@@ -65,6 +65,18 @@
   
   /* Photo Frame Styles */
   
+/* Add this CSS to your stylesheet */
+.photos-row {
+  display: flex;
+  justify-content: space-around; /* This will space out the images evenly */
+  align-items: center; /* This will align the images vertically in the center */
+}
+
+.photo-frame {
+  /* If you want to ensure the images have some space between them */
+  margin: 0 10px; /* Adjust the 10px as needed */
+}
+
   .photo-frame {
     border: 1px solid #ddd;
     border-radius: 10px;
