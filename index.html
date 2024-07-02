@@ -5,87 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niladri Das</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .chat-ad {
-            margin-top: 30px;
-            background: linear-gradient(135deg, #007bff, #6a11cb);
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .chat-ad h3 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        .chat-ad p {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-        .chat-ad .btn {
-            background-color: #fff;
-            color: #007bff;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        .chat-ad .btn:hover {
-            background-color: #007bff;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-        .chat-ad .fas {
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        .chat-ad::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-            animation: rotate 20s infinite linear;
-        }
-        .chat-ad::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-            animation: rotate 20s infinite linear;
-            animation-delay: -10s;
-        }
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -105,6 +26,7 @@
         <img src="https://avatars.githubusercontent.com/u/125604915?v=4" alt="Niladri Das" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px;">
         <h1 class="display-4">Hello, I'm Niladri Das</h1>
         <p class="lead">Solution Stack</p>
+        <img src="/data/redhat-icon-2048x2048-c81kj8ny.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/0_eFomJUFua8tuqe8g.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/926px-C_Programming_Language.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/Bootstrap_logo.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
@@ -112,37 +34,42 @@
         <img src="/data/images.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/Python-logo-notext.svg.webp" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/Unofficial_JavaScript_logo_2.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
-        <img src="/data/Bash_Logo_Colored.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+        <img src="/data/Bash_Logo_Colored.svg.png" alt="Badge" class="img-fluid mb-3"style="width: 100px; height: 100px;">
         <img src="/data/Git_icon.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/brand-github-copilot-icon-2048x1775-2h15dc8k.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
         <img src="/data/Tux.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+        <img src="/data/Microsoft_Azure.svg.png" alt="Badge" class="img-fluid mb-3" style="width: 100px; height: 100px;">
     </header>
 
-  <!-- ChatBuddy Advertisement Section -->
-  <div class="chat-ad">
-    <h3>Meet ChatBuddy!</h3>
-    <p>Your personal AI assistant for all your queries and support.</p>
-    <i class="fas fa-robot fa-4x mb-3"></i>
-    <br>
-    <a href="chatbot.html" class="btn btn-lg" role="button">Try ChatBuddy Now!</a>
-</div>
-</section>
+    <section class="photos-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/data/Vmware_workstation_16_icon.svg.png" alt="Photo 1" class="img-fluid mb-3">
+                </div>
+                <div class="col-md-4">
+                    <img src="/data/Microsoft_365_(2022).svg.png" alt="Photo 2" class="img-fluid mb-3">
+                </div>
+                <div class="col-md-4">
+                    <img src="/data/926px-C_Programming_Language.svg.png" alt="Photo 3" class="img-fluid mb-3">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="text-center py-4">
-        <p>&copy; 2024 Niladri Das. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/niladrridas/" target="_blank">
-            <i class="fab fa-linkedin-in fa-2x" style="color: #0082ca;"></i>
-        </a>
-        <a href="https://twitter.com/niladrridas" target="_blank">
-            <i class="fab fa-twitter fa-2x" style="color: #1DA1F2;"></i>
-        </a>
-        <a href="https://www.instagram.com/resc.uer10/" target="_blank">
-            <i class="fab fa-instagram fa-2x" style="color: #C13584;"></i>
-        </a>
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2023 Niladri Das. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://www.facebook.com/niladri.das.509" target="_blank" class="text-muted"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/niladri-das-8b08081b8/" target="_blank" class="text-muted"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="list-inline-item"><a href="https://github.com/niladri-das" target="_blank" class="text-muted"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
