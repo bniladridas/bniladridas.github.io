@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBuddy Interface</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 100px; /* Ensure space for the footer */
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ensure relative positioning */
+            z-index: 1; /* Ensure chatbot stays above footer */
+        }
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f1f1f1;
+            scrollbar-width: thin;
+            scrollbar-color: #007bff #e9ecef;
+        }
+        .chat-box::-webkit-scrollbar {
+            width: 10px;
+        }
+        .chat-box::-webkit-scrollbar-track {
+            background: #e9ecef;
+        }
+        .chat-box::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+        }
+        .message {
+            margin-bottom: 10px;
+            animation: fadeIn 0.5s;
+        }
+        .message.bot {
+            text-align: left;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message p {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .message.bot p {
+            background-color: #e9ecef;
+            border: 1px solid #ddd;
+        }
+        .message.user p {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+        .input-group {
+            margin-top: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 0; /* Lower z-index to ensure it's behind chatbot */
+        }
+        .footer-icons {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">ChatBuddy Interface</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <img src="https://avatars.githubusercontent.com/u/125604915?v=4" alt="ChatBuddy" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px;">
+        <h1 class="display-4">Welcome to ChatBuddy</h1>
+        <p class="lead" style="margin-bottom: 0;">Your AI assistant</p>
+    </header>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="chat-container">
+                    <h3 class="text-center">Chat with Us</h3>
+                    <div class="chat-box" id="chat-box">
+                        <!-- Messages will be appended here -->
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="user-input" placeholder="Type your message...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="send-button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 ChatBuddy Interface. All rights reserved.</p>
+        <a href="https://www.linkedin.com" target="_blank" class="footer-icons">
+            <i class="fab fa-linkedin-in fa-2x" style="color: #0082ca;"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="footer-icons">
+            <i class="fab fa-twitter fa-2x" style="color: #1DA1F2;"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="footer-icons">
+            <i class="fab fa-instagram fa-2x" style="color: #C13584;"></i>
+        </a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#send-button').click(function () {
+                sendMessage();
+            });
+
+            $('#user-input').keypress(function (e) {
+                if (e.which == 13) { // Enter key pressed
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                var userInput = $('#user-input').val();
+                if (userInput.trim() !== '') {
+                    appendMessage('user', userInput);
+                    $('#user-input').val('');
+                    setTimeout(function () {
+                        appendMessage('bot', getBotResponse(userInput));
+                    }, 1000);
+                }
+            }
+
+            function appendMessage(sender, message) {
+                var messageElement = $('<div class="message ' + sender + '"><p>' + message + '</p></div>');
+                $('#chat-box').append(messageElement);
+                $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+            }
+
+            function getBotResponse(userInput) {
+                userInput = userInput.toLowerCase();
+                if (userInput.includes('hello') || userInput.includes('hi')) {
+                    return 'Hello! How can I assist you today?';
+                } else if (userInput.includes('help')) {
+                    return 'I am here to help! What do you need assistance with?';
+                } else if (userInput.includes('name')) {
+                    return 'My name is ChatBuddy, your friendly AI assistant.';
+                } else if (userInput.includes('time')) {
+                    return 'The current time is ' + new Date().toLocaleTimeString();
+                } else if (userInput.includes('date')) {
+                    return 'Today\'s date is ' + new Date().toLocaleDateString();
+                } else if (userInput.includes('thank you') || userInput.includes('thanks')) {
+                    return 'You\'re welcome! If you have any other questions, feel free to ask.';
+                } else if (userInput.includes('who are you')) {
+                    return 'I am ChatBuddy, an AI assistant here to help you with your queries.';
+                } else if (userInput.includes('what can you do')) {
+                    return 'I can provide information about time, date, and answer general queries. Feel free to ask!';
+                } else if (userInput.includes('how are you')) {
+                    return 'I\'m just a program, but thanks for asking! How can I assist you today?';
+                } else {
+                    // For more sophisticated responses, consider integrating with an NLU service
+                    return 'I\'m not sure about that. Can you ask something else? For more complex queries, consider integrating with a natural language understanding (NLU) service like Dialogflow or Watson Assistant.';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
