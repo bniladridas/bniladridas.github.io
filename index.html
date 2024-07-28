@@ -79,9 +79,28 @@
                     </div>
                 </div>
                 
-                <div class="profile-tabs">
-                    <div class="nav-tabs-navigation">
-                        <div class="nav-tabs-wrapper">
+                <div class="profile-tabs container-fluid">
+                    <style>
+                        @media (max-width: 768px) {
+                            .nav-tabs-wrapper {
+                                margin-bottom: 20px;
+                            }
+                            .tab-pane {
+                                padding: 20px;
+                            }
+                        }
+                
+                        @media (max-width: 480px) {
+                            .nav-tabs-wrapper {
+                                margin-bottom: 10px;
+                            }
+                            .tab-pane {
+                                padding: 10px;
+                            }
+                        }
+                    </style>
+                    <div class="nav-tabs-navigation row">
+                        <div class="nav-tabs-wrapper col-md-12">
                             <ul id="tabs" class="nav nav-tabs nav-justified" data-tabs="tabs">
                                 <li class="active"><a href="#curriculum" data-toggle="tab">University Curriculum</a></li>
                                 <li><a href="#interests" data-toggle="tab">Interests and Specialization</a></li>
@@ -89,24 +108,25 @@
                             </ul>
                         </div>
                     </div>
-                    <div id="my-tab-content" class="tab-content">
-                        <div class="tab-pane active text-center" id="curriculum">
+                    <div id="my-tab-content" class="tab-content row">
+                        <div class="tab-pane active col-md-12 text-center" id="curriculum">
                             <h3 class="text-muted">University Curriculum</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                             <a href="#" class="btn btn-warning btn-fill">Learn More</a>
                         </div>
-                        <div class="tab-pane text-center" id="interests">
+                        <div class="tab-pane col-md-12 text-center" id="interests">
                             <h3 class="text-muted">Interests and Specialization</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                             <a href="#" class="btn btn-warning btn-fill">Explore Interests</a>
                         </div>
-                        <div class="tab-pane text-center" id="research">
+                        <div class="tab-pane col-md-12 text-center" id="research">
                             <h3 class="text-muted">Research Opportunities</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
                             <a href="#" class="btn btn-warning btn-fill">Find Research Opportunities</a>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div> 
