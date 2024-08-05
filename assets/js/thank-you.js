@@ -1,18 +1,3 @@
-/*!
-
- =========================================================
- * Paper Kit - v1.2.2
- =========================================================
- 
- * Product Page: http://www.creative-tim.com/product/paper-kit
- * Copyright 2016 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/timcreative/paper-kit/blob/master/LICENSE.md)
- 
- =========================================================
- 
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- */
-
 var searchVisible = 0;
 var transparent = true;
 
