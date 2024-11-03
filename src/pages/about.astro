@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Ava from '@src/assets/img/picture.png';
+import Prose from '../components/Prose.astro';
+
+---
+
+<BaseLayout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+>
+  <div class='container'>
+		<main class='prose text-lg dark:prose-invert'>
+      <article>
+        <div class='w-full md:flex md:items-center gap-16 mb-10'>
+          <div class="text-pretty leading-9">
+            <h1 class="text-4xl font-bold mb-4">Hi There 👋, Niladri Here! </h1>
+            <Prose>
+              <div class="text-lg">
+                <p>I am a Full Stack Engineer from India with a degree from <a href="https://www.lpu.in/" target="_blank">Lovely Professional University</a>. Driven by a passion for coding, I regularly share my work on <a href="https://github.com/bniladridas" target="_blank">GitHub</a> and write articles on <a href="https://niladrridas.medium.com/" target="_blank">Medium</a>. I also created <a href="https://niladridas.hashnode.dev/" target="_blank">Optimize Coding</a>, a tech blog dedicated to keeping developers informed about the latest trends.</p> <p>I actively tackle complex coding challenges on various platforms and enjoy participating in hackathons, such as the <a href="https://geekle.ai/hackathon/first/" target="_blank">Geekle AI Hackathon</a>, which have sharpened my skills in both collaboration and innovation. My expertise spans front-end and back-end technologies, and I am certified on <a href="https://www.hackerrank.com/certificates/de879709fc27" target="_blank">HackerRank</a>. I also enjoy solving algorithmic problems and exploring data structures on <a href="https://leetcode.com/u/bniladridas/" target="_blank">LeetCode</a>. My passion for coding extends to <a href="https://www.freecodecamp.org/niladrridas" target="_blank">freeCodeCamp</a>, where I have completed projects in data visualization and honed my skills in Bash, PostgreSQL, HTML, CSS, and JavaScript.</p>
+              </div>
+            </Prose>
+          </div>
+          <Image src={Ava} alt="Niladri Das" width={300}  class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
+        </div>     
+        <div>
+    <p>
+        With a solid foundation in cybersecurity and Linux system automation, I bring a strong command of cloud platforms such as AWS, Azure, and GCP. My skill set includes SQL data management, Bash scripting, and IT troubleshooting, all of which have been invaluable in my role as a <a href="https://arcx.io/verify-certificate?id=643624c596d17841c480c00f33c21255fffb4f24&k=146c6a50718140b59e04f363f0b3b2d7" target="_blank">Cyber Threat Intelligence Analyst</a>. Additionally, I hold a <a href="https://www.linkedin.com/learning/certificates/a47fa7b95a3671b05df2a5aeebaccd812b4d77d9eb4089721a804986e74eb2d4" target="_blank">GitHub Professional Certificate</a>.
+    </p> 
+    <p>
+        Motivated by a passion for technology’s potential to make a difference, I am eager to expand my network, share knowledge, and stay at the cutting edge of emerging tech trends.
+    </p>
+    <p>
+        With expertise in Linux automation, network infrastructure, and cybersecurity, I focus on creating secure, high-performance systems. My approach combines hands-on experience with scalable solution design, process automation, and a commitment to bolstering system resilience. From implementing CI/CD pipelines to deploying AI-powered applications, my work centers on maximizing operational efficiency and security. Recently, I completed a <a href="https://www.linkedin.com/learning/certificates/93a34784c86633af1c78cad0c9ec796fc68de8380932c28af4694f7279b09f81?trk=share_certificate" target="_blank">System Administration Career Certificate from Microsoft</a>.
+    </p>
+    <p>
+        As a researcher and academic contributor, I have experience in VLSI system design, hardware troubleshooting, and digital circuit development. I also give back as an alumni volunteer at Lovely Professional University, where I mentor students and foster knowledge-sharing initiatives. My projects span developing an AI-powered banking interface, creating a <a href="https://arxiv.org/abs/2405.05292" target="_blank">Smart Portable Computer</a>, and contributing to cybersecurity threat intelligence.
+    </p>
+    <p>
+        Driven by a commitment to innovation, I am always expanding my expertise. I recently joined <a href="https://build.nvidia.com/explore/discover" target="_blank">NVIDIA's Microservices Developer Preview Program</a> to explore advanced applications in vision AI, while also participating in workshops like <a href="https://www.intel.com/content/www/us/en/developer/tools/tiber/ai-cloud.html" target="_blank">Intel DevOps for Tiber AI Cloud</a>. I am a dynamic leader and a lifelong learner, merging technical expertise with a dedication to creating a positive impact through technology.
+    </p>
+</div>
+        </article>
+      </article>
+    </main>
+  </div>
+</BaseLayout>
