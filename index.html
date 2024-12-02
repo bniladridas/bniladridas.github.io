@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Design Projects</title>
+<style>
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    perspective: 1000px;
+}
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+.button {
+    background: linear-gradient(
+        135deg, 
+        rgba(50, 60, 120, 0.9) 0%, 
+        rgba(70, 80, 160, 0.9) 50%, 
+        rgba(50, 60, 120, 0.9) 100%
+    );
+    color: #e0e0ff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 2px solid rgba(100, 100, 255, 0.3);
+    box-shadow: 
+        0 15px 25px rgba(0, 0, 0, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.2) inset;
+    transition: all 0.3s ease;
+    transform: rotateX(10deg);
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.button:hover::before {
+    opacity: 1;
+}
+.button:hover {
+    background: linear-gradient(
+        135deg, 
+        rgba(70, 80, 160, 0.9) 0%, 
+        rgba(90, 100, 200, 0.9) 50%, 
+        rgba(70, 80, 160, 0.9) 100%
+    );
+    transform: rotateX(0deg) scale(1.05);
+    box-shadow: 
+        0 20px 30px rgba(0, 0, 0, 0.4),
+        0 8px 15px rgba(0, 0, 0, 0.3) inset;
+}
+.button:active {
+    transform: rotateX(15deg) scale(0.95);
+    box-shadow: 
+        0 10px 15px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.2) inset;
+}
+.footer {
+    margin-top: 30px;
+    color: #c0c0ff;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+}
+.footer a {
+    color: #4db8ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://dragon-ai-assistant.vercel.app/" class="button">
+            <span style="font-size: 24px;">&#128101;</span> AI Assistant
+        </a>
+        <a href="https://melody-three.vercel.app/" class="button">
+            <span style="font-size: 24px;">&#127911;</span> Spotify Recommender
+        </a>
+        <div class="footer">
+            <p>ISV managed by Niladri Das</p>
+            <div>
+                <a href="https://github.com/bniladridas" target="_blank">&#x1F4BB; GitHub</a>
+                <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">&#x1F4E2; LinkedIn</a>
+                <a href="https://twitter.com/bniladridas" target="_blank">&#x1F426; Twitter</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
