@@ -4,166 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future System Design Projects</title>
-    <!-- Favicon Links -->
+    <!-- Favicon Links for different devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
     <link rel="icon" href="images/favicon.ico">
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore future system design projects including advanced AI assistant and AI music recommender.">
-    <meta name="keywords" content="AI, AI Assistant, AI Music Recommender, Future Projects, System Design">
-    <meta name="author" content="Niladri Das">
-    <meta property="og:title" content="Future System Design Projects">
-    <meta property="og:description" content="Explore future system design projects including advanced AI assistant and AI music recommender.">
-    <meta property="og:image" content="images/og-image.png">
-    <meta property="og:url" content="https://bniladridas.github.io/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Future System Design Projects">
-    <meta name="twitter:description" content="Explore future system design projects including advanced AI assistant and AI music recommender.">
-    <meta name="twitter:image" content="images/twitter-image.png">
+
     <style>
+        /* Basic styling for the body */
         body {
-            background: radial-gradient(circle, #0d0d1a, #1a1a2e);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            color: #e0e0ff;
-            perspective: 1200px;
-            overflow: hidden;
+            background: radial-gradient(circle, #0d0d1a, #1a1a2e); /* Gradient background */
+            display: flex; /* Flexbox for centering content */
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            font-family: 'Roboto', sans-serif; /* Font family */
+            color: #e0e0ff; /* Text color */
+            perspective: 1200px; /* 3D perspective */
+            overflow: hidden; /* Hide overflow */
         }
+
+        /* Container for main content */
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 60px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            transform: translateZ(0);
-            animation: floating 5s infinite alternate;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            border-radius: 30px; /* Rounded corners */
+            padding: 60px; /* Padding inside the container */
+            backdrop-filter: blur(20px); /* Blur effect for background */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            transform: translateZ(0); /* Force hardware acceleration */
+            animation: floating 5s infinite alternate; /* Floating animation */
         }
+
+        /* Keyframes for floating animation */
         @keyframes floating {
             0% { transform: translateY(0); }
             100% { transform: translateY(-15px); }
         }
+
+        /* Styling for buttons */
         .button {
-            background: linear-gradient(
-                135deg, 
-                rgba(30, 40, 80, 0.9) 0%, 
-                rgba(50, 60, 120, 0.9) 50%, 
-                rgba(30, 40, 80, 0.9) 100%
-            );
-            color: #e0e0ff;
-            padding: 20px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            border-radius: 25px;
-            border: 2px solid rgba(100, 100, 255, 0.4);
-            box-shadow: 
-                0 20px 30px rgba(0, 0, 0, 0.4),
-                0 10px 15px rgba(0, 0, 0, 0.3) inset;
-            transition: all 0.3s ease;
-            margin: 15px;
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
+            background: linear-gradient(135deg, rgba(30, 40, 80, 0.9) 0%, rgba(50, 60, 120, 0.9) 50%, rgba(30, 40, 80, 0.9) 100%);
+            color: #e0e0ff; /* Text color */
+            padding: 20px 40px; /* Button padding */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Inline block for proper sizing */
+            font-size: 20px; /* Font size */
+            border-radius: 25px; /* Rounded corners */
+            border: 2px solid rgba(100, 100, 255, 0.4); /* Border */
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4), 0 10px 15px rgba(0, 0, 0, 0.3) inset; /* Shadow effects */
+            transition: all 0.3s ease; /* Smooth transition for effects */
+            margin: 15px; /* Margin around buttons */
+            position: relative; /* Position for pseudo-elements */
+            overflow: hidden; /* Hide overflow for effects */
+            transform-style: preserve-3d; /* Preserve 3D transformations */
         }
+
+        /* Pseudo-element for button hover effect */
         .button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(-45deg);
-            transition: all 0.3s ease;
-            opacity: 0;
-            border-radius: 50%;
+            content: ''; /* Empty content for pseudo-element */
+            position: absolute; /* Position it absolutely */
+            top: -50%; /* Position it above the button */
+            left: -50%; /* Position it to the left */
+            width: 200%; /* Double the width */
+            height: 200%; /* Double the height */
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            transform: rotate(-45deg); /* Rotate for effect */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            opacity: 0; /* Initially hidden */
+            border-radius: 50%; /* Circular shape */
         }
+
+        /* Hover effect for buttons */
         .button:hover::before {
-            opacity: 1;
+            opacity: 1; /* Show the pseudo-element on hover */
         }
+
+        /* Change button appearance on hover */
         .button:hover {
-            background: linear-gradient(
-                135deg, 
-                rgba(50, 60, 120, 0.9) 0%, 
-                rgba(70, 80, 160, 0.9) 50%, 
-                rgba(50, 60, 120, 0.9) 100%
-            );
-            transform: scale(1.1) rotateY(10deg);
-            box-shadow: 
-                0 30px 45px rgba(0, 0, 0, 0.5),
-                0 15px 20px rgba(0, 0, 0 , 0.4) inset;
+            background: linear-gradient(135deg, rgba(50, 60, 120, 0.9) 0%, rgba(70, 80, 160, 0.9) 50%, rgba(50, 60, 120, 0.9) 100%);
+            transform: scale(1.1) rotateY(10deg); /* Scale and rotate */
+            box-shadow: 0 30px 45px rgba(0, 0, 0, 0.5), 0 15px 20px rgba(0, 0, 0, 0.4) inset; /* Enhanced shadow */
         }
+
+        /* Active state for buttons */
         .button:active {
-            transform: scale(0.95) rotateY(5deg);
-            box-shadow: 
-                0 15px 20px rgba(0, 0, 0, 0.4),
-                0 5px 10px rgba(0, 0, 0, 0.3) inset;
+            transform: scale(0.95) rotateY(5deg); /* Scale down on click */
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.3) inset; /* Shadow effect */
         }
+
+        /* Footer styling */
         .footer {
-            margin-top: 40px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 40px; /* Space above footer */
+            text-align: center; /* Center text */
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            padding: 30px; /* Padding inside footer */
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
         }
+
+        /* Footer link styling */
         .footer a {
-            color: #4db8ff;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-            position: relative;
+            color: #4db8ff; /* Link color */
+            text-decoration: none; /* Remove underline */
+            margin: 0 15px; /* Margin between links */
+            transition: color 0.3s ease; /* Smooth color transition */
+            position: relative; /* Position for tooltip */
         }
+
+        /* Hover effect for footer links */
         .footer a:hover {
-            color: #1e90ff;
-            text-decoration: underline;
+            color: #1e90ff; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
         }
+
+        /* Tooltip styling */
         .tooltip {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            z-index: 10;
-            white-space: nowrap;
+            display: none; /* Hidden by default */
+            position: absolute; /* Position it absolutely */
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+            color: #fff; /* White text */
+            padding: 5px 10px; /* Padding */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 14px; /* Font size */
+            z-index: 10; /* Above other elements */
+            white-space: nowrap; /* Prevent line breaks */
         }
+
+        /* Show tooltip on link hover */
         .footer a:hover .tooltip {
-            display: block;
+            display: block; /* Show tooltip */
         }
     </style>
 </head>
 <body>
-    <audio id="buttonSound" src="sounds/button-click.mp3"></audio>
+    <audio id="buttonSound" src="sounds/button-click.mp3"></audio> <!-- Audio for button click -->
     <div class="container">
+        <!-- Button linking to AI Assistant -->
         <a href="https://dragon-ai-assistant.vercel.app/" class="button" onclick="playSoundAndRedirect(event, 'https://dragon-ai-assistant.vercel.app/')">
             <span style="font-size: 28px;">&#128101;</span> Advanced AI Assistant
         </a>
+        <!-- Button linking to AI Music Recommender -->
         <a href="https://melody-three.vercel.app/" class="button" onclick="playSoundAndRedirect(event, 'https://melody-three.vercel.app/')">
             <span style="font-size: 28px;">&#127911;</span> AI Music Recommender
         </a>
+        <!-- Input for user queries -->
+        <input type="text" id="userInput" placeholder="Ask me something..." style="margin-top: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        <!-- Button to ask AI -->
+        <button onclick="getAIResponse()" style="padding: 10px 20px; border-radius: 5px; border: none; background-color: #4db8ff; color: white; cursor: pointer;"> Ask AI</button>
+        <!-- Div to display AI response -->
+        <div id="aiResponse" style="margin-top: 20px; color: #e0e0ff;"></div>
         <div class="footer">
             <p>ISV managed by Niladri Das</p>
             <div>
+                <!-- GitHub link with tooltip -->
                 <a href="https://github.com/bniladridas" target="_blank">
                     &#x1F4BB; GitHub
                     <span class="tooltip">View my GitHub profile</span>
                 </a>
+                <!-- LinkedIn link with tooltip -->
                 <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">
                     &#x1F4E2; LinkedIn
                     <span class="tooltip">Connect with me on LinkedIn</span>
                 </a>
+                <!-- Twitter link with tooltip -->
                 <a href="https://twitter.com/bniladridas" target="_blank">
                     &#x1F426; Twitter
                     <span class="tooltip">Follow me on Twitter</span>
@@ -172,6 +181,7 @@
         </div>
     </div>
     <script>
+        // Function to play sound and redirect to a new URL
         function playSoundAndRedirect(event, url) {
             event.preventDefault(); // Prevent the default link behavior
             const sound = document.getElementById('buttonSound');
@@ -180,8 +190,25 @@
                     window.location.href = url; // Redirect after 1 second
                 }, 1000);
             }).catch(error => {
-                console.error("Error playing sound:", error);
+                console.error("Error playing sound:", error); // Log any errors
             });
+        }
+
+        // Function to get AI response based on user input
+        function getAIResponse() {
+            const input = document.getElementById('userInput').value; // Get user input
+            const response = recommend(input); // Get recommendation based on input
+            document.getElementById('aiResponse').innerText = response; // Display response
+        }
+
+        // Function to recommend responses based on user input
+        function recommend(userInput) {
+            if (userInput.includes('music')) {
+                return 'I recommend listening to classical music!'; // Music recommendation
+            } else if (userInput.includes('study')) {
+                return 'How about some focus music?'; // Study recommendation
+            }
+            return 'Try our AI tools!'; // Default response
         }
     </script>
 </body>

@@ -1,8 +1,8 @@
 # Future System Design Projects
 
-Welcome to the Future System Design Projects! This project showcases innovative applications powered by AI, including an advanced AI assistant and a music recommender.
+Welcome to the Future System Design Projects! This project showcases innovative applications powered by AI. These include an advanced AI assistant and a music recommender.
 
-![Hot Preview](images/preview.png)
+![Preview of Future System Design Projects](images/preview_ai.png)
 
 ## Features
 
@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-Click on the buttons to interact with the AI applications. A sound effect will play upon clicking, followed by a 1-second delay before redirecting to the respective application.
+Click on the "AI Assistant" and "Music Recommender" buttons to interact with the AI applications. A sound effect will play upon clicking, followed by a 1-second delay before redirecting to the respective application.
 
 ## Contributing
 
@@ -43,8 +43,7 @@ This project is actively maintained. For any issues or updates, please refer to 
 
 ## Acknowledgments
 
-Thanks to all contributors and supporters of this project.
-Special thanks to the developers of the libraries and tools used in this project.
+Thanks to all contributors and supporters of this project. Special thanks to the developers of the libraries and tools used in this project.
 
 Cheers!
 Thank you for checking out this project! Your support and feedback are greatly appreciated. Let's build a better future together!
