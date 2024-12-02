@@ -13,7 +13,7 @@
     <link rel="icon" href="images/favicon.ico">
     <style>
         body {
-            background: radial-gradient(circle, #1a1a2e, #16213e);
+            background: radial-gradient(circle, #0d0d1a, #1a1a2e);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,15 +29,15 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 30px;
             padding: 60px;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             transform: translateZ(0);
             animation: floating 5s infinite alternate;
         }
         @keyframes floating {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
+            100% { transform: translateY(-15px); }
         }
         .button {
             background: linear-gradient(
@@ -51,8 +51,8 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 18px;
-            border-radius: 20px;
+            font-size: 20px;
+            border-radius: 25px;
             border: 2px solid rgba(100, 100, 255, 0.4);
             box-shadow: 
                 0 20px 30px rgba(0, 0, 0, 0.4),
@@ -89,7 +89,7 @@
             transform: scale(1.1) rotateY(10deg);
             box-shadow: 
                 0 30px 45px rgba(0, 0, 0, 0.5),
-                0 15px 20px rgba(0, 0, 0, 0.4) inset;
+                0 15px 20px rgba(0, 0, 0 , 0.4) inset;
         }
         .button:active {
             transform: scale(0.95) rotateY(5deg);
@@ -103,17 +103,32 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         .footer a {
             color: #4db8ff;
             text-decoration: none;
             margin: 0 15px;
             transition: color 0.3s ease;
+            position: relative;
         }
         .footer a:hover {
             color: #1e90ff;
             text-decoration: underline;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 10;
+            white-space: nowrap;
+        }
+        .footer a:hover .tooltip {
+            display: block;
         }
     </style>
 </head>
@@ -128,9 +143,18 @@
         <div class="footer">
             <p>ISV managed by Niladri Das</p>
             <div>
-                <a href="https://github.com/bniladridas" target="_blank">&#x1F4BB; GitHub</a>
-                <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">&#x1F4E2; LinkedIn</a>
-                <a href="https://twitter.com/bniladridas" target="_blank">&#x1F426; Twitter</a>
+                <a href="https://github.com/bniladridas" target="_blank">
+                    &#x1F4BB; GitHub
+                    <span class="tooltip">View my GitHub profile</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">
+                    &#x1F4E2; LinkedIn
+                    <span class="tooltip">Connect with me on LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/bniladridas" target="_blank">
+                    &#x1F426; Twitter
+                    <span class="tooltip">Follow me on Twitter</span>
+                </a>
             </div>
         </div>
     </div>
