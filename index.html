@@ -91,7 +91,8 @@
                 0 30px 45px rgba(0, 0, 0, 0.5),
                 0 15px 20px rgba(0, 0, 0 , 0.4) inset;
         }
-        .button:active {
+        .button ```html
+:active {
             transform: scale(0.95) rotateY(5deg);
             box-shadow: 
                 0 15px 20px rgba(0, 0, 0, 0.4),
@@ -133,11 +134,12 @@
     </style>
 </head>
 <body>
+    <audio id="buttonSound" src="sounds/button-click.mp3"></audio>
     <div class="container">
-        <a href="https://dragon-ai-assistant.vercel.app/" class="button">
+        <a href="https://dragon-ai-assistant.vercel.app/" class="button" onclick="playSoundAndRedirect(event, 'https://dragon-ai-assistant.vercel.app/')">
             <span style="font-size: 28px;">&#128101;</span> Advanced AI Assistant
         </a>
-        <a href="https://melody-three.vercel.app/" class="button">
+        <a href="https://melody-three.vercel.app/" class="button" onclick="playSoundAndRedirect(event, 'https://melody-three.vercel.app/')">
             <span style="font-size: 28px;">&#127911;</span> AI Music Recommender
         </a>
         <div class="footer">
@@ -158,5 +160,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function playSoundAndRedirect(event, url) {
+            event.preventDefault(); // Prevent the default link behavior
+            const sound = document.getElementById('buttonSound');
+            sound.play().then(() => {
+                setTimeout(() => {
+                    window.location.href = url; // Redirect after 1 second
+                }, 1000);
+            }).catch(error => {
+                console.error("Error playing sound:", error);
+            });
+        }
+    </script>
 </body>
 </html>
