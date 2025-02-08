@@ -2,384 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Niladri Das | Future System Design Projects</title>
-    
-   <!-- SEO Meta Tags -->
-   <meta name="description" content="Explore the future system design projects by Niladri Das, including AI assistants, music recommenders, and more.">
-   <meta name="keywords" content="Niladri Das, system design, AI assistant, music recommender, future projects">
-   <meta name="author" content="Niladri Das">
-   
-   <!-- Open Graph Meta Tags -->
-   <meta property="og:title" content="Niladri Das | Future System Design Projects">
-   <meta property="og:description" content="Explore the future system design projects by Niladri Das, including AI assistants, music recommenders, and more.">
-   <meta property="og:image" content="images/bio.png">
-   <meta property="og:url" content="https://bniladridas.github.io">
-   <meta property="og:type" content="website">
-   
-   <!-- Twitter Card Meta Tags -->
-   <meta name="twitter:card" content="summary_bio">
-   <meta name="twitter:title" content="Niladri Das | Future System Design Projects">
-   <meta name="twitter:description" content="Explore the future system design projects by Niladri Das, including AI assistants, music recommenders, and more.">
-   <meta name="twitter:image" content="images/bio.png">
-
-    <!-- Favicon Links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
-    <link rel="icon" href="images/favicon.ico">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Environment Monitor</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
         }
 
         body {
-            background-color: #1a1a2e;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            line-height: 1.6;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(26, 26, 46, 0.9);
-            text-align: center;
-            padding: 10px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .header h1 {
-            font-size: 1.5rem;
-            color: #4db8ff;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
         }
 
         .container {
+            max-width: 800px;
             width: 100%;
-            max-width: 600px;
-            margin: 80px auto 20px;
-            padding: 15px;
-            background-color: #2c2c4e;
+            background: #252525;
+            padding: 2rem;
             border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .button {
-            display: block;
-            width: 90%;
-            max-width: 400px;
-            margin: 15px auto;
-            padding: 12px;
-            background-color: #3a3a5e;
-            color: white;
-            text-decoration: none;
+        .title {
+            font-size: 2.5rem;
             text-align: center;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #f0f0f0, #808080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .button:active {
-            background-color: #4a4a6e;
-            transform: scale(0.98);
+        .gradient-display {
+            height: 300px;
+            border-radius: 8px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4a90e2, #87ceeb);
+            transition: background 0.5s ease;
         }
 
-        .input-group {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
+        .typography-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 0 15px;
-        }
-
-        #userInput {
-            flex-grow: 1;
-            max-width: 300px;
-            padding: 10px;
-            border: 1px solid #555;
-            background-color: #3a3a5e;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .search-button {
-            margin-left: 10px;
-            padding: 10px 15px;
-            background-color: #4db8ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #aiResponse {
-            background-color: #3a3a5e;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 50px;
-            word-wrap: break-word;
-        }
-
-        #memory-game {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            justify-content: center;
-            max-width: 100%;
-            margin: 20px auto;
-        }
-
-        .memory-card {
-            aspect-ratio: 1;
-            background-color: #3a3a5e;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 1.2rem;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #404040;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4a90e2;
             cursor: pointer;
-            border-radius: 5px;
         }
 
-        .footer {
+        .label {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .value-display {
+            font-size: 1.8rem;
             text-align: center;
-            padding: 15px;
+            margin-top: 1rem;
         }
 
-        .footer a {
-            color: #4db8ff;
-            margin: 0 10px;
-            text-decoration: none;
+        .type-sample {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
         }
 
-        @media screen and (max-width: 480px) {
-            .header h1 {
-                font-size: 1.2rem;
-            }
+        .type-sample p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
 
-            .memory-card {
-                font-size: 1.5rem;
-            }
-
-            .input-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .search-button {
-                margin-left: 0;
-                margin-top: 10px;
+        @media (max-width: 600px) {
+            .controls {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Audio for button clicks -->
-    <audio id="buttonClickSound" src="/sounds/button-click.mp3"></audio>
-
-    <div class="header">
-        <h1>Niladri Das 
-            <span style="color: gold;">⭐⭐⭐</span>
-        </h1>
-    </div>
-
     <div class="container">
-        <a href="https://dragon-ai-assistant.vercel.app/" class="button" onclick="playButtonSound()">
-            Advanced AI Assistant
-        </a>
-        <a href="https://archer-musics.netlify.app/" class="button" onclick="playButtonSound()">
-            Music Recommender
-        </a>
+        <h1 class="title">Typography Environment Monitor</h1>
         
-        <div class="input-group">
-            <input type="text" id="userInput" placeholder="Ask me something smart...">
-            <button class="search-button" onclick="getSmartReply()">Search</button>
-        </div>
-        <div id="aiResponse"></div>
-        
-        <div>
-            <h3 style="text-align: center; margin-bottom: 10px;">Memory Game</h3>
-            <div id="memory-game"></div>
-            <div id="game-status" style="text-align: center; margin: 10px 0;">Moves: 0 | Matches: 0/6</div>
-            <button onclick="resetGame()" class="button" style="width: 50%; margin: 10px auto;">Reset Game</button>
-        </div>
-        
-        <div class="footer">
-            <div>
-                <a href="https://github.com/bniladridas" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">LinkedIn</a>
-                <a href="https://x.com/bniladridas" target="_blank">X</a>
+        <div class="gradient-display" id="gradientDisplay">
+            <div class="typography-overlay">
+                <div id="conditions"></div>
+                <div id="typeStatus"></div>
             </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label class="label">Temperature (°C)</label>
+                <input type="range" id="tempSlider" min="15" max="35" value="22" step="0.1">
+            </div>
+            <div class="control-group">
+                <label class="label">Humidity (%)</label>
+                <input type="range" id="humiditySlider" min="30" max="80" value="50" step="0.1">
+            </div>
+        </div>
+
+        <div class="value-display">
+            <div id="values"></div>
+        </div>
+
+        <div class="type-sample">
+            <p id="typeSample">The quick brown fox jumps over the lazy dog</p>
         </div>
     </div>
 
     <script>
-        // Button Sound Function
-        function playButtonSound() {
-            const audio = document.getElementById('buttonClickSound');
-            audio.currentTime = 0; // Reset audio to start
-            audio.play().catch(error => {
-                console.log('Audio play failed:', error);
-            });
-        }
+        const tempSlider = document.getElementById('tempSlider');
+        const humiditySlider = document.getElementById('humiditySlider');
+        const gradientDisplay = document.getElementById('gradientDisplay');
+        const conditions = document.getElementById('conditions');
+        const values = document.getElementById('values');
+        const typeStatus = document.getElementById('typeStatus');
+        const typeSample = document.getElementById('typeSample');
 
-        // Smart Reply Function (same as previous implementation)
-        function getSmartReply() {
-            const userInput = document.getElementById('userInput').value.toLowerCase().trim();
-            const aiResponse = document.getElementById('aiResponse');
+        function updateDisplay() {
+            const temp = parseFloat(tempSlider.value);
+            const humidity = parseFloat(humiditySlider.value);
 
-            if (!userInput) {
-                alert("Please enter some text.");
-                return;
-            }
+            // Update values display
+            values.textContent = `${temp.toFixed(1)}°C | ${humidity.toFixed(1)}%`;
 
-            // Existing smart reply logic from previous implementation
-            const replyRules = {
-                'hi': ['Hello there!', 'Hi! How can I help you today?', 'Greetings!'],
-                'how are you': [
-                    'I\'m functioning optimally, thanks for asking!', 
-                    'Doing great! Ready to assist you.', 
-                    'Fully operational and eager to help!'
-                ],
-                'tell me about yourself': [
-                    'I\'m a smart AI assistant created by Niladri Das. I can help with various tasks and provide intelligent responses.',
-                    'I\'m an advanced AI designed to provide helpful and insightful information across multiple domains.',
-                    'Created to support and enhance human productivity through intelligent interaction.'
-                ],
-                'what can you do': [
-                    'I can assist with various tasks like answering questions, providing recommendations, helping with problem-solving, and more!',
-                    'My capabilities include information retrieval, basic analysis, conversational support, and quick problem-solving.',
-                    'I\'m versatile - from answering questions to helping brainstorm ideas!'
-                ]
-            };
-
-            // Existing reply logic continues...
-            if (replyRules[userInput]) {
-                const responses = replyRules[userInput];
-                aiResponse.innerHTML = responses[Math.floor(Math.random() * responses.length)];
-                return;
-            }
-
-            const partialMatches = {
-                'project': 'I see you\'re interested in projects. Check out the AI Assistant and Music Recommender links above!',
-                'ai': 'Artificial Intelligence is a fascinating field. I\'m an AI assistant created to help and interact intelligently.',
-                'help': 'I\'m here to help! What specific assistance do you need?',
-                'game': 'There\'s a memory game below. Feel free to play and enjoy!'
-            };
-
-            for (let key in partialMatches) {
-                if (userInput.includes(key)) {
-                    aiResponse.innerHTML = partialMatches[key];
-                    return;
-                }
-            }
-
-            const genericResponses = [
-                `Interesting input: "${userInput}". I'm processing your query...`,
-                `I'm thinking about your message: "${userInput}"`,
-                `"${userInput}" - an intriguing input! Let me help you with that.`
-            ];
-
-            aiResponse.innerHTML = genericResponses[Math.floor(Math.random() * genericResponses.length)];
-            document.getElementById('userInput').value = '';
-        }
-
-        // Existing Memory Game Logic (same as previous implementation)
-        const emojis = ['🍎', '🍌', '🍇', '🍓', '🍊', '🍍'];
-        let cards = [...emojis, ...emojis];
-        let flippedCards = [];
-        let matchedPairs = 0;
-        let moves = 0;
-
-        function shuffleCards() {
-            return cards.sort(() => Math.random() - 0.5);
-        }
-
-        function createBoard() {
-            const gameBoard = document.getElementById('memory-game');
-            gameBoard.innerHTML = '';
-            const shuffledCards = shuffleCards();
-
-            shuffledCards.forEach((emoji, index) => {
-                const card = document.createElement('div');
-                card.classList.add('memory-card');
-                card.dataset.emoji = emoji;
-                card.addEventListener('click', flipCard);
-                gameBoard.appendChild(card);
-            });
-        }
-
-        function flipCard() {
-            playButtonSound(); // Add sound to card flips
-            if (flippedCards.length === 2 || this.classList.contains('matched') || this.classList.contains('flipped')) return;
-
-            this.classList.add('flipped');
-            this.textContent = this.dataset.emoji;
-            flippedCards.push(this);
-
-            if (flippedCards.length === 2) {
-                moves++;
-                updateGameStatus();
-                setTimeout(checkMatch, 1000);
-            }
-        }
-
-        function checkMatch() {
-            const [card1, card2] = flippedCards;
+            // Calculate gradient colors based on conditions
+            const hue1 = Math.min(240, Math.max(180, 240 - (temp - 15) * 4));
+            const hue2 = Math.min(200, Math.max(140, 200 - (humidity - 30) * 0.5));
             
-            if (card1.dataset.emoji === card2.dataset.emoji) {
-                card1.classList.add('matched');
-                card2.classList.add('matched');
-                matchedPairs++;
-                updateGameStatus();
-                
-                if (matchedPairs === emojis.length) {
-                    alert(`Congratulations! You won in ${moves} moves!`);
-                }
+            gradientDisplay.style.background = `linear-gradient(135deg, 
+                hsl(${hue1}, 70%, 60%), 
+                hsl(${hue2}, 60%, 70%))`;
+
+            // Determine conditions status
+            let status = '';
+            if (temp < 18) status = 'Too Cold';
+            else if (temp > 30) status = 'Too Hot';
+            else if (humidity < 35) status = 'Too Dry';
+            else if (humidity > 70) status = 'Too Humid';
+            else status = 'Optimal Conditions';
+
+            conditions.textContent = status;
+            
+            // Update typography sample based on conditions
+            if (status === 'Optimal Conditions') {
+                typeSample.style.opacity = '1';
+                typeStatus.textContent = 'Typography Preservation: Excellent';
             } else {
-                card1.classList.remove('flipped');
-                card2.classList.remove('flipped');
-                card1.textContent = '';
-                card2.textContent = '';
+                typeSample.style.opacity = '0.7';
+                typeStatus.textContent = 'Typography Preservation: At Risk';
             }
-
-            flippedCards = [];
         }
 
-        function updateGameStatus() {
-            document.getElementById('game-status').textContent = `Moves: ${moves} | Matches: ${matchedPairs}/${emojis.length}`;
-        }
+        tempSlider.addEventListener('input', updateDisplay);
+        humiditySlider.addEventListener('input', updateDisplay);
 
-        function resetGame() {
-            playButtonSound(); // Add sound to reset
-            flippedCards = [];
-            matchedPairs = 0;
-            moves = 0;
-            createBoard();
-            updateGameStatus();
-        }
-
-        // Initialize the game when the page loads
-        createBoard();
-
-        // Add event listener for Enter key in input
-        document.getElementById('userInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                getSmartReply();
-            }
-        });
+        // Initial update
+        updateDisplay();
     </script>
 </body>
 </html>
