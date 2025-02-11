@@ -1,212 +1,229 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typography Environment Monitor</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-
-        body {
-            background: #1a1a1a;
-            color: #e0e0e0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: #252525;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #f0f0f0, #808080);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .gradient-display {
-            height: 300px;
-            border-radius: 8px;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #4a90e2, #87ceeb);
-            transition: background 0.5s ease;
-        }
-
-        .typography-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-size: 1.2rem;
-        }
-
-        .controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        input[type="range"] {
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: #404040;
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #4a90e2;
-            cursor: pointer;
-        }
-
-        .label {
-            font-size: 0.9rem;
-            color: #b0b0b0;
-        }
-
-        .value-display {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .type-sample {
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-        }
-
-        .type-sample p {
-            margin: 0.5rem 0;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 600px) {
-            .controls {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 class="title">Typography Environment Monitor</h1>
-        
-        <div class="gradient-display" id="gradientDisplay">
-            <div class="typography-overlay">
-                <div id="conditions"></div>
-                <div id="typeStatus"></div>
-            </div>
-        </div>
-
-        <div class="controls">
-            <div class="control-group">
-                <label class="label">Temperature (°C)</label>
-                <input type="range" id="tempSlider" min="15" max="35" value="22" step="0.1">
-            </div>
-            <div class="control-group">
-                <label class="label">Humidity (%)</label>
-                <input type="range" id="humiditySlider" min="30" max="80" value="50" step="0.1">
-            </div>
-        </div>
-
-        <div class="value-display">
-            <div id="values"></div>
-        </div>
-
-        <div class="type-sample">
-            <p id="typeSample">The quick brown fox jumps over the lazy dog</p>
-        </div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Profile Page
+  </title>
+  <meta name="description" content="Niladri Das - Full Stack Developer specializing in AI, cloud computing, and high-performance computing.">
+  <meta property="og:title" content="Niladri Das - Full Stack Developer">
+  <meta property="og:description" content="Leading software developer, NVIDIA Developer Program member, and AI innovator.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/125604915?v=4">
+  <meta property="og:url" content="https://bniladridas.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Niladri Das - Full Stack Developer">
+  <meta name="twitter:description" content="Leading software developer, NVIDIA Developer Program member, and AI innovator.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/125604915?v=4">
+  <link rel="icon" href="https://img.icons8.com/material-outlined/24/html-filetype.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script async src="https://cse.google.com/cse.js?cx=00ac7751ccea04e74"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+    .gcse-searchbox-only {
+      margin-top: 20px;
+    }
+    .container {
+      flex: 1;
+    }
+    footer {
+      margin-top: auto;
+    }
+    .header {
+      background-color: #161b22;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .header p {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    .profile-img {
+      border: 5px solid #30363d;
+    }
+    .social-icons a {
+      color: #58a6ff;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #1f6feb;
+    }
+    .content {
+      padding: 40px 20px;
+    }
+    .content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .content strong {
+      color: #58a6ff;
+    }
+    footer {
+      background-color: #161b22;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="container mx-auto px-4">
+    <h1>
+     Niladri Das
+    </h1>
+    <p>
+     Full Stack Developer
+    </p>
+   </div>
+  </div>
+  <div class="container mx-auto px-4 py-8 content">
+    <!-- Add Google Custom Search box -->
+    <div class="gcse-searchbox-only"></div>
+   <div class="flex flex-col items-center md:flex-row md:items-start">
+    <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-6">
+     <img alt="Profile picture of Niladri Das" class="rounded-full w-24 h-24 profile-img" height="100" src="/public_image/1739263478727.jpeg" width="100"/>
+     <div class="flex justify-center mt-2 social-icons">
+      <a class="mx-2" href="https://www.linkedin.com/in/bniladridas/">
+       <i class="fab fa-linkedin">
+       </i>
+      </a>
+      <a class="mx-2" href="https://github.com/bniladridas">
+       <i class="fab fa-github">
+       </i>
+      </a>
+     </div>
     </div>
-
-    <script>
-        const tempSlider = document.getElementById('tempSlider');
-        const humiditySlider = document.getElementById('humiditySlider');
-        const gradientDisplay = document.getElementById('gradientDisplay');
-        const conditions = document.getElementById('conditions');
-        const values = document.getElementById('values');
-        const typeStatus = document.getElementById('typeStatus');
-        const typeSample = document.getElementById('typeSample');
-
-        function updateDisplay() {
-            const temp = parseFloat(tempSlider.value);
-            const humidity = parseFloat(humiditySlider.value);
-
-            // Update values display
-            values.textContent = `${temp.toFixed(1)}°C | ${humidity.toFixed(1)}%`;
-
-            // Calculate gradient colors based on conditions
-            const hue1 = Math.min(240, Math.max(180, 240 - (temp - 15) * 4));
-            const hue2 = Math.min(200, Math.max(140, 200 - (humidity - 30) * 0.5));
-            
-            gradientDisplay.style.background = `linear-gradient(135deg, 
-                hsl(${hue1}, 70%, 60%), 
-                hsl(${hue2}, 60%, 70%))`;
-
-            // Determine conditions status
-            let status = '';
-            if (temp < 18) status = 'Too Cold';
-            else if (temp > 30) status = 'Too Hot';
-            else if (humidity < 35) status = 'Too Dry';
-            else if (humidity > 70) status = 'Too Humid';
-            else status = 'Optimal Conditions';
-
-            conditions.textContent = status;
-            
-            // Update typography sample based on conditions
-            if (status === 'Optimal Conditions') {
-                typeSample.style.opacity = '1';
-                typeStatus.textContent = 'Typography Preservation: Excellent';
-            } else {
-                typeSample.style.opacity = '0.7';
-                typeStatus.textContent = 'Typography Preservation: At Risk';
-            }
-        }
-
-        tempSlider.addEventListener('input', updateDisplay);
-        humiditySlider.addEventListener('input', updateDisplay);
-
-        // Initial update
-        updateDisplay();
-    </script>
-</body>
+    <div>
+     <p>
+      <strong>
+       Niladri Das
+      </strong>
+      is a leading software developer, NVIDIA Developer Program member, and AI innovator, specializing in full-stack development, cloud computing, and artificial intelligence. His expertise spans containerization with Docker, orchestration with Kubernetes, and high-performance computing using CUDA for GPU acceleration.
+     </p>
+     <p>
+      He develops
+      <strong>
+       custom AI architectures
+      </strong>
+      from scratch, leveraging
+      <strong>
+       transformer models
+      </strong>
+      ,
+      <strong>
+       deep learning frameworks
+      </strong>
+      , and cloud-based APIs to build intelligent and scalable systems. His work includes
+      <strong>
+       kernel-level optimizations using CUDA
+      </strong>
+      , ensuring efficient parallel computing and real-time AI processing.
+     </p>
+     <p>
+      Niladri actively contributes to
+      <strong>
+       DevOps pipelines
+      </strong>
+      ,
+      <strong>
+       CI/CD automation
+      </strong>
+      , and
+      <strong>
+       cloud-native deployments
+      </strong>
+      , integrating
+      <strong>
+       machine learning
+      </strong>
+      ,
+      <strong>
+       edge computing
+      </strong>
+      , and
+      <strong>
+       distributed AI
+      </strong>
+      for production-ready applications. His projects range from
+      <strong>
+       computer vision systems using OpenCV
+      </strong>
+      to
+      <strong>
+       natural language processing models deployed on high-performance cloud platforms
+      </strong>
+      .
+     </p>
+     <p>
+      Additionally, Niladri plays a pivotal role in
+      <strong>
+       performance optimization
+      </strong>
+      ,
+      <strong>
+       system debugging
+      </strong>
+      , and
+      <strong>
+       secure development practices
+      </strong>
+      , utilizing GitHub, GitGuardian, and industry-leading tools to enhance software reliability. His innovation extends to
+      <strong>
+       developing AI-driven assistants
+      </strong>
+      ,
+      <strong>
+       anomaly detection systems
+      </strong>
+      , and
+      <strong>
+       full-stack applications
+      </strong>
+      that seamlessly bridge
+      <strong>
+       hardware-accelerated computing and cloud-based AI solutions
+      </strong>
+      .
+     </p>
+     <p>
+      <strong>Contributions:</strong>
+      <ul class="list-disc list-inside">
+        <li>
+          <a href="https://huggingface.co/bniladridas/conversational-ai-base-model" class="text-blue-600" target="_blank">
+            Conversational AI Base Model on Hugging Face
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/project/spam-detection-system/" class="text-blue-600" target="_blank">
+            Spam Detection System on PyPI
+          </a>
+        </li>
+      </ul>
+    </p>
+     <p>
+      <strong>Google Developer Member since 2021</strong>
+     </p>
+    </div>
+   </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Niladri Das. All rights reserved.</p>
+  </footer>
+ </body>
 </html>
