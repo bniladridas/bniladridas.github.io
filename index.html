@@ -42,6 +42,7 @@
       background-color: #161b22;
       padding: 20px 0;
       text-align: center;
+      position: relative;
     }
     .header h1 {
       font-size: 3rem;
@@ -79,17 +80,38 @@
       padding: 20px 0;
       text-align: center;
     }
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-selector select {
+      background-color: #161b22;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      padding: 5px;
+      border-radius: 5px;
+    }
   </style>
  </head>
  <body>
   <div class="header">
    <div class="container mx-auto px-4">
-    <h1>
+    <h1 id="name">
      Niladri Das
     </h1>
-    <p>
+    <p id="title">
      Full Stack Developer
     </p>
+    <div class="language-selector">
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en">US</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+        <option value="jp">JP</option>
+        <option value="cn">CN</option>
+      </select>
+    </div>
    </div>
   </div>
   <div class="container mx-auto px-4 py-8 content">
@@ -110,13 +132,13 @@
      </div>
     </div>
     <div>
-     <p>
+     <p id="description1">
       <strong>
        Niladri Das
       </strong>
       is a leading software developer, NVIDIA Developer Program member, and AI innovator, specializing in full-stack development, cloud computing, and artificial intelligence. His expertise spans containerization with Docker, orchestration with Kubernetes, and high-performance computing using CUDA for GPU acceleration.
      </p>
-     <p>
+     <p id="description2">
       He develops
       <strong>
        custom AI architectures
@@ -135,7 +157,7 @@
       </strong>
       , ensuring efficient parallel computing and real-time AI processing.
      </p>
-     <p>
+     <p id="description3">
       Niladri actively contributes to
       <strong>
        DevOps pipelines
@@ -170,7 +192,7 @@
       </strong>
       .
      </p>
-     <p>
+     <p id="description4">
       Additionally, Niladri plays a pivotal role in
       <strong>
        performance optimization
@@ -221,7 +243,7 @@
         </li>
       </ul>
     </p>
-     <p>
+     <p id="google-member">
       <strong>Google Developer Member since 2021</strong>
      </p>
     </div>
@@ -230,5 +252,65 @@
   <footer>
     <p>&copy; 2025 Niladri Das. All rights reserved.</p>
   </footer>
+  <script>
+    const translations = {
+      en: {
+        name: "Niladri Das",
+        title: "Full Stack Developer",
+        description1: "<strong>Niladri Das</strong> is a leading software developer, NVIDIA Developer Program member, and AI innovator, specializing in full-stack development, cloud computing, and artificial intelligence. His expertise spans containerization with Docker, orchestration with Kubernetes, and high-performance computing using CUDA for GPU acceleration.",
+        description2: "He develops <strong>custom AI architectures</strong> from scratch, leveraging <strong>transformer models</strong>, <strong>deep learning frameworks</strong>, and cloud-based APIs to build intelligent and scalable systems. His work includes <strong>kernel-level optimizations using CUDA</strong>, ensuring efficient parallel computing and real-time AI processing.",
+        description3: "Niladri actively contributes to <strong>DevOps pipelines</strong>, <strong>CI/CD automation</strong>, and <strong>cloud-native deployments</strong>, integrating <strong>machine learning</strong>, <strong>edge computing</strong>, and <strong>distributed AI</strong> for production-ready applications. His projects range from <strong>computer vision systems using OpenCV</strong> to <strong>natural language processing models deployed on high-performance cloud platforms</strong>.",
+        description4: "Additionally, Niladri plays a pivotal role in <strong>performance optimization</strong>, <strong>system debugging</strong>, and <strong>secure development practices</strong>, utilizing GitHub, GitGuardian, and industry-leading tools to enhance software reliability. His innovation extends to <strong>developing AI-driven assistants</strong>, <strong>anomaly detection systems</strong>, and <strong>full-stack applications</strong> that seamlessly bridge <strong>hardware-accelerated computing and cloud-based AI solutions</strong>.",
+        googleMember: "<strong>Google Developer Member since 2021</strong>"
+      },
+      es: {
+        name: "Niladri Das",
+        title: "Desarrollador Full Stack",
+        description1: "<strong>Niladri Das</strong> es un desarrollador de software líder, miembro del Programa de Desarrolladores de NVIDIA e innovador en IA, especializado en desarrollo full-stack, computación en la nube e inteligencia artificial. Su experiencia abarca la contenedorización con Docker, la orquestación con Kubernetes y la computación de alto rendimiento utilizando CUDA para la aceleración de GPU.",
+        description2: "Desarrolla <strong>arquitecturas de IA personalizadas</strong> desde cero, aprovechando <strong>modelos de transformadores</strong>, <strong>marcos de aprendizaje profundo</strong> y API basadas en la nube para construir sistemas inteligentes y escalables. Su trabajo incluye <strong>optimizaciones a nivel de kernel utilizando CUDA</strong>, asegurando una computación paralela eficiente y un procesamiento de IA en tiempo real.",
+        description3: "Niladri contribuye activamente a <strong>pipelines de DevOps</strong>, <strong>automatización de CI/CD</strong> y <strong>despliegues nativos en la nube</strong>, integrando <strong>aprendizaje automático</strong>, <strong>computación en el borde</strong> e <strong>IA distribuida</strong> para aplicaciones listas para producción. Sus proyectos van desde <strong> sistemas de visión por computadora utilizando OpenCV</strong> hasta <strong>modelos de procesamiento de lenguaje natural desplegados en plataformas en la nube de alto rendimiento</strong>.",
+        description4: "Además, Niladri juega un papel fundamental en <strong>optimización del rendimiento</strong>, <strong>depuración de sistemas</strong> y <strong>prácticas de desarrollo seguro</strong>, utilizando GitHub, GitGuardian y herramientas líderes en la industria para mejorar la fiabilidad del software. Su innovación se extiende a <strong>desarrollar asistentes impulsados por IA</strong>, <strong>sistemas de detección de anomalías</strong> y <strong>aplicaciones full-stack</strong> que conectan sin problemas <strong>computación acelerada por hardware y soluciones de IA basadas en la nube</strong>.",
+        googleMember: "<strong>Miembro del Programa de Desarrolladores de Google desde 2021</strong>"
+      },
+      fr: {
+        name: "Niladri Das",
+        title: "Développeur Full Stack",
+        description1: "<strong>Niladri Das</strong> est un développeur de logiciels de premier plan, membre du programme de développeurs NVIDIA et innovateur en IA, spécialisé dans le développement full-stack, l'informatique en nuage et l'intelligence artificielle. Son expertise couvre la conteneurisation avec Docker, l'orchestration avec Kubernetes et l'informatique haute performance utilisant CUDA pour l'accélération GPU.",
+        description2: "Il développe des <strong>architectures d'IA personnalisées</strong> à partir de zéro, en tirant parti des <strong>modèles de transformateurs</strong>, des <strong>cadres d'apprentissage profond</strong> et des API basées sur le cloud pour construire des systèmes intelligents et évolutifs. Son travail comprend des <strong>optimisations au niveau du noyau utilisant CUDA</strong>, garantissant une informatique parallèle efficace et un traitement de l'IA en temps réel.",
+        description3: "Niladri contribue activement aux <strong>pipelines DevOps</strong>, à l'<strong>automatisation CI/CD</strong> et aux <strong>déploiements natifs dans le cloud</strong>, intégrant <strong>l'apprentissage automatique</strong>, <strong>l'informatique de périphérie</strong> et <strong>l'IA distribuée</strong> pour des applications prêtes pour la production. Ses projets vont des <strong>systèmes de vision par ordinateur utilisant OpenCV</strong> aux <strong>modèles de traitement du langage naturel déployés sur des plateformes cloud haute performance</strong>.",
+        description4: "De plus, Niladri joue un rôle clé dans <strong>l'optimisation des performances</strong>, <strong>le débogage des systèmes</strong> et <strong>les pratiques de développement sécurisées</strong>, en utilisant GitHub, GitGuardian et des outils de pointe pour améliorer la fiabilité des logiciels. Son innovation s'étend au <strong>développement d'assistants pilotés par IA</strong>, aux <strong>systèmes de détection d'anomalies</strong> et aux <strong>applications full-stack</strong> qui relient de manière transparente <strong>l'informatique accélérée par le matériel et les solutions d'IA basées sur le cloud</strong>.",
+        googleMember: "<strong>Membre du programme de développeurs Google depuis 2021</strong>"
+      },
+      jp: {
+        name: "ニラドリ・ダス",
+        title: "フルスタック開発者",
+        description1: "<strong>ニラドリ・ダス</strong>は、フルスタック開発、クラウドコンピューティング、および人工知能を専門とする、NVIDIA開発者プログラムのメンバーであり、AIの革新者である先進的なソフトウェア開発者です。彼の専門知識は、Dockerによるコンテナ化、Kubernetesによるオーケストレーション、およびGPUアクセラレーションのためのCUDAを使用した高性能コンピューティングに及びます。",
+        description2: "彼は、<strong>トランスフォーマーモデル</strong>、<strong>ディープラーニングフレームワーク</strong>、およびクラウドベースのAPIを活用して、インテリジェントでスケーラブルなシステムを構築するために、<strong>カスタムAIアーキテクチャ</strong>をゼロから開発します。彼の仕事には、効率的な並列コンピューティングとリアルタイムAI処理を保証するための<strong>CUDAを使用したカーネルレベルの最適化</strong>が含まれます。",
+        description3: "ニラドリは、<strong>DevOpsパイプライン</strong>、<strong>CI/CD自動化</strong>、および<strong>クラウドネイティブデプロイメント</strong>に積極的に貢献し、<strong>機械学習</strong>、<strong>エッジコンピューティング</strong>、および<strong>分散AI</strong>を統合して、プロダクション対応のアプリケーションを提供します。彼のプロジェクトは、<strong>OpenCVを使用したコンピュータビジョンシステム</strong>から、<strong>高性能クラウドプラットフォームにデプロイされた自然言語処理モデル</strong>まで多岐にわたります。",
+        description4: "さらに、ニラドリは、<strong>パフォーマンスの最適化</strong>、<strong>システムデバッグ</strong>、および<strong>安全な開発プラクティス</strong>において重要な役割を果たし、GitHub、GitGuardian、および業界をリードするツールを使用してソフトウェアの信頼性を向上させます。彼の革新は、<strong>AI駆動のアシスタントの開発</strong>、<strong>異常検出システム</strong>、および<strong>ハードウェアアクセラレーションコンピューティングとクラウドベースのAIソリューションをシームレスに橋渡しするフルスタックアプリケーション</strong>にまで及びます。",
+        googleMember: "<strong>2021年からのGoogle開発者メンバー</strong>"
+      },
+      cn: {
+        name: "尼拉德里·达斯",
+        title: "全栈开发者",
+        description1: "<strong>尼拉德里·达斯</strong>是一位领先的软件开发人员，NVIDIA开发者计划成员和AI创新者，专注于全栈开发、云计算和人工智能。他的专业知识涵盖使用Docker进行容器化、使用Kubernetes进行编排以及使用CUDA进行GPU加速的高性能计算。",
+        description2: "他从头开始开发<strong>定制AI架构</strong>，利用<strong>变压器模型</strong>、<strong>深度学习框架</strong>和基于云的API构建智能和可扩展的系统。他的工作包括使用CUDA进行<strong>内核级优化</strong>，确保高效的并行计算和实时AI处理。",
+        description3: "尼拉德里积极参与<strong>DevOps管道</strong>、<strong>CI/CD自动化</strong>和<strong>云原生部署</strong>，集成<strong>机器学习</strong>、<strong>边缘计算</strong>和<strong>分布式AI</strong>，以实现生产就绪的应用程序。他的项目范围从使用OpenCV的<strong>计算机视觉系统</strong>到部署在高性能云平台上的<strong>自然语言处理模型</strong>。",
+        description4: "此外，尼拉德里在<strong>性能优化</strong>、<strong>系统调试</strong>和<strong>安全开发实践</strong>方面发挥了关键作用，利用GitHub、GitGuardian和行业领先的工具来提高软件的可靠性。他的创新还包括开发<strong>AI驱动的助手</strong>、<strong>异常检测系统</strong>和<strong>无缝连接硬件加速计算和基于云的AI解决方案的全栈应用程序</strong>。",
+        googleMember: "<strong>自2021年以来的Google开发者成员</strong>"
+      }
+    };
+
+    function changeLanguage() {
+      const language = document.getElementById('language-select').value;
+      document.getElementById('name').innerHTML = translations[language].name;
+      document.getElementById('title').innerHTML = translations[language].title;
+      document.getElementById('description1').innerHTML = translations[language].description1;
+      document.getElementById('description2').innerHTML = translations[language].description2;
+      document.getElementById('description3').innerHTML = translations[language].description3;
+      document.getElementById('description4').innerHTML = translations[language].description4;
+      document.getElementById('google-member').innerHTML = translations[language].googleMember;
+    }
+  </script>
  </body>
 </html>
