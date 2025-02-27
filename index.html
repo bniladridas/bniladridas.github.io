@@ -92,6 +92,17 @@
       padding: 5px;
       border-radius: 5px;
     }
+    .voice-output-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #161b22;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
  </head>
  <body>
@@ -110,8 +121,12 @@
         <option value="fr">FR</option>
         <option value="jp">JP</option>
         <option value="cn">CN</option>
+        <option value="de">DE</option>
       </select>
     </div>
+    <button class="voice-output-button" onclick="toggleVoiceOutput()">
+      <i class="fas fa-volume-up"></i>
+    </button>
    </div>
   </div>
   <div class="container mx-auto px-4 py-8 content">
@@ -298,6 +313,15 @@
         description3: "尼拉德里积极参与<strong>DevOps管道</strong>、<strong>CI/CD自动化</strong>和<strong>云原生部署</strong>，集成<strong>机器学习</strong>、<strong>边缘计算</strong>和<strong>分布式AI</strong>，以实现生产就绪的应用程序。他的项目范围从使用OpenCV的<strong>计算机视觉系统</strong>到部署在高性能云平台上的<strong>自然语言处理模型</strong>。",
         description4: "此外，尼拉德里在<strong>性能优化</strong>、<strong>系统调试</strong>和<strong>安全开发实践</strong>方面发挥了关键作用，利用GitHub、GitGuardian和行业领先的工具来提高软件的可靠性。他的创新还包括开发<strong>AI驱动的助手</strong>、<strong>异常检测系统</strong>和<strong>无缝连接硬件加速计算和基于云的AI解决方案的全栈应用程序</strong>。",
         googleMember: "<strong>自2021年以来的Google开发者成员</strong>"
+      },
+      de: {
+        name: "Niladri Das",
+        title: "Full Stack Entwickler",
+        description1: "<strong>Niladri Das</strong> ist ein führender Softwareentwickler, Mitglied des NVIDIA-Entwicklerprogramms und KI-Innovator, spezialisiert auf Full-Stack-Entwicklung, Cloud-Computing und künstliche Intelligenz. Seine Expertise umfasst die Containerisierung mit Docker, die Orchestrierung mit Kubernetes und das Hochleistungsrechnen mit CUDA zur GPU-Beschleunigung.",
+        description2: "Er entwickelt <strong>benutzerdefinierte KI-Architekturen</strong> von Grund auf, nutzt <strong>Transformator-Modelle</strong>, <strong>Tiefenlern-Frameworks</strong> und cloudbasierte APIs, um intelligente und skalierbare Systeme zu bauen. Seine Arbeit umfasst <strong>Kernel-Level-Optimierungen mit CUDA</strong>, um effizientes paralleles Rechnen und Echtzeit-KI-Verarbeitung zu gewährleisten.",
+        description3: "Niladri trägt aktiv zu <strong>DevOps-Pipelines</strong>, <strong>CI/CD-Automatisierung</strong> und <strong>Cloud-nativen Bereitstellungen</strong> bei, integriert <strong>maschinelles Lernen</strong>, <strong>Edge-Computing</strong> und <strong>verteilte KI</strong> für produktionsreife Anwendungen. Seine Projekte reichen von <strong>Computervisionssystemen mit OpenCV</strong> bis hin zu <strong>natürlichen Sprachverarbeitungsmodellen, die auf Hochleistungs-Cloud-Plattformen bereitgestellt werden</strong>.",
+        description4: "Darüber hinaus spielt Niladri eine entscheidende Rolle bei der <strong>Leistungsoptimierung</strong>, <strong>System-Debugging</strong> und <strong>sicheren Entwicklungspraxis</strong>, nutzt GitHub, GitGuardian und branchenführende Tools, um die Zuverlässigkeit der Software zu verbessern. Seine Innovation erstreckt sich auf die <strong>Entwicklung von KI-gesteuerten Assistenten</strong>, <strong>Anomalieerkennungssystemen</strong> und <strong>Full-Stack-Anwendungen</strong>, die nahtlos <strong>hardwarebeschleunigtes Rechnen und cloudbasierte KI-Lösungen</strong> verbinden.",
+        googleMember: "<strong>Google-Entwicklermitglied seit 2021</strong>"
       }
     };
 
@@ -310,6 +334,14 @@
       document.getElementById('description3').innerHTML = translations[language].description3;
       document.getElementById('description4').innerHTML = translations[language].description4;
       document.getElementById('google-member').innerHTML = translations[language].googleMember;
+    }
+
+    function toggleVoiceOutput() {
+      const synth = window.speechSynthesis;
+      const language = document.getElementById('language-select').value;
+      const text = `${translations[language].name}, ${translations[language].title}, ${translations[language].description1}, ${translations[language].description2}, ${translations[language].description3}, ${translations[language].description4}, ${translations[language].googleMember}`;
+      const utterance = new SpeechSynthesisUtterance(text);
+      synth.speak(utterance);
     }
   </script>
  </body>
