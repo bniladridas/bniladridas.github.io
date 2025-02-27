@@ -1,3 +1,5 @@
+![Google Search API](/google_search_api.png)
+
 # Niladri Das - Full Stack Developer
 
 Welcome to my personal website. This site showcases my work and contributions as a Full Stack Developer specializing in AI, cloud computing, and high-performance computing.

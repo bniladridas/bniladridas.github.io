@@ -336,12 +336,21 @@
       document.getElementById('google-member').innerHTML = translations[language].googleMember;
     }
 
+    let isSpeaking = false;
+    let utterance;
+
     function toggleVoiceOutput() {
       const synth = window.speechSynthesis;
-      const language = document.getElementById('language-select').value;
-      const text = `${translations[language].name}, ${translations[language].title}, ${translations[language].description1}, ${translations[language].description2}, ${translations[language].description3}, ${translations[language].description4}, ${translations[language].googleMember}`;
-      const utterance = new SpeechSynthesisUtterance(text);
-      synth.speak(utterance);
+      if (isSpeaking) {
+        synth.cancel();
+        isSpeaking = false;
+      } else {
+        const language = document.getElementById('language-select').value;
+        const text = `${translations[language].name}, ${translations[language].title}, ${translations[language].description1}, ${translations[language].description2}, ${translations[language].description3}, ${translations[language].description4}, ${translations[language].googleMember}`;
+        utterance = new SpeechSynthesisUtterance(text);
+        synth.speak(utterance);
+        isSpeaking = true;
+      }
     }
   </script>
  </body>
