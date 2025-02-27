@@ -8,6 +8,10 @@ Welcome to my personal website. This site showcases my work and contributions as
 - Contributions to various projects
 - Links to social media profiles
 - Google Custom Search
+- Language selector for multiple languages
+- Voice output button for reading profile information
+- Footer with copyright information
+- Google Developer Member since 2021
 
 ## Installation
 
