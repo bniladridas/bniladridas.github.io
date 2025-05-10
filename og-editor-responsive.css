@@ -1,0 +1,59 @@
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column;
+    }
+    
+    .canvas-container {
+        min-width: 100% !important;
+        margin-bottom: var(--space-4);
+    }
+    
+    .tools-container {
+        width: 100%;
+    }
+    
+    #svgCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .tool-section {
+        margin-bottom: var(--space-3);
+    }
+    
+    input[type="text"], 
+    input[type="number"], 
+    input[type="color"], 
+    select {
+        width: 100%;
+        margin-bottom: var(--space-2);
+    }
+    
+    button {
+        width: 100%;
+        margin-bottom: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: var(--space-2);
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    .instructions {
+        padding: var(--space-2);
+    }
+}

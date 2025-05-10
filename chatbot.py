@@ -40,11 +40,11 @@ logger.info(f"AI file analysis is {'enabled' if os.environ.get('ENABLE_AI_ANALYS
 
 # Validate API key
 api_key = os.environ.get("GEMINI_API_KEY")
-# Check if API key is missing, placeholder, or known invalid key
-invalid_key = not api_key or api_key == "your_api_key_here" or api_key.startswith("AIzaSyA")
+# Check if API key is missing or placeholder
+invalid_key = not api_key or api_key == "your_api_key_here"
 if invalid_key:
-    logger.error("Valid GEMINI_API_KEY not found in .env file")
-    logger.warning("AI features will be disabled")
+    logger.info("Using fallback mode - no valid GEMINI_API_KEY found")
+    logger.info("AI features will use pre-defined responses")
     os.environ["ENABLE_AI_ANALYSIS"] = "false"  # Disable AI analysis if no valid API key
 
 app = Flask(__name__, static_folder='.')
@@ -1006,8 +1006,8 @@ def chat():
 
     # Use a simple fallback if API key is missing or invalid
     api_key = os.environ.get("GEMINI_API_KEY")
-    # Check if API key is missing, placeholder, or known invalid key
-    invalid_key = not api_key or api_key == "your_api_key_here" or api_key.startswith("AIzaSyA")
+    # Check if API key is missing or placeholder
+    invalid_key = not api_key or api_key == "your_api_key_here"
     if invalid_key:
         logger.warning("No valid API key found, using fallback response")
         return jsonify({

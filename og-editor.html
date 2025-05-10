@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Open Graph SVG Editor - SyntharaAI</title>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Open Graph SVG Editor - SyntharaAI">
     <meta name="description" content="Create and customize Open Graph images for your SyntharaAI website. Simple SVG editor for social media sharing graphics.">
     <meta name="keywords" content="SyntharaAI, Niladri Das, Open Graph, SVG editor, social media, image editor">
-    <meta name="author" content="Niladri Das">
+    <meta name="author" content="Niladri Das, Founder of SyntharaAI">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
@@ -22,8 +22,9 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Open Graph SVG Editor - SyntharaAI">
     <meta property="og:description" content="Create and customize Open Graph images for your SyntharaAI website.">
-    <meta property="og:image" content="assets/images/og-image-minimal.svg">
+    <meta property="og:image" content="assets/images/og-image-devices.png">
     <meta property="og:url" content="https://bniladridas.github.io/og-editor.html">
+    <meta property="og:url" content="https://bniladridas.vercel.app/og-editor.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
     <meta property="og:locale" content="en_US">
@@ -32,10 +33,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Open Graph SVG Editor - SyntharaAI">
     <meta name="twitter:description" content="Create and customize Open Graph images for your SyntharaAI website.">
-    <meta name="twitter:image" content="assets/images/og-image-minimal.svg">
+    <meta name="twitter:image" content="assets/images/og-image-devices.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://bniladridas.github.io/og-editor.html">
+    <link rel="alternate" href="https://bniladridas.vercel.app/og-editor.html">
 
     <!-- Google Fonts - Only loading the weights we need -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +100,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1000px; width: 100%;
             margin: 0 auto;
             padding: var(--space-4);
             background-color: var(--bg-white);
@@ -124,7 +126,7 @@
 
         .canvas-container {
             flex: 1;
-            min-width: 480px;
+            min-width: 300px;
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
@@ -132,8 +134,8 @@
         }
 
         .tools-container {
-            width: 260px;
-            padding: var(--space-3);
+            width: 260px; max-width: 100%;
+            padding: var(--space-3); overflow-x: auto;
             background-color: var(--bg-subtle);
             border-radius: var(--radius);
             border: 1px solid var(--border);
@@ -168,6 +170,7 @@
             padding: var(--space-2);
             margin-bottom: var(--space-2);
             border: 1px solid var(--border);
+            box-sizing: border-box;
             border-radius: var(--radius);
             font-size: 0.875rem;
             font-family: 'Inter', sans-serif;
@@ -226,7 +229,7 @@
 
         .instructions {
             margin-top: var(--space-4);
-            padding: var(--space-3);
+            padding: var(--space-3); overflow-x: auto;
             background-color: var(--bg-subtle);
             border-radius: var(--radius);
             border-left: 2px solid var(--primary);
@@ -341,7 +344,7 @@
         }
 
         .chatbot-header {
-            padding: var(--space-3);
+            padding: var(--space-3); overflow-x: auto;
             background-color: var(--primary);
             color: white;
             font-weight: 500;
@@ -358,7 +361,7 @@
 
         .chatbot-messages {
             flex: 1;
-            padding: var(--space-3);
+            padding: var(--space-3); overflow-x: auto;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -451,6 +454,65 @@
             0% { transform: translateY(0); }
             50% { transform: translateY(-3px); }
             100% { transform: translateY(0); }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .editor-container {
+                flex-direction: column;
+            }
+            
+            .canvas-container {
+                min-width: 100% !important;
+                margin-bottom: var(--space-4);
+            }
+            
+            .tools-container {
+                width: 100%;
+            }
+            
+            #svgCanvas {
+                width: 100%;
+                height: auto;
+            }
+            
+            .tool-section {
+                margin-bottom: var(--space-3);
+            }
+            
+            input[type="text"], 
+            input[type="number"], 
+            input[type="color"], 
+            select {
+                width: 100%;
+                margin-bottom: var(--space-2);
+            }
+            
+            button {
+                width: 100%;
+                margin-bottom: var(--space-2);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: var(--space-2);
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .instructions {
+                padding: var(--space-2);
+            }
+        }
         }
     </style>
 </head>
@@ -460,7 +522,7 @@
 
         <div class="editor-container">
             <div class="canvas-container">
-                <svg id="svgCanvas" width="1200" height="630" viewBox="0 0 1200 630">
+                <svg id="svgCanvas" width="100%" height="auto" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid meet">
                     <!-- Default background -->
                     <rect id="background" width="1200" height="630" fill="#ffffff"></rect>
                     <!-- Default text elements -->
@@ -528,13 +590,13 @@
                 <li>Click "Export as SVG" to download the SVG file</li>
                 <li>Save the file in the "assets/images" folder with one of these names:
                     <ul>
-                        <li><strong>og-image-minimal.svg</strong>: For the minimal template</li>
+                        <li><strong>og-image-devices.png</strong>: For the minimal template</li>
                         <li><strong>og-image-devices.svg</strong>: For the devices template</li>
                     </ul>
                 </li>
                 <li>Update the Open Graph meta tag in index.html to point to your chosen file if needed</li>
             </ol>
-            <p>Note: All pages now point to <code>assets/images/og-image-minimal.svg</code></p>
+            <p>Note: All pages now point to <code>assets/images/og-image-devices.png</code></p>
         </div>
 
         <a href="index.html" class="back-link">Back to Main Page</a>
@@ -636,8 +698,8 @@
         devicesTemplateBtn.addEventListener('click', function() {
             // Redirect to download the devices template
             const link = document.createElement('a');
-            link.href = 'assets/images/og-image-minimal.svg';
-            link.download = 'og-image-minimal.svg';
+            link.href = 'assets/images/og-image-devices.png';
+            link.download = 'og-image-devices.png';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -708,7 +770,7 @@
             // Ask for filename
             const filenameChoice = prompt(
                 'Choose a filename for your Open Graph image:',
-                'og-image-minimal.svg'
+                'og-image-devices.png'
             );
 
             // If user cancels, exit
@@ -744,7 +806,7 @@
             document.body.removeChild(link);
 
             // Remind user about the meta tag
-            if (filename !== 'og-image-minimal.svg') {
+            if (filename !== 'og-image-devices.png') {
                 alert('Remember to update the Open Graph meta tag in index.html to point to your new file: ' + filename);
             }
         });
