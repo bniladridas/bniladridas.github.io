@@ -35,6 +35,24 @@ int main() {
 - **Built with**: [Augment Code](https://www.augmentcode.com/).
 - **Links**: [Portfolio](bniladridas.github.io), [Repo](#).
 
+## Security Practices
+
+This repository implements several security best practices:
+
+### Git Secret Removal
+
+We performed a Git secret removal operation to eliminate sensitive API keys from the repository history. This process:
+
+- Removed hardcoded credentials from the entire Git history
+- Rewrote commits to eliminate traces of sensitive information
+- Preserved repository functionality while eliminating security risks
+
+### API Key Management
+
+- All API keys are now stored as environment variables
+- No sensitive credentials are hardcoded in the source code
+- Vercel environment variables are used for secure deployment
+
 ## Contact
 
 Open to ideas, collaborations, or discussions. Connect via [Portfolio](bniladridas.github.io).
