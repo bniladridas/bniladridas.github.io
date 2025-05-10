@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "buildCommand": "chmod +x build_vercel.sh && ./build_vercel.sh",
+  "outputDirectory": ".vercel/output",
+  "builds": [
+    {
+      "src": "chatbot.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.md",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "chatbot.py"
+    },
+    {
+      "src": "/(.*\\.(js|css|svg|jpg|png|ico|json))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "chatbot.py"
+    }
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  }
+}

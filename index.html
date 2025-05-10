@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niladri Das - SyntharaAI</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Niladri Das - SyntharaAI">
+    <meta name="description" content="Creating tools and spaces for clarity and connection in mental health. Developing technology to support well-being.">
+    <meta name="keywords" content="SyntharaAI, Niladri Das, mental health, technology, well-being, clarity, connection">
+    <meta name="author" content="Niladri Das">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#2a6b9e">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Niladri Das - SyntharaAI">
+    <meta property="og:description" content="Creating tools and spaces for clarity and connection in mental health.">
+    <meta property="og:image" content="assets/images/og-image-minimal.svg">
+    <meta property="og:url" content="https://bniladridas.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SyntharaAI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Niladri Das - SyntharaAI">
+    <meta name="twitter:description" content="Creating tools and spaces for clarity and connection in mental health.">
+    <meta name="twitter:image" content="assets/images/og-image-minimal.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bniladridas.github.io/">
+
+    <!-- Google Fonts - Single weight for maximum consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome - Only loading the specific icon we need -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
+
+    <style>
+        :root {
+            /* Monochromatic color palette */
+            --primary: #2d6f9f;
+            --primary-light: #e8f1f8;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg: #f7f9fa;
+            --bg-white: #ffffff;
+            --border: #edf2f7;
+
+            /* No shadows for cleaner look */
+            --shadow: none;
+
+            /* Minimal radius */
+            --radius: 3px;
+
+            /* Simplified spacing scale */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+
+            /* Subtle transition */
+            --transition: all 0.1s ease;
+
+            /* Chatbot dimensions */
+            --chatbot-width: 300px;
+            --chatbot-height: 400px;
+
+            /* Typography */
+            --font-size-xs: 0.75rem;   /* 12px */
+            --font-size-sm: 0.813rem;  /* 13px */
+            --font-size-md: 0.875rem;  /* 14px */
+            --font-size-lg: 1rem;      /* 16px */
+            --font-size-xl: 1.125rem;  /* 18px */
+            --line-height: 1.5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: var(--line-height);
+            text-align: center;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: var(--space-4) var(--space-3);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: var(--font-size-xl);
+            color: var(--text);
+            margin: var(--space-4) 0 var(--space-2);
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            font-size: var(--font-size-md);
+            color: var(--text-light);
+            margin: var(--space-2) 0;
+            line-height: var(--line-height);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .link {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: var(--transition);
+        }
+
+        .link:hover {
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        .stats {
+            margin: var(--space-3) 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .logo-container {
+            margin: var(--space-4) auto var(--space-3);
+        }
+
+        .github-avatar {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            transition: opacity var(--transition);
+            opacity: 0.95;
+        }
+
+        .github-avatar:hover {
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0 var(--space-3);
+            border-radius: var(--radius);
+            margin-top: var(--space-3);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            height: 32px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--bg-white);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+            margin-top: var(--space-3);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: var(--space-4) auto;
+            padding: var(--space-4) var(--space-3);
+            border-radius: var(--radius);
+            max-width: 600px;
+            border: 1px solid var(--border);
+            text-align: left;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            font-size: var(--font-size-lg);
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+        }
+
+        .modal h3 {
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: var(--space-2);
+            margin-top: 0;
+            margin-bottom: var(--space-3);
+            font-weight: 400;
+            font-size: var(--font-size-lg);
+        }
+
+        .modal ul {
+            padding-left: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+
+        .modal li {
+            margin-bottom: var(--space-2);
+            color: var(--text-light);
+            font-size: var(--font-size-md);
+        }
+
+        .section-title {
+            font-weight: 400;
+            color: var(--text);
+            margin-top: var(--space-3);
+            margin-bottom: var(--space-2);
+            font-size: var(--font-size-md);
+        }
+
+        .content-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--space-3) var(--space-2);
+        }
+
+        /* Chatbot styles */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .chatbot-toggle:hover {
+            background-color: var(--bg-white);
+        }
+
+        .chatbot-toggle i {
+            font-size: 16px;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 64px;
+            left: 16px;
+            width: var(--chatbot-width);
+            height: var(--chatbot-height);
+            background-color: var(--bg-white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            z-index: 998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            padding: var(--space-2);
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chatbot-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .chatbot-control {
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .chatbot-control:hover {
+            opacity: 1;
+        }
+
+        .chatbot-close {
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
+        }
+
+        .chatbot-close:hover {
+            opacity: 1;
+        }
+
+        .chatbot-container.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            z-index: 1000;
+        }
+
+        /* File upload area styles */
+        .file-upload-area {
+            display: none;
+            padding: var(--space-3);
+            background-color: var(--primary-light);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .chatbot-container.fullscreen .file-upload-area {
+            display: block;
+        }
+
+        .file-upload-container {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: var(--space-3);
+            text-align: center;
+            background-color: var(--bg-white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .file-upload-container:hover {
+            border-color: var(--primary);
+            background-color: var(--bg);
+        }
+
+        .file-upload-container p {
+            margin: var(--space-2) 0;
+            color: var(--text-light);
+            font-size: var(--font-size-sm);
+        }
+
+        .file-upload-icon {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .file-upload-input {
+            display: none;
+        }
+
+        .file-types {
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            margin-top: var(--space-2);
+        }
+
+        .ai-disclaimer {
+            font-size: var(--font-size-xs);
+            color: #e74c3c;
+            margin-top: var(--space-2);
+            font-style: italic;
+        }
+
+        .uploaded-file {
+            display: flex;
+            align-items: center;
+            margin-top: var(--space-3);
+            padding: var(--space-2);
+            background-color: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .uploaded-file-icon {
+            margin-right: var(--space-2);
+            color: var(--primary);
+        }
+
+        .uploaded-file-name {
+            flex: 1;
+            font-size: var(--font-size-sm);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .uploaded-file-remove {
+            cursor: pointer;
+            color: var(--text-light);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .uploaded-file-remove:hover {
+            opacity: 1;
+            color: #e74c3c;
+        }
+
+        .analyze-btn {
+            display: none;
+            margin-top: var(--space-3);
+            padding: var(--space-2);
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: var(--font-size-sm);
+            width: 100%;
+        }
+
+        .analyze-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: var(--space-2);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .message {
+            max-width: 85%;
+            padding: var(--space-2);
+            border-radius: var(--radius);
+            margin-bottom: var(--space-1);
+            word-wrap: break-word;
+            font-size: var(--font-size-sm);
+            line-height: 1.4;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: var(--bg);
+            color: var(--text);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: var(--space-2);
+            border-top: 1px solid var(--border);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: 'Inter', sans-serif;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+        }
+
+        .chatbot-input input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+
+        .chatbot-input button {
+            margin-left: var(--space-2);
+            padding: 0 var(--space-2);
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: var(--font-size-sm);
+        }
+
+        .chatbot-input button:hover {
+            background-color: var(--bg-white);
+        }
+
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background-color: var(--bg);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius);
+            margin-bottom: var(--space-1);
+            border: 1px solid var(--border);
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: var(--text-light);
+            border-radius: 50%;
+            margin-right: 2px;
+            animation: typing 0.8s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.3s;
+            margin-right: 0;
+        }
+
+        @keyframes typing {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="logo-container">
+            <img src="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" alt="SyntharaAI Logo" class="github-avatar">
+        </div>
+
+        <h2>Welcome, I'm Niladri!</h2>
+        <p>Creating tools and spaces for <span class="highlight">clarity and connection</span> in mental health.</p>
+
+        <div class="stats">
+            <div>
+                <a href="https://github.com/bniladridas?tab=stars">
+                    <img src="https://img.shields.io/github/stars/bniladridas?affiliations=OWNER&style=flat-square&color=#e6b422&label=Stars&labelColor=#262626" alt="GitHub Stars"/>
+                </a>
+                <a href="https://github.com/bniladridas?tab=followers">
+                    <img src="https://img.shields.io/github/followers/bniladridas?style=flat-square&color=#3e8e6a&label=Followers&labelColor=#262626" alt="GitHub Followers"/>
+                </a>
+            </div>
+
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bniladridas&layout=compact&hide_title=true&card_width=280&langs_count=5&theme=moonlight&border_radius=4&hide_border=true" alt="Top Languages"/>
+        </div>
+
+        <p>Developing technology to support well-being · <a href="http://inferencesyntharaai.vercel.app/" class="link">Explore My Work</a></p>
+
+        <!-- Buttons -->
+        <div class="btn-container">
+            <button class="btn" id="openRulesBtn">View Community Guidelines</button>
+            <a href="og-editor.html" class="btn">Create Open Graph Image</a>
+            <a href="supply-chain.html" class="btn">Supply Chain, Fair Policy & Legal</a>
+            <a href="gallery.html" class="btn">Image Gallery</a>
+            <a href="downloads.html" class="btn">Documentation & Downloads</a>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3>Community Guidelines</h3>
+            <ul>
+                <li>Adhere to SyntharaAI's <a href="https://inferencesyntharaai.vercel.app/pages/infrastructure.html" class="link">Community Infrastructure</a>.</li>
+                <li>Be respectful and demonstrate empathy and kindness toward other people.</li>
+                <li>No age-restricted or work-inappropriate content (Keep it SFW).</li>
+                <li>No trolling, insults, harassment, doxxing, slurs, political attacks, or derogatory comments.</li>
+                <li>Don't cross-post. Don't post the same message across multiple channels or threads.</li>
+                <li>No spam, advertisements, or self-promotions.</li>
+                <li>No "hiring" or "looking for work" postings.</li>
+                <li>Use threads for long messages & conversations.</li>
+            </ul>
+
+            <p class="section-title">Enforcement</p>
+            <p>Community moderators have the right and responsibility to remove, edit, or reject comments, commits, code, forum posts, issues, and other contributions that are not aligned with these guidelines, or to temporarily or permanently ban any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.</p>
+
+            <p class="section-title">What to do if there's an issue</p>
+            <p>Instances of abusive, harassing, or otherwise unacceptable behavior or content may be reported by tagging a SyntharaAI team member or community leader. If you don't feel comfortable reporting an issue publicly, you can DM one of the admins and we will review it and make every reasonable effort to maintain your confidentiality.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal element
+        const modal = document.getElementById('rulesModal');
+
+        // Get the button that opens the modal
+        const openBtn = document.getElementById('openRulesBtn');
+
+        // Get the element that closes the modal
+        const closeBtn = document.getElementById('closeModal');
+
+        // Function to open the modal
+        openBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+        });
+
+        // Function to close the modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+
+        // Close the modal if user clicks outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+
+        // Country Selection and Age Verification
+        document.addEventListener('DOMContentLoaded', function() {
+            const countryModal = document.getElementById('country-modal');
+            const countrySelect = document.getElementById('country-select');
+            const countryContinue = document.getElementById('country-continue');
+            const ageModal = document.getElementById('age-modal');
+            const birthMonth = document.getElementById('birth-month');
+            const birthDay = document.getElementById('birth-day');
+            const birthYear = document.getElementById('birth-year');
+            const ageContinue = document.getElementById('age-continue');
+
+            // Check if user has already selected country and verified age
+            const hasSelectedCountry = localStorage.getItem('selectedCountry');
+            const hasVerifiedAge = localStorage.getItem('ageVerified');
+
+            // Populate birth year dropdown (100 years back from current year)
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear; year >= currentYear - 100; year--) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                birthYear.appendChild(option);
+            }
+
+            // Function to update days based on selected month and year
+            function updateDays() {
+                const month = parseInt(birthMonth.value);
+                const year = parseInt(birthYear.value);
+
+                // Clear current options
+                birthDay.innerHTML = '<option value="" disabled selected>Day</option>';
+
+                if (!month || !year) return;
+
+                // Get number of days in the selected month and year
+                const daysInMonth = new Date(year, month, 0).getDate();
+
+                // Populate days
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const option = document.createElement('option');
+                    option.value = day;
+                    option.textContent = day;
+                    birthDay.appendChild(option);
+                }
+            }
+
+            // Update days when month or year changes
+            birthMonth.addEventListener('change', updateDays);
+            birthYear.addEventListener('change', updateDays);
+
+            // Enable/disable continue button based on selection
+            countrySelect.addEventListener('change', function() {
+                countryContinue.disabled = !countrySelect.value;
+            });
+
+            // Check if all birthdate fields are selected
+            function checkBirthdateFields() {
+                ageContinue.disabled = !(birthMonth.value && birthDay.value && birthYear.value);
+            }
+
+            birthMonth.addEventListener('change', checkBirthdateFields);
+            birthDay.addEventListener('change', checkBirthdateFields);
+            birthYear.addEventListener('change', checkBirthdateFields);
+
+            // Continue from country selection to age verification
+            countryContinue.addEventListener('click', function() {
+                const country = countrySelect.value;
+                localStorage.setItem('selectedCountry', country);
+                countryModal.style.display = 'none';
+                ageModal.style.display = 'block';
+            });
+
+            // Verify age and continue
+            ageContinue.addEventListener('click', function() {
+                const month = parseInt(birthMonth.value);
+                const day = parseInt(birthDay.value);
+                const year = parseInt(birthYear.value);
+
+                // Create date objects for birthdate and minimum age date
+                const birthdate = new Date(year, month - 1, day);
+                const today = new Date();
+                const minAgeDate = new Date(today.getFullYear() - 13, today.getMonth(), today.getDate());
+
+                // Check if user is at least 13 years old
+                if (birthdate <= minAgeDate) {
+                    // User is old enough
+                    localStorage.setItem('ageVerified', 'true');
+                    localStorage.setItem('birthdate', `${year}-${month}-${day}`);
+                    ageModal.style.display = 'none';
+                } else {
+                    // User is too young
+                    alert('You must be at least 13 years old to use SyntharaAI.');
+                }
+            });
+
+            // Show modals if needed
+            if (!hasSelectedCountry) {
+                countryModal.style.display = 'block';
+            } else if (!hasVerifiedAge) {
+                ageModal.style.display = 'block';
+            }
+        });
+
+        // Cookie Consent Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookie-consent');
+            const cookieAccept = document.getElementById('cookie-accept');
+            const cookieSettings = document.getElementById('cookie-settings');
+            const cookieSettingsModal = document.getElementById('cookie-settings-modal');
+            const cookieClose = document.getElementById('cookie-close');
+            const savePreferences = document.getElementById('save-preferences');
+            const analyticsCookies = document.getElementById('analytics-cookies');
+            const functionalCookies = document.getElementById('functional-cookies');
+
+            // Check if user has already consented
+            const hasConsented = localStorage.getItem('cookieConsent');
+            const cookiePreferences = localStorage.getItem('cookiePreferences') ?
+                JSON.parse(localStorage.getItem('cookiePreferences')) :
+                { essential: true, analytics: true, functional: true };
+
+            // Set checkbox states based on saved preferences
+            if (cookiePreferences) {
+                analyticsCookies.checked = cookiePreferences.analytics;
+                functionalCookies.checked = cookiePreferences.functional;
+            }
+
+            // Show cookie banner if user hasn't consented
+            if (!hasConsented) {
+                cookieConsent.style.display = 'block';
+            }
+
+            // Accept all cookies
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'true');
+                localStorage.setItem('cookiePreferences', JSON.stringify({
+                    essential: true,
+                    analytics: true,
+                    functional: true
+                }));
+                cookieConsent.style.display = 'none';
+            });
+
+            // Open cookie settings
+            cookieSettings.addEventListener('click', function() {
+                cookieSettingsModal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            });
+
+            // Close cookie settings
+            cookieClose.addEventListener('click', function() {
+                cookieSettingsModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+
+            // Close cookie settings if user clicks outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === cookieSettingsModal) {
+                    cookieSettingsModal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                }
+            });
+
+            // Save cookie preferences
+            savePreferences.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'true');
+                localStorage.setItem('cookiePreferences', JSON.stringify({
+                    essential: true,
+                    analytics: analyticsCookies.checked,
+                    functional: functionalCookies.checked
+                }));
+                cookieSettingsModal.style.display = 'none';
+                cookieConsent.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+
+            // Apply cookie preferences
+            function applyCookiePreferences() {
+                const preferences = localStorage.getItem('cookiePreferences') ?
+                    JSON.parse(localStorage.getItem('cookiePreferences')) :
+                    { essential: true, analytics: true, functional: true };
+
+                // Essential cookies are always enabled
+
+                // Analytics cookies
+                if (!preferences.analytics) {
+                    // Disable analytics tracking
+                    window['ga-disable-UA-XXXXX-Y'] = true; // Replace with your actual GA ID
+                    console.log('Analytics cookies disabled');
+                }
+
+                // Functional cookies
+                if (!preferences.functional) {
+                    // Disable functional cookies
+                    console.log('Functional cookies disabled');
+                }
+            }
+
+            // Apply preferences on page load
+            applyCookiePreferences();
+        });
+    </script>
+
+    <!-- Footer with Copyright -->
+    <div class="footer">
+        <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="downloads.html" class="footer-link">Documentation</a></p>
+    </div>
+
+    <style>
+        .footer {
+            margin-top: var(--space-4);
+            padding: var(--space-2) 0;
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .footer-link {
+            color: var(--text-light);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            border-bottom: 1px dotted var(--text-light);
+        }
+
+        /* Country Selection and Age Verification Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: 10% auto;
+            padding: var(--space-4);
+            border-radius: var(--radius);
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+            text-align: center;
+        }
+
+        .modal p {
+            margin-bottom: var(--space-3);
+            text-align: center;
+            color: var(--text);
+        }
+
+        .country-selection, .birthdate-selection {
+            margin-bottom: var(--space-4);
+        }
+
+        .country-select {
+            width: 100%;
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--bg);
+            color: var(--text);
+            font-size: var(--font-size-md);
+        }
+
+        .birthdate-selection {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .birthdate-field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .birthdate-field label {
+            margin-bottom: var(--space-1);
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+        }
+
+        .birthdate-select {
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--bg);
+            color: var(--text);
+            font-size: var(--font-size-md);
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: var(--space-2) var(--space-3);
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: var(--font-size-md);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: var(--space-3);
+        }
+
+        .modal-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .modal-btn:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+        }
+
+        .modal-disclaimer {
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .modal-disclaimer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .modal-disclaimer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cookie Consent Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-white);
+            border-top: 1px solid var(--border);
+            padding: var(--space-3);
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .cookie-content p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .cookie-accept {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .cookie-accept:hover {
+            background-color: var(--secondary);
+        }
+
+        .cookie-settings {
+            background-color: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .cookie-settings:hover {
+            background-color: var(--primary-light);
+        }
+
+        .cookie-save {
+            background-color: var(--primary);
+            color: white;
+            margin-top: var(--space-3);
+        }
+
+        .cookie-save:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Cookie Settings Modal */
+        .cookie-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
+        }
+
+        .cookie-modal-content {
+            background-color: var(--bg-white);
+            margin: var(--space-4) auto;
+            padding: var(--space-4);
+            border-radius: var(--radius);
+            max-width: 600px;
+            position: relative;
+            border: 1px solid var(--border);
+        }
+
+        .cookie-close {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            font-size: var(--font-size-lg);
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+
+        .cookie-close:hover {
+            opacity: 1;
+        }
+
+        .cookie-options {
+            margin-top: var(--space-3);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .cookie-option {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-2);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cookie-option:last-child {
+            border-bottom: none;
+        }
+
+        .cookie-option-text {
+            flex: 1;
+        }
+
+        .cookie-option-text h4 {
+            margin: 0 0 var(--space-1) 0;
+            font-size: var(--font-size-md);
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        .cookie-option-text p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+        }
+
+        /* Toggle Switch */
+        .cookie-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+            margin-top: 2px;
+        }
+
+        .cookie-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .cookie-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .cookie-slider {
+            background-color: var(--primary);
+        }
+
+        input:disabled + .cookie-slider {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        input:checked + .cookie-slider:before {
+            transform: translateX(16px);
+        }
+
+        @media (min-width: 768px) {
+            .cookie-content {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .cookie-content p {
+                flex: 1;
+                margin-right: var(--space-3);
+            }
+
+            .cookie-buttons {
+                flex-shrink: 0;
+            }
+        }
+    </style>
+
+    <!-- Country Selection Modal -->
+    <div id="country-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Country</h2>
+            <p>Please select your country to continue to SyntharaAI.</p>
+            <div class="country-selection">
+                <select id="country-select" class="country-select">
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="JP">Japan</option>
+                    <option value="IN">India</option>
+                    <option value="BR">Brazil</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="CN">China</option>
+                    <option value="RU">Russia</option>
+                    <option value="MX">Mexico</option>
+                    <option value="ES">Spain</option>
+                    <option value="IT">Italy</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="SE">Sweden</option>
+                    <option value="SG">Singapore</option>
+                    <option value="AE">United Arab Emirates</option>
+                </select>
+            </div>
+            <button id="country-continue" class="modal-btn" disabled>Continue</button>
+            <p class="modal-disclaimer">By continuing, you agree to our <a href="supply-chain.html#copyright">Terms of Service</a> and <a href="supply-chain.html#copyright">Privacy Policy</a>.</p>
+        </div>
+    </div>
+
+    <!-- Age Verification Modal -->
+    <div id="age-modal" class="modal">
+        <div class="modal-content">
+            <h2>Age Verification</h2>
+            <p>Please enter your date of birth to continue. You must be at least 13 years old to use SyntharaAI.</p>
+            <div class="birthdate-selection">
+                <div class="birthdate-field">
+                    <label for="birth-month">Month</label>
+                    <select id="birth-month" class="birthdate-select">
+                        <option value="" disabled selected>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="birthdate-field">
+                    <label for="birth-day">Day</label>
+                    <select id="birth-day" class="birthdate-select">
+                        <option value="" disabled selected>Day</option>
+                        <!-- Days will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="birthdate-field">
+                    <label for="birth-year">Year</label>
+                    <select id="birth-year" class="birthdate-select">
+                        <option value="" disabled selected>Year</option>
+                        <!-- Years will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+            <button id="age-continue" class="modal-btn" disabled>Continue</button>
+            <p class="modal-disclaimer">By continuing, you confirm that the information provided is accurate.</p>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="cookie-content">
+            <p>SyntharaAI uses cookies and local storage to enhance your experience, analyze site usage, and assist in our marketing efforts. By clicking "Accept", you consent to our use of cookies and similar technologies.</p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-accept">Accept</button>
+                <button id="cookie-settings" class="cookie-btn cookie-settings">Cookie Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-modal">
+        <div class="cookie-modal-content">
+            <span class="cookie-close" id="cookie-close">&times;</span>
+            <h3>Cookie Settings</h3>
+            <div class="cookie-options">
+                <div class="cookie-option">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="essential-cookies" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                    <div class="cookie-option-text">
+                        <h4>Essential Cookies</h4>
+                        <p>These cookies are necessary for the website to function and cannot be switched off.</p>
+                    </div>
+                </div>
+                <div class="cookie-option">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="analytics-cookies" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                    <div class="cookie-option-text">
+                        <h4>Analytics Cookies</h4>
+                        <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.</p>
+                    </div>
+                </div>
+                <div class="cookie-option">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="functional-cookies" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                    <div class="cookie-option-text">
+                        <h4>Functional Cookies</h4>
+                        <p>These cookies enable the website to provide enhanced functionality and personalization.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="save-preferences" class="cookie-btn cookie-save">Save Preferences</button>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div>SyntharaAI Assistant</div>
+            <div class="chatbot-controls">
+                <div class="chatbot-control" id="chatbot-fullscreen" title="Toggle fullscreen">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <div class="chatbot-close" id="chatbot-close" title="Close">&times;</div>
+            </div>
+        </div>
+
+        <!-- File upload area (only visible in fullscreen mode) -->
+        <div class="file-upload-area" id="file-upload-area">
+            <div class="file-upload-container" id="file-upload-container">
+                <div class="file-upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <p>Drag & drop files here or click to browse</p>
+                <p class="file-types">Supported files: Images, PDFs, DOCs, CSV, Code files (.js, .py, .html, .css, etc.), Medical scans, Homework</p>
+                <p class="ai-disclaimer">Note: AI analysis may not always be 100% accurate. Please verify important information.</p>
+                <input type="file" class="file-upload-input" id="file-upload-input" multiple>
+            </div>
+            <div id="uploaded-files-list"></div>
+            <button class="analyze-btn" id="analyze-btn">Analyze Files with AI</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">How can I help today? 👋</div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="user-input" placeholder="Type your message here..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const chatbotClose = document.getElementById('chatbot-close');
+            const chatbotFullscreen = document.getElementById('chatbot-fullscreen');
+            const chatbotMessages = document.getElementById('chatbot-messages');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            const typingIndicator = document.getElementById('typing-indicator');
+
+            // Check URL parameters to see if we should open the chatbot
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('openChat') === 'true') {
+                chatbotContainer.style.display = 'flex';
+                userInput.focus();
+
+                // Remove the parameter from the URL without refreshing the page
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
+
+            // Toggle chatbot visibility
+            chatbotToggle.addEventListener('click', function() {
+                if (chatbotContainer.style.display === 'flex') {
+                    chatbotContainer.style.display = 'none';
+                } else {
+                    chatbotContainer.style.display = 'flex';
+                    userInput.focus();
+                }
+            });
+
+            // Close chatbot
+            chatbotClose.addEventListener('click', function() {
+                chatbotContainer.style.display = 'none';
+            });
+
+            // Toggle fullscreen
+            chatbotFullscreen.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('fullscreen');
+
+                // Toggle icon between expand and compress
+                const icon = chatbotFullscreen.querySelector('i');
+                if (chatbotContainer.classList.contains('fullscreen')) {
+                    icon.classList.remove('fa-expand');
+                    icon.classList.add('fa-compress');
+                    chatbotFullscreen.setAttribute('title', 'Exit fullscreen');
+                } else {
+                    icon.classList.remove('fa-compress');
+                    icon.classList.add('fa-expand');
+                    chatbotFullscreen.setAttribute('title', 'Toggle fullscreen');
+                }
+
+                // Scroll to bottom after toggling fullscreen
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            });
+
+            // File upload functionality
+            const fileUploadContainer = document.getElementById('file-upload-container');
+            const fileUploadInput = document.getElementById('file-upload-input');
+            const uploadedFilesList = document.getElementById('uploaded-files-list');
+            const analyzeBtn = document.getElementById('analyze-btn');
+            let uploadedFiles = [];
+
+            // Trigger file input when clicking on the container
+            fileUploadContainer.addEventListener('click', function() {
+                fileUploadInput.click();
+            });
+
+            // Handle file selection
+            fileUploadInput.addEventListener('change', function(e) {
+                handleFiles(e.target.files);
+            });
+
+            // Handle drag and drop
+            fileUploadContainer.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                fileUploadContainer.style.borderColor = '#2d6f9f'; // primary color
+                fileUploadContainer.style.backgroundColor = '#f7f9fa'; // bg color
+            });
+
+            fileUploadContainer.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                fileUploadContainer.style.borderColor = '#edf2f7'; // border color
+                fileUploadContainer.style.backgroundColor = '#ffffff'; // bg-white color
+            });
+
+            fileUploadContainer.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                fileUploadContainer.style.borderColor = '#edf2f7'; // border color
+                fileUploadContainer.style.backgroundColor = '#ffffff'; // bg-white color
+
+                if (e.dataTransfer.files.length > 0) {
+                    handleFiles(e.dataTransfer.files);
+                }
+            });
+
+            // Process the uploaded files
+            function handleFiles(files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+
+                    // Check if file is already in the list
+                    if (uploadedFiles.some(f => f.name === file.name && f.size === file.size)) {
+                        continue;
+                    }
+
+                    uploadedFiles.push(file);
+
+                    // Create file element
+                    const fileElement = document.createElement('div');
+                    fileElement.className = 'uploaded-file';
+
+                    // Determine icon based on file type
+                    let iconClass = 'fa-file';
+                    if (file.type.startsWith('image/')) {
+                        iconClass = 'fa-file-image';
+                    } else if (file.type === 'application/pdf') {
+                        iconClass = 'fa-file-pdf';
+                    } else if (file.type.includes('word') || file.type.includes('document')) {
+                        iconClass = 'fa-file-word';
+                    } else if (file.type.includes('spreadsheet') || file.type.includes('excel')) {
+                        iconClass = 'fa-file-excel';
+                    }
+
+                    fileElement.innerHTML = `
+                        <div class="uploaded-file-icon">
+                            <i class="fas ${iconClass}"></i>
+                        </div>
+                        <div class="uploaded-file-name">${file.name}</div>
+                        <div class="uploaded-file-remove" data-filename="${file.name}">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    `;
+
+                    uploadedFilesList.appendChild(fileElement);
+                }
+
+                // Show analyze button if files are uploaded
+                if (uploadedFiles.length > 0) {
+                    analyzeBtn.style.display = 'block';
+                } else {
+                    analyzeBtn.style.display = 'none';
+                }
+            }
+
+            // Remove file when clicking the remove button
+            uploadedFilesList.addEventListener('click', function(e) {
+                if (e.target.closest('.uploaded-file-remove')) {
+                    const filename = e.target.closest('.uploaded-file-remove').getAttribute('data-filename');
+                    uploadedFiles = uploadedFiles.filter(file => file.name !== filename);
+                    e.target.closest('.uploaded-file').remove();
+
+                    // Hide analyze button if no files are left
+                    if (uploadedFiles.length === 0) {
+                        analyzeBtn.style.display = 'none';
+                    }
+                }
+            });
+
+            // Handle analyze button click
+            analyzeBtn.addEventListener('click', function() {
+                // Show AI accuracy alert
+                if (confirm("AI Analysis Disclaimer: The analysis provided is based on file structure and metadata. Results may not be 100% accurate. Please verify important information. Continue with analysis?")) {
+                    // Show typing indicator
+                    typingIndicator.style.display = 'block';
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    // Add user message about file analysis
+                    const userMessageElement = document.createElement('div');
+                    userMessageElement.classList.add('message', 'user-message');
+                    userMessageElement.textContent = `Please analyze ${uploadedFiles.length} file(s)`;
+                    chatbotMessages.appendChild(userMessageElement);
+
+                    // Process each file and send to the server for analysis
+                    const analysisPromises = uploadedFiles.map(file => {
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        return fetch('/api/upload', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .catch(error => {
+                            console.error('Error uploading file:', error);
+                            return {
+                                type: 'error',
+                                filename: file.name,
+                                error: error.message,
+                                analysis: 'An error occurred while analyzing this file.'
+                            };
+                        });
+                    });
+
+                    // Wait for all files to be analyzed
+                    Promise.all(analysisPromises)
+                        .then(analysisResults => {
+                            // Hide typing indicator
+                            typingIndicator.style.display = 'none';
+
+                            // Add bot response
+                            const botMessageElement = document.createElement('div');
+                            botMessageElement.classList.add('message', 'bot-message');
+
+                            // Generate response based on server analysis
+                            let analysisResponse = `I've analyzed the following files:<br><br>`;
+
+                            // Group analysis results by file type
+                            const filesByType = {};
+                            analysisResults.forEach(result => {
+                                const type = result.type || 'unknown';
+                                if (!filesByType[type]) {
+                                    filesByType[type] = [];
+                                }
+                                filesByType[type].push(result);
+                            });
+
+                            // Process each file type group
+                            for (const [type, files] of Object.entries(filesByType)) {
+                                // Skip error files for now
+                                if (type === 'error') continue;
+
+                                // Add section header for this file type
+                                analysisResponse += `<strong>${type.charAt(0).toUpperCase() + type.slice(1)} Files (${files.length}):</strong><br>`;
+
+                                // Add details for each file
+                                files.forEach(file => {
+                                    analysisResponse += `<div style="margin-left: 15px; margin-bottom: 10px;">`;
+                                    analysisResponse += `<strong>${file.filename}</strong> (${file.size})`;
+
+                                    // Add file type description if available
+                                    if (file.file_type_description) {
+                                        analysisResponse += `<br><span style="font-size: 0.9em; color: #666;">Type: ${file.file_type_description}</span>`;
+                                    }
+
+                                    // Add specific details based on file type
+                                    if (type === 'text document' && file.word_count) {
+                                        analysisResponse += `<br>Word count: ${file.word_count}, Lines: ${file.line_count}`;
+
+                                        // Add document type if available
+                                        if (file.document_type) {
+                                            analysisResponse += `<br>Document type: ${file.document_type}`;
+                                        }
+
+                                        // Add key topics
+                                        if (file.frequent_words && file.frequent_words.length > 0) {
+                                            analysisResponse += `<br>Key topics: ${file.frequent_words.join(', ')}`;
+                                        }
+
+                                        // Add document headings if available
+                                        if (file.headings && file.headings.length > 0) {
+                                            analysisResponse += `<br>Document sections: ${file.headings.join(' | ')}`;
+                                        }
+                                    } else if (type === 'CSV data' && file.rows) {
+                                        analysisResponse += `<br>Rows: ${file.rows}, Columns: ${file.columns}`;
+
+                                        // Add column types summary if available
+                                        if (file.column_types) {
+                                            const typeCount = {};
+                                            Object.values(file.column_types).forEach(type => {
+                                                typeCount[type] = (typeCount[type] || 0) + 1;
+                                            });
+
+                                            const typesSummary = Object.entries(typeCount)
+                                                .map(([type, count]) => `${count} ${type}`)
+                                                .join(', ');
+
+                                            analysisResponse += `<br>Column types: ${typesSummary}`;
+                                        }
+
+                                        // Add key columns if available
+                                        if (file.key_columns && file.key_columns.length > 0) {
+                                            analysisResponse += `<br>Key columns: ${file.key_columns.join(', ')}`;
+                                        }
+
+                                        // Add category columns if available
+                                        if (file.category_columns && file.category_columns.length > 0) {
+                                            analysisResponse += `<br>Category columns: ${file.category_columns.join(', ')}`;
+                                        }
+
+                                        // Add headers
+                                        if (file.headers && file.headers.length > 0) {
+                                            analysisResponse += `<br>Headers: ${file.headers.join(', ')}`;
+                                        }
+                                    } else if (type === 'JSON data (array)' && file.items) {
+                                        analysisResponse += `<br>Items: ${file.items}`;
+                                        if (file.sample_keys && file.sample_keys.length > 0) {
+                                            analysisResponse += `<br>Properties: ${file.sample_keys.join(', ')}`;
+                                        }
+                                    } else if (type === 'JSON data (object)' && file.top_keys) {
+                                        analysisResponse += `<br>Properties: ${file.top_keys.join(', ')}`;
+                                    } else if (type === 'code file' && file.lines) {
+                                        analysisResponse += `<br>Lines of code: ${file.lines}`;
+
+                                        // Add complexity and purpose if available
+                                        if (file.complexity) {
+                                            analysisResponse += `<br>Complexity: <span style="font-weight: bold; color: ${
+                                                file.complexity === 'High' ? '#e74c3c' :
+                                                file.complexity === 'Medium' ? '#f39c12' :
+                                                '#27ae60'
+                                            };">${file.complexity}</span>`;
+                                        }
+
+                                        if (file.purpose && file.purpose !== 'Unknown') {
+                                            analysisResponse += `<br>Purpose: ${file.purpose}`;
+                                        }
+
+                                        // Add code features if available
+                                        if (file.features) {
+                                            if (file.features.functions && file.features.functions.length > 0) {
+                                                analysisResponse += `<br>Functions: ${file.features.functions.length > 3 ?
+                                                    `${file.features.functions.length} total, including ` : ''}${
+                                                    file.features.functions.slice(0, 3).join(', ')}${
+                                                    file.features.functions.length > 3 ? '...' : ''}`;
+                                            }
+                                            if (file.features.classes && file.features.classes.length > 0) {
+                                                analysisResponse += `<br>Classes: ${file.features.classes.length > 3 ?
+                                                    `${file.features.classes.length} total, including ` : ''}${
+                                                    file.features.classes.slice(0, 3).join(', ')}${
+                                                    file.features.classes.length > 3 ? '...' : ''}`;
+                                            }
+                                        }
+                                    }
+
+                                    // Add the basic analysis from the server
+                                    if (file.analysis) {
+                                        analysisResponse += `<br><span style="font-style: italic;">${file.analysis}</span>`;
+                                    }
+
+                                    // Add the AI analysis if available
+                                    if (file.ai_analysis) {
+                                        analysisResponse += `<br><br><strong>AI Analysis:</strong><br>`;
+                                        analysisResponse += `<div style="padding: 8px; background-color: #f8f9fa; border-left: 3px solid #2d6f9f; margin: 5px 0;">
+                                            ${file.ai_analysis}
+                                        </div>`;
+                                    } else {
+                                        // If AI analysis is not available, show a message
+                                        analysisResponse += `<br><small style="color: #666; font-style: italic;">
+                                            (AI-powered analysis not available for this file. Using basic analysis only.)
+                                        </small>`;
+                                    }
+
+                                    analysisResponse += `</div>`;
+                                });
+
+                                analysisResponse += `<br>`;
+                            }
+
+                            // Add error files if any
+                            if (filesByType['error'] && filesByType['error'].length > 0) {
+                                analysisResponse += `<strong>Files with Errors (${filesByType['error'].length}):</strong><br>`;
+                                filesByType['error'].forEach(file => {
+                                    analysisResponse += `<div style="margin-left: 15px; margin-bottom: 10px;">`;
+                                    analysisResponse += `<strong>${file.filename}</strong>: ${file.analysis}`;
+                                    analysisResponse += `</div>`;
+                                });
+                                analysisResponse += `<br>`;
+                            }
+
+                            // Add a disclaimer about AI accuracy
+                            analysisResponse += '<em>Would you like me to explain any specific file in more detail or answer questions about the content?</em><br><br>';
+                            analysisResponse += '<small style="color: #e74c3c;">Note: This analysis is based on file structure and metadata. For a more comprehensive analysis, specialized tools would be required.</small>';
+
+                            botMessageElement.innerHTML = analysisResponse;
+                            chatbotMessages.appendChild(botMessageElement);
+
+                            // Scroll to bottom
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                            // Clear uploaded files
+                            uploadedFiles = [];
+                            uploadedFilesList.innerHTML = '';
+                            analyzeBtn.style.display = 'none';
+                        })
+                        .catch(error => {
+                            // Hide typing indicator
+                            typingIndicator.style.display = 'none';
+
+                            // Show error message
+                            const botMessageElement = document.createElement('div');
+                            botMessageElement.classList.add('message', 'bot-message');
+                            botMessageElement.innerHTML = `<span style="color: #e74c3c;">Sorry, there was an error analyzing the files: ${error.message}</span><br><br>
+                                <small style="color: #e74c3c;">Please try again with smaller or different files.</small>`;
+                            chatbotMessages.appendChild(botMessageElement);
+
+                            // Scroll to bottom
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                        });
+                }
+            });
+
+            // Helper function to generate random analysis topics
+            function getRandomTopic() {
+                const topics = [
+                    'medical diagnostics',
+                    'academic research',
+                    'data visualization',
+                    'mathematical equations',
+                    'scientific experiments',
+                    'historical documents',
+                    'educational materials',
+                    'healthcare records',
+                    'statistical analysis',
+                    'homework assignments'
+                ];
+                return topics[Math.floor(Math.random() * topics.length)];
+            }
+
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                // Add user message to chat
+                const userMessageElement = document.createElement('div');
+                userMessageElement.classList.add('message', 'user-message');
+                userMessageElement.textContent = message;
+                chatbotMessages.appendChild(userMessageElement);
+
+                // Clear input
+                userInput.value = '';
+
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                // Send message to backend
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+
+                    // Add bot response to chat
+                    const botMessageElement = document.createElement('div');
+                    botMessageElement.classList.add('message', 'bot-message');
+                    botMessageElement.textContent = data.response || "Sorry, I couldn't process your request.";
+                    chatbotMessages.appendChild(botMessageElement);
+
+                    // Scroll to bottom
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    typingIndicator.style.display = 'none';
+
+                    // Add error message
+                    const errorMessageElement = document.createElement('div');
+                    errorMessageElement.classList.add('message', 'bot-message');
+                    errorMessageElement.textContent = "Sorry, there was an error processing your request. Please try again later.";
+                    chatbotMessages.appendChild(errorMessageElement);
+
+                    // Scroll to bottom
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                });
+            }
+
+            // Send message on button click
+            sendBtn.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

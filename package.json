@@ -1,0 +1,29 @@
+{
+  "name": "syntharaai",
+  "version": "1.0.0",
+  "description": "SyntharaAI Website with Gemini-powered chatbot",
+  "main": "index.js",
+  "scripts": {
+    "build": "chmod +x build_vercel.sh && ./build_vercel.sh",
+    "start": "python chatbot.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bniladridas/bniladridas.github.io.git"
+  },
+  "keywords": [
+    "syntharaai",
+    "chatbot",
+    "ai",
+    "flask"
+  ],
+  "author": "Niladri Das",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bniladridas/bniladridas.github.io/issues"
+  },
+  "homepage": "https://github.com/bniladridas/bniladridas.github.io#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

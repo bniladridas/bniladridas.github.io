@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntharaAI - Downloads</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="SyntharaAI - Downloads">
+    <meta name="description" content="Technical resources and documentation for the SyntharaAI system, including architecture, features, API endpoints, and usage guides.">
+    <meta name="keywords" content="SyntharaAI, documentation, downloads, technical resources, whitepaper, changelog">
+    <meta name="author" content="Niladri Das">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#2a6b9e">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SyntharaAI - Downloads">
+    <meta property="og:description" content="Technical resources and documentation for the SyntharaAI system.">
+    <meta property="og:image" content="assets/images/og-image-minimal.svg">
+    <meta property="og:url" content="https://bniladridas.github.io/downloads.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SyntharaAI">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SyntharaAI - Downloads">
+    <meta name="twitter:description" content="Technical resources and documentation for the SyntharaAI system.">
+    <meta name="twitter:image" content="assets/images/og-image-minimal.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            /* Monochromatic color palette */
+            --primary: #2d6f9f;
+            --primary-light: #e8f1f8;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg: #f7f9fa;
+            --bg-white: #ffffff;
+            --border: #edf2f7;
+
+            /* No shadows for cleaner look */
+            --shadow: none;
+
+            /* Minimal radius */
+            --radius: 3px;
+
+            /* Simplified spacing scale */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+
+            /* Subtle transition */
+            --transition: all 0.1s ease;
+
+            /* Chatbot dimensions */
+            --chatbot-width: 300px;
+            --chatbot-height: 400px;
+
+            /* Typography */
+            --font-size-xs: 0.75rem;   /* 12px */
+            --font-size-sm: 0.813rem;  /* 13px */
+            --font-size-md: 0.875rem;  /* 14px */
+            --font-size-lg: 1rem;      /* 16px */
+            --font-size-xl: 1.125rem;  /* 18px */
+            --line-height: 1.5;
+
+            /* For backward compatibility */
+            --primary-color: #2d6f9f;
+            --secondary-color: #1e4b6d;
+            --accent-color: #4a90e2;
+            --text-color: #2c3e50;
+            --bg-color: #f7f9fa;
+            --card-bg: #ffffff;
+            --border-color: #edf2f7;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4a90e2;
+                --primary-light: #1a2733;
+                --text: #e0e0e0;
+                --text-light: #a0a0a0;
+                --bg: #121212;
+                --bg-white: #1e1e1e;
+                --border: #333;
+
+                /* For backward compatibility */
+                --primary-color: #4a90e2;
+                --secondary-color: #3a7bc8;
+                --accent-color: #64a6f3;
+                --text-color: #e0e0e0;
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --border-color: #333;
+                --success-color: #2ecc71;
+                --warning-color: #f1c40f;
+                --danger-color: #e74c3c;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: var(--line-height);
+            color: var(--text);
+            background-color: var(--bg);
+            padding: var(--space-3);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: var(--space-2);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+
+        p {
+            font-size: var(--font-size-md);
+            color: var(--text-light);
+            margin: var(--space-2) 0;
+            line-height: var(--line-height);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .link {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: var(--transition);
+        }
+
+        .link:hover {
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3) var(--space-2);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-3);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-3);
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .doc-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius);
+            padding: var(--space-3);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .doc-card:hover {
+            border-color: var(--primary-light);
+        }
+
+        .doc-card h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+        }
+
+        .doc-card p {
+            margin-bottom: var(--space-3);
+            color: var(--text-light);
+            font-size: var(--font-size-md);
+        }
+
+        .doc-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            font-size: var(--font-size-md);
+            border: none;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        .view-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid var(--primary);
+            width: 100%;
+            text-align: center;
+            margin-top: var(--space-2);
+            font-size: var(--font-size-md);
+        }
+
+        .view-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: var(--space-3);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            border-bottom: 1px dotted transparent;
+        }
+
+        .back-link:hover {
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        .back-link:before {
+            content: "←";
+            margin-right: var(--space-1);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer {
+            margin-top: var(--space-4);
+            padding: var(--space-2) 0;
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .footer-link {
+            color: var(--text-light);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            border-bottom: 1px dotted var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Chatbot styles */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .chatbot-toggle:hover {
+            background-color: var(--bg-white);
+        }
+
+        .chatbot-toggle i {
+            font-size: 16px;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 64px;
+            left: 16px;
+            width: var(--chatbot-width);
+            height: var(--chatbot-height);
+            background-color: var(--bg-white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            z-index: 998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            padding: var(--space-2);
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chatbot-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .chatbot-control {
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .chatbot-control:hover {
+            opacity: 1;
+        }
+
+        .chatbot-close {
+            cursor: pointer;
+            font-size: var(--font-size-lg);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .chatbot-close:hover {
+            opacity: 1;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: var(--space-2);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .message {
+            padding: var(--space-2);
+            border-radius: var(--radius);
+            max-width: 80%;
+            word-break: break-word;
+        }
+
+        .bot-message {
+            background-color: var(--primary-light);
+            color: var(--text);
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: var(--space-2);
+            border-top: 1px solid var(--border);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: var(--font-size-sm);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--primary);
+        }
+
+        .chatbot-input button {
+            padding: var(--space-2) var(--space-3);
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            margin-left: var(--space-2);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: var(--font-size-sm);
+        }
+
+        .chatbot-input button:hover {
+            opacity: 0.9;
+        }
+
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background-color: var(--primary-light);
+            padding: var(--space-2);
+            border-radius: var(--radius);
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: typing 1s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+            margin-right: 0;
+        }
+
+        @keyframes typing {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .chatbot-container.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            z-index: 1000;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: 10% auto;
+            padding: var(--space-4);
+            border-radius: var(--radius);
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+            text-align: center;
+        }
+
+        .modal p {
+            margin-bottom: var(--space-3);
+            text-align: center;
+            color: var(--text);
+        }
+
+        .country-selection, .birthdate-selection {
+            margin-bottom: var(--space-4);
+        }
+
+        .country-select, .birthdate-select {
+            width: 100%;
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--bg-white);
+            color: var(--text);
+            font-size: var(--font-size-md);
+            margin-bottom: var(--space-2);
+        }
+
+        .birthdate-field {
+            margin-bottom: var(--space-2);
+        }
+
+        .birthdate-field label {
+            display: block;
+            margin-bottom: var(--space-1);
+            color: var(--text-light);
+            font-size: var(--font-size-sm);
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: var(--space-2);
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: var(--font-size-md);
+            transition: var(--transition);
+        }
+
+        .modal-btn:disabled {
+            background-color: var(--text-light);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .modal-btn:not(:disabled):hover {
+            opacity: 0.9;
+        }
+
+        .modal-disclaimer {
+            margin-top: var(--space-3);
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .birthdate-row {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        /* Captcha styles */
+        .captcha-container {
+            margin-bottom: var(--space-3);
+            text-align: center;
+        }
+
+        .captcha-box {
+            background-color: var(--primary-light);
+            padding: var(--space-3);
+            border-radius: var(--radius);
+            margin-bottom: var(--space-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .captcha-text {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: var(--primary);
+            user-select: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .captcha-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+        }
+
+        .captcha-line {
+            position: absolute;
+            height: 2px;
+            background-color: var(--primary);
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) rotate(-5deg);
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .captcha-input {
+            width: 100%;
+            padding: var(--space-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: var(--font-size-md);
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: var(--space-2);
+        }
+
+        .captcha-refresh {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .captcha-refresh i {
+            margin-right: var(--space-1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <h1>SyntharaAI Documentation</h1>
+            <p class="subtitle">Technical resources and documentation for the SyntharaAI system</p>
+        </header>
+
+        <div class="docs-grid">
+            <div class="doc-card">
+                <h3>Technical Documentation</h3>
+                <div class="doc-meta">
+                    <span>Format: Markdown</span>
+                    <span>Updated: May 10, 2025</span>
+                </div>
+                <p>Comprehensive documentation covering all aspects of the SyntharaAI system, including architecture, features, API endpoints, and usage guides.</p>
+                <div class="btn-group">
+                    <a href="DOCUMENTATION.md" download class="download-btn">Download Documentation</a>
+                    <a href="DOCUMENTATION.md" target="_blank" class="view-btn">View Online</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <h3>Technical Whitepaper</h3>
+                <div class="doc-meta">
+                    <span>Format: Markdown</span>
+                    <span>Updated: May 10, 2025</span>
+                </div>
+                <p>Detailed technical whitepaper explaining the AI implementation, file analysis techniques, and technical architecture of SyntharaAI.</p>
+                <div class="btn-group">
+                    <a href="WHITEPAPER.md" download class="download-btn">Download Whitepaper</a>
+                    <a href="WHITEPAPER.md" target="_blank" class="view-btn">View Online</a>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <h3>Changelog</h3>
+                <div class="doc-meta">
+                    <span>Format: Markdown</span>
+                    <span>Updated: May 10, 2025</span>
+                </div>
+                <p>Complete version history and changelog detailing all features, improvements, and fixes in each release of SyntharaAI.</p>
+                <div class="btn-group">
+                    <a href="CHANGELOG.md" download class="download-btn">Download Changelog</a>
+                    <a href="CHANGELOG.md" target="_blank" class="view-btn">View Online</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="doc-card">
+            <h3>Source Code</h3>
+            <div class="doc-meta">
+                <span>Platform: GitHub</span>
+                <span>License: MIT</span>
+            </div>
+            <p>Access the complete source code for SyntharaAI, including the Flask backend, frontend implementation, and AI integration components.</p>
+            <div class="btn-group">
+                <a href="https://github.com/bniladridas" target="_blank" class="download-btn">View on GitHub</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <!-- Footer with Copyright -->
+        <div class="footer">
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a></p>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle -->
+    <div class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div>SyntharaAI Assistant</div>
+            <div class="chatbot-controls">
+                <div class="chatbot-control" id="chatbot-fullscreen" title="Toggle fullscreen">
+                    <i class="fas fa-expand"></i>
+                </div>
+                <div class="chatbot-close" id="chatbot-close" title="Close">&times;</div>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">Need help with documentation? Ask me about SyntharaAI resources! 📚</div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="user-input" placeholder="Type your message here..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <!-- Captcha Verification Modal -->
+    <div id="captcha-modal" class="modal">
+        <div class="modal-content">
+            <h2>Verify You're Human</h2>
+            <p>Please complete the captcha verification to continue to SyntharaAI.</p>
+            <div class="captcha-container">
+                <div class="captcha-box">
+                    <div class="captcha-noise"></div>
+                    <div class="captcha-line"></div>
+                    <div class="captcha-text" id="captcha-text">ABC123</div>
+                </div>
+                <input type="text" id="captcha-input" class="captcha-input" placeholder="Enter the code above" autocomplete="off">
+                <button class="captcha-refresh" id="captcha-refresh">
+                    <i class="fas fa-sync-alt"></i> Refresh Captcha
+                </button>
+            </div>
+            <button id="captcha-continue" class="modal-btn" disabled>Verify</button>
+            <p class="modal-disclaimer">This verification helps us prevent automated access to SyntharaAI.</p>
+        </div>
+    </div>
+
+    <!-- Country Selection Modal -->
+    <div id="country-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Country</h2>
+            <p>Please select your country to continue to SyntharaAI.</p>
+            <div class="country-selection">
+                <select id="country-select" class="country-select">
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="JP">Japan</option>
+                    <option value="IN">India</option>
+                    <option value="BR">Brazil</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="CN">China</option>
+                    <option value="RU">Russia</option>
+                    <option value="MX">Mexico</option>
+                    <option value="ES">Spain</option>
+                    <option value="IT">Italy</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="SE">Sweden</option>
+                    <option value="SG">Singapore</option>
+                    <option value="AE">United Arab Emirates</option>
+                </select>
+            </div>
+            <button id="country-continue" class="modal-btn" disabled>Continue</button>
+            <p class="modal-disclaimer">By continuing, you agree to our <a href="supply-chain.html#copyright">Terms of Service</a> and <a href="supply-chain.html#copyright">Privacy Policy</a>.</p>
+        </div>
+    </div>
+
+    <!-- Age Verification Modal -->
+    <div id="age-modal" class="modal">
+        <div class="modal-content">
+            <h2>Age Verification</h2>
+            <p>Please enter your date of birth to continue. You must be at least 13 years old to use SyntharaAI.</p>
+            <div class="birthdate-selection">
+                <div class="birthdate-field">
+                    <label for="birth-month">Month</label>
+                    <select id="birth-month" class="birthdate-select">
+                        <option value="" disabled selected>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="birthdate-field">
+                    <label for="birth-day">Day</label>
+                    <select id="birth-day" class="birthdate-select">
+                        <option value="" disabled selected>Day</option>
+                        <!-- Days will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="birthdate-field">
+                    <label for="birth-year">Year</label>
+                    <select id="birth-year" class="birthdate-select">
+                        <option value="" disabled selected>Year</option>
+                        <!-- Years will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+            <button id="age-continue" class="modal-btn" disabled>Continue</button>
+            <p class="modal-disclaimer">SyntharaAI requires users to be at least 13 years old. Your birthdate will be stored locally on your device.</p>
+        </div>
+    </div>
+
+    <script>
+        // Captcha, Country Selection and Age Verification
+        document.addEventListener('DOMContentLoaded', function() {
+            // Captcha elements
+            const captchaModal = document.getElementById('captcha-modal');
+            const captchaText = document.getElementById('captcha-text');
+            const captchaInput = document.getElementById('captcha-input');
+            const captchaRefresh = document.getElementById('captcha-refresh');
+            const captchaContinue = document.getElementById('captcha-continue');
+
+            // Country elements
+            const countryModal = document.getElementById('country-modal');
+            const countrySelect = document.getElementById('country-select');
+            const countryContinue = document.getElementById('country-continue');
+
+            // Age elements
+            const ageModal = document.getElementById('age-modal');
+            const birthMonth = document.getElementById('birth-month');
+            const birthDay = document.getElementById('birth-day');
+            const birthYear = document.getElementById('birth-year');
+            const ageContinue = document.getElementById('age-continue');
+
+            // Check if user has already completed verification steps
+            const hasCompletedCaptcha = localStorage.getItem('captchaVerified');
+            const hasSelectedCountry = localStorage.getItem('selectedCountry');
+            const hasVerifiedAge = localStorage.getItem('ageVerified');
+
+            // Captcha generation and verification
+            let captchaCode = '';
+
+            // Generate a random captcha code
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+                captchaCode = '';
+                for (let i = 0; i < 6; i++) {
+                    captchaCode += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                captchaText.textContent = captchaCode;
+                captchaInput.value = '';
+                captchaContinue.disabled = true;
+            }
+
+            // Initial captcha generation
+            generateCaptcha();
+
+            // Refresh captcha
+            captchaRefresh.addEventListener('click', generateCaptcha);
+
+            // Validate captcha input
+            captchaInput.addEventListener('input', function() {
+                captchaContinue.disabled = this.value.trim() !== captchaCode;
+            });
+
+            // Continue from captcha to country selection
+            captchaContinue.addEventListener('click', function() {
+                localStorage.setItem('captchaVerified', 'true');
+                captchaModal.style.display = 'none';
+                countryModal.style.display = 'block';
+            });
+
+            // Populate birth year dropdown (100 years back from current year)
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear; year >= currentYear - 100; year--) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                birthYear.appendChild(option);
+            }
+
+            // Populate days dropdown (default 31 days)
+            function populateDays(month) {
+                birthDay.innerHTML = '<option value="" disabled selected>Day</option>';
+
+                let daysInMonth = 31;
+                if (month) {
+                    if ([4, 6, 9, 11].includes(parseInt(month))) {
+                        daysInMonth = 30;
+                    } else if (parseInt(month) === 2) {
+                        // Simplified leap year calculation
+                        const isLeapYear = (parseInt(birthYear.value) % 4 === 0 &&
+                                          parseInt(birthYear.value) % 100 !== 0) ||
+                                          parseInt(birthYear.value) % 400 === 0;
+                        daysInMonth = isLeapYear ? 29 : 28;
+                    }
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const option = document.createElement('option');
+                    option.value = day;
+                    option.textContent = day;
+                    birthDay.appendChild(option);
+                }
+            }
+
+            // Initial population of days
+            populateDays();
+
+            // Update days when month or year changes
+            birthMonth.addEventListener('change', function() {
+                populateDays(this.value);
+                checkBirthdateFields();
+            });
+
+            birthYear.addEventListener('change', function() {
+                if (birthMonth.value) {
+                    populateDays(birthMonth.value);
+                }
+                checkBirthdateFields();
+            });
+
+            // Enable continue button when country is selected
+            countrySelect.addEventListener('change', function() {
+                countryContinue.disabled = !this.value;
+            });
+
+            // Check if all birthdate fields are filled
+            function checkBirthdateFields() {
+                ageContinue.disabled = !(birthMonth.value && birthDay.value && birthYear.value);
+            }
+
+            birthMonth.addEventListener('change', checkBirthdateFields);
+            birthDay.addEventListener('change', checkBirthdateFields);
+            birthYear.addEventListener('change', checkBirthdateFields);
+
+            // Continue from country selection to age verification
+            countryContinue.addEventListener('click', function() {
+                const country = countrySelect.value;
+                localStorage.setItem('selectedCountry', country);
+                countryModal.style.display = 'none';
+                ageModal.style.display = 'block';
+            });
+
+            // Verify age and continue
+            ageContinue.addEventListener('click', function() {
+                const month = parseInt(birthMonth.value);
+                const day = parseInt(birthDay.value);
+                const year = parseInt(birthYear.value);
+
+                // Create date objects for birthdate and minimum age date
+                const birthdate = new Date(year, month - 1, day);
+                const today = new Date();
+                const minAgeDate = new Date(today.getFullYear() - 13, today.getMonth(), today.getDate());
+
+                // Check if user is at least 13 years old
+                if (birthdate <= minAgeDate) {
+                    // User is old enough
+                    localStorage.setItem('ageVerified', 'true');
+                    localStorage.setItem('birthdate', `${year}-${month}-${day}`);
+                    ageModal.style.display = 'none';
+                } else {
+                    // User is too young
+                    alert('You must be at least 13 years old to use SyntharaAI.');
+                }
+            });
+
+            // Show modals if needed
+            if (!hasCompletedCaptcha) {
+                captchaModal.style.display = 'block';
+            } else if (!hasSelectedCountry) {
+                countryModal.style.display = 'block';
+            } else if (!hasVerifiedAge) {
+                ageModal.style.display = 'block';
+            }
+        });
+
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const chatbotClose = document.getElementById('chatbot-close');
+            const chatbotFullscreen = document.getElementById('chatbot-fullscreen');
+            const chatbotMessages = document.getElementById('chatbot-messages');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            const typingIndicator = document.getElementById('typing-indicator');
+
+            // Check URL parameters to see if we should open the chatbot
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('openChat') === 'true') {
+                chatbotContainer.style.display = 'flex';
+                userInput.focus();
+
+                // Remove the parameter from the URL without refreshing the page
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
+
+            // Toggle chatbot visibility
+            chatbotToggle.addEventListener('click', function() {
+                if (chatbotContainer.style.display === 'flex') {
+                    chatbotContainer.style.display = 'none';
+                } else {
+                    chatbotContainer.style.display = 'flex';
+                    userInput.focus();
+                }
+            });
+
+            // Close chatbot
+            chatbotClose.addEventListener('click', function() {
+                chatbotContainer.style.display = 'none';
+            });
+
+            // Toggle fullscreen
+            chatbotFullscreen.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('fullscreen');
+                if (chatbotContainer.classList.contains('fullscreen')) {
+                    chatbotFullscreen.innerHTML = '<i class="fas fa-compress"></i>';
+                    chatbotFullscreen.title = "Exit fullscreen";
+                } else {
+                    chatbotFullscreen.innerHTML = '<i class="fas fa-expand"></i>';
+                    chatbotFullscreen.title = "Toggle fullscreen";
+                }
+            });
+
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                // Add user message to chat
+                const userMessageElement = document.createElement('div');
+                userMessageElement.classList.add('message', 'user-message');
+                userMessageElement.textContent = message;
+                chatbotMessages.appendChild(userMessageElement);
+
+                // Clear input
+                userInput.value = '';
+
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                // Send message to backend
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+
+                    // Add bot response to chat
+                    const botMessageElement = document.createElement('div');
+                    botMessageElement.classList.add('message', 'bot-message');
+                    botMessageElement.textContent = data.response || "Sorry, I couldn't process your request.";
+                    chatbotMessages.appendChild(botMessageElement);
+
+                    // Scroll to bottom
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    typingIndicator.style.display = 'none';
+
+                    // Add error message
+                    const errorMessageElement = document.createElement('div');
+                    errorMessageElement.classList.add('message', 'bot-message');
+                    errorMessageElement.textContent = "Sorry, there was an error processing your request. Please try again later.";
+                    chatbotMessages.appendChild(errorMessageElement);
+
+                    // Scroll to bottom
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                });
+            }
+
+            // Send message on button click
+            sendBtn.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
