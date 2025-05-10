@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntharaAI - Image Gallery</title>
-    <meta name="description" content="A collection of images showcasing SyntharaAI's visual aesthetic and design philosophy.">
+    <title>SyntharaAI - Interface & Tools</title>
+    <meta name="description" content="See SyntharaAI in action through our interface designs, data visualization tools, and real-world applications for mental health professionals.">
+    <meta name="date" content="2023-05-15">
+    <meta name="pubdate" content="2023-05-15">
+    <meta name="lastmod" content="2023-05-15">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="SyntharaAI - Image Gallery">
-    <meta property="og:description" content="A collection of images showcasing SyntharaAI's visual aesthetic and design philosophy.">
+    <meta property="og:title" content="SyntharaAI - Interface & Tools">
+    <meta property="og:description" content="See SyntharaAI in action through our interface designs, data visualization tools, and real-world applications for mental health professionals.">
     <meta property="og:image" content="assets/images/og-image-devices.png">
     <meta property="og:url" content="https://bniladridas.github.io/gallery.html">
     <meta property="og:url" content="https://bniladridas.vercel.app/gallery.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
+    <meta property="article:published_time" content="2023-05-15">
+    <meta property="article:modified_time" content="2023-05-15">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SyntharaAI - Image Gallery">
-    <meta name="twitter:description" content="A collection of images showcasing SyntharaAI's visual aesthetic and design philosophy.">
+    <meta name="twitter:title" content="SyntharaAI - Interface & Tools">
+    <meta name="twitter:description" content="See SyntharaAI in action through our interface designs, data visualization tools, and real-world applications for mental health professionals.">
     <meta name="twitter:image" content="assets/images/og-image-devices.png">
 
     <!-- Favicon -->
@@ -231,6 +236,28 @@
             border-bottom: 1px dotted var(--text-light);
         }
 
+        .action-link {
+            margin: var(--space-4) 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--space-2) var(--space-3);
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-size: var(--font-size-md);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #235a86;
+        }
+
         /* Footer styles */
         .footer {
             margin-top: var(--space-4);
@@ -253,10 +280,14 @@
         }
 
         /* Chatbot styles */
-        .chatbot-toggle {
+        .chatbot-toggle-wrapper {
             position: fixed;
             bottom: 16px;
             left: 16px;
+            z-index: 999;
+        }
+
+        .chatbot-toggle {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -266,9 +297,73 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 999;
             transition: var(--transition);
             border: 1px solid var(--border);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            background-color: var(--bg-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            border: 1px solid var(--border);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-tooltip p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .chatbot-tooltip-arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 16px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .chatbot-tooltip-arrow:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            top: -5px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-toggle-wrapper:hover .chatbot-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0.2);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(45, 111, 159, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0);
+            }
         }
 
         .chatbot-toggle:hover {
@@ -282,15 +377,15 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <h1>SyntharaAI Image Gallery</h1>
-        <p>A visual exploration of clarity and connection in mental health technology. These images represent our design philosophy of creating clean, harmonious spaces that promote well-being.</p>
+        <h1>SyntharaAI in Action</h1>
+        <p>See how SyntharaAI is transforming mental health technology through our interface designs, user experiences, and real-world applications. These visuals demonstrate our commitment to creating technology that fosters clarity and connection.</p>
 
         <div class="gallery">
             <div class="gallery-item">
                 <img src="assets/images/ahmet-yuksek-ANMqonfLgHo-unsplash.jpg" alt="Minimalist architectural space with clean lines and natural light" class="gallery-image">
                 <div class="gallery-caption">
-                    <div class="gallery-title">Clarity Through Design</div>
-                    <p>Architectural spaces that embody our principles of clarity, simplicity, and thoughtful design.</p>
+                    <div class="gallery-title">SyntharaAI Interface Design</div>
+                    <p>Our user interfaces embody principles of clarity and simplicity, creating intuitive digital spaces that reduce cognitive load for mental health professionals.</p>
                     <p class="photo-credit">Photo by <a href="https://unsplash.com/photos/a-road-winding-between-fields-of-color-ANMqonfLgHo" target="_blank" class="credit-link">Ahmet Yüksek ✪</a> on Unsplash</p>
                 </div>
             </div>
@@ -298,34 +393,61 @@
             <div class="gallery-item">
                 <img src="assets/images/colton-sturgeon-rVy-feCflWM-unsplash.jpg" alt="Serene natural landscape with balanced composition" class="gallery-image">
                 <div class="gallery-caption">
-                    <div class="gallery-title">Natural Balance</div>
-                    <p>Finding harmony between technology and nature to create mental health tools that feel intuitive and calming.</p>
+                    <div class="gallery-title">SyntharaAI Data Visualization</div>
+                    <p>Our AI-powered analytics tools transform complex mental health data into clear, actionable insights that help professionals make better decisions for their clients.</p>
                     <p class="photo-credit">Photo by <a href="https://unsplash.com/photos/a-climber-ascends-a-towering-ice-formation-rVy-feCflWM" target="_blank" class="credit-link">Colton Sturgeon</a> on Unsplash</p>
                 </div>
             </div>
         </div>
 
-        <p>These images are selected to represent SyntharaAI's commitment to creating mental health technology that is both visually calming and functionally clear. Our design philosophy emphasizes removing visual noise and redundancy to create interfaces that support well-being.</p>
+        <p>These examples showcase how SyntharaAI is actively transforming mental health technology through thoughtful design and powerful AI capabilities. Our platform helps mental health professionals deliver better care by providing intuitive tools that enhance their expertise rather than replacing it.</p>
+
+        <div class="action-link">
+            <a href="http://inferencesyntharaai.vercel.app/" class="btn" target="_blank">Try SyntharaAI Demo</a>
+        </div>
 
         <a href="index.html" class="back-link">Back to Home</a>
 
         <!-- Footer with Copyright -->
         <div class="footer">
-            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a></p>
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="https://www.linkedin.com/in/bniladridas/" class="footer-link" target="_blank">Connect with Niladri</a></p>
         </div>
     </div>
 
     <!-- Chatbot -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-comment"></i>
+    <div class="chatbot-toggle-wrapper">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbot-tooltip">
+            <p>Want to learn about our gallery? 💬</p>
+            <div class="chatbot-tooltip-arrow"></div>
+        </div>
     </div>
 
     <script>
         // Chatbot toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+
+            // Show tooltip after 3 seconds
+            setTimeout(function() {
+                chatbotTooltip.style.opacity = '1';
+                chatbotTooltip.style.transform = 'translateY(0)';
+
+                // Hide tooltip after 5 seconds
+                setTimeout(function() {
+                    chatbotTooltip.style.opacity = '0';
+                    chatbotTooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 3000);
 
             chatbotToggle.addEventListener('click', function() {
+                // Hide tooltip when chatbot is clicked
+                chatbotTooltip.style.opacity = '0';
+                chatbotTooltip.style.transform = 'translateY(10px)';
+
                 // Redirect to index.html with a query parameter to open the chatbot
                 window.location.href = 'index.html?openChat=true';
             });

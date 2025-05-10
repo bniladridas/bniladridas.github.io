@@ -849,16 +849,16 @@ GREETINGS = [
 
 # Fallback responses for common queries
 FALLBACK_RESPONSES = {
-    "help": "I can help with information about SyntharaAI, mental health resources, and more. Just ask! 💬",
-    "about": "SyntharaAI is a platform focused on creating tools and spaces for clarity and connection in mental health. 🧠",
-    "mental health": "Mental health is essential for overall wellbeing. SyntharaAI provides tools to support mental health professionals. 💙",
-    "resources": "Some helpful mental health resources include the NIMH, Psychology Today, and Mental Health America. 📚",
-    "tools": "SyntharaAI offers various tools for mental health professionals, including assessment tools and therapy resources. 🛠️",
-    "therapy": "Therapy is a collaborative process between a person and a mental health professional. SyntharaAI supports therapists with digital tools. 🤝",
-    "meditation": "Meditation is a practice that can help reduce stress and improve mental clarity. Try apps like Headspace or Calm. 🧘",
-    "anxiety": "Anxiety is a common feeling of worry or fear. SyntharaAI provides resources for anxiety management. 😰",
-    "depression": "Depression is a common but serious mood disorder. SyntharaAI offers tools to help professionals support those with depression. 💙",
-    "stress": "Stress management techniques include deep breathing, meditation, and physical activity. 🌬️",
+    "help": "I'm here to guide you through SyntharaAI's human-centered approach to mental health technology. How can I support your journey today? 💫",
+    "about": "SyntharaAI bridges technology and human well-being, creating compassionate AI tools that empower mental health professionals and provide moments of clarity and connection for those in need. 🧠",
+    "mental health": "Mental health is the foundation of our well-being and quality of life. SyntharaAI creates technology that honors the complexity of human experience while providing meaningful support for mental health professionals. 💙",
+    "resources": "SyntharaAI offers a carefully curated collection of resources designed to enhance mental health practice, from assessment tools to therapeutic frameworks, all created with our human-centered approach. 📚",
+    "tools": "Our tools are designed with empathy and precision, combining cutting-edge AI with deep understanding of mental health needs to create moments of breakthrough and connection in therapeutic settings. 🛠️",
+    "therapy": "Therapy is a sacred space of human connection and growth. SyntharaAI enhances this relationship by providing therapists with insights and resources that amplify their expertise and intuition. 🤝",
+    "meditation": "Meditation cultivates present-moment awareness and inner peace. SyntharaAI supports mindfulness practices with tools that help mental health professionals integrate these techniques into their work. 🧘",
+    "anxiety": "Anxiety can feel overwhelming, but it's also a normal part of being human. SyntharaAI provides mental health professionals with nuanced resources to help people transform their relationship with anxiety. 😰",
+    "depression": "Depression affects millions worldwide, touching every aspect of life. SyntharaAI's compassionate technology helps mental health professionals create pathways to healing and reconnection. 💙",
+    "stress": "Stress is our body's response to demands and challenges. SyntharaAI helps mental health professionals teach effective stress management through personalized, evidence-based approaches. 🌬️",
     "sleep": "Good sleep is essential for mental health. Establish a regular sleep schedule and create a restful environment. 😴",
     "exercise": "Regular physical activity can help reduce anxiety and depression while improving mood and sleep. 🏃‍♀️",
     "nutrition": "A balanced diet can support brain health and affect mood. Consider foods rich in omega-3s and antioxidants. 🥗",
@@ -867,10 +867,10 @@ FALLBACK_RESPONSES = {
     "github": "Check out Niladri's GitHub profile at https://github.com/bniladridas for more projects. 💻",
 
     # Supply Chain related responses
-    "supply chain": "SyntharaAI's supply chain connects data sources, AI processing, and delivery of mental health insights to professionals and users. 🔄",
-    "data flow": "In SyntharaAI, data flows from secure collection points through ethical AI processing to actionable insights for mental health professionals. 📊",
-    "data sources": "SyntharaAI ethically sources data from consenting users, anonymized health records, and published research to train its models. 📑",
-    "processing": "SyntharaAI processes mental health data using secure, privacy-preserving AI models that prioritize user confidentiality. 🔒",
+    "supply chain": "SyntharaAI's ethical framework weaves together human wisdom and technological innovation, creating a seamless flow from data collection to meaningful insights that honor the complexity of mental health experiences. 🔄",
+    "data flow": "Our data journey begins with consent and respect, flowing through carefully designed AI systems that preserve privacy while uncovering patterns that help mental health professionals create moments of clarity and connection. 📊",
+    "data sources": "We believe in ethical data stewardship. SyntharaAI carefully curates diverse, representative data from consenting participants, ensuring our technology serves all communities with equal care and understanding. 📑",
+    "processing": "At the heart of SyntharaAI is our commitment to privacy-first processing. We've designed our systems to extract meaningful insights while protecting the sacred trust between mental health professionals and those they serve. 🔒",
     "delivery": "SyntharaAI delivers insights through secure APIs, dashboards, and integration with existing mental health platforms. 📲",
     "security": "Data security in SyntharaAI includes end-to-end encryption, anonymization, and strict access controls throughout the supply chain. 🛡️",
     "ethics": "Ethical considerations are built into every stage of SyntharaAI's supply chain, from data collection to insight delivery. ⚖️",
@@ -886,11 +886,11 @@ FALLBACK_RESPONSES = {
     "discrimination": "SyntharaAI has zero tolerance for discrimination and employs rigorous testing to ensure our tools serve all users equally. 🚫",
 
     # Honesty related responses
-    "honesty": "SyntharaAI commits to complete transparency about our capabilities, limitations, data usage, and business practices. 📝",
-    "transparency": "We practice radical transparency by clearly communicating how our AI works, what data we collect, and how we use it. 🔎",
-    "limitations": "SyntharaAI openly acknowledges the limitations of our technology and provides clear guidance on when professional human support is needed. ⚠️",
-    "accuracy": "We're committed to accuracy in all communications and regularly verify the performance of our AI systems against real-world outcomes. ✓",
-    "claims": "SyntharaAI makes only evidence-based claims about our technology's capabilities and effectiveness in supporting mental health. 📊",
+    "honesty": "Truth is the foundation of healing. SyntharaAI embraces radical transparency about our capabilities and limitations, believing that authentic technology creates authentic human connections in mental health care. 📝",
+    "transparency": "We believe you deserve to understand exactly how our technology works. SyntharaAI opens its processes to view, explaining our methods, data practices, and decision-making in clear, accessible language. 🔎",
+    "limitations": "Technology alone cannot heal the human heart. SyntharaAI clearly communicates where our tools end and human wisdom begins, honoring the irreplaceable value of human connection in mental health care. ⚠️",
+    "accuracy": "We hold ourselves to the highest standards of precision and truth. SyntharaAI continuously tests our systems against real-world outcomes, ensuring our technology truly serves those who need it most. ✓",
+    "claims": "In a field where hope matters, false promises cause harm. SyntharaAI makes only evidence-based claims about our technology, grounding our work in research while acknowledging the complex nature of mental health. 📊",
     "marketing": "Our marketing materials accurately represent our services without exaggeration or misleading promises about mental health outcomes. 📢",
     "data transparency": "We provide clear, accessible information about what user data we collect, how we use it, and who has access to it. 📋",
 

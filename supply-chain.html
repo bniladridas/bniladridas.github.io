@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SyntharaAI - Supply Chain, Fair Policy & Legal</title>
     <meta name="description" content="Learn about SyntharaAI's supply chain, fair policy, honesty principles, copyright, legal information, and terminology for mental health technology.">
+    <meta name="date" content="2023-05-15">
+    <meta name="pubdate" content="2023-05-15">
+    <meta name="lastmod" content="2023-05-15">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="SyntharaAI - Supply Chain, Fair Policy & Legal">
@@ -14,6 +17,8 @@
     <meta property="og:url" content="https://bniladridas.vercel.app/supply-chain.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
+    <meta property="article:published_time" content="2023-05-15">
+    <meta property="article:modified_time" content="2023-05-15">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -207,10 +212,14 @@
         }
 
         /* Chatbot styles */
-        .chatbot-toggle {
+        .chatbot-toggle-wrapper {
             position: fixed;
             bottom: 16px;
             left: 16px;
+            z-index: 999;
+        }
+
+        .chatbot-toggle {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -220,9 +229,10 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 999;
             transition: var(--transition);
             border: 1px solid var(--border);
+            position: relative;
+            z-index: 1000;
         }
 
         .chatbot-toggle:hover {
@@ -231,6 +241,69 @@
 
         .chatbot-toggle i {
             font-size: 16px;
+        }
+
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            background-color: var(--bg-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            border: 1px solid var(--border);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-tooltip p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .chatbot-tooltip-arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 16px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .chatbot-tooltip-arrow:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            top: -5px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-toggle-wrapper:hover .chatbot-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0.2);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(45, 111, 159, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0);
+            }
         }
 
         .chatbot-container {
@@ -697,7 +770,7 @@
 
         <!-- Footer with Copyright -->
         <div class="footer">
-            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="#copyright" class="footer-link">Legal Information</a> | <a href="downloads.html" class="footer-link">Documentation</a></p>
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="#copyright" class="footer-link">Legal Information</a> | <a href="downloads.html" class="footer-link">Documentation</a> | <a href="https://www.linkedin.com/in/bniladridas/" class="footer-link" target="_blank">Connect with Niladri</a></p>
         </div>
 
         <style>
@@ -998,8 +1071,14 @@
     </div>
 
     <!-- Chatbot -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-comment"></i>
+    <div class="chatbot-toggle-wrapper">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbot-tooltip">
+            <p>Questions about our ethical framework? 💬</p>
+            <div class="chatbot-tooltip-arrow"></div>
+        </div>
     </div>
 
     <div class="chatbot-container" id="chatbot-container">
@@ -1028,7 +1107,7 @@
             <button class="analyze-btn" id="analyze-btn">Analyze Files with AI</button>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot-message">Need help understanding our supply chain, fair policy, legal information, or terminology? 🔄</div>
+            <div class="message bot-message" id="initial-greeting">Need help understanding our supply chain, fair policy, legal information, or terminology? 🔄</div>
             <div class="typing-indicator" id="typing-indicator">
                 <span></span>
                 <span></span>
@@ -1149,12 +1228,52 @@
             const userInput = document.getElementById('user-input');
             const sendBtn = document.getElementById('send-btn');
             const typingIndicator = document.getElementById('typing-indicator');
+            const initialGreeting = document.getElementById('initial-greeting');
+
+            // Array of possible greeting messages for supply chain page
+            const greetings = [
+                "Welcome to SyntharaAI's ethical framework! 🌿 I'm here to guide you through our values-driven approach to mental health technology.",
+                "Discover SyntharaAI's commitment to transparency and fairness. 🔄 How can I help you understand our ethical practices?",
+                "Hello! 📝 Explore how SyntharaAI builds trust through responsible AI development and clear policies.",
+                "Welcome to our ethical framework page! ⚖️ Learn how we're creating technology that respects human dignity and privacy.",
+                "Hi there! 🌟 I'd be happy to explain how SyntharaAI's values shape every aspect of our mental health solutions."
+            ];
+
+            // Function to set a random greeting message
+            function setRandomGreeting() {
+                const randomIndex = Math.floor(Math.random() * greetings.length);
+                initialGreeting.textContent = greetings[randomIndex];
+            }
+
+            // Set a random greeting on page load
+            setRandomGreeting();
+
+            // Chatbot tooltip functionality
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+
+            // Show tooltip after 3 seconds
+            setTimeout(function() {
+                chatbotTooltip.style.opacity = '1';
+                chatbotTooltip.style.transform = 'translateY(0)';
+
+                // Hide tooltip after 5 seconds
+                setTimeout(function() {
+                    chatbotTooltip.style.opacity = '0';
+                    chatbotTooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 3000);
 
             // Toggle chatbot visibility
             chatbotToggle.addEventListener('click', function() {
+                // Hide tooltip when chatbot is clicked
+                chatbotTooltip.style.opacity = '0';
+                chatbotTooltip.style.transform = 'translateY(10px)';
+
                 if (chatbotContainer.style.display === 'flex') {
                     chatbotContainer.style.display = 'none';
                 } else {
+                    // Set a new random greeting each time the chatbot is opened
+                    setRandomGreeting();
                     chatbotContainer.style.display = 'flex';
                     userInput.focus();
                 }

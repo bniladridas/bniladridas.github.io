@@ -1,6 +1,6 @@
 {
   "name": "syntharaai",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SyntharaAI Website with Gemini-powered chatbot",
   "main": "index.js",
   "scripts": {

@@ -14,6 +14,9 @@
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="theme-color" content="#2a6b9e">
+    <meta name="date" content="2023-05-15">
+    <meta name="pubdate" content="2023-05-15">
+    <meta name="lastmod" content="2023-05-15">
 
     <!-- Favicon -->
     <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
@@ -28,6 +31,8 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
     <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2023-05-15">
+    <meta property="article:modified_time" content="2023-05-15">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -303,10 +308,14 @@
         }
 
         /* Chatbot styles */
-        .chatbot-toggle {
+        .chatbot-toggle-wrapper {
             position: fixed;
             bottom: 16px;
             left: 16px;
+            z-index: 999;
+        }
+
+        .chatbot-toggle {
             width: 48px;
             height: 48px;
             border-radius: 50%;
@@ -316,8 +325,9 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 999;
             transition: var(--transition);
+            position: relative;
+            z-index: 1000;
         }
 
         .chatbot-toggle:hover {
@@ -326,6 +336,69 @@
 
         .chatbot-toggle i {
             font-size: 20px;
+        }
+
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 58px;
+            left: 0;
+            background-color: var(--bg-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            border: 1px solid var(--border);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-tooltip p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .chatbot-tooltip-arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 16px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .chatbot-tooltip-arrow:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            top: -5px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-toggle-wrapper:hover .chatbot-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0.2);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(45, 111, 159, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0);
+            }
         }
 
         .chatbot-container {
@@ -459,56 +532,56 @@
             .editor-container {
                 flex-direction: column;
             }
-            
+
             .canvas-container {
                 min-width: 100% !important;
                 margin-bottom: var(--space-4);
             }
-            
+
             .tools-container {
                 width: 100%;
             }
-            
+
             #svgCanvas {
                 width: 100%;
                 height: auto;
             }
-            
+
             .tool-section {
                 margin-bottom: var(--space-3);
             }
-            
-            input[type="text"], 
-            input[type="number"], 
-            input[type="color"], 
+
+            input[type="text"],
+            input[type="number"],
+            input[type="color"],
             select {
                 width: 100%;
                 margin-bottom: var(--space-2);
             }
-            
+
             button {
                 width: 100%;
                 margin-bottom: var(--space-2);
             }
         }
-        
+
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
             }
-            
+
             .container {
                 padding: var(--space-2);
             }
-            
+
             h1 {
                 font-size: 1.5rem;
             }
-            
+
             h2 {
                 font-size: 1.2rem;
             }
-            
+
             .instructions {
                 padding: var(--space-2);
             }
@@ -600,6 +673,33 @@
         </div>
 
         <a href="index.html" class="back-link">Back to Main Page</a>
+
+        <!-- Footer with Copyright -->
+        <div class="footer">
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="https://www.linkedin.com/in/bniladridas/" class="footer-link" target="_blank">Connect with Niladri</a></p>
+        </div>
+
+        <style>
+            .footer {
+                margin-top: var(--space-4);
+                padding: var(--space-2) 0;
+                font-size: var(--font-size-xs);
+                color: var(--text-light);
+                text-align: center;
+                opacity: 0.8;
+            }
+
+            .footer-link {
+                color: var(--text-light);
+                text-decoration: none;
+                border-bottom: 1px dotted transparent;
+                transition: var(--transition);
+            }
+
+            .footer-link:hover {
+                border-bottom: 1px dotted var(--text-light);
+            }
+        </style>
     </div>
 
     <script>
@@ -813,8 +913,14 @@
     </script>
 
     <!-- Chatbot -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-comment"></i>
+    <div class="chatbot-toggle-wrapper">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbot-tooltip">
+            <p>Need help with the editor? 💬</p>
+            <div class="chatbot-tooltip-arrow"></div>
+        </div>
     </div>
 
     <div class="chatbot-container" id="chatbot-container">
@@ -823,7 +929,7 @@
             <div class="chatbot-close" id="chatbot-close">&times;</div>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot-message">Need help with Open Graph images? ✨</div>
+            <div class="message bot-message" id="initial-greeting">Need help with Open Graph images? ✨</div>
             <div class="typing-indicator" id="typing-indicator">
                 <span></span>
                 <span></span>
@@ -846,12 +952,52 @@
             const userInput = document.getElementById('user-input');
             const sendBtn = document.getElementById('send-btn');
             const typingIndicator = document.getElementById('typing-indicator');
+            const initialGreeting = document.getElementById('initial-greeting');
+
+            // Array of possible greeting messages for OG Editor page
+            const greetings = [
+                "Welcome to SyntharaAI's creative studio! ✨ Let's design social graphics that capture the essence of your mental health work.",
+                "Ready to amplify your mental health message? 🎨 I'm here to help you create visuals that resonate with your audience.",
+                "Hello, creative mind! 🖌️ Let's craft compelling social media graphics that communicate your mental health mission.",
+                "Welcome to our design space! 📊 I'd be happy to guide you through creating visuals that reflect SyntharaAI's human-centered approach.",
+                "Hi there! 🖼️ Let's create social graphics that inspire connection and showcase your commitment to mental health innovation."
+            ];
+
+            // Function to set a random greeting message
+            function setRandomGreeting() {
+                const randomIndex = Math.floor(Math.random() * greetings.length);
+                initialGreeting.textContent = greetings[randomIndex];
+            }
+
+            // Set a random greeting on page load
+            setRandomGreeting();
+
+            // Chatbot tooltip functionality
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+
+            // Show tooltip after 3 seconds
+            setTimeout(function() {
+                chatbotTooltip.style.opacity = '1';
+                chatbotTooltip.style.transform = 'translateY(0)';
+
+                // Hide tooltip after 5 seconds
+                setTimeout(function() {
+                    chatbotTooltip.style.opacity = '0';
+                    chatbotTooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 3000);
 
             // Toggle chatbot visibility
             chatbotToggle.addEventListener('click', function() {
+                // Hide tooltip when chatbot is clicked
+                chatbotTooltip.style.opacity = '0';
+                chatbotTooltip.style.transform = 'translateY(10px)';
+
                 if (chatbotContainer.style.display === 'flex') {
                     chatbotContainer.style.display = 'none';
                 } else {
+                    // Set a new random greeting each time the chatbot is opened
+                    setRandomGreeting();
                     chatbotContainer.style.display = 'flex';
                     userInput.focus();
                 }

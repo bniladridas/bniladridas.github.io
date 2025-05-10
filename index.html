@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niladri Das - SyntharaAI</title>
+    <title>SyntharaAI - Transforming Mental Health Through Human-Centered AI</title>
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Niladri Das - SyntharaAI">
-    <meta name="description" content="SyntharaAI: Creating innovative tools and spaces for clarity and connection in mental health. Developing AI-powered technology to support well-being and enhance therapeutic outcomes.">
-    <meta name="keywords" content="SyntharaAI, Niladri Das, mental health, AI technology, well-being, clarity, connection, therapy, healthcare technology">
+    <meta name="title" content="SyntharaAI - Transforming Mental Health Through Human-Centered AI">
+    <meta name="description" content="SyntharaAI bridges technology and human well-being, creating compassionate AI tools that empower mental health professionals and provide moments of clarity and connection for those in need.">
+    <meta name="keywords" content="SyntharaAI, Niladri Das, mental health, AI technology, well-being, clarity, connection, therapy, healthcare technology, compassionate AI">
     <meta name="author" content="Niladri Das, Founder of SyntharaAI">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="theme-color" content="#2a6b9e">
+    <meta name="date" content="2023-05-15">
+    <meta name="pubdate" content="2023-05-15">
+    <meta name="lastmod" content="2023-05-15">
 
     <!-- Favicon -->
     <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Niladri Das - SyntharaAI">
-    <meta property="og:description" content="SyntharaAI: Creating innovative tools and spaces for clarity and connection in mental health. Developing AI-powered technology to support well-being and enhance therapeutic outcomes.">
+    <meta property="og:title" content="SyntharaAI - Transforming Mental Health Through Human-Centered AI">
+    <meta property="og:description" content="SyntharaAI bridges technology and human well-being, creating compassionate AI tools that empower mental health professionals and provide moments of clarity and connection for those in need.">
     <meta property="og:image" content="assets/images/og-image-devices.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -30,11 +33,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
     <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2023-05-15">
+    <meta property="article:modified_time" content="2023-05-15">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Niladri Das - SyntharaAI">
-    <meta name="twitter:description" content="SyntharaAI: Creating innovative tools and spaces for clarity and connection in mental health. Developing AI-powered technology to support well-being and enhance therapeutic outcomes.">
+    <meta name="twitter:title" content="SyntharaAI - Transforming Mental Health Through Human-Centered AI">
+    <meta name="twitter:description" content="SyntharaAI bridges technology and human well-being, creating compassionate AI tools that empower mental health professionals and provide moments of clarity and connection for those in need.">
     <meta name="twitter:image" content="assets/images/og-image-devices.png">
 
     <!-- Canonical URL -->
@@ -279,11 +284,45 @@
             padding: var(--space-3) var(--space-2);
         }
 
+        .tagline {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-3);
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .brand-story {
+            background-color: var(--primary-light);
+            padding: var(--space-3);
+            border-radius: var(--radius);
+            margin-bottom: var(--space-4);
+            text-align: left;
+        }
+
+        .brand-story p {
+            color: var(--text);
+            font-size: var(--font-size-md);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .mission {
+            font-size: var(--font-size-md);
+            color: var(--text);
+            margin: var(--space-3) 0;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
         /* Chatbot styles */
-        .chatbot-toggle {
+        .chatbot-toggle-wrapper {
             position: fixed;
             bottom: 16px;
             left: 16px;
+            z-index: 999;
+        }
+
+        .chatbot-toggle {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -293,9 +332,10 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 999;
             transition: var(--transition);
             border: 1px solid var(--border);
+            position: relative;
+            z-index: 1000;
         }
 
         .chatbot-toggle:hover {
@@ -304,6 +344,69 @@
 
         .chatbot-toggle i {
             font-size: 16px;
+        }
+
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            background-color: var(--bg-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            border: 1px solid var(--border);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-tooltip p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .chatbot-tooltip-arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 16px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .chatbot-tooltip-arrow:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            top: -5px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-toggle-wrapper:hover .chatbot-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0.2);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(45, 111, 159, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0);
+            }
         }
 
         .chatbot-container {
@@ -597,8 +700,12 @@
             <img src="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" alt="SyntharaAI Logo" class="github-avatar">
         </div>
 
-        <h2>Welcome, I'm Niladri!</h2>
-        <p>Creating tools and spaces for <span class="highlight">clarity and connection</span> in mental health.</p>
+        <h2>Welcome to SyntharaAI</h2>
+        <p class="tagline">Transforming mental health through <span class="highlight">human-centered AI</span> that creates moments of clarity and connection.</p>
+
+        <div class="brand-story">
+            <p>Founded by <a href="https://www.linkedin.com/in/bniladridas/" class="link" target="_blank">Niladri Das</a>, SyntharaAI bridges the gap between technology and human well-being, creating tools that empower mental health professionals and support those in need.</p>
+        </div>
 
         <div class="stats">
             <div>
@@ -613,15 +720,15 @@
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bniladridas&layout=compact&hide_title=true&card_width=280&langs_count=5&theme=moonlight&border_radius=4&hide_border=true" alt="Top Languages"/>
         </div>
 
-        <p>Developing technology to support well-being · <a href="http://inferencesyntharaai.vercel.app/" class="link">Explore My Work</a></p>
+        <p class="mission">Building compassionate technology that understands, responds, and evolves with human needs · <a href="http://inferencesyntharaai.vercel.app/" class="link">Experience SyntharaAI</a></p>
 
         <!-- Buttons -->
         <div class="btn-container">
-            <button class="btn" id="openRulesBtn">View Community Guidelines</button>
-            <a href="og-editor.html" class="btn">Create Open Graph Image</a>
-            <a href="supply-chain.html" class="btn">Supply Chain, Fair Policy & Legal</a>
-            <a href="gallery.html" class="btn">Image Gallery</a>
-            <a href="downloads.html" class="btn">Documentation & Downloads</a>
+            <button class="btn" id="openRulesBtn">Join Our Community</button>
+            <a href="og-editor.html" class="btn">Design Your Social Graphics</a>
+            <a href="supply-chain.html" class="btn">Explore Our Ethical Framework</a>
+            <a href="gallery.html" class="btn">View Our Interface & Tools</a>
+            <a href="downloads.html" class="btn">Get Started with Resources</a>
         </div>
     </div>
 
@@ -891,7 +998,7 @@
 
     <!-- Footer with Copyright -->
     <div class="footer">
-        <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="downloads.html" class="footer-link">Documentation</a></p>
+        <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="downloads.html" class="footer-link">Documentation</a> | <a href="https://www.linkedin.com/in/bniladridas/" class="footer-link" target="_blank">Connect with Niladri</a></p>
     </div>
 
     <style>
@@ -1385,8 +1492,14 @@
     </div>
 
     <!-- Chatbot -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-comment"></i>
+    <div class="chatbot-toggle-wrapper">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbot-tooltip">
+            <p>Ask me about SyntharaAI! 💬</p>
+            <div class="chatbot-tooltip-arrow"></div>
+        </div>
     </div>
 
     <div class="chatbot-container" id="chatbot-container">
@@ -1415,7 +1528,7 @@
             <button class="analyze-btn" id="analyze-btn">Analyze Files with AI</button>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot-message">How can I help today? 👋</div>
+            <!-- Initial conversation will be populated dynamically -->
             <div class="typing-indicator" id="typing-indicator">
                 <span></span>
                 <span></span>
@@ -1440,10 +1553,94 @@
             const sendBtn = document.getElementById('send-btn');
             const typingIndicator = document.getElementById('typing-indicator');
 
+            // Array of possible greeting messages
+            const greetings = [
+                "Welcome to SyntharaAI! 💫 I'm here to guide you through our human-centered mental health technology.",
+                "Hello! 🌱 I'm your SyntharaAI companion, ready to explore how we're transforming mental health care together.",
+                "Greetings! 🌟 Discover how SyntharaAI is creating moments of clarity and connection in mental health.",
+                "Hi there! 💙 I'm here to show you how SyntharaAI bridges technology and human well-being.",
+                "Welcome! 🤝 Let me introduce you to SyntharaAI's compassionate approach to mental health technology."
+            ];
+
+            // Array of follow-up messages
+            const followupMessages = [
+                "SyntharaAI helps mental health professionals deliver better care through AI-powered tools and insights.",
+                "Our platform combines cutting-edge AI with deep understanding of mental health needs.",
+                "We create technology that honors the complexity of human experience while providing meaningful support.",
+                "Our tools are designed to enhance the therapeutic relationship, not replace it.",
+                "Would you like to learn about our ethical framework, tools, or community?"
+            ];
+
+            // Function to create a dynamic conversation flow
+            function createInitialConversation() {
+                // Clear existing messages
+                while (chatbotMessages.firstChild) {
+                    if (chatbotMessages.firstChild.id !== 'typing-indicator') {
+                        chatbotMessages.removeChild(chatbotMessages.firstChild);
+                    } else {
+                        break;
+                    }
+                }
+
+                // Select a random greeting
+                const randomGreetingIndex = Math.floor(Math.random() * greetings.length);
+                const greeting = greetings[randomGreetingIndex];
+
+                // Select 2 random follow-up messages (ensuring they're different)
+                let followupIndices = [];
+                while (followupIndices.length < 2) {
+                    const randomIndex = Math.floor(Math.random() * followupMessages.length);
+                    if (!followupIndices.includes(randomIndex)) {
+                        followupIndices.push(randomIndex);
+                    }
+                }
+
+                // Add the initial greeting with a delay
+                const greetingElement = document.createElement('div');
+                greetingElement.classList.add('message', 'bot-message');
+                greetingElement.textContent = greeting;
+                chatbotMessages.insertBefore(greetingElement, typingIndicator);
+
+                // Show typing indicator for first follow-up
+                setTimeout(() => {
+                    typingIndicator.style.display = 'block';
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    // Add first follow-up message after a delay
+                    setTimeout(() => {
+                        typingIndicator.style.display = 'none';
+
+                        const followup1Element = document.createElement('div');
+                        followup1Element.classList.add('message', 'bot-message');
+                        followup1Element.textContent = followupMessages[followupIndices[0]];
+                        chatbotMessages.insertBefore(followup1Element, typingIndicator);
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                        // Show typing indicator for second follow-up
+                        setTimeout(() => {
+                            typingIndicator.style.display = 'block';
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                            // Add second follow-up message after a delay
+                            setTimeout(() => {
+                                typingIndicator.style.display = 'none';
+
+                                const followup2Element = document.createElement('div');
+                                followup2Element.classList.add('message', 'bot-message');
+                                followup2Element.textContent = followupMessages[followupIndices[1]];
+                                chatbotMessages.insertBefore(followup2Element, typingIndicator);
+                                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 500);
+            }
+
             // Check URL parameters to see if we should open the chatbot
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('openChat') === 'true') {
                 chatbotContainer.style.display = 'flex';
+                createInitialConversation();
                 userInput.focus();
 
                 // Remove the parameter from the URL without refreshing the page
@@ -1451,12 +1648,33 @@
                 window.history.replaceState({}, document.title, newUrl);
             }
 
+            // Chatbot tooltip functionality
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+
+            // Show tooltip after 3 seconds
+            setTimeout(function() {
+                chatbotTooltip.style.opacity = '1';
+                chatbotTooltip.style.transform = 'translateY(0)';
+
+                // Hide tooltip after 5 seconds
+                setTimeout(function() {
+                    chatbotTooltip.style.opacity = '0';
+                    chatbotTooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 3000);
+
             // Toggle chatbot visibility
             chatbotToggle.addEventListener('click', function() {
+                // Hide tooltip when chatbot is clicked
+                chatbotTooltip.style.opacity = '0';
+                chatbotTooltip.style.transform = 'translateY(10px)';
+
                 if (chatbotContainer.style.display === 'flex') {
                     chatbotContainer.style.display = 'none';
                 } else {
+                    // Create a dynamic conversation flow each time the chatbot is opened
                     chatbotContainer.style.display = 'flex';
+                    createInitialConversation();
                     userInput.focus();
                 }
             });

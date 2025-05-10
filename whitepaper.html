@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SyntharaAI Technical Whitepaper - Detailed explanation of AI implementation and architecture">
+    <meta name="keywords" content="SyntharaAI, whitepaper, AI, chatbot, file analysis, mental health, technical architecture">
+    <meta name="author" content="Niladri Das">
+    <meta property="og:title" content="SyntharaAI Technical Whitepaper">
+    <meta property="og:description" content="Detailed explanation of AI implementation and architecture for SyntharaAI">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://bniladridas.github.io/whitepaper.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SyntharaAI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="publication_date" content="2025-05-10">
+    <title>SyntharaAI Technical Whitepaper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 1rem;
+            --space-4: 2rem;
+            --space-5: 4rem;
+
+            /* Colors */
+            --primary: #2d6f9f;
+            --primary-light: #e6f0f7;
+            --secondary: #1a4971;
+            --accent: #4a90e2;
+            --text: #333333;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --bg-white: #f8f9fa;
+            --border: #edf2f7;
+            --success: #2ecc71;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+
+            /* Typography */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-md: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --line-height: 1.6;
+
+            /* Effects */
+            --radius: 0.375rem;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --transition: all 0.2s ease-in-out;
+
+            /* Chatbot */
+            --chatbot-width: 350px;
+            --chatbot-height: 450px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4a90e2;
+                --primary-light: #1a2733;
+                --text: #e0e0e0;
+                --text-light: #a0a0a0;
+                --bg: #121212;
+                --bg-white: #1e1e1e;
+                --border: #333;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: var(--line-height);
+            color: var(--text);
+            background-color: var(--bg);
+            padding: var(--space-3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-3);
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: var(--font-size-3xl);
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .version {
+            font-size: var(--font-size-md);
+            color: var(--text-light);
+            margin-bottom: var(--space-3);
+        }
+
+        h2 {
+            font-size: var(--font-size-2xl);
+            color: var(--primary);
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-3);
+            padding-bottom: var(--space-1);
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: var(--font-size-xl);
+            color: var(--secondary);
+            margin-top: var(--space-3);
+            margin-bottom: var(--space-2);
+        }
+
+        h4 {
+            font-size: var(--font-size-lg);
+            color: var(--text);
+            margin-top: var(--space-3);
+            margin-bottom: var(--space-2);
+        }
+
+        p {
+            margin-bottom: var(--space-3);
+        }
+
+        ul, ol {
+            margin-bottom: var(--space-3);
+            padding-left: var(--space-4);
+        }
+
+        li {
+            margin-bottom: var(--space-1);
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-white);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius);
+            font-size: var(--font-size-sm);
+            border: 1px solid var(--border);
+        }
+
+        pre {
+            background-color: var(--bg-white);
+            padding: var(--space-3);
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin-bottom: var(--space-3);
+            border: 1px solid var(--border);
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: var(--space-4);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            border-bottom: 1px dotted transparent;
+        }
+
+        .back-link:hover {
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        .back-link:before {
+            content: "←";
+            margin-right: var(--space-1);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer {
+            margin-top: var(--space-5);
+            padding: var(--space-3) 0;
+            text-align: center;
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-2);
+            }
+
+            h1 {
+                font-size: var(--font-size-2xl);
+            }
+
+            h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            h3 {
+                font-size: var(--font-size-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SyntharaAI Technical Whitepaper</h1>
+            <div class="version">Version 1.0.2 - Updated May 10, 2025</div>
+        </header>
+
+        <h2>Executive Summary</h2>
+        <p>SyntharaAI represents a novel approach to combining conversational AI with specialized file analysis capabilities. This whitepaper details the technical implementation, AI integration strategies, and domain-specific optimizations that enable SyntharaAI to provide intelligent analysis across multiple file types while maintaining robust fallback mechanisms for reliability.</p>
+
+        <h2>1. Introduction</h2>
+
+        <h3>1.1 Problem Statement</h3>
+        <p>Organizations face increasing challenges in extracting meaningful insights from diverse file formats. Traditional analysis tools often:</p>
+        <ul>
+            <li>Require specialized knowledge to operate</li>
+            <li>Focus on specific file formats only</li>
+            <li>Lack contextual understanding of content</li>
+            <li>Cannot adapt to domain-specific needs</li>
+        </ul>
+
+        <h3>1.2 Solution Overview</h3>
+        <p>SyntharaAI addresses these challenges through:</p>
+        <ul>
+            <li>A unified interface for analyzing multiple file types</li>
+            <li>AI-powered content understanding with domain awareness</li>
+            <li>Graceful degradation when AI services are unavailable</li>
+            <li>Specialized knowledge in supply chain management</li>
+            <li>Accessible natural language interaction</li>
+        </ul>
+
+        <h2>2. Technical Architecture</h2>
+
+        <h3>2.1 System Components</h3>
+        <p>SyntharaAI employs a modular architecture with the following key components:</p>
+
+        <ol>
+            <li><strong>User Interface Layer</strong>
+                <ul>
+                    <li>Dynamic chat interface with multi-message conversation flows</li>
+                    <li>Interactive tooltips and engagement prompts</li>
+                    <li>Responsive design for mobile and desktop devices</li>
+                    <li>File upload and management components</li>
+                    <li>Analysis visualization components</li>
+                    <li>Professional networking integration (LinkedIn)</li>
+                </ul>
+            </li>
+            <li><strong>API Layer</strong>
+                <ul>
+                    <li>RESTful endpoints for chat and file processing</li>
+                    <li>Request validation and error handling</li>
+                    <li>Response formatting and delivery</li>
+                </ul>
+            </li>
+            <li><strong>Processing Layer</strong>
+                <ul>
+                    <li>File type detection and routing</li>
+                    <li>Format-specific analysis engines</li>
+                    <li>Metadata extraction utilities</li>
+                </ul>
+            </li>
+        </ol>
+
+        <a href="downloads.html" class="back-link">Back to Downloads</a>
+
+        <div class="footer">
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="https://www.linkedin.com/in/bniladridas/" target="_blank">Connect with Niladri</a></p>
+        </div>
+    </div>
+</body>
+</html>

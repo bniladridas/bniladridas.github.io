@@ -14,6 +14,9 @@
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="theme-color" content="#2a6b9e">
+    <meta name="date" content="2023-05-15">
+    <meta name="pubdate" content="2023-05-15">
+    <meta name="lastmod" content="2023-05-15">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="SyntharaAI - Downloads">
@@ -23,6 +26,8 @@
     <meta property="og:url" content="https://bniladridas.vercel.app/downloads.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SyntharaAI">
+    <meta property="article:published_time" content="2023-05-15">
+    <meta property="article:modified_time" content="2023-05-15">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -315,10 +320,14 @@
         }
 
         /* Chatbot styles */
-        .chatbot-toggle {
+        .chatbot-toggle-wrapper {
             position: fixed;
             bottom: 16px;
             left: 16px;
+            z-index: 999;
+        }
+
+        .chatbot-toggle {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -328,9 +337,10 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 999;
             transition: var(--transition);
             border: 1px solid var(--border);
+            position: relative;
+            z-index: 1000;
         }
 
         .chatbot-toggle:hover {
@@ -339,6 +349,69 @@
 
         .chatbot-toggle i {
             font-size: 16px;
+        }
+
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            background-color: var(--bg-white);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            border: 1px solid var(--border);
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-tooltip p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+            color: var(--text);
+            text-align: center;
+        }
+
+        .chatbot-tooltip-arrow {
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 16px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .chatbot-tooltip-arrow:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            top: -5px;
+            left: 3px;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-toggle-wrapper:hover .chatbot-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0.2);
+            }
+            70% {
+                box-shadow: 0 0 0 6px rgba(45, 111, 159, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 111, 159, 0);
+            }
         }
 
         .chatbot-container {
@@ -706,7 +779,7 @@
                 <p>Comprehensive documentation covering all aspects of the SyntharaAI system, including architecture, features, API endpoints, and usage guides.</p>
                 <div class="btn-group">
                     <a href="DOCUMENTATION.md" download class="download-btn">Download Documentation</a>
-                    <a href="DOCUMENTATION.md" target="_blank" class="view-btn">View Online</a>
+                    <a href="documentation.html" target="_blank" class="view-btn">View Online</a>
                 </div>
             </div>
 
@@ -719,7 +792,7 @@
                 <p>Detailed technical whitepaper explaining the AI implementation, file analysis techniques, and technical architecture of SyntharaAI.</p>
                 <div class="btn-group">
                     <a href="WHITEPAPER.md" download class="download-btn">Download Whitepaper</a>
-                    <a href="WHITEPAPER.md" target="_blank" class="view-btn">View Online</a>
+                    <a href="whitepaper.html" target="_blank" class="view-btn">View Online</a>
                 </div>
             </div>
 
@@ -732,7 +805,7 @@
                 <p>Complete version history and changelog detailing all features, improvements, and fixes in each release of SyntharaAI.</p>
                 <div class="btn-group">
                     <a href="CHANGELOG.md" download class="download-btn">Download Changelog</a>
-                    <a href="CHANGELOG.md" target="_blank" class="view-btn">View Online</a>
+                    <a href="changelog.html" target="_blank" class="view-btn">View Online</a>
                 </div>
             </div>
         </div>
@@ -753,13 +826,19 @@
 
         <!-- Footer with Copyright -->
         <div class="footer">
-            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a></p>
+            <p>&copy; 2025 SyntharaAI. All rights reserved. | <a href="supply-chain.html#copyright" class="footer-link">Legal Information</a> | <a href="https://www.linkedin.com/in/bniladridas/" class="footer-link" target="_blank">Connect with Niladri</a></p>
         </div>
     </div>
 
     <!-- Chatbot Toggle -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-comment"></i>
+    <div class="chatbot-toggle-wrapper">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbot-tooltip">
+            <p>Need help finding resources? 💬</p>
+            <div class="chatbot-tooltip-arrow"></div>
+        </div>
     </div>
 
     <!-- Chatbot Container -->
@@ -774,7 +853,7 @@
             </div>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot-message">Need help with documentation? Ask me about SyntharaAI resources! 📚</div>
+            <!-- Initial conversation will be populated dynamically -->
             <div class="typing-indicator" id="typing-indicator">
                 <span></span>
                 <span></span>
@@ -1063,10 +1142,94 @@
             const sendBtn = document.getElementById('send-btn');
             const typingIndicator = document.getElementById('typing-indicator');
 
+            // Array of possible greeting messages for documentation page
+            const greetings = [
+                "Welcome to SyntharaAI's resource center! 📚 I'm here to help you find the perfect tools to enhance your mental health practice.",
+                "Ready to transform your approach to mental health care? 🌱 Let me guide you to the resources that will empower your work.",
+                "Hello! 💫 Discover SyntharaAI's comprehensive toolkit designed to create moments of clarity and connection in mental health.",
+                "Welcome to our resources page! 🔍 What specific aspect of mental health technology are you looking to explore today?",
+                "Hi there! 📋 I'd be happy to help you navigate SyntharaAI's resources and find exactly what you need to support your practice."
+            ];
+
+            // Array of follow-up messages for documentation page
+            const followupMessages = [
+                "Our documentation includes technical guides, whitepapers, and the latest changelog for SyntharaAI v1.0.2.",
+                "You can download our comprehensive documentation or view it directly in your browser.",
+                "The technical whitepaper explains our AI implementation and architecture in detail.",
+                "Our latest changelog (May 10, 2025) includes updates to the chatbot interface and mobile responsiveness.",
+                "Would you like me to explain any specific document or feature in more detail?"
+            ];
+
+            // Function to create a dynamic conversation flow
+            function createInitialConversation() {
+                // Clear existing messages
+                while (chatbotMessages.firstChild) {
+                    if (chatbotMessages.firstChild.id !== 'typing-indicator') {
+                        chatbotMessages.removeChild(chatbotMessages.firstChild);
+                    } else {
+                        break;
+                    }
+                }
+
+                // Select a random greeting
+                const randomGreetingIndex = Math.floor(Math.random() * greetings.length);
+                const greeting = greetings[randomGreetingIndex];
+
+                // Select 2 random follow-up messages (ensuring they're different)
+                let followupIndices = [];
+                while (followupIndices.length < 2) {
+                    const randomIndex = Math.floor(Math.random() * followupMessages.length);
+                    if (!followupIndices.includes(randomIndex)) {
+                        followupIndices.push(randomIndex);
+                    }
+                }
+
+                // Add the initial greeting with a delay
+                const greetingElement = document.createElement('div');
+                greetingElement.classList.add('message', 'bot-message');
+                greetingElement.textContent = greeting;
+                chatbotMessages.insertBefore(greetingElement, typingIndicator);
+
+                // Show typing indicator for first follow-up
+                setTimeout(() => {
+                    typingIndicator.style.display = 'block';
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    // Add first follow-up message after a delay
+                    setTimeout(() => {
+                        typingIndicator.style.display = 'none';
+
+                        const followup1Element = document.createElement('div');
+                        followup1Element.classList.add('message', 'bot-message');
+                        followup1Element.textContent = followupMessages[followupIndices[0]];
+                        chatbotMessages.insertBefore(followup1Element, typingIndicator);
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                        // Show typing indicator for second follow-up
+                        setTimeout(() => {
+                            typingIndicator.style.display = 'block';
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                            // Add second follow-up message after a delay
+                            setTimeout(() => {
+                                typingIndicator.style.display = 'none';
+
+                                const followup2Element = document.createElement('div');
+                                followup2Element.classList.add('message', 'bot-message');
+                                followup2Element.textContent = followupMessages[followupIndices[1]];
+                                chatbotMessages.insertBefore(followup2Element, typingIndicator);
+                                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 500);
+            }
+
             // Check URL parameters to see if we should open the chatbot
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('openChat') === 'true') {
                 chatbotContainer.style.display = 'flex';
+                createInitialConversation();
                 userInput.focus();
 
                 // Remove the parameter from the URL without refreshing the page
@@ -1074,12 +1237,33 @@
                 window.history.replaceState({}, document.title, newUrl);
             }
 
+            // Chatbot tooltip functionality
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+
+            // Show tooltip after 3 seconds
+            setTimeout(function() {
+                chatbotTooltip.style.opacity = '1';
+                chatbotTooltip.style.transform = 'translateY(0)';
+
+                // Hide tooltip after 5 seconds
+                setTimeout(function() {
+                    chatbotTooltip.style.opacity = '0';
+                    chatbotTooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 3000);
+
             // Toggle chatbot visibility
             chatbotToggle.addEventListener('click', function() {
+                // Hide tooltip when chatbot is clicked
+                chatbotTooltip.style.opacity = '0';
+                chatbotTooltip.style.transform = 'translateY(10px)';
+
                 if (chatbotContainer.style.display === 'flex') {
                     chatbotContainer.style.display = 'none';
                 } else {
+                    // Create a dynamic conversation flow each time the chatbot is opened
                     chatbotContainer.style.display = 'flex';
+                    createInitialConversation();
                     userInput.focus();
                 }
             });

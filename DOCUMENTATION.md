@@ -1,5 +1,7 @@
 # SyntharaAI Documentation
 
+**Version 1.0.2 - Updated May 10, 2025**
+
 ## Overview
 
 SyntharaAI is an advanced AI-powered chatbot and file analysis system designed to provide intelligent responses and detailed file analysis. The system combines natural language processing with specialized file analysis capabilities to deliver insights across various file types and domains, with particular expertise in supply chain management.
@@ -35,7 +37,11 @@ SyntharaAI is an advanced AI-powered chatbot and file analysis system designed t
 - **Natural Language Understanding**: Comprehension of user queries and context
 - **Domain Knowledge**: Specialized knowledge in supply chain management
 - **Contextual Responses**: Maintains conversation context for coherent interactions
+- **Dynamic Conversation Flow**: Presents multiple sequential messages with typing indicators
+- **Personalized Greetings**: Randomized welcome messages tailored to each page
+- **Visual Engagement**: Tooltip prompts to encourage user interaction
 - **GitHub Integration**: Provides information about the developer's GitHub projects
+- **LinkedIn Integration**: Direct connection to the developer's professional profile
 
 ### File Analysis System
 

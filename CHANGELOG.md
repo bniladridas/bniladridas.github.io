@@ -1,5 +1,14 @@
 # SyntharaAI Changelog
 
+## Version 1.0.2 (2025-05-10)
+- Enhanced chatbot with dynamic multi-message conversation flow
+- Improved "SyntharaAI in Action" page with clearer demonstrations of interface and tools
+- Added Niladri Das's LinkedIn profile link across all pages
+- Added publication date meta tags to all pages for improved SEO
+- Updated button text for better clarity and user experience
+- Added direct demo link on the interface showcase page
+- Fixed mobile responsiveness issues on all pages
+
 ## Version 1.0.1 (2025-05-10)
 - Fixed API key validation for Gemini integration
 - Improved error handling and user feedback
