@@ -26,13 +26,18 @@ cat > .vercel/output/config.json << EOL
 }
 EOL
 
-# Create .env file for Vercel if it doesn't exist
-if [ ! -f ".vercel/output/functions/api/.env" ]; then
+# Create .env file for Vercel using the local .env file if it exists
+if [ -f ".env" ]; then
+  cp .env .vercel/output/functions/api/.env
+  echo "Copied existing .env file to functions/api/"
+else
+  # Create default .env file if local one doesn't exist
   cat > .vercel/output/functions/api/.env << EOL
-GEMINI_API_KEY=your_api_key_here
+GEMINI_API_KEY=REMOVED_API_KEY
 ENABLE_AI_ANALYSIS=true
 FLASK_ENV=production
 EOL
+  echo "Created default .env file with provided Gemini API key"
 fi
 
 echo "Build completed successfully!"
