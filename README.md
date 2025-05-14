@@ -1,58 +1,58 @@
 <div align="center">
-  <img src="assets/images/og-image-devices.svg" alt="SyntharaAI Development" width="800">
+  <img src="assets/images/og-image-devices.svg" alt="SyntharaAI Development" width="600">
 </div>
 
-# Niladri's Profile
+# Niladri
 
-Developer focused on AI, system design, and open-source innovation.
+**Crafting the future of AI, one line at a time.**
 
 ```cpp
 #include <iostream>
 
-void buildWhatMatters() {
-    std::cout << "Crafting code for clarity & connection." << std::endl;
+void create() {
+    std::cout << "Building clarity. Connecting ideas." << std::endl;
 }
 
 int main() {
-    buildWhatMatters();
+    create();
     return 0;
 }
 ```
 
 ## About
 
-- **Focus**: AI-driven applications, scalable architectures.
-- **Skills**: AI/ML, web development (HTML, CSS, JavaScript), backend systems (Python, Flask), open-source contributions.
-- **Vision**: Simplify complexity and amplify impact through technology.
+I’m a developer passionate about AI, system design, and open-source innovation. My work simplifies complexity and amplifies impact through elegant, scalable solutions.
 
-## Featured Project: SyntharaAI Website
+- **Focus**: AI-driven applications, robust architectures.  
+- **Skills**: AI/ML, Python (Flask), web development (HTML, CSS, JavaScript), open-source contributions.  
+- **Vision**: Technology that empowers and inspires.
 
-- **Description**: Modern web platform with AI-powered tools.
-- **Features**:
-  - Responsive UI with custom Open Graph image editor.
-  - Gemini-powered chatbot.
-  - Flask backend on Vercel.
-- **Built with**: [Augment Code](https://www.augmentcode.com/).
-- **Links**: [Portfolio](bniladridas.github.io), [Repo](#).
+## Featured Project: SyntharaAI
 
-## Security Practices
+A modern web platform powered by AI, designed to delight and perform.
 
-This repository implements several security best practices:
+- **What it does**: Delivers intuitive tools with a responsive UI.  
+- **Highlights**:  
+  - Custom Open Graph image editor.  
+  - Gemini-powered chatbot.  
+  - Flask backend, seamlessly deployed on Vercel.  
+- **Built with**: [Augment Code](https://www.augmentcode.com/).  
+- **Explore**: [Portfolio](bniladridas.github.io) | [Repo](#).
 
-### Git Secret Removal
+## Security, Done Right
 
-We performed a Git secret removal operation to eliminate sensitive API keys from the repository history. This process:
+SyntharaAI is built with trust in mind:  
 
-- Removed hardcoded credentials from the entire Git history
-- Rewrote commits to eliminate traces of sensitive information
-- Preserved repository functionality while eliminating security risks
+- **Git Secret Removal**: Sensitive API keys erased from history, preserving functionality.  
+- **API Key Management**: Securely stored as environment variables, never hardcoded.  
+- **Deployment**: Vercel’s secure environment ensures peace of mind.
 
-### API Key Management
+## Let’s Connect
 
-- All API keys are now stored as environment variables
-- No sensitive credentials are hardcoded in the source code
-- Vercel environment variables are used for secure deployment
+Ideas, collaborations, or just a chat about tech—I’m all in.  
+Reach me at [Portfolio](bniladridas.github.io).  
 
-## Contact
-
-Open to ideas, collaborations, or discussions. Connect via [Portfolio](bniladridas.github.io).
+**To run SyntharaAI**:  
+1. Verify Python 3.  
+2. Install dependencies: `python3 -m pip install -r requirements.txt`.  
+3. Launch: `python3 chatbot.py`.

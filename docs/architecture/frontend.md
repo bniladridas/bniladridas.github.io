@@ -14,7 +14,6 @@ The frontend is structured around several HTML files:
 - `gallery.html`: Gallery of SyntharaAI features and capabilities
 - `downloads.html`: Resources and downloads page
 - `supply-chain.html`: Information about supply chain features
-- `og-editor.html`: Open Graph image editor
 
 ### CSS Styling
 
@@ -187,7 +186,6 @@ bniladridas.github.io/
 ├── gallery.html         # Gallery page
 ├── downloads.html       # Downloads page
 ├── supply-chain.html    # Supply chain page
-├── og-editor.html       # Open Graph editor
 └── assets/
     ├── css/             # CSS styles
     ├── js/              # JavaScript files
