@@ -33,7 +33,7 @@ A modern web platform powered by AI, designed to delight and perform.
 
 - **What it does**: Delivers intuitive tools with a responsive UI.  
 - **Highlights**:  
-  - Custom Open Graph image editor.  
+  - Custom Open Graph image editor.   ❌
   - Gemini-powered chatbot.  
   - Flask backend, seamlessly deployed on Vercel.  
 - **Built with**: [Augment Code](https://www.augmentcode.com/).  
