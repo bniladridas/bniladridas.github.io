@@ -37,7 +37,7 @@ A modern web platform powered by AI, designed to delight and perform.
   - Gemini-powered chatbot.  
   - Flask backend, seamlessly deployed on Vercel.  
 - **Built with**: [Augment Code](https://www.augmentcode.com/).  
-- **Explore**: [Portfolio](bniladridas.github.io) | [Repo](#).
+- **Explore**: [Portfolio](https://bniladridas.github.io) | [Repo](#).
 
 ## Security, Done Right
 
@@ -50,7 +50,7 @@ SyntharaAI is built with trust in mind:
 ## Let’s Connect
 
 Ideas, collaborations, or just a chat about tech—I’m all in.  
-Reach me at [Portfolio](bniladridas.github.io).  
+Reach me at [Portfolio](https://bniladridas.vercel.app).  
 
 **To run SyntharaAI**:  
 1. Verify Python 3.  
