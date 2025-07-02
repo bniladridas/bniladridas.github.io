@@ -12,6 +12,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title, index, onFullscre
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const togglePlay = () => {
     if (videoRef) {
@@ -35,6 +36,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title, index, onFullscre
     setIsPlaying(false);
   };
 
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="group relative">
       {/* Gradient Border Container */}
@@ -44,6 +49,11 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title, index, onFullscre
         
         {/* Video Container */}
         <div className="relative bg-gray-950 rounded-md overflow-hidden">
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="w-8 h-8 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+            </div>
+          )}
           <video
             ref={setVideoRef}
             src={src}
@@ -51,6 +61,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title, index, onFullscre
             muted={isMuted}
             onEnded={handleVideoEnd}
             onClick={togglePlay}
+            preload="metadata"
+            playsInline
+            controlsList="nodownload"
+            disablePictureInPicture
+            onLoadedData={handleLoadedData}
+            style={isLoading ? { visibility: 'hidden' } : {}}
           />
           
           <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
@@ -127,6 +143,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ src, title, isOpen,
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -168,6 +185,10 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ src, title, isOpen,
     setIsPlaying(false);
   };
 
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -180,6 +201,11 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ src, title, isOpen,
       </button>
 
       <div className="relative w-full h-full flex items-center justify-center p-12">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="w-12 h-12 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+          </div>
+        )}
         <video
           ref={setVideoRef}
           src={src}
@@ -188,6 +214,12 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ src, title, isOpen,
           onEnded={handleVideoEnd}
           onClick={togglePlay}
           autoPlay
+          preload="metadata"
+          playsInline
+          controlsList="nodownload"
+          disablePictureInPicture
+          onLoadedData={handleLoadedData}
+          style={isLoading ? { visibility: 'hidden' } : {}}
         />
 
         <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
