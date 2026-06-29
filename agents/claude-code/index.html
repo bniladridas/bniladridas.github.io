@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Claude Code: CLI Agents</title>
+  <meta name="description" content="Notes on using Claude Code for everyday engineering work.">
+  <meta property="og:title" content="Claude Code: CLI Agents">
+  <meta property="og:description" content="Notes on using Claude Code for everyday engineering work.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/claude-code/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/claude-code/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Claude Code</h1>
+    <img src="/assets/logos/claude-code.svg" alt="Claude Code logo" class="agent-logo">
+    <p><span class="verdict-badge">Daily driver</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Anthropic</dd>
+      <dt>Version Reviewed</dt>
+      <dd>0.12.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started using Claude Code in early 2025, a few weeks after its initial release. It operates directly in the terminal with filesystem access, command execution, and context management. Over time it became the tool I reach for first in most situations.</p>
+    <p>The terminal integration is what kept me using it. It sits alongside git, build tools, and other CLI utilities without getting in the way. After several months of daily use, it became a natural part of my workflow.</p>
+    <figure>
+      <img src="/assets/screenshots/claude-code.webp" alt="Claude Code reviewing a multi-file change in the terminal." loading="lazy" width="800">
+      <figcaption>Claude Code reviewing a multi-file change in the terminal.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>This was the first agent that made me stop thinking about the tool and focus on the work.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Code generation quality is consistently good. It respects existing project conventions.</li>
+      <li>Multi-file refactoring works reliably. I have used it to restructure several projects.</li>
+      <li>Asks clarifying questions instead of guessing when requirements are ambiguous.</li>
+      <li>Streaming output is fast enough to follow along without waiting.</li>
+      <li>Repository understanding is strong. It indexes the project and keeps context well.</li>
+      <li>The permission system for command execution is well designed.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>API costs accumulate quickly with heavy use. I had to adjust my usage patterns.</li>
+      <li>Occasionally over-engineers solutions. A simpler approach would often suffice.</li>
+      <li>Can be verbose in its reasoning output during long sessions.</li>
+      <li>Requires API connectivity for all operations. No meaningful offline mode.</li>
+      <li>Configuration options are limited compared to more customizable tools.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>General-purpose coding across the full stack. I use it for feature implementation, refactoring, debugging, and codebase exploration. It works particularly well with TypeScript, Python, and Rust.</p>
+    <h2>Engineering Maturity</h2>
+    <p>High. It understands project structure, dependency graphs, and language-specific patterns. I found it handles monorepos well. It respects existing code conventions without requiring explicit configuration.</p>
+    <h2>Product Maturity</h2>
+    <p>High. Installation is straightforward through npm or direct download. Authentication is simple. The CLI follows expected Unix conventions. The permission model for filesystem and shell access feels well-considered.</p>
+    <h2>Developer Experience</h2>
+    <p>Setup took a few minutes. The CLI gives clear error messages and sensible defaults. The real-time streaming output makes it easy to follow what the agent is doing. I appreciated not having to read a manual before getting productive.</p>
+    <h2>Workflow Integration</h2>
+    <p>Sits naturally alongside existing terminal tools. I use it with git, build systems, and other CLI utilities without friction. It respects project-level configuration files.</p>
+    <h2>Performance</h2>
+    <p>Streaming responses are fast. Context indexing completes quickly on most projects. Performance degrades gracefully on larger codebases, though I noticed it on projects over 100k lines.</p>
+    <h2>Documentation</h2>
+    <p>Well maintained. Covers installation, configuration, permissions, and troubleshooting. Examples reflect real use cases I could relate to.</p>
+    <h2>Pricing</h2>
+    <p>API usage-based pricing through Anthropic. Heavy daily use can accumulate substantial charges. The initial API credit was enough to evaluate it thoroughly.</p>
+    <h2>Platform Support</h2>
+    <p>macOS and Linux. I have not tried Windows, though it may work through WSL.</p>
+    <h2>Verdict</h2>
+    <p>Claude Code is the CLI agent I rely on most in my daily work. It became my daily driver because the combination of code quality, repository understanding, and thoughtful design works well for the kind of engineering I do. I compare other tools against it.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.12.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-11</span> Updated review for version 0.8.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-03</span> Initial review (version 0.4.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

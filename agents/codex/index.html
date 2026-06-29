@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Codex: CLI Agents</title>
+  <meta name="description" content="Notes on using Codex for CLI-based code generation.">
+  <meta property="og:title" content="Codex: CLI Agents">
+  <meta property="og:description" content="Notes on using Codex for CLI-based code generation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/codex/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/codex/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Codex</h1>
+    <img src="/assets/logos/codex.svg" alt="Codex logo" class="agent-logo">
+    <p><span class="verdict-badge">Useful in specific situations</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Cursor / OpenAI</dd>
+      <dt>Version Reviewed</dt>
+      <dd>0.10.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I tried Codex in late 2024 when it was released by the Cursor team. It is a command-line AI coding tool with sandboxed execution, file editing, and OpenAI model integration. It was designed as a standalone CLI companion to the Cursor editor.</p>
+    <p>I found Codex useful for quick code generation tasks where I did not need deep project context. It is reliable for well-defined, single-file tasks.</p>
+    <figure>
+      <img src="/assets/screenshots/codex.png" alt="Codex CLI terminal interface." loading="lazy" width="800">
+      <figcaption>Codex CLI terminal interface.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>This solved one problem well, but I rarely opened it for anything else.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>The terminal interface is clean and well designed. Output formatting is clear.</li>
+      <li>Sandboxed command execution adds a safety layer for file operations.</li>
+      <li>Tight integration with OpenAI models provides consistent results.</li>
+      <li>Reliable for single-file edits and straightforward code generation.</li>
+      <li>Installation and authentication are simple.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Repository understanding is limited. It does not compare well with Claude Code or Aider.</li>
+      <li>Context handling degrades on longer tasks or multi-file changes.</li>
+      <li>Limited model choice and configuration options.</li>
+      <li>Updates are less frequent than major competitors.</li>
+      <li>Code quality is inconsistent across different problem domains.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Quick code generation and prototyping. I found Codex useful when I need rapid answers or single-file implementations without complex project context.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium. It handles straightforward tasks competently but struggles with complex multi-file changes. Best suited for well-scoped problems with clear requirements.</p>
+    <h2>Product Maturity</h2>
+    <p>Medium. The CLI is polished and sandboxed execution is a thoughtful safety feature. The tool feels less actively developed than the Cursor editor, and features lag behind competitors.</p>
+    <h2>Developer Experience</h2>
+    <p>Simple to get started. The CLI is clean and well organized. Limited configuration keeps things simple but can feel restrictive for advanced use.</p>
+    <h2>Workflow Integration</h2>
+    <p>The sandboxed execution model makes it safe for experimental work. Best for one-off questions and quick code generation. Less suitable for sustained development sessions.</p>
+    <h2>Performance</h2>
+    <p>Fast response times for straightforward queries. Performance holds up well for typical single-file tasks.</p>
+    <h2>Documentation</h2>
+    <p>Minimal but adequate. Setup and basic usage are covered. Advanced use cases are less documented.</p>
+    <h2>Pricing</h2>
+    <p>Usage-based through the OpenAI API. A free tier is available with limited usage.</p>
+    <h2>Platform Support</h2>
+    <p>macOS, Linux, Windows. Cross-platform via npm.</p>
+    <h2>Verdict</h2>
+    <p>Codex is useful for specific situations, particularly quick code generation and prototyping. It is not as capable as Claude Code or Aider for complex work. Its simplicity and clean design make it a reasonable choice for lightweight tasks.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.10.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-06</span> Updated review for version 0.7.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2024-10</span> Initial review (version 0.3.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>OpenHands: CLI Agents</title>
+  <meta name="description" content="Notes on using OpenHands for autonomous coding.">
+  <meta property="og:title" content="OpenHands: CLI Agents">
+  <meta property="og:description" content="Notes on using OpenHands for autonomous coding.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/openhands/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/openhands/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>OpenHands</h1>
+    <img src="/assets/logos/openhands.svg" alt="OpenHands logo" class="agent-logo">
+    <p><span class="verdict-badge">Useful in specific situations</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>All-Hands-AI</dd>
+      <dt>Version Reviewed</dt>
+      <dd>0.9.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Web UI</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started following OpenHands (formerly OpenDevin) in early 2025. It is an open-source platform for AI coding agents that provides both a web interface and command-line access. The project focuses on autonomous agents that can write code, use the terminal, browse the web, and interact with APIs.</p>
+    <p>I found it useful for experimentation and understanding where autonomous coding agents are heading. It is not yet reliable enough for my daily production work.</p>
+    <figure>
+      <img src="/assets/screenshots/openhands.png" alt="OpenHands web interface showing an autonomous coding session." loading="lazy" width="800">
+      <figcaption>OpenHands web interface showing an autonomous coding session.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>I learned a lot about what autonomous agents could become, even when the tool was not ready for my daily work.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>The scope is ambitious. Agents can browse the web, run code, and interact with external services.</li>
+      <li>Open source with an active community contributing regularly.</li>
+      <li>The sandboxed execution environment adds a safety layer.</li>
+      <li>Plugin architecture extends agent capabilities.</li>
+      <li>Supports multiple LLM backends including local models.</li>
+      <li>The web UI provides visual feedback alongside CLI access.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Setup and configuration are complex compared to simpler CLI agents.</li>
+      <li>Autonomous agent behavior can be unpredictable and hard to debug.</li>
+      <li>Resource intensive. The sandbox environment requires significant compute.</li>
+      <li>The CLI experience is less polished than dedicated CLI agents.</li>
+      <li>Code quality varies significantly across different models and tasks.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Developers interested in autonomous coding agents and experimental workflows. I used it to explore what AI agents can achieve with broad tool access.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium-low. The approach is innovative but the autonomous model introduces reliability challenges. Results are less predictable than more constrained agents.</p>
+    <h2>Product Maturity</h2>
+    <p>Medium-low. The web UI is functional. The CLI has rough edges. Setup complexity is a barrier. Under active development with meaningful improvements each release.</p>
+    <h2>Developer Experience</h2>
+    <p>Setup requires Docker and sandbox configuration. The web UI is the primary interface. Configuration is complex but well documented.</p>
+    <h2>Workflow Integration</h2>
+    <p>The sandboxed environment isolates agent operations. File synchronization between sandbox and host is supported but adds overhead.</p>
+    <h2>Performance</h2>
+    <p>Resource intensive due to sandbox requirements. Agent response times are slower than simpler CLI tools.</p>
+    <h2>Documentation</h2>
+    <p>Detailed documentation covering setup, configuration, and usage. Some areas are catching up to rapid development.</p>
+    <h2>Pricing</h2>
+    <p>Free and open source. Costs are limited to compute resources and model API fees. Can run entirely locally with sufficient hardware.</p>
+    <h2>Platform Support</h2>
+    <p>macOS and Linux via Docker. Web UI from any browser.</p>
+    <h2>Verdict</h2>
+    <p>OpenHands is an interesting platform that shows the potential of autonomous coding agents. It is not yet reliable enough for daily production use. I found it useful for experimentation and understanding where the technology is heading.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.9.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-08</span> Updated review for version 0.6.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-01</span> Initial review (version 0.3.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

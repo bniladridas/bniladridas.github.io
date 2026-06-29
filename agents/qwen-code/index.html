@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Qwen Code: CLI Agents</title>
+  <meta name="description" content="Notes on using Qwen Code, Alibaba Cloud's CLI coding agent.">
+  <meta property="og:title" content="Qwen Code: CLI Agents">
+  <meta property="og:description" content="Notes on using Qwen Code, Alibaba Cloud's CLI coding agent.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/qwen-code/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/qwen-code/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Qwen Code</h1>
+    <img src="/assets/logos/qwen-code.svg" alt="Qwen Code logo" class="agent-logo">
+    <p><span class="verdict-badge">Watching its progress</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Alibaba Cloud</dd>
+      <dt>Version Reviewed</dt>
+      <dd>2.5.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started testing Qwen Code in mid-2025. It is Alibaba Cloud's command-line AI coding agent, built on the Qwen model family. It provides code generation, file editing, and terminal integration. It is one of the newer entrants in the CLI agent space.</p>
+    <p>The model quality has improved noticeably with each release. The CLI tooling is still catching up to the model capabilities.</p>
+    <figure>
+      <img src="/assets/screenshots/qwen-code.png" alt="Qwen Code CLI interface." loading="lazy" width="800">
+      <figcaption>Qwen Code CLI interface.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>The model quality improved faster than the CLI tooling, which is unusual in this space.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Competitive performance on coding benchmarks, particularly for Python and Java.</li>
+      <li>Very low cost compared to Western alternatives.</li>
+      <li>Good support for Chinese-language documentation and comments.</li>
+      <li>Open-weight models available for self-hosting.</li>
+      <li>Rapid iteration cycle with frequent model updates.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>CLI tooling is still immature with rough edges in installation and configuration.</li>
+      <li>Documentation is primarily in Chinese. English translations lag behind.</li>
+      <li>Smaller community and fewer third-party resources.</li>
+      <li>Code quality drops outside of well-represented languages.</li>
+      <li>Privacy considerations for code sent to Alibaba Cloud servers.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Developers in the Alibaba Cloud ecosystem or those needing a low-cost coding agent. The open-weight models are interesting for teams that want to self-host.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Low-medium. Handles straightforward tasks in core languages competently. Struggles with complex multi-file changes or less common frameworks.</p>
+    <h2>Product Maturity</h2>
+    <p>Low. The CLI is functional but has usability issues. The documentation gap is significant for English-speaking users.</p>
+    <h2>Developer Experience</h2>
+    <p>Installation and setup are more complex than alternatives. The interface is functional but less polished.</p>
+    <h2>Workflow Integration</h2>
+    <p>Standard terminal integration with filesystem access. The setup friction makes it less seamless than more mature alternatives.</p>
+    <h2>Performance</h2>
+    <p>Model performance is competitive for supported languages. CLI response times are acceptable.</p>
+    <h2>Documentation</h2>
+    <p>Primarily in Chinese. English documentation is available but less comprehensive.</p>
+    <h2>Pricing</h2>
+    <p>Very competitive. Significantly lower than Claude or GPT-4. Open-weight models can be self-hosted at no API cost.</p>
+    <h2>Platform Support</h2>
+    <p>macOS, Linux, Windows. Cross-platform through standard tooling.</p>
+    <h2>Verdict</h2>
+    <p>Qwen Code shows rapid progress, particularly in model quality and pricing. It is not yet ready for my daily production use. I am watching its development, especially as the CLI tooling matures.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 2.5.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-12</span> Updated review for version 2.0.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-05</span> Initial review (version 1.0.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

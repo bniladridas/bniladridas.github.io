@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Aider: CLI Agents</title>
+  <meta name="description" content="Notes on using Aider, an open-source CLI coding assistant.">
+  <meta property="og:title" content="Aider: CLI Agents">
+  <meta property="og:description" content="Notes on using Aider, an open-source CLI coding assistant.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/aider/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/aider/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Aider</h1>
+    <img src="/assets/logos/aider.svg" alt="Aider logo" class="agent-logo">
+    <p><span class="verdict-badge">Frequently used</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Paul Gauthier</dd>
+      <dt>Version Reviewed</dt>
+      <dd>0.72.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I found Aider in mid-2024 while looking for an open-source alternative to the existing CLI agents. It operates directly in the terminal and works with multiple LLM backends. What kept me using it was the thoughtful git integration and the flexibility to choose different models for different tasks.</p>
+    <p>I switch between Aider and Claude Code depending on the task and budget. For cost-sensitive work or when I want to use a local model, Aider is the tool I reach for.</p>
+    <figure>
+      <img src="/assets/screenshots/aider.svg" alt="Aider editing code in a terminal session." loading="lazy" width="800">
+      <figcaption>Aider editing code in a terminal session.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>The git integration saved me from myself more times than I can count.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Fully open source with an Apache 2.0 license. I can audit the code and understand exactly what it does.</li>
+      <li>Works with OpenAI, Anthropic, Google, local, and self-hosted models. This flexibility has been valuable.</li>
+      <li>The git integration is well-designed. Automatic commits with good messages save me time.</li>
+      <li>The map-refine architecture provides good repository understanding without consuming too much context.</li>
+      <li>The development community is active. Releases come frequently with meaningful improvements.</li>
+      <li>Can run entirely locally. I use this for privacy-sensitive projects.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Code quality depends heavily on the backend model. This is not Aider's fault, but it adds variability.</li>
+      <li>Setup requires API key configuration and model selection. This adds some initial friction.</li>
+      <li>Occasionally makes edit mistakes that require manual correction. Less polished than Claude Code.</li>
+      <li>The terminal UI is functional but minimal. It gets the job done without being elegant.</li>
+      <li>Documentation is scattered across the repository wiki and GitHub issues.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Developers who want a flexible, open-source CLI agent they can customize. I found Aider valuable when I need to use different models for different tasks, or when I want local models for privacy.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium-high. The repository understanding is solid, especially with the map-refine approach. Handles common frameworks well. The git integration feels natural and well thought out.</p>
+    <h2>Product Maturity</h2>
+    <p>Medium. Core functionality is reliable, but the user experience has rough edges. Configuration is more complex than commercial alternatives. The project is under active development and improving steadily.</p>
+    <h2>Developer Experience</h2>
+    <p>Setup takes longer than commercial alternatives due to API key configuration. The command-line interface is functional with helpful default behavior. The learning curve is moderate but worth the investment.</p>
+    <h2>Workflow Integration</h2>
+    <p>The git-native workflow is well-integrated. The map-refine architecture provides good repository awareness. Works alongside other CLI tools without getting in the way.</p>
+    <h2>Performance</h2>
+    <p>Performance depends on the backend model. Streaming output works with most providers. The map-refine approach is efficient with context window usage.</p>
+    <h2>Documentation</h2>
+    <p>The README covers usage examples and configuration. The wiki has more detail about features and architecture. Some sections are less organized than I would like.</p>
+    <h2>Pricing</h2>
+    <p>Free and open source. Costs are limited to API usage fees. I use it with local models for cost-free operation on simpler tasks.</p>
+    <h2>Platform Support</h2>
+    <p>macOS, Linux, Windows. Python-based installation works across all platforms.</p>
+    <h2>Verdict</h2>
+    <p>Aider is a capable open-source CLI agent I use regularly. Its model flexibility, git integration, and active community make it a regular part of my workflow. It is not as polished as Claude Code, but for many tasks it is just as capable and more cost-effective.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.72.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-09</span> Updated review for version 0.60.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2024-06</span> Initial review (version 0.30.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

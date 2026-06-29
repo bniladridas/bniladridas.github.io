@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Methodology: CLI Agents</title>
+  <meta name="description" content="How CLI agent reviews are performed.">
+  <meta property="og:title" content="Methodology: CLI Agents">
+  <meta property="og:description" content="How CLI agent reviews are performed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bniladridas.github.io/methodology/">
+  <link rel="canonical" href="https://bniladridas.github.io/methodology/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Methodology</h1>
+    <p>Every review on this site is based on actual engineering use rather than feature lists or marketing materials. I evaluate each agent by applying it to real tasks across a range of projects and noting what works, what does not, and where the tool sits in its maturity lifecycle.</p>
+    <p>Reviews are not scored or ranked numerically. Instead, each agent receives a short qualitative verdict that reflects my current experience. Because the landscape moves quickly, reviews are updated as tools change and as my usage patterns evolve.</p>
+    <h2>Evaluation Criteria</h2>
+    <h3>Reliability</h3>
+    <p>Does the agent produce consistent, correct results? How often does it introduce bugs, hallucinate APIs, or fail to complete tasks?</p>
+    <h3>Context Handling</h3>
+    <p>How well does the agent maintain understanding across a conversation or session? Can it reference earlier decisions, track project state, and follow multi-step instructions?</p>
+    <h3>Code Quality</h3>
+    <p>Is the generated code idiomatic, maintainable, and consistent with the project's existing style? Does it follow the same conventions a human engineer would?</p>
+    <h3>Repository Understanding</h3>
+    <p>How well does the agent grasp the structure, dependencies, and conventions of the codebase it operates on? This includes framework awareness, directory navigation, and config file comprehension.</p>
+    <h3>Terminal Experience</h3>
+    <p>How seamless is the command-line workflow? This covers installation, authentication, configuration, streaming output, error messages, interrupt handling, and integration with existing terminal tools.</p>
+    <h3>Speed</h3>
+    <p>Latency from request to response. How does the agent perform under real working conditions, including streaming, caching, and parallel operations?</p>
+    <h3>Documentation</h3>
+    <p>Is the documentation clear, complete, and up to date? Can a new user get productive without digging through forums or source code?</p>
+    <h3>Cost</h3>
+    <p>What is the real cost of using the agent? This includes API pricing, subscription fees, compute overhead, and indirect costs like time spent fixing incorrect output.</p>
+    <h3>Local vs Cloud</h3>
+    <p>Does the agent run locally, in the cloud, or both? How does the deployment model affect privacy, latency, offline capability, and data control?</p>
+    <h3>Open Source</h3>
+    <p>Is the agent open source? What is the license? Can it be self-hosted, forked, or audited? How active is the community?</p>
+    <h3>Maintainability</h3>
+    <p>How easy is it to keep the agent working over time? This includes update frequency, breaking changes, deprecation policies, and long-term viability.</p>
+    <h2>Review Cycle</h2>
+    <p>Each agent is re-evaluated at least once per quarter or when a significant version change is released. In-use agents are evaluated more frequently as part of daily work.</p>
+    <h2>Verdict Categories</h2>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Verdict</th>
+          <th scope="col">Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Daily driver</td>
+          <td>Used as a primary tool in everyday engineering work. Highly reliable and integrated into workflow.</td>
+        </tr>
+        <tr>
+          <td>Frequently used</td>
+          <td>Used regularly but not the primary tool. May have specific use cases where it excels.</td>
+        </tr>
+        <tr>
+          <td>Useful in specific situations</td>
+          <td>Valuable for certain types of tasks but not general-purpose. Worth knowing about and keeping in the toolbox.</td>
+        </tr>
+        <tr>
+          <td>Occasionally used</td>
+          <td>Used from time to time. May be early in maturity or limited in applicability.</td>
+        </tr>
+        <tr>
+          <td>Watching its progress</td>
+          <td>Evaluated but not yet part of regular use. Shows potential worth monitoring.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>

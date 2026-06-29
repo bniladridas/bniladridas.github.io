@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Cursor: CLI Agents</title>
+  <meta name="description" content="Notes on using Cursor as an AI-first code editor.">
+  <meta property="og:title" content="Cursor: CLI Agents">
+  <meta property="og:description" content="Notes on using Cursor as an AI-first code editor.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/cursor/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/cursor/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Cursor</h1>
+    <img src="/assets/logos/cursor.svg" alt="Cursor logo" class="agent-logo">
+    <p><span class="verdict-badge">Frequently used</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Cursor Inc.</dd>
+      <dt>Version Reviewed</dt>
+      <dd>0.46.x</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started using Cursor in late 2024. It is an AI-first code editor built on VS Code. While it is primarily a GUI editor, its agent mode and terminal integration make it relevant as a coding agent. It supports multiple model backends including Claude and GPT-4.</p>
+    <p>I use Cursor alongside Claude Code rather than as a replacement. The editor integration is valuable for quick edits and situations where seeing the full file context helps.</p>
+    <figure>
+      <img src="/assets/screenshots/cursor.jpg" alt="Cursor editor showing inline AI diffs during a refactoring session." loading="lazy" width="800">
+      <figcaption>Cursor showing inline AI diffs during a refactoring session.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>I kept reaching for Cursor when I wanted to see diffs before committing to changes.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Inline editing with diffs makes it easy to review AI suggestions before accepting them.</li>
+      <li>Multi-model support lets me choose the right model for different tasks.</li>
+      <li>The tab-to-accept completions are fast and contextually aware.</li>
+      <li>Composer mode handles multi-file changes effectively.</li>
+      <li>Good for rapid prototyping and exploratory coding sessions.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Not a pure CLI tool. The editor needs to be running for full functionality.</li>
+      <li>Agent mode can be aggressive. I have had it make changes across files unexpectedly.</li>
+      <li>Performance degrades on larger projects, especially during indexing.</li>
+      <li>Sends code to third-party model providers, which matters for sensitive work.</li>
+      <li>The subscription cost adds to monthly tooling expenses.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Developers who want AI assistance integrated into their editor. I found Cursor particularly useful for line-level completions, quick refactoring, and navigating unfamiliar codebases.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium-high. It understands the open file and project context well. Handles TypeScript, Python, and web frameworks competently. The indexing pipeline provides good repository awareness, but it is resource-intensive on larger projects.</p>
+    <h2>Product Maturity</h2>
+    <p>High. Cursor is polished, well-documented, and actively maintained. The onboarding experience is smooth. Learning all the AI features takes time, but the basics are easy to pick up.</p>
+    <h2>Developer Experience</h2>
+    <p>Settings are managed through the UI. The command palette provides quick access to AI features. Keyboard shortcuts are customizable. The learning curve is moderate for users unfamiliar with AI-assisted editing.</p>
+    <h2>Workflow Integration</h2>
+    <p>Integrates with git, terminal, and language server protocols. The editor-based workflow complements traditional development tools. Agent mode can execute terminal commands directly.</p>
+    <h2>Performance</h2>
+    <p>Fast for line-level completions and single-file edits. Multi-file operations show noticeable latency. Indexing can consume significant CPU and memory on larger projects. I noticed this most on monorepos.</p>
+    <h2>Documentation</h2>
+    <p>Well-organized with guides, FAQs, and changelogs. The community forum is active. Feature documentation stays current with the release cycle.</p>
+    <h2>Pricing</h2>
+    <p>Subscription model with monthly and annual tiers. The Pro plan includes full AI features. A free tier is available with limited functionality.</p>
+    <h2>Platform Support</h2>
+    <p>macOS, Linux, Windows. Full cross-platform support with consistent experience across systems.</p>
+    <h2>Verdict</h2>
+    <p>Cursor is a polished AI coding environment for editor-centric workflows. I use it frequently for quick edits and exploratory work. The editor dependency keeps it from being a pure CLI solution, but it complements other tools well.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.46.x</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-10</span> Updated review for version 0.42.x</p>
+      <p class="changelog-entry"><span class="changelog-date">2024-08</span> Initial review (version 0.30.x)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

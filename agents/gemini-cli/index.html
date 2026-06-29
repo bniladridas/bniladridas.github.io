@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Gemini CLI: CLI Agents</title>
+  <meta name="description" content="Notes on using Gemini CLI, Google's command-line coding agent.">
+  <meta property="og:title" content="Gemini CLI: CLI Agents">
+  <meta property="og:description" content="Notes on using Gemini CLI, Google's command-line coding agent.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/gemini-cli/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/gemini-cli/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Gemini CLI</h1>
+    <img src="/assets/logos/gemini-cli.svg" alt="Gemini CLI logo" class="agent-logo">
+    <p><span class="verdict-badge">Occasionally used</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Google</dd>
+      <dt>Version Reviewed</dt>
+      <dd>1.2.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started testing Gemini CLI when it was released in mid-2025. It is Google's command-line AI coding agent, powered by the Gemini model family. It provides terminal-native code generation, file editing, and shell command execution.</p>
+    <p>I check in on Gemini CLI periodically to see how it is progressing. The pricing is compelling, but the reliability has not reached what I need for daily use.</p>
+    <figure>
+      <img src="/assets/screenshots/gemini-cli.png" alt="Gemini CLI terminal session showing code generation." loading="lazy" width="800">
+      <figcaption>Gemini CLI terminal session showing code generation.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>I wanted the pricing to win me over, but reliability kept me from switching.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Pricing is very competitive compared to Claude and GPT-based alternatives.</li>
+      <li>The context window is large. I was able to process substantial codebases in one session.</li>
+      <li>Integrates well with Google Cloud services for users in that ecosystem.</li>
+      <li>Response times are fast, especially for simpler queries.</li>
+      <li>The free tier has reasonable usage limits for evaluation.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Code quality is inconsistent. It struggled with less common languages and frameworks.</li>
+      <li>Repository understanding is weaker than Claude Code. It often missed project conventions.</li>
+      <li>The permission model for command execution feels less safe than competitors.</li>
+      <li>Documentation and community resources are still maturing.</li>
+      <li>I had issues with larger, complex codebases.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Cost-sensitive development and Google Cloud-native projects. The large context window provides an advantage for certain types of analysis tasks.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium-low. It understands basic project structure but frequently misses nuanced conventions. Improving with each release but has not reached the reliability of more mature alternatives.</p>
+    <h2>Product Maturity</h2>
+    <p>Medium-low. The CLI works but has rough edges. Google Cloud authentication adds friction. Documentation is catching up.</p>
+    <h2>Developer Experience</h2>
+    <p>Installation is straightforward via npm. Authentication requires Google Cloud project setup, which adds some friction. The CLI is functional.</p>
+    <h2>Workflow Integration</h2>
+    <p>Standard terminal-based workflow with filesystem access and command execution. Google Cloud integration is a differentiator for users in that ecosystem.</p>
+    <h2>Performance</h2>
+    <p>Fast response times, particularly for simpler queries. The large context window is a practical advantage for certain tasks.</p>
+    <h2>Documentation</h2>
+    <p>Improving but lags behind more established tools. Setup guides cover the basics. Advanced usage is less documented.</p>
+    <h2>Pricing</h2>
+    <p>Very competitive with a generous free tier. Significant cost advantage over Claude and GPT-based alternatives.</p>
+    <h2>Platform Support</h2>
+    <p>macOS, Linux, Windows. Cross-platform via npm.</p>
+    <h2>Verdict</h2>
+    <p>Gemini CLI shows promise, particularly in pricing and context window size. It has not reached the reliability I need for daily use. I check its progress periodically. Google continues to invest in the Gemini model family, so this is worth monitoring.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 1.2.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-11</span> Updated review for version 0.8.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-04</span> Initial review (version 0.4.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>

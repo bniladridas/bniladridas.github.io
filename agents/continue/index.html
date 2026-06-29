@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Continue: CLI Agents</title>
+  <meta name="description" content="Notes on using Continue as an open-source IDE assistant.">
+  <meta property="og:title" content="Continue: CLI Agents">
+  <meta property="og:description" content="Notes on using Continue as an open-source IDE assistant.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bniladridas.github.io/agents/continue/">
+  <link rel="canonical" href="https://bniladridas.github.io/agents/continue/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+      <a href="/ethos/">Ethos</a>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <h1>Continue</h1>
+    <img src="/assets/logos/continue.svg" alt="Continue logo" class="agent-logo">
+    <p><span class="verdict-badge">Useful in specific situations</span></p>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Continue Dev</dd>
+      <dt>Version Reviewed</dt>
+      <dd>1.2.0</dd>
+      <dt>Last Updated</dt>
+      <dd>June 2026</dd>
+      <dt>Platform</dt>
+      <dd>VS Code, JetBrains</dd>
+    </dl>
+    <h2>Overview</h2>
+    <p>I started using Continue in mid-2024. It is an open-source AI code assistant that integrates with IDEs like VS Code and JetBrains. It provides inline code suggestions, chat-based assistance, and custom slash commands. Unlike standalone CLI agents, it operates within the editor and can be configured to use various LLM backends, including local models.</p>
+    <p>I use Continue for in-editor assistance when I want AI help without leaving my IDE. It serves a different purpose than CLI agents and complements them well.</p>
+    <figure>
+      <img src="/assets/screenshots/continue.png" alt="Continue chat interface in VS Code." loading="lazy" width="800">
+      <figcaption>Continue chat interface in VS Code.</figcaption>
+    </figure>
+    <h2>Personal Note</h2>
+    <p>I wanted it to replace my CLI agents, but it serves a different purpose entirely.</p>
+    <h2>What Works Well</h2>
+    <ul>
+      <li>Fully open source with a permissive Apache 2.0 license. I can inspect and modify the code.</li>
+      <li>Works with VS Code and JetBrains. The model choice is flexible.</li>
+      <li>Custom slash commands let me create reusable workflows for common tasks.</li>
+      <li>Privacy-focused. I can run it entirely with local models when needed.</li>
+      <li>The community is active with a growing plugin ecosystem.</li>
+    </ul>
+    <h2>Where It Works Less Well</h2>
+    <ul>
+      <li>Requires an IDE. It is not a standalone CLI agent.</li>
+      <li>Code generation quality varies by the backend model I choose.</li>
+      <li>Context understanding is limited to open files and project index.</li>
+      <li>Setup is more complex than commercial alternatives.</li>
+      <li>I experienced occasional instability when switching models during sessions.</li>
+    </ul>
+    <h2>Use Cases</h2>
+    <p>Developers who want an open-source, privacy-respecting AI assistant in their IDE. I found Continue valuable for teams that need to self-host or use custom model deployments.</p>
+    <h2>Engineering Maturity</h2>
+    <p>Medium. Provides solid code suggestions but lacks deep repository understanding. I use it as a pair programming assistant within the context of open files rather than as an autonomous agent.</p>
+    <h2>Product Maturity</h2>
+    <p>Medium-high. The IDE integration is polished. The extension is well maintained. Configuration is complex but well documented.</p>
+    <h2>Developer Experience</h2>
+    <p>Installation through IDE extension marketplaces is straightforward. Configuring models and slash commands requires editing a JSON file. The chat interface is clean and intuitive.</p>
+    <h2>Workflow Integration</h2>
+    <p>Deeply integrated with the IDE. It respects editor context, selection, and language server features. It cannot be used outside the IDE.</p>
+    <h2>Performance</h2>
+    <p>Responsive for inline completions and chat. Performance depends heavily on the backend model choice. Local models show variable latency based on my hardware.</p>
+    <h2>Documentation</h2>
+    <p>Good documentation with setup guides, configuration reference, and examples. The community contributes guides for various setups.</p>
+    <h2>Pricing</h2>
+    <p>Free and open source. Costs are limited to API usage fees when using cloud models. I have used it with local models at no cost.</p>
+    <h2>Platform Support</h2>
+    <p>Available as extensions for VS Code and JetBrains across all platforms.</p>
+    <h2>Verdict</h2>
+    <p>Continue fills a specific niche. It is a privacy-respecting, IDE-integrated code assistant with flexible model backends. I do not see it as a replacement for CLI agents. It serves a complementary role for in-editor workflows.</p>
+    <h2>Changelog</h2>
+    <div class="changelog">
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 1.2.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2025-07</span> Updated review for version 0.8.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2024-07</span> Initial review (version 0.5.0)</p>
+    </div>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+</body>
+</html>
