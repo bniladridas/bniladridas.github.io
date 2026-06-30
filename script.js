@@ -305,7 +305,7 @@
     var hintBtn = document.createElement('button');
     hintBtn.className = 'shortcuts-trigger';
     hintBtn.setAttribute('aria-label', 'Keyboard shortcuts');
-    hintBtn.textContent = '?';
+    hintBtn.textContent = 'Shortcuts';
     footerColophon.appendChild(document.createTextNode(' \u00b7 '));
     footerColophon.appendChild(hintBtn);
     hintBtn.addEventListener('click', function (e) {

@@ -50,7 +50,7 @@ The interface has crossed a threshold from making things quieter to making the i
 - Auth return URL fixed: `auth.js` stores `sessionStorage.setItem('auth_return_to', window.location.pathname)` before redirect; callback reads it back and removes it
 - Search index failure no longer silent – `.catch` sets `"Search is temporarily unavailable."` in the empty-state element
 - `build-index.py` now scans `agents/` directory for folders containing `index.html` instead of hardcoding agent IDs
-- Footer `?` trigger button added via `script.js` injection, styled as quiet `text-tertiary`, appended to `.footer-colophon` with `·` separator
+- Footer "Shortcuts" label replaces `?` trigger button, added via `script.js` injection, styled as quiet `text-tertiary`, appended to `.footer-colophon` with `·` separator
 - Shortcuts panel note added: "Hold Alt (⌥) to reveal shortcuts on navigation links."
 - Logo `alt="Palmshed"` → `alt=""` on all 25 pages (decorative image, adjacent text provides accessible name)
 
@@ -112,7 +112,7 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - Search results show breadcrumb + snippet (no separate title line); repetitive "CLI Agents" suffix eliminated
 - Auth return URL uses `sessionStorage` (survives redirect, auto-clears) instead of encoding in OAuth state or redirect_uri
 - build-index.py scans filesystem for agent directories so adding a new agent automatically includes it in search after rebuild
-- Footer `?` trigger shows available shortcuts visually without being intrusive
+- Footer "Shortcuts" label replaces `?` for immediate understandability
 - Shortcuts panel has no backdrop — the page underneath is part of the experience
 - Design direction shifted from "quieter" to "disappearing" — making the interface fade so the content leads
 
