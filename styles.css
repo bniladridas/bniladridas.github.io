@@ -608,6 +608,53 @@ nav a[aria-current="page"] {
   margin: 3rem 0;
 }
 
+/* Privacy page */
+.page-privacy {
+  max-width: 560px;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.page-privacy h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.page-privacy h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+
+.page-privacy p {
+  font-size: 1rem;
+  line-height: 1.85;
+  max-width: 48ch;
+}
+
+.page-privacy ul {
+  margin-bottom: 1.5rem;
+}
+
+.page-privacy li {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.privacy-intro {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  max-width: 48ch;
+}
+
 /* Home page */
 .subtitle {
   font-size: 1.1rem;
@@ -1581,6 +1628,20 @@ footer a:hover {
     margin-top: 2rem;
   }
 
+  .page-privacy {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .page-privacy h1 {
+    font-size: 1.4rem;
+  }
+
+  .page-privacy h2 {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
   .error-code {
     font-size: 3rem;
   }
@@ -1662,6 +1723,18 @@ footer a:hover {
   }
 
   .page-ethos p {
+    font-size: 0.95rem;
+  }
+
+  .page-privacy {
+    padding-top: 1.5rem;
+  }
+
+  .page-privacy p {
+    font-size: 0.95rem;
+  }
+
+  .page-privacy li {
     font-size: 0.95rem;
   }
 
