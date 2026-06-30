@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Signing in – CLI Agents</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+  <style>
+    .callback-status {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .callback-error {
+      color: #c47a6c;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <div class="nav-left">
+<a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      </div>
+      <div class="nav-center">
+        <a href="/">Home</a>
+        <a href="/agents/">Agents</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-right">
+        <a href="/auth/" class="nav-auth-link">Sign in</a>
+      <noscript><a href="/search/" class="nav-search-link">Search</a></noscript>
+      </div>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
+    <p class="callback-status" id="status">Signing you in...</p>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+  <script src="/auth.js"></script>
+  <script>
+  (function () {
+    var statusEl = document.getElementById('status');
+    var params = new URLSearchParams(window.location.search);
+    var code = params.get('code');
+    var state = params.get('state');
+    var error = params.get('error');
+
+    if (error) {
+      statusEl.textContent = 'Sign-in was cancelled or denied.';
+      statusEl.className = 'callback-status callback-error';
+      return;
+    }
+
+    if (!code) {
+      statusEl.textContent = 'No authorization code received.';
+      statusEl.className = 'callback-status callback-error';
+      return;
+    }
+
+    /* Validate CSRF state */
+    var storedState = window.Auth && window.Auth._getStoredState && window.Auth._getStoredState();
+    if (storedState && state !== storedState) {
+      statusEl.textContent = 'Sign-in failed: state mismatch. Please try again.';
+      statusEl.className = 'callback-status callback-error';
+      if (window.Auth._clearStoredState) window.Auth._clearStoredState();
+      return;
+    }
+    if (window.Auth._clearStoredState) window.Auth._clearStoredState();
+
+    /* Exchange the code for a token via the auth worker */
+    var config = window.Auth && window.Auth._config && window.Auth._config.github;
+    var exchangeUrl = (config && config.workerUrl) || '';
+
+    if (!exchangeUrl) {
+      statusEl.innerHTML = 'GitHub sign-in is not yet configured. ' +
+        '<a href="/auth/">Go back</a>.';
+      return;
+    }
+
+    fetch(exchangeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        code: code,
+        client_id: 'Ov23liMMYiMlgYzGg2Ht',
+        redirect_uri: window.location.origin + '/auth/callback/'
+      })
+    })
+    .then(function (res) {
+      if (!res.ok) {
+        return res.json().then(function (err) {
+          throw new Error(err.error || 'Token exchange failed');
+        });
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      if (data.error) throw new Error(data.error_description || data.error);
+
+      var user = {
+        login: data.login,
+        name: data.name || data.login,
+        email: data.email || '',
+        avatar: data.avatar_url || '',
+        provider: 'github'
+      };
+
+      window.Auth._setUser(user);
+
+      /* Redirect – only allow relative paths to prevent open redirect */
+      var returnTo = sessionStorage.getItem('auth_return_to') || '/';
+      sessionStorage.removeItem('auth_return_to');
+      if (returnTo.charAt(0) !== '/' || returnTo.charAt(1) === '/') {
+        returnTo = '/';
+      }
+      window.location.href = returnTo;
+    })
+    .catch(function (err) {
+      statusEl.textContent = 'Sign-in failed: ' + err.message;
+      statusEl.className = 'callback-status callback-error';
+    });
+  })();
+  </script>
+  <script src="/search.js"></script>
+</body>
+</html>

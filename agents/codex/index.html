@@ -19,15 +19,23 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
   <nav role="navigation" aria-label="Main">
     <div class="container">
-      <a href="/" class="logo-link">
-        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+      <div class="nav-left">
+<a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="" class="logo-mark" width="28" height="28">
         <span class="site-title">CLI Agents</span>
       </a>
-      <a href="/">Home</a>
-      <a href="/agents/">All Agents</a>
-      <a href="/methodology/">Methodology</a>
-      <a href="/about/">About</a>
-      <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-center">
+        <a href="/">Home</a>
+        <a href="/agents/">Agents</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-right">
+        <a href="/auth/" class="nav-auth-link">Sign in</a>
+      <noscript><a href="/search/" class="nav-search-link">Search</a></noscript>
+      </div>
     </div>
   </nav>
   <main class="container" id="main-content">
@@ -72,13 +80,13 @@
     <h2>Use Cases</h2>
     <p>Quick code generation and prototyping. I found Codex useful when I need rapid answers or single-file implementations without complex project context.</p>
     <h2>Engineering Maturity</h2>
-    <p>Medium. It handles straightforward tasks competently but struggles with complex multi-file changes. Best suited for well-scoped problems with clear requirements.</p>
+    <p>Medium. It handles straightforward tasks competently but struggles with complex multi-file changes. Well suited for well-scoped problems with clear requirements.</p>
     <h2>Product Maturity</h2>
     <p>Medium. The CLI is polished and sandboxed execution is a thoughtful safety feature. The tool feels less actively developed than the Cursor editor, and features lag behind competitors.</p>
     <h2>Developer Experience</h2>
     <p>Simple to get started. The CLI is clean and well organized. Limited configuration keeps things simple but can feel restrictive for advanced use.</p>
     <h2>Workflow Integration</h2>
-    <p>The sandboxed execution model makes it safe for experimental work. Best for one-off questions and quick code generation. Less suitable for sustained development sessions.</p>
+    <p>The sandboxed execution model makes it safe for experimental work. Suitable for one-off questions and quick code generation. Less suitable for sustained development sessions.</p>
     <h2>Performance</h2>
     <p>Fast response times for straightforward queries. Performance holds up well for typical single-file tasks.</p>
     <h2>Documentation</h2>
@@ -100,5 +108,7 @@
     <p>Building steadily since 2023.</p>
     <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
   </footer>
+  <script src="/auth.js"></script>
+  <script src="/search.js"></script>
 </body>
 </html>

@@ -22,7 +22,8 @@
     'a': '/agents/',
     'm': '/methodology/',
     'b': '/about/',
-    'e': '/ethos/'
+    'e': '/ethos/',
+    's': '/auth/'
   };
 
   // Build shortcuts panel
@@ -38,18 +39,21 @@
         '<h3 class="shortcuts-section-title">Navigation</h3>' +
         '<dl class="shortcuts-list">' +
           '<dt><kbd>H</kbd></dt><dd>Home</dd>' +
-          '<dt><kbd>A</kbd></dt><dd>All Agents</dd>' +
+          '<dt><kbd>A</kbd></dt><dd>Agents</dd>' +
           '<dt><kbd>M</kbd></dt><dd>Methodology</dd>' +
           '<dt><kbd>B</kbd></dt><dd>About</dd>' +
           '<dt><kbd>E</kbd></dt><dd>Ethos</dd>' +
+          '<dt><kbd>S</kbd></dt><dd>Sign in</dd>' +
         '</dl>' +
       '</div>' +
       '<div class="shortcuts-section">' +
         '<h3 class="shortcuts-section-title">General</h3>' +
         '<dl class="shortcuts-list">' +
-          '<dt><kbd>?</kbd></dt><dd>Show this panel</dd>' +
-          '<dt><kbd>Esc</kbd></dt><dd>Close panel</dd>' +
+          '<dt><kbd>/</kbd></dt><dd>Search</dd>' +
+          '<dt><kbd>?</kbd></dt><dd>Show shortcuts</dd>' +
+          '<dt><kbd>Esc</kbd></dt><dd>Close</dd>' +
         '</dl>' +
+        '<p class="shortcuts-note">Hold <kbd>Alt</kbd> (<kbd>\u2325</kbd>) to reveal navigation shortcuts.</p>' +
       '</div>' +
     '</div>';
   document.body.appendChild(panel);
@@ -88,8 +92,21 @@
     });
   }
 
+  // Alt key reveals keyboard hints
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Alt') {
+      document.documentElement.classList.add('alt-hints');
+    }
+  });
+  document.addEventListener('keyup', function(e) {
+    if (e.key === 'Alt') {
+      document.documentElement.classList.remove('alt-hints');
+    }
+  });
+
   // Global keyboard handler
   document.addEventListener('keydown', function(e) {
+    if (e.altKey) return;
     var tag = e.target.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
 
@@ -280,5 +297,20 @@
 
   if (agentTable) {
     renderAgentTable(agents);
+  }
+
+  // Add [?] trigger to footer
+  var footerColophon = document.querySelector('.footer-colophon');
+  if (footerColophon) {
+    var hintBtn = document.createElement('button');
+    hintBtn.className = 'shortcuts-trigger';
+    hintBtn.setAttribute('aria-label', 'Keyboard shortcuts');
+    hintBtn.textContent = '?';
+    footerColophon.appendChild(document.createTextNode(' \u00b7 '));
+    footerColophon.appendChild(hintBtn);
+    hintBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openPanel();
+    });
   }
 })();

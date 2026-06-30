@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161412">
+  <title>Sign in: CLI Agents</title>
+  <meta name="description" content="Sign in to enable optional personal features like bookmarks and reading history.">
+  <meta property="og:title" content="Sign in: CLI Agents">
+  <meta property="og:description" content="Sign in to enable optional personal features.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bniladridas.github.io/auth/">
+  <link rel="canonical" href="https://bniladridas.github.io/auth/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/palmshed.svg">
+  <link rel="alternate icon" href="/assets/palmshed.svg">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav role="navigation" aria-label="Main">
+    <div class="container">
+      <div class="nav-left">
+<a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="" class="logo-mark" width="28" height="28">
+        <span class="site-title">CLI Agents</span>
+      </a>
+      </div>
+      <div class="nav-center">
+        <a href="/">Home</a>
+        <a href="/agents/">Agents</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-right">
+        <a href="/auth/" class="nav-auth-link">Sign in</a>
+      <noscript><a href="/search/" class="nav-search-link">Search</a></noscript>
+      </div>
+    </div>
+  </nav>
+  <main class="container auth-page" id="main-content">
+    <h1>Sign in</h1>
+    <p class="auth-intro">An account enables optional personal features – bookmarks, notes, reading history, and collections. Sign-in is completely optional. You can always read without one.</p>
+    <div class="auth-providers" id="auth-providers">
+      <button class="auth-btn auth-btn-github" data-provider="github">
+        <svg class="auth-btn-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        Continue with GitHub
+      </button>
+      <div class="auth-divider" role="separator" aria-orientation="horizontal">
+        <span>or</span>
+      </div>
+      <button class="auth-btn auth-btn-email" data-provider="email" title="Coming soon">
+        Create an account with email
+      </button>
+      <button class="auth-btn auth-btn-email-secondary" data-provider="email-signin" title="Coming soon">
+        Sign in with email
+      </button>
+    </div>
+    <div class="auth-signed-in" id="auth-signed-in" hidden>
+      <p>You are signed in.</p>
+      <button class="auth-btn auth-btn-signout" id="auth-signout">Sign out</button>
+    </div>
+    <p class="auth-footer">
+      <a href="/">Back to reading</a>
+    </p>
+  </main>
+  <footer class="container">
+    <p>Building steadily since 2023.</p>
+    <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
+  </footer>
+  <script src="/auth.js"></script>
+  <script>
+    (function () {
+      var providers = document.getElementById('auth-providers');
+      var signedInEl = document.getElementById('auth-signed-in');
+      var signOutBtn = document.getElementById('auth-signout');
+
+      function updateView() {
+        if (window.Auth && window.Auth.isSignedIn()) {
+          if (providers) providers.hidden = true;
+          if (signedInEl) signedInEl.hidden = false;
+        } else {
+          if (providers) providers.hidden = false;
+          if (signedInEl) signedInEl.hidden = true;
+        }
+      }
+
+      if (signOutBtn) {
+        signOutBtn.addEventListener('click', function () {
+          if (window.Auth) window.Auth.signOut();
+        });
+      }
+
+      var btns = document.querySelectorAll('[data-provider]');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var provider = btn.getAttribute('data-provider');
+          if (window.Auth) {
+            window.Auth.signIn(provider);
+          }
+        });
+      });
+
+      /* Watch for auth state changes */
+      if (window.Auth) {
+        var origSetUser = window.Auth._setUser;
+        window.Auth._setUser = function (user) {
+          origSetUser.call(window.Auth, user);
+          updateView();
+        };
+        updateView();
+      }
+    })();
+  </script>
+  <script src="/search.js"></script>
+</body>
+</html>

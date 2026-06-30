@@ -1,0 +1,1350 @@
+[
+  {
+    "url": "/",
+    "title": "CLI Agents",
+    "breadcrumb": "Home",
+    "summary": "Practical notes from using command-line AI agents in real engineering work.",
+    "sections": [
+      {
+        "heading": "CLI Agents",
+        "content": "Practical notes from using command-line AI agents in real engineering work. These are personal observations based on real engineering use across a variety of projects. Rankings and assessments shift as tools evolve. This site is updated periodically to reflect current experience."
+      },
+      {
+        "heading": "Ranking",
+        "content": "Rankings reflect my current experience and will evolve as tools improve. Last updated: June 2026. See Agents for the complete list with version details. This workshop is sustained by time, curiosity, and the kindness of those who choose to support it. Share a coffee, if you feel like it."
+      }
+    ]
+  },
+  {
+    "url": "/about/",
+    "title": "About: CLI Agents",
+    "breadcrumb": "About",
+    "summary": "About this site and its author.",
+    "sections": [
+      {
+        "heading": "About",
+        "content": "I'm a software engineer who enjoys building reliable software and documenting what I learn. This site collects practical notes from tools I use in everyday engineering. The focus is on command-line AI coding agents. These tools integrate directly into terminal workflows and assist with code generation, refactoring, debugging, and exploration. Every review on this site is based on hands-on use. I do not accept sponsorships, early access perks, or compensation for reviews. My goal is to provide honest, evidence-driven assessments that other engineers can use to make informed decisions. If you have questions or feedback, feel free to open an issue on the repository."
+      }
+    ]
+  },
+  {
+    "url": "/ethos/",
+    "title": "Ethos: CLI Agents",
+    "breadcrumb": "Ethos",
+    "summary": "The values and spirit behind Palmshed.",
+    "sections": [
+      {
+        "heading": "Ethos",
+        "content": "The values and spirit behind this workshop – a project about building software carefully. It started with a simple observation: tools change quickly, but the way we think about our work changes slowly. The notes here are an attempt to slow down and pay attention to what actually helps. The agents and tools reviewed on this site are not recommendations. They are observations from someone who spends time in the terminal and tries to notice what works, what does not, and what changes over time. This site does not try to persuade you. It does not argue that one tool is better than another for everyone. It simply describes what one person has found useful, frustrating, or worth watching."
+      },
+      {
+        "heading": "Patience",
+        "content": "Good software is not written in a hurry. It is thought about, set aside, revisited, revised, and eventually maintained for years. The tools that help with this process are worth examining carefully. The ones that add speed at the cost of understanding are worth questioning."
+      },
+      {
+        "heading": "Respect",
+        "content": "The people who use these tools are engineers, designers, students, and curious minds. They deserve honest writing that does not exaggerate, manipulate, or oversimplify. They deserve to make up their own minds."
+      },
+      {
+        "heading": "Understanding",
+        "content": "It is better to understand a problem than to solve it quickly with the wrong approach. The agents reviewed here are judged not just on speed, but on whether they help the person using them understand what they are building."
+      },
+      {
+        "heading": "Mistakes",
+        "content": "Software is made by people. People learn gradually. This site will contain mistakes in judgment, in prediction, in technical detail. When they are found, they will be corrected openly. No tool is perfect. No review is final."
+      },
+      {
+        "heading": "Maintenance",
+        "content": "This project is built to last. The code is plain HTML, CSS, and JavaScript. No frameworks. No build steps. No analytics. It will still work in ten years. The words here are written to be useful beyond the current news cycle. If you are new to CLI agents, you are welcome here. Start with the agent reviews or the ranking page. Ask questions. Be curious. If you have been using these tools for years, you are also welcome. There may be something here you have not tried, or an observation that matches your own experience. There is nothing to buy. Nothing to sign up for. Nothing to prove. Just notes from someone who builds software and tries to do it well."
+      }
+    ]
+  },
+  {
+    "url": "/methodology/",
+    "title": "Methodology: CLI Agents",
+    "breadcrumb": "Methodology",
+    "summary": "How CLI agent reviews are performed.",
+    "sections": [
+      {
+        "heading": "Methodology",
+        "content": "Every review on this site is based on actual engineering use rather than feature lists or marketing materials. I evaluate each agent by applying it to real tasks across a range of projects and noting what works, what does not, and where the tool sits in its maturity lifecycle. Reviews are not scored or ranked numerically. Instead, each agent receives a short qualitative verdict that reflects my current experience. Because the landscape moves quickly, reviews are updated as tools change and as my usage patterns evolve."
+      },
+      {
+        "heading": "Reliability",
+        "content": "Does the agent produce consistent, correct results? How often does it introduce bugs, hallucinate APIs, or fail to complete tasks?"
+      },
+      {
+        "heading": "Context Handling",
+        "content": "How well does the agent maintain understanding across a conversation or session? Can it reference earlier decisions, track project state, and follow multi-step instructions?"
+      },
+      {
+        "heading": "Code Quality",
+        "content": "Is the generated code idiomatic, maintainable, and consistent with the project's existing style? Does it follow the same conventions a human engineer would?"
+      },
+      {
+        "heading": "Repository Understanding",
+        "content": "How well does the agent grasp the structure, dependencies, and conventions of the codebase it operates on? This includes framework awareness, directory navigation, and config file comprehension."
+      },
+      {
+        "heading": "Terminal Experience",
+        "content": "How seamless is the command-line workflow? This covers installation, authentication, configuration, streaming output, error messages, interrupt handling, and integration with existing terminal tools."
+      },
+      {
+        "heading": "Speed",
+        "content": "Latency from request to response. How does the agent perform under real working conditions, including streaming, caching, and parallel operations?"
+      },
+      {
+        "heading": "Documentation",
+        "content": "Is the documentation clear, complete, and up to date? Can a new user get productive without digging through forums or source code?"
+      },
+      {
+        "heading": "Cost",
+        "content": "What is the real cost of using the agent? This includes API pricing, subscription fees, compute overhead, and indirect costs like time spent fixing incorrect output."
+      },
+      {
+        "heading": "Local vs Cloud",
+        "content": "Does the agent run locally, in the cloud, or both? How does the deployment model affect privacy, latency, offline capability, and data control?"
+      },
+      {
+        "heading": "Open Source",
+        "content": "Is the agent open source? What is the license? Can it be self-hosted, forked, or audited? How active is the community?"
+      },
+      {
+        "heading": "Maintainability",
+        "content": "How easy is it to keep the agent working over time? This includes update frequency, breaking changes, deprecation policies, and long-term viability."
+      },
+      {
+        "heading": "Review Cycle",
+        "content": "Each agent is re-evaluated at least once per quarter or when a significant version change is released. In-use agents are evaluated more frequently as part of daily work."
+      },
+      {
+        "heading": "Verdict Categories",
+        "content": "Verdict Meaning Daily driver Used as a primary tool in everyday engineering work. Highly reliable and integrated into workflow. Frequently used Used regularly but not the primary tool. May have specific use cases where it excels. Useful in specific situations Valuable for certain types of tasks but not general-purpose. Worth knowing about and keeping in the toolbox. Occasionally used Used from time to time. May be early in maturity or limited in applicability. Watching its progress Evaluated but not yet part of regular use. Shows potential worth monitoring."
+      }
+    ]
+  },
+  {
+    "url": "/auth/",
+    "title": "Sign in: CLI Agents",
+    "breadcrumb": "Sign in",
+    "summary": "Sign in to enable optional personal features like bookmarks and reading history.",
+    "sections": [
+      {
+        "heading": "Sign in",
+        "content": "An account enables optional personal features – bookmarks, notes, reading history, and collections. Sign-in is completely optional. You can always read without one. Continue with GitHub or Create an account with email Sign in with email You are signed in. Sign out Back to reading"
+      }
+    ]
+  },
+  {
+    "url": "/agents/",
+    "title": "Agents: CLI Agents",
+    "breadcrumb": "Agents",
+    "summary": "Reviews of command-line AI coding agents.",
+    "sections": [
+      {
+        "heading": "Agents",
+        "content": "Detailed reviews of command-line AI coding agents based on hands-on engineering use. Use the filters below to browse by ranking, recent updates, or newest additions. Current Ranking Recently Updated New Reviews Reviews of CLI AI coding agents, sortable by ranking, last updated, or addition date. Agent Verdict Version Last Updated"
+      }
+    ]
+  },
+  {
+    "url": "/agents/aider/",
+    "title": "Aider: CLI Agents",
+    "breadcrumb": "Agents / Aider",
+    "summary": "Notes on using Aider, an open-source CLI coding assistant.",
+    "tags": [
+      "Frequently used"
+    ],
+    "sections": [
+      {
+        "heading": "Aider",
+        "content": "Frequently used Developer Paul Gauthier Version Reviewed 0.72.0 Last Updated June 2026 Platform macOS, Linux, Windows"
+      },
+      {
+        "heading": "Overview",
+        "content": "I found Aider in mid-2024 while looking for an open-source alternative to the existing CLI agents. It operates directly in the terminal and works with multiple LLM backends. What kept me using it was the thoughtful git integration and the flexibility to choose different models for different tasks. I switch between Aider and Claude Code depending on the task and budget. For cost-sensitive work or when I want to use a local model, Aider is the tool I reach for. Aider editing code in a terminal session."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The git integration saved me from myself more times than I can count."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Fully open source with an Apache 2.0 license. I can audit the code and understand exactly what it does. Works with OpenAI, Anthropic, Google, local, and self-hosted models. This flexibility has been valuable. The git integration is well-designed. Automatic commits with good messages save me time. The map-refine architecture provides good repository understanding without consuming too much context. The development community is active. Releases come frequently with meaningful improvements. Can run entirely locally. I use this for privacy-sensitive projects."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Code quality depends heavily on the backend model. This is not Aider's fault, but it adds variability. Setup requires API key configuration and model selection. This adds some initial friction. Occasionally makes edit mistakes that require manual correction. Less polished than Claude Code. The terminal UI is functional but minimal. It gets the job done without being elegant. Documentation is scattered across the repository wiki and GitHub issues."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers who want a flexible, open-source CLI agent they can customize. I found Aider valuable when I need to use different models for different tasks, or when I want local models for privacy."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium-high. The repository understanding is solid, especially with the map-refine approach. Handles common frameworks well. The git integration feels natural and well thought out."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium. Core functionality is reliable, but the user experience has rough edges. Configuration is more complex than commercial alternatives. The project is under active development and improving steadily."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Setup takes longer than commercial alternatives due to API key configuration. The command-line interface is functional with helpful default behavior. The learning curve is moderate but worth the investment."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "The git-native workflow is well-integrated. The map-refine architecture provides good repository awareness. Works alongside other CLI tools without getting in the way."
+      },
+      {
+        "heading": "Performance",
+        "content": "Performance depends on the backend model. Streaming output works with most providers. The map-refine approach is efficient with context window usage."
+      },
+      {
+        "heading": "Documentation",
+        "content": "The README covers usage examples and configuration. The wiki has more detail about features and architecture. Some sections are less organized than I would like."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Costs are limited to API usage fees. I use it with local models for cost-free operation on simpler tasks."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS, Linux, Windows. Python-based installation works across all platforms."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Aider is a capable open-source CLI agent I use regularly. Its model flexibility, git integration, and active community make it a regular part of my workflow. It is less polished than Claude Code, but I find it equally capable for many tasks and more cost-effective."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.72.0 2025-09 Updated review for version 0.60.0 2024-06 Initial review (version 0.30.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/amp/",
+    "title": "Amp: CLI Agents",
+    "breadcrumb": "Agents / Amp",
+    "summary": "Notes on using Amp, a CLI coding agent.",
+    "tags": [
+      "Watching its progress"
+    ],
+    "sections": [
+      {
+        "heading": "Amp",
+        "content": "Watching its progress Developer Amp AI Version Reviewed 0.3.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I found Amp in early 2026. It is a CLI coding agent designed for fast, interactive code generation and editing. The focus is on providing a smooth developer experience with minimal configuration. Amp is in early development. The interactive mode is pleasant to use, but the capabilities are limited. I check each release to track progress."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The interactive experience was pleasant, but I need capability more than polish at this stage."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Interactive and responsive CLI interface. Fast code generation for common patterns. Simple setup process with sensible defaults. Good support for popular frameworks and languages. Active early development with frequent improvements."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Early stage. Features and stability are still developing. Limited context handling for long sessions. Repository understanding is basic. Small community with limited resources. Documentation is incomplete."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers looking for a fast, simple CLI agent for quick code generation tasks. Suitable for prototyping and learning."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Low. Handles straightforward tasks well but lacks depth for complex engineering work."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Low. The CLI is functional with a clean interface. Features are limited but well implemented."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Easy to install and configure. The interactive mode is pleasant to use."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Standard terminal workflow. Designed for interactive use."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast response times due to lightweight design. Good for quick iterations."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Minimal documentation covering basic usage."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Model API fees apply for cloud providers."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Amp is a promising early-stage CLI agent with a focus on developer experience. It is not ready for production use but is worth monitoring as it develops."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.3.0 2026-04 Updated review for version 0.2.0 2026-02 Initial review (version 0.1.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/antigravity/",
+    "title": "Antigravity: CLI Agents",
+    "breadcrumb": "Agents / Antigravity",
+    "summary": "Notes on using Antigravity, a lightweight CLI coding agent.",
+    "tags": [
+      "Watching its progress"
+    ],
+    "sections": [
+      {
+        "heading": "Antigravity",
+        "content": "Watching its progress Developer Antigravity AI Version Reviewed 0.4.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I came across Antigravity in early 2026. It is a lightweight CLI coding agent that focuses on fast operation and minimal dependencies. The design emphasizes simplicity and composability. It is still very early in development. I test each release to see how it evolves. The philosophy is promising but the capabilities are limited."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "Its simplicity is refreshing, but there is a distance between simple and capable."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Lightweight design with minimal dependencies. Fast startup and response times. Clean, focused CLI interface. Good performance for basic code generation tasks. Simple configuration model."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Early development. Features and reliability are still maturing. Limited repository understanding and context management. Small user community and limited resources. Documentation is minimal. Few supported model backends compared to established tools."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers interested in lightweight, minimal CLI agents. Worth monitoring if you value simplicity and speed over feature completeness."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Low. Handles basic code generation but lacks sophistication for complex multi-file operations."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Low. The CLI is functional but basic. Features are limited. The tool is clearly in early development."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Simple installation and configuration. The minimal design means less to learn but also less capability."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Standard terminal integration. The lightweight design makes it easy to script."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast due to minimal overhead. Competitive for the tasks it can handle."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Minimal documentation covering basic setup and usage."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. API usage fees for cloud model providers."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Antigravity is an early-stage CLI agent focused on simplicity and speed. It shows promise for lightweight use cases but is not ready for production work. I am watching its progress."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.4.0 2026-03 Updated review for version 0.2.0 2026-01 Initial review (version 0.1.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/claude-code/",
+    "title": "Claude Code: CLI Agents",
+    "breadcrumb": "Agents / Claude Code",
+    "summary": "Notes on using Claude Code for everyday engineering work.",
+    "tags": [
+      "Daily driver"
+    ],
+    "sections": [
+      {
+        "heading": "Claude Code",
+        "content": "Daily driver Developer Anthropic Version Reviewed 0.12.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started using Claude Code in early 2025, a few weeks after its initial release. It operates directly in the terminal with filesystem access, command execution, and context management. Over time it became the tool I reach for first in most situations. The terminal integration is what kept me using it. It sits alongside git, build tools, and other CLI utilities without getting in the way. After several months of daily use, it became a natural part of my workflow. Claude Code reviewing a multi-file change in the terminal."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "With this tool I found myself thinking less about the agent and more about the work itself."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Code generation quality is consistently good. It respects existing project conventions. Multi-file refactoring works reliably. I have used it to restructure several projects. Asks clarifying questions instead of guessing when requirements are ambiguous. Streaming output is fast enough to follow along without waiting. Repository understanding is strong. It indexes the project and keeps context well. The permission system for command execution is well designed."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "API costs accumulate quickly with heavy use. I had to adjust my usage patterns. Occasionally over-engineers solutions. A simpler approach would often suffice. Can be verbose in its reasoning output during long sessions. Requires API connectivity for all operations. No meaningful offline mode. Configuration options are limited compared to more customizable tools."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "General-purpose coding across the full stack. I use it for feature implementation, refactoring, debugging, and codebase exploration. It works particularly well with TypeScript, Python, and Rust."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "High. It understands project structure, dependency graphs, and language-specific patterns. I found it handles monorepos well. It respects existing code conventions without requiring explicit configuration."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "High. Installation is straightforward through npm or direct download. Authentication is simple. The CLI follows expected Unix conventions. The permission model for filesystem and shell access feels well-considered."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Setup took a few minutes. The CLI gives clear error messages and sensible defaults. The real-time streaming output makes it easy to follow what the agent is doing. I appreciated not having to read a manual before getting productive."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Sits naturally alongside existing terminal tools. I use it with git, build systems, and other CLI utilities without friction. It respects project-level configuration files."
+      },
+      {
+        "heading": "Performance",
+        "content": "Streaming responses are fast. Context indexing completes quickly on most projects. Performance degrades gracefully on larger codebases, though I noticed it on projects over 100k lines."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Well maintained. Covers installation, configuration, permissions, and troubleshooting. Examples reflect real use cases I could relate to."
+      },
+      {
+        "heading": "Pricing",
+        "content": "API usage-based pricing through Anthropic. Heavy daily use can accumulate substantial charges. The initial API credit was enough to evaluate it thoroughly."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux. I have not tried Windows, though it may work through WSL."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Claude Code is the CLI agent I rely on most in my daily work. It became my daily driver because the combination of code quality, repository understanding, and thoughtful design works well for the kind of engineering I do."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.12.0 2025-11 Updated review for version 0.8.0 2025-03 Initial review (version 0.4.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/cline/",
+    "title": "Cline: CLI Agents",
+    "breadcrumb": "Agents / Cline",
+    "summary": "Notes on using Cline as an AI coding assistant in VS Code.",
+    "tags": [
+      "Occasionally used"
+    ],
+    "sections": [
+      {
+        "heading": "Cline",
+        "content": "Occasionally used Developer Cline Bot Version Reviewed 3.4.0 Last Updated June 2026 Platform VS Code"
+      },
+      {
+        "heading": "Overview",
+        "content": "I tried Cline in early 2025 as a VS Code extension for AI-assisted coding. It can read and write files, execute terminal commands, and interact with language servers. It focuses on agentic behavior within the editor, capable of autonomous multi-step task execution. I found it useful for automated refactoring tasks within the editor. The autonomous mode is impressive when it works, but reliability varies. Cline autonomous coding session in VS Code."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "When the autonomous mode worked, it was impressive. The trick was knowing when it would work."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Capable of autonomous multi-step task execution within the editor. Good integration with VS Code language server protocol for code understanding. Supports multiple LLM providers including OpenAI, Anthropic, and local models. Transparent execution model. I can see planned actions before they execute. Regular updates with active development."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Tied to VS Code. Not usable in other editors or standalone terminal. Autonomous behavior can be unpredictable, especially on complex tasks. Resource usage is high during indexing and analysis. Requires configuring API keys and model selection. Code quality varies significantly between different models."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "VS Code users who want an autonomous coding assistant for multi-step tasks. I used it for automated refactoring, code generation, and exploration within the editor."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. Handles well-defined tasks competently but struggles with ambiguous requirements or complex multi-service projects."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium. The extension is well built and integrates smoothly with VS Code. Some features feel experimental. The autonomous mode is powerful but occasionally unpredictable."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Installation is one-click from the VS Code marketplace. Setting up model providers and API keys is required. The agent interface provides good visibility into planned actions."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Tightly integrated with VS Code editor, terminal, and language server features. Cannot be used outside of VS Code."
+      },
+      {
+        "heading": "Performance",
+        "content": "Responsive for typical tasks. Indexing and analysis can be resource intensive on larger projects."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Good documentation covering setup, configuration, and usage patterns. The community is active. Some advanced features have limited coverage."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free extension. Costs are limited to API usage fees. Can use local models at no additional cost."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "Available on all platforms VS Code supports."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Cline is a capable autonomous coding assistant for VS Code users. Its multi-step task execution is impressive when it works well, but reliability varies. I use it occasionally for specific scenarios within the editor."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 3.4.0 2025-10 Updated review for version 2.5.0 2025-01 Initial review (version 1.0.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/codex/",
+    "title": "Codex: CLI Agents",
+    "breadcrumb": "Agents / Codex",
+    "summary": "Notes on using Codex for CLI-based code generation.",
+    "tags": [
+      "Useful in specific situations"
+    ],
+    "sections": [
+      {
+        "heading": "Codex",
+        "content": "Useful in specific situations Developer Cursor / OpenAI Version Reviewed 0.10.0 Last Updated June 2026 Platform macOS, Linux, Windows"
+      },
+      {
+        "heading": "Overview",
+        "content": "I tried Codex in late 2024 when it was released by the Cursor team. It is a command-line AI coding tool with sandboxed execution, file editing, and OpenAI model integration. It was designed as a standalone CLI companion to the Cursor editor. I found Codex useful for quick code generation tasks where I did not need deep project context. It is reliable for well-defined, single-file tasks. Codex CLI terminal interface."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "This solved one problem well, but I rarely opened it for anything else."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "The terminal interface is clean and well designed. Output formatting is clear. Sandboxed command execution adds a safety layer for file operations. Tight integration with OpenAI models provides consistent results. Reliable for single-file edits and straightforward code generation. Installation and authentication are simple."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Repository understanding is limited. It does not compare well with Claude Code or Aider. Context handling degrades on longer tasks or multi-file changes. Limited model choice and configuration options. Updates are less frequent than major competitors. Code quality is inconsistent across different problem domains."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Quick code generation and prototyping. I found Codex useful when I need rapid answers or single-file implementations without complex project context."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. It handles straightforward tasks competently but struggles with complex multi-file changes. Well suited for well-scoped problems with clear requirements."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium. The CLI is polished and sandboxed execution is a thoughtful safety feature. The tool feels less actively developed than the Cursor editor, and features lag behind competitors."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Simple to get started. The CLI is clean and well organized. Limited configuration keeps things simple but can feel restrictive for advanced use."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "The sandboxed execution model makes it safe for experimental work. Suitable for one-off questions and quick code generation. Less suitable for sustained development sessions."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast response times for straightforward queries. Performance holds up well for typical single-file tasks."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Minimal but adequate. Setup and basic usage are covered. Advanced use cases are less documented."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Usage-based through the OpenAI API. A free tier is available with limited usage."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS, Linux, Windows. Cross-platform via npm."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Codex is useful for specific situations, particularly quick code generation and prototyping. It is not as capable as Claude Code or Aider for complex work. Its simplicity and clean design make it a reasonable choice for lightweight tasks."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.10.0 2025-06 Updated review for version 0.7.0 2024-10 Initial review (version 0.3.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/continue/",
+    "title": "Continue: CLI Agents",
+    "breadcrumb": "Agents / Continue",
+    "summary": "Notes on using Continue as an open-source IDE assistant.",
+    "tags": [
+      "Useful in specific situations"
+    ],
+    "sections": [
+      {
+        "heading": "Continue",
+        "content": "Useful in specific situations Developer Continue Dev Version Reviewed 1.2.0 Last Updated June 2026 Platform VS Code, JetBrains"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started using Continue in mid-2024. It is an open-source AI code assistant that integrates with IDEs like VS Code and JetBrains. It provides inline code suggestions, chat-based assistance, and custom slash commands. Unlike standalone CLI agents, it operates within the editor and can be configured to use various LLM backends, including local models. I use Continue for in-editor assistance when I want AI help without leaving my IDE. It serves a different purpose than CLI agents and complements them well. Continue chat interface in VS Code."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "I wanted it to replace my CLI agents, but it serves a different purpose entirely."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Fully open source with a permissive Apache 2.0 license. I can inspect and modify the code. Works with VS Code and JetBrains. The model choice is flexible. Custom slash commands let me create reusable workflows for common tasks. Privacy-focused. I can run it entirely with local models when needed. The community is active with a growing plugin ecosystem."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Requires an IDE. It is not a standalone CLI agent. Code generation quality varies by the backend model I choose. Context understanding is limited to open files and project index. Setup is more complex than commercial alternatives. I experienced occasional instability when switching models during sessions."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers who want an open-source, privacy-respecting AI assistant in their IDE. I found Continue valuable for teams that need to self-host or use custom model deployments."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. Provides solid code suggestions but lacks deep repository understanding. I use it as a pair programming assistant within the context of open files rather than as an autonomous agent."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium-high. The IDE integration is polished. The extension is well maintained. Configuration is complex but well documented."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Installation through IDE extension marketplaces is straightforward. Configuring models and slash commands requires editing a JSON file. The chat interface is clean and intuitive."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Deeply integrated with the IDE. It respects editor context, selection, and language server features. It cannot be used outside the IDE."
+      },
+      {
+        "heading": "Performance",
+        "content": "Responsive for inline completions and chat. Performance depends heavily on the backend model choice. Local models show variable latency based on my hardware."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Good documentation with setup guides, configuration reference, and examples. The community contributes guides for various setups."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Costs are limited to API usage fees when using cloud models. I have used it with local models at no cost."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "Available as extensions for VS Code and JetBrains across all platforms."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Continue fills a specific niche. It is a privacy-respecting, IDE-integrated code assistant with flexible model backends. I do not see it as a replacement for CLI agents. It serves a complementary role for in-editor workflows."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 1.2.0 2025-07 Updated review for version 0.8.0 2024-07 Initial review (version 0.5.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/crush/",
+    "title": "Crush: CLI Agents",
+    "breadcrumb": "Agents / Crush",
+    "summary": "Notes on using Crush, a CLI coding agent.",
+    "tags": [
+      "Watching its progress"
+    ],
+    "sections": [
+      {
+        "heading": "Crush",
+        "content": "Watching its progress Developer Crush AI Version Reviewed 0.2.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started tracking Crush in early 2026. It is a CLI coding agent focused on rapid code generation and editing. The emphasis is on simplicity and low friction, with minimal configuration required. Crush is very early in development. I am watching to see if the project gains momentum. Crush CLI interface."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "Too early to judge seriously, but the direction is worth paying attention to."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Simple, focused CLI with minimal learning curve. Fast code generation for common programming tasks. Easy installation and setup process. Low overhead and small dependency footprint."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Very early development. Features are minimal. Limited language and framework support. No meaningful repository understanding. Small community with minimal resources. Documentation is sparse. Stability issues with complex tasks."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers curious about CLI AI agents who want a simple, low-commitment tool to experiment with."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Low. In very early development. Handles basic code snippets but lacks capabilities for serious engineering work."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Very low. The CLI is functional but minimal. The tool is in an early prototype stage."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Very easy to get started. Limited capability but low friction."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Basic terminal integration for quick code generation tasks."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast for the simple tasks it can handle."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Minimal README with basic usage instructions."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Model API fees apply for cloud providers."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Crush is a very early-stage CLI agent with minimal features. It is worth keeping an eye on if the project gains momentum, but it is not yet useful for practical engineering work."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Initial review (version 0.2.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/cursor/",
+    "title": "Cursor: CLI Agents",
+    "breadcrumb": "Agents / Cursor",
+    "summary": "Notes on using Cursor as an AI-first code editor.",
+    "tags": [
+      "Frequently used"
+    ],
+    "sections": [
+      {
+        "heading": "Cursor",
+        "content": "Frequently used Developer Cursor Inc. Version Reviewed 0.46.x Last Updated June 2026 Platform macOS, Linux, Windows"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started using Cursor in late 2024. It is an AI-first code editor built on VS Code. While it is primarily a GUI editor, its agent mode and terminal integration make it relevant as a coding agent. It supports multiple model backends including Claude and GPT-4. I use Cursor alongside Claude Code rather than as a replacement. The editor integration is valuable for quick edits and situations where seeing the full file context helps. Cursor showing inline AI diffs during a refactoring session."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "I kept reaching for Cursor when I wanted to see diffs before committing to changes."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Inline editing with diffs makes it easy to review AI suggestions before accepting them. Multi-model support lets me choose the right model for different tasks. The tab-to-accept completions are fast and contextually aware. Composer mode handles multi-file changes effectively. Good for rapid prototyping and exploratory coding sessions."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Not a pure CLI tool. The editor needs to be running for full functionality. Agent mode can be aggressive. I have had it make changes across files unexpectedly. Performance degrades on larger projects, especially during indexing. Sends code to third-party model providers, which matters for sensitive work. The subscription cost adds to monthly tooling expenses."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers who want AI assistance integrated into their editor. I found Cursor particularly useful for line-level completions, quick refactoring, and navigating unfamiliar codebases."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium-high. It understands the open file and project context well. Handles TypeScript, Python, and web frameworks competently. The indexing pipeline provides good repository awareness, but it is resource-intensive on larger projects."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "High. Cursor is polished, well-documented, and actively maintained. The onboarding experience is smooth. Learning all the AI features takes time, but the basics are easy to pick up."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Settings are managed through the UI. The command palette provides quick access to AI features. Keyboard shortcuts are customizable. The learning curve is moderate for users unfamiliar with AI-assisted editing."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Integrates with git, terminal, and language server protocols. The editor-based workflow complements traditional development tools. Agent mode can execute terminal commands directly."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast for line-level completions and single-file edits. Multi-file operations show noticeable latency. Indexing can consume significant CPU and memory on larger projects. I noticed this most on monorepos."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Well-organized with guides, FAQs, and changelogs. The community forum is active. Feature documentation stays current with the release cycle."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Subscription model with monthly and annual tiers. The Pro plan includes full AI features. A free tier is available with limited functionality."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS, Linux, Windows. Full cross-platform support with consistent experience across systems."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Cursor is a polished AI coding environment for editor-centric workflows. I use it frequently for quick edits and exploratory work. The editor dependency keeps it from being a pure CLI solution, but it complements other tools well."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.46.x 2025-10 Updated review for version 0.42.x 2024-08 Initial review (version 0.30.x)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/gemini-cli/",
+    "title": "Gemini CLI: CLI Agents",
+    "breadcrumb": "Agents / Gemini Cli",
+    "summary": "Notes on using Gemini CLI, Google",
+    "tags": [
+      "Occasionally used"
+    ],
+    "sections": [
+      {
+        "heading": "Gemini CLI",
+        "content": "Occasionally used Developer Google Version Reviewed 1.2.0 Last Updated June 2026 Platform macOS, Linux, Windows"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started testing Gemini CLI when it was released in mid-2025. It is Google's command-line AI coding agent, powered by the Gemini model family. It provides terminal-native code generation, file editing, and shell command execution. I check in on Gemini CLI periodically to see how it is progressing. The pricing is compelling, but the reliability has not reached what I need for daily use. Gemini CLI terminal session showing code generation."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "I wanted the pricing to win me over, but reliability kept me from switching."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Pricing is very competitive compared to Claude and GPT-based alternatives. The context window is large. I was able to process substantial codebases in one session. Integrates well with Google Cloud services for users in that ecosystem. Response times are fast, especially for simpler queries. The free tier has reasonable usage limits for evaluation."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Code quality is inconsistent. It struggled with less common languages and frameworks. Repository understanding is weaker than Claude Code. It often missed project conventions. The permission model for command execution feels less safe than competitors. Documentation and community resources are still maturing. I had issues with larger, complex codebases."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Cost-sensitive development and Google Cloud-native projects. The large context window provides an advantage for certain types of analysis tasks."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium-low. It understands basic project structure but frequently misses nuanced conventions. Improving with each release but has not reached the reliability of more mature alternatives."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium-low. The CLI works but has rough edges. Google Cloud authentication adds friction. Documentation is catching up."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Installation is straightforward via npm. Authentication requires Google Cloud project setup, which adds some friction. The CLI is functional."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Standard terminal-based workflow with filesystem access and command execution. Google Cloud integration is a differentiator for users in that ecosystem."
+      },
+      {
+        "heading": "Performance",
+        "content": "Fast response times, particularly for simpler queries. The large context window is a practical advantage for certain tasks."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Improving but lags behind more established tools. Setup guides cover the basics. Advanced usage is less documented."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Very competitive with a generous free tier. Significant cost advantage over Claude and GPT-based alternatives."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS, Linux, Windows. Cross-platform via npm."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Gemini CLI shows promise, particularly in pricing and context window size. It has not reached the reliability I need for daily use. I check its progress periodically. Google continues to invest in the Gemini model family, so this is worth monitoring."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 1.2.0 2025-11 Updated review for version 0.8.0 2025-04 Initial review (version 0.4.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/goose/",
+    "title": "Goose: CLI Agents",
+    "breadcrumb": "Agents / Goose",
+    "summary": "Notes on using Goose, an open-source AI agent by Block.",
+    "tags": [
+      "Useful in specific situations"
+    ],
+    "sections": [
+      {
+        "heading": "Goose",
+        "content": "Useful in specific situations Developer Block Version Reviewed 1.5.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started evaluating Goose in early 2025 after hearing about it through the developer community. It is an open-source AI agent developed by Block (formerly Square) that operates in a sandboxed environment. It can edit code, execute terminal commands, and browse the web. The focus on safety and developer control is evident in its design. I found Goose useful for projects where I need granular control over what the agent can access. The safety model is well thought out."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The safety model gave me confidence to let an agent operate on sensitive projects."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "The safety model is strong. Granular permission controls for file and command access. Open source with corporate backing from Block. This gives confidence in long-term maintenance. The sandboxed execution environment prevents accidental system modifications. Documentation is thorough with practical examples. Supports multiple LLM backends including local models. Extensible via MCP (Model Context Protocol)."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Setup is more involved than simpler CLI agents. The sandbox adds noticeable latency to operations. Code generation quality depends heavily on the backend model. The community is smaller than more established tools. I experienced occasional stability issues with the sandbox environment."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Teams that prioritize safety and need granular control over agent access. I found Goose useful for projects where I need to be careful about what the agent can modify."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. Handles common development tasks competently. The sandbox constraints can limit effectiveness on complex multi-service projects. The safety model is well designed for production environments."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium. Core features are solid. The safety model is well implemented. The CLI interface is functional but not as polished as some alternatives."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Installation requires setting up the Goose runtime and sandbox. Configuration is managed through a configuration file. The permission model requires some upfront setup but provides peace of mind."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "The sandbox model means Goose operates in an isolated environment. File sharing between sandbox and host is configurable. Suitable for projects where safety and isolation matter."
+      },
+      {
+        "heading": "Performance",
+        "content": "The sandbox adds noticeable latency compared to agents that operate directly on the filesystem. Response times are acceptable for most tasks."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Well-organized coverage of setup, configuration, safety features, and usage patterns. Examples reflect real use cases."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Costs are limited to compute resources and model API fees."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux. Requires Docker or similar container runtime for the sandbox."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Goose is a well-designed open-source agent with a strong safety model. I found it useful in situations where sandboxed execution and granular permission control are important. The sandbox overhead limits its appeal for fast-paced development."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 1.5.0 2025-09 Updated review for version 1.0.0 2025-02 Initial review (version 0.9.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/opencode/",
+    "title": "OpenCode: CLI Agents",
+    "breadcrumb": "Agents / Opencode",
+    "summary": "Notes on using OpenCode, an open-source CLI coding agent.",
+    "tags": [
+      "Watching its progress"
+    ],
+    "sections": [
+      {
+        "heading": "OpenCode",
+        "content": "Watching its progress Developer Anomaly Co. Version Reviewed 0.5.0 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started following OpenCode in late 2025. It is an open-source command-line AI coding agent designed for terminal-native development workflows. It supports multiple LLM backends and provides file editing capabilities. The project focuses on simplicity and extensibility. OpenCode is early in its development. I test it periodically to track its progress. The design philosophy is clean, but it has not reached the maturity I need for regular use. OpenCode terminal interface during a coding session."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The design philosophy resonated with me even when the tool was not ready for my workflow."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Open source with a clean, permissive license. Terminal-native design for seamless workflow integration. Multi-model support with straightforward configuration. Good performance for code generation and editing tasks. Active development with regular releases."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Early stage. Features are still maturing. Small community and limited third-party resources. Repository understanding is less sophisticated than established tools. Documentation is still being built out. Occasional stability issues with newer features."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers interested in a lightweight, open-source CLI agent. Worth evaluating for teams that prefer simple, composable tools."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Low-medium. Handles basic coding tasks competently. Lacks the deep repository understanding and context management of more mature tools."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Low. The CLI is functional but has rough edges. The tool is clearly in early development with rapid iteration."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Straightforward setup with clear configuration. The CLI is clean and follows expected conventions."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Standard terminal-based workflow with filesystem access. Designed to sit alongside existing CLI tools without friction."
+      },
+      {
+        "heading": "Performance",
+        "content": "Good for standard tasks. Response times depend on the backend model. Lightweight design keeps overhead minimal."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Under active development. Core setup and usage are covered. Advanced topics are still being written."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Model API fees apply for cloud providers. Can use local models at no cost."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux."
+      },
+      {
+        "heading": "Verdict",
+        "content": "OpenCode is an interesting open-source CLI agent with a clean design. It is early in development and not yet ready for daily use. I am watching its progress and testing each release."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.5.0 2026-03 Updated review for version 0.3.0 2025-11 Initial review (version 0.1.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/openhands/",
+    "title": "OpenHands: CLI Agents",
+    "breadcrumb": "Agents / Openhands",
+    "summary": "Notes on using OpenHands for autonomous coding.",
+    "tags": [
+      "Useful in specific situations"
+    ],
+    "sections": [
+      {
+        "heading": "OpenHands",
+        "content": "Useful in specific situations Developer All-Hands-AI Version Reviewed 0.9.0 Last Updated June 2026 Platform macOS, Linux, Web UI"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started following OpenHands (formerly OpenDevin) in early 2025. It is an open-source platform for AI coding agents that provides both a web interface and command-line access. The project focuses on autonomous agents that can write code, use the terminal, browse the web, and interact with APIs. I found it useful for experimentation and understanding where autonomous coding agents are heading. It is not yet reliable enough for my daily production work. OpenHands web interface showing an autonomous coding session."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "I learned a lot about what autonomous agents could become, even when the tool was not ready for my daily work."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "The scope is ambitious. Agents can browse the web, run code, and interact with external services. Open source with an active community contributing regularly. The sandboxed execution environment adds a safety layer. Plugin architecture extends agent capabilities. Supports multiple LLM backends including local models. The web UI provides visual feedback alongside CLI access."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Setup and configuration are complex compared to simpler CLI agents. Autonomous agent behavior can be unpredictable and hard to debug. Resource intensive. The sandbox environment requires significant compute. The CLI experience is less polished than dedicated CLI agents. Code quality varies significantly across different models and tasks."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers interested in autonomous coding agents and experimental workflows. I used it to explore what AI agents can achieve with broad tool access."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium-low. The approach is innovative but the autonomous model introduces reliability challenges. Results are less predictable than more constrained agents."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium-low. The web UI is functional. The CLI has rough edges. Setup complexity is a barrier. Under active development with meaningful improvements each release."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Setup requires Docker and sandbox configuration. The web UI is the primary interface. Configuration is complex but well documented."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "The sandboxed environment isolates agent operations. File synchronization between sandbox and host is supported but adds overhead."
+      },
+      {
+        "heading": "Performance",
+        "content": "Resource intensive due to sandbox requirements. Agent response times are slower than simpler CLI tools."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Detailed documentation covering setup, configuration, and usage. Some areas are catching up to rapid development."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free and open source. Costs are limited to compute resources and model API fees. Can run entirely locally with sufficient hardware."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux via Docker. Web UI from any browser."
+      },
+      {
+        "heading": "Verdict",
+        "content": "OpenHands is an interesting platform that shows the potential of autonomous coding agents. It is not yet reliable enough for daily production use. I found it useful for experimentation and understanding where the technology is heading."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 0.9.0 2025-08 Updated review for version 0.6.0 2025-01 Initial review (version 0.3.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/qwen-code/",
+    "title": "Qwen Code: CLI Agents",
+    "breadcrumb": "Agents / Qwen Code",
+    "summary": "Notes on using Qwen Code, Alibaba Cloud",
+    "tags": [
+      "Watching its progress"
+    ],
+    "sections": [
+      {
+        "heading": "Qwen Code",
+        "content": "Watching its progress Developer Alibaba Cloud Version Reviewed 2.5.0 Last Updated June 2026 Platform macOS, Linux, Windows"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started testing Qwen Code in mid-2025. It is Alibaba Cloud's command-line AI coding agent, built on the Qwen model family. It provides code generation, file editing, and terminal integration. It is one of the newer entrants in the CLI agent space. The model quality has improved noticeably with each release. The CLI tooling is still catching up to the model capabilities. Qwen Code CLI interface."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The model quality improved faster than the CLI tooling, which is unusual in this space."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Competitive performance on coding benchmarks, particularly for Python and Java. Very low cost compared to Western alternatives. Good support for Chinese-language documentation and comments. Open-weight models available for self-hosting. Rapid iteration cycle with frequent model updates."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "CLI tooling is still immature with rough edges in installation and configuration. Documentation is primarily in Chinese. English translations lag behind. Smaller community and fewer third-party resources. Code quality drops outside of well-represented languages. Privacy considerations for code sent to Alibaba Cloud servers."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers in the Alibaba Cloud ecosystem or those needing a low-cost coding agent. The open-weight models are interesting for teams that want to self-host."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Low-medium. Handles straightforward tasks in core languages competently. Struggles with complex multi-file changes or less common frameworks."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Low. The CLI is functional but has usability issues. The documentation gap is significant for English-speaking users."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Installation and setup are more complex than alternatives. The interface is functional but less polished."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Standard terminal integration with filesystem access. The setup friction makes it less seamless than more mature alternatives."
+      },
+      {
+        "heading": "Performance",
+        "content": "Model performance is competitive for supported languages. CLI response times are acceptable."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Primarily in Chinese. English documentation is available but less comprehensive."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Very competitive. Significantly lower than Claude or GPT-4. Open-weight models can be self-hosted at no API cost."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS, Linux, Windows. Cross-platform through standard tooling."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Qwen Code shows rapid progress, particularly in model quality and pricing. It is not yet ready for my daily production use. I am watching its development, especially as the CLI tooling matures."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 2.5.0 2025-12 Updated review for version 2.0.0 2025-05 Initial review (version 1.0.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/roo-code/",
+    "title": "Roo Code: CLI Agents",
+    "breadcrumb": "Agents / Roo Code",
+    "summary": "Notes on using Roo Code for autonomous coding in VS Code.",
+    "tags": [
+      "Occasionally used"
+    ],
+    "sections": [
+      {
+        "heading": "Roo Code",
+        "content": "Occasionally used Developer Roo Version Reviewed 2.0.0 Last Updated June 2026 Platform VS Code"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started evaluating Roo Code in early 2025. It is an AI coding assistant for VS Code that provides autonomous coding capabilities. It can create and edit files, execute terminal commands, and perform multi-step development tasks. I found it useful for automated refactoring and code generation within VS Code. It shows promise but has not reached the reliability I need for daily use. Roo Code interface in VS Code showing task planning."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "The planning visibility gave me more confidence than other autonomous agents."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "Autonomous task execution with multi-step planning capabilities. Good VS Code integration with filesystem and terminal access. Supports multiple model providers for flexibility. Clear visibility into agent planning and execution. Active development with frequent feature updates."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Tied to VS Code. Not a standalone CLI solution. Autonomous behavior can be unpredictable on complex tasks. Code quality varies with model choice and task complexity. Requires API key configuration across providers. Resource usage during indexing can be significant."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "VS Code users looking for an autonomous coding agent for multi-step tasks. I found it useful for automated refactoring and code generation within the editor."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. Handles well-defined tasks reliably. Performance degrades with task ambiguity or complex multi-service projects."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "Medium. The extension is functional and integrates well with VS Code. Some features feel experimental."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Simple installation through VS Code marketplace. Requires model provider setup. The agent interface provides clear visibility into planned actions."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Integrated with VS Code editor, terminal, and filesystem. Cannot be used outside of VS Code."
+      },
+      {
+        "heading": "Performance",
+        "content": "Depends on the backend model. Responsive for standard tasks. Resource usage during analysis can impact editor performance on larger projects."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Adequate coverage of setup and basic usage. Community resources supplement official docs. Some advanced features have limited coverage."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free extension. API usage fees for selected model providers. Can operate with local models at no additional cost."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "All platforms supported by VS Code."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Roo Code is a capable autonomous coding assistant for VS Code users. It shows promise in multi-step task execution but has not reached the reliability of more mature CLI agents. I use it occasionally for specific scenarios within the editor."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 2.0.0 2025-11 Updated review for version 1.2.0 2025-03 Initial review (version 0.8.0)"
+      }
+    ]
+  },
+  {
+    "url": "/agents/warp/",
+    "title": "Warp: CLI Agents",
+    "breadcrumb": "Agents / Warp",
+    "summary": "Notes on using Warp as a terminal with AI features.",
+    "tags": [
+      "Frequently used"
+    ],
+    "sections": [
+      {
+        "heading": "Warp",
+        "content": "Frequently used Developer Warp Inc. Version Reviewed 2026.06 Last Updated June 2026 Platform macOS, Linux"
+      },
+      {
+        "heading": "Overview",
+        "content": "I started using Warp in late 2024 as a terminal replacement. It is a modern terminal emulator with built-in AI capabilities. Unlike CLI agents that run in any terminal, Warp is a complete terminal replacement that includes AI command generation and natural language querying. I categorize Warp differently from most CLI agents. It is a terminal first, with AI as a feature. It does not replace code generation agents, but it complements them well for command-line operations. Warp terminal with AI command generation."
+      },
+      {
+        "heading": "Personal Note",
+        "content": "I switched terminals for this and did not regret it."
+      },
+      {
+        "heading": "What Works Well",
+        "content": "AI is integrated into the terminal rather than being a separate tool. This feels natural. Natural language to command translation works well for shell operations I use regularly. Smart autocomplete learns from my usage patterns across sessions. The editing features are well done. Multi-cursor, block selection, and fuzzy finder. Workflows let me save and share multi-step command sequences. The rendering engine is fast with GPU acceleration."
+      },
+      {
+        "heading": "Where It Works Less Well",
+        "content": "Not a general-purpose coding agent. It is focused on command-line operations. Proprietary terminal. I cannot use it as a standard CLI agent in other terminals. AI features are limited to shell operations. It does not do multi-file code editing. Switching from iTerm2 meant leaving an established terminal setup behind. Commands are sent to Warp servers for AI processing. This matters for sensitive work."
+      },
+      {
+        "heading": "Use Cases",
+        "content": "Developers who spend significant time in the terminal and want AI assistance for command-line operations. I found it useful for command discovery, shell scripting, and reducing context switches."
+      },
+      {
+        "heading": "Engineering Maturity",
+        "content": "Medium. Warp is a strong terminal but limited as a coding agent. Its AI features work well for shell commands and simple scripting. I would not use it for complex code generation or refactoring."
+      },
+      {
+        "heading": "Product Maturity",
+        "content": "High. Warp is polished, performant, and well designed. The user interface is thoughtful. Onboarding is smooth. Regular releases bring meaningful improvements."
+      },
+      {
+        "heading": "Developer Experience",
+        "content": "Switching terminals takes some adjustment. The AI features feel natural and unobtrusive. Workflows are a standout feature for repetitive command sequences."
+      },
+      {
+        "heading": "Workflow Integration",
+        "content": "Sits at the terminal level, so it works with all CLI tools. It cannot be used as a headless agent in CI/CD or remote sessions. Suitable for interactive local development."
+      },
+      {
+        "heading": "Performance",
+        "content": "GPU-accelerated rendering makes it one of the fastest terminals I have used. AI responses are fast for command generation. No noticeable overhead for standard operations."
+      },
+      {
+        "heading": "Documentation",
+        "content": "Well-organized documentation with clear explanations of AI features, workflows, and configuration. In-app help is contextual and useful."
+      },
+      {
+        "heading": "Pricing",
+        "content": "Free tier with core features. Pro subscription for advanced AI features. Team plans for organizations."
+      },
+      {
+        "heading": "Platform Support",
+        "content": "macOS and Linux. No Windows release. Native apps with consistent experience."
+      },
+      {
+        "heading": "Verdict",
+        "content": "Warp is a different category from most CLI agents. It is a terminal with AI features rather than a standalone agent. I use it frequently for its terminal capabilities, and the AI features are genuinely useful for command-line operations. It complements code generation agents rather than replacing them."
+      },
+      {
+        "heading": "Changelog",
+        "content": "2026-06 Updated review for version 2026.06 2025-08 Updated review for version 2025.08 2024-09 Initial review (version 2024.09)"
+      }
+    ]
+  }
+]

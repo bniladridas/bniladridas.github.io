@@ -19,15 +19,23 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
   <nav role="navigation" aria-label="Main">
     <div class="container">
-      <a href="/" class="logo-link">
-        <img src="/assets/palmshed.svg" alt="Palmshed" class="logo-mark" width="28" height="28">
+      <div class="nav-left">
+<a href="/" class="logo-link">
+        <img src="/assets/palmshed.svg" alt="" class="logo-mark" width="28" height="28">
         <span class="site-title">CLI Agents</span>
       </a>
-      <a href="/">Home</a>
-      <a href="/agents/">All Agents</a>
-      <a href="/methodology/">Methodology</a>
-      <a href="/about/">About</a>
-      <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-center">
+        <a href="/">Home</a>
+        <a href="/agents/">Agents</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/ethos/">Ethos</a>
+      </div>
+      <div class="nav-right">
+        <a href="/auth/" class="nav-auth-link">Sign in</a>
+      <noscript><a href="/search/" class="nav-search-link">Search</a></noscript>
+      </div>
     </div>
   </nav>
   <main class="container" id="main-content">
@@ -52,7 +60,7 @@
       <figcaption>Claude Code reviewing a multi-file change in the terminal.</figcaption>
     </figure>
     <h2>Personal Note</h2>
-    <p>This was the first agent that made me stop thinking about the tool and focus on the work.</p>
+    <p>With this tool I found myself thinking less about the agent and more about the work itself.</p>
     <h2>What Works Well</h2>
     <ul>
       <li>Code generation quality is consistently good. It respects existing project conventions.</li>
@@ -89,7 +97,7 @@
     <h2>Platform Support</h2>
     <p>macOS and Linux. I have not tried Windows, though it may work through WSL.</p>
     <h2>Verdict</h2>
-    <p>Claude Code is the CLI agent I rely on most in my daily work. It became my daily driver because the combination of code quality, repository understanding, and thoughtful design works well for the kind of engineering I do. I compare other tools against it.</p>
+    <p>Claude Code is the CLI agent I rely on most in my daily work. It became my daily driver because the combination of code quality, repository understanding, and thoughtful design works well for the kind of engineering I do.</p>
     <h2>Changelog</h2>
     <div class="changelog">
       <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.12.0</p>
@@ -101,5 +109,7 @@
     <p>Building steadily since 2023.</p>
     <p class="footer-colophon">&copy; 2026 Niladri Das. Published under the Palmshed identity. <a href="/rss.xml">RSS feed</a> &#183; <a href="https://buymeacoffee.com/bniladridas">Support</a>.</p>
   </footer>
+  <script src="/auth.js"></script>
+  <script src="/search.js"></script>
 </body>
 </html>
