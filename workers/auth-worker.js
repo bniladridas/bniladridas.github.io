@@ -14,15 +14,27 @@
  *   GITHUB_CLIENT_SECRET – required
  */
 
+var CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+};
+
 addEventListener('fetch', function (event) {
   event.respondWith(handleRequest(event.request));
 });
 
 async function handleRequest(request) {
+  if (request.method === 'OPTIONS') {
+    return new Response(null, {
+      headers: CORS_HEADERS
+    });
+  }
+
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json', 'Allow': 'POST' }
+      headers: Object.assign({ 'Content-Type': 'application/json', 'Allow': 'POST' }, CORS_HEADERS)
     });
   }
 
@@ -32,7 +44,7 @@ async function handleRequest(request) {
   } catch (e) {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' }
+      headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
     });
   }
 
@@ -43,7 +55,7 @@ async function handleRequest(request) {
   if (!code) {
     return new Response(JSON.stringify({ error: 'Missing authorization code' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' }
+      headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
     });
   }
 
@@ -51,7 +63,7 @@ async function handleRequest(request) {
   if (!clientSecret) {
     return new Response(JSON.stringify({ error: 'Server misconfigured' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
     });
   }
 
@@ -78,7 +90,7 @@ async function handleRequest(request) {
       error_description: tokenData.error_description
     }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' }
+      headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
     });
   }
 
@@ -96,7 +108,7 @@ async function handleRequest(request) {
   if (!userRes.ok) {
     return new Response(JSON.stringify({ error: 'Failed to fetch user info' }), {
       status: 502,
-      headers: { 'Content-Type': 'application/json' }
+      headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
     });
   }
 
@@ -125,6 +137,6 @@ async function handleRequest(request) {
     email: email,
     avatar_url: userData.avatar_url
   }), {
-    headers: { 'Content-Type': 'application/json' }
+    headers: Object.assign({ 'Content-Type': 'application/json' }, CORS_HEADERS)
   });
 }
