@@ -81,10 +81,24 @@ Guidelines for future changes:
 - Gate every future change on: "Does this help someone return to reading more quickly?"
 
 ### In Progress
-(none)
+- **Mobile-first navigation redesign** – hamburger menu ≤ 520px, mobile menu panel, touch targets, responsive tables and typography
 
 ### Blocked
 (none)
+
+## Mobile Architecture
+The mobile experience is designed as its own first-class interface, not a scaled-down desktop:
+- **Navigation** collapses to a hamburger toggle at ≤ 520px with a simple, calm dropdown menu; search becomes icon-only at ≤ 650px
+- **Touch targets** are ≥ 44px for all interactive elements (search btn, nav links, ranking list items, auth buttons)
+- **Tables** have forced horizontal scroll on screens ≤ 720px to prevent overflow
+- **Auth page** buttons go full-width on mobile for easy tapping
+- **Typography** scales down at 600px (16px base) and 400px (tighter spacing); line length remains comfortable
+- **Agent meta** grid collapses to single column at 768px
+- **Shortcuts panel** re-centers on mobile (position: fixed, translate(-50%, -50%))
+- **Search** at narrow widths uses `calc(100vw - 2rem)` to avoid overflow
+- **Menu closes automatically** on Escape, outside click, and search focus – never overlaps with other overlays
+- **Reduced motion** respected – hamburger animation and all transitions disabled
+- Every page includes the same nav-toggle button for consistent mobile behavior
 
 ## Key Decisions
 - Auth state stored in `localStorage` for persistence; `sessionStorage` for OAuth CSRF state and return URL
