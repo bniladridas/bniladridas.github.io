@@ -330,7 +330,7 @@ def generate_rss(agents_data):
     # sort by pubDate descending
     items.sort(key=lambda x: x['pubDate'], reverse=True)
 
-    now = formatdate(localtime=False, usegmt=True)
+    now = items[0]['pubDate'] if items else formatdate(localtime=False, usegmt=True)
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
