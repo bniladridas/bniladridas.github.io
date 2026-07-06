@@ -1,6 +1,6 @@
 # Palmshed
 
-Palmshed is a collection of careful observations on software, tools, and the practice of building.
+Palmshed is a collection of careful observations on software, tools, and the practice of building. This site is published through an automated release pipeline.
 
 The project values sustained use over first impressions, evidence over advocacy, and revision over certainty. Reviews describe what has been learned through continued use and are updated as understanding changes.
 
