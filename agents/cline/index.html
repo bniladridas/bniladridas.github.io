@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161412">
-  <title>Cline: CLI Agents</title>
-  <meta name="description" content="Notes on using Cline as an AI coding assistant in VS Code.">
-  <meta property="og:title" content="Cline: CLI Agents">
-  <meta property="og:description" content="Notes on using Cline as an AI coding assistant in VS Code.">
+  <title>Cline — Palmshed</title>
+  <meta name="description" content="A review of Cline, an autonomous AI coding assistant for VS Code, based on evaluation through early 2026.">
+  <meta property="og:title" content="Cline — Palmshed">
+  <meta property="og:description" content="A review of Cline, an autonomous AI coding assistant for VS Code.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bniladridas.github.io/agents/cline/">
   <link rel="canonical" href="https://bniladridas.github.io/agents/cline/">
@@ -41,9 +41,9 @@
   </nav>
   <main class="container" id="main-content">
     <h1>Cline</h1>
-    <img src="/assets/logos/cline.svg" alt="Cline logo" class="agent-logo">
-    <p><span class="verdict-badge">Occasionally used</span></p>
     <dl class="agent-meta">
+      <dt>Status</dt>
+      <dd>Archived</dd>
       <dt>Developer</dt>
       <dd>Cline Bot</dd>
       <dt>Version Reviewed</dt>
@@ -53,54 +53,43 @@
       <dt>Platform</dt>
       <dd>VS Code</dd>
     </dl>
+    <p class="archived-notice">This tool is no longer in active use. Observations from evaluation in 2025 and early 2026.</p>
     <h2>Overview</h2>
-    <p>I tried Cline in early 2025 as a VS Code extension for AI-assisted coding. It can read and write files, execute terminal commands, and interact with language servers. It focuses on agentic behavior within the editor, capable of autonomous multi-step task execution.</p>
-    <p>I found it useful for automated refactoring tasks within the editor. The autonomous mode is impressive when it works, but reliability varies.</p>
+    <p>Cline is a VS Code extension for AI-assisted coding that provides autonomous multi-step task execution. It can read and write files, execute terminal commands, and interact with language servers, operating with agentic behavior within the editor.</p>
     <figure>
       <img src="/assets/screenshots/cline.png" alt="Cline autonomous coding session in VS Code." loading="lazy" width="800">
       <figcaption>Cline autonomous coding session in VS Code.</figcaption>
     </figure>
-    <h2>Personal Note</h2>
-    <p>When the autonomous mode worked, it was impressive. The trick was knowing when it would work.</p>
-    <h2>What Works Well</h2>
+    <h2>Review context</h2>
+    <aside class="review-context">
+      <p><strong>Source of assessment:</strong> Evaluation from early 2025 through early 2026 for automated refactoring and code generation within VS Code. No longer in current workflow.</p>
+    </aside>
+    <h2>Strengths</h2>
     <ul>
-      <li>Capable of autonomous multi-step task execution within the editor.</li>
+      <li>Autonomous multi-step task execution within the editor, capable of complex workflows.</li>
       <li>Good integration with VS Code language server protocol for code understanding.</li>
       <li>Supports multiple LLM providers including OpenAI, Anthropic, and local models.</li>
-      <li>Transparent execution model. I can see planned actions before they execute.</li>
-      <li>Regular updates with active development.</li>
+      <li>Transparent execution model showing planned actions before execution.</li>
+      <li>Active development with regular updates.</li>
     </ul>
-    <h2>Where It Works Less Well</h2>
+    <h2>Limitations</h2>
     <ul>
-      <li>Tied to VS Code. Not usable in other editors or standalone terminal.</li>
+      <li>Tied to VS Code. Not usable in other editors or as a standalone terminal agent.</li>
       <li>Autonomous behavior can be unpredictable, especially on complex tasks.</li>
-      <li>Resource usage is high during indexing and analysis.</li>
-      <li>Requires configuring API keys and model selection.</li>
-      <li>Code quality varies significantly between different models.</li>
+      <li>Resource usage is high during indexing and analysis on larger projects.</li>
+      <li>Code quality varies significantly between different backend models.</li>
     </ul>
-    <h2>Use Cases</h2>
-    <p>VS Code users who want an autonomous coding assistant for multi-step tasks. I used it for automated refactoring, code generation, and exploration within the editor.</p>
-    <h2>Engineering Maturity</h2>
-    <p>Medium. Handles well-defined tasks competently but struggles with ambiguous requirements or complex multi-service projects.</p>
-    <h2>Product Maturity</h2>
-    <p>Medium. The extension is well built and integrates smoothly with VS Code. Some features feel experimental. The autonomous mode is powerful but occasionally unpredictable.</p>
-    <h2>Developer Experience</h2>
-    <p>Installation is one-click from the VS Code marketplace. Setting up model providers and API keys is required. The agent interface provides good visibility into planned actions.</p>
-    <h2>Workflow Integration</h2>
-    <p>Tightly integrated with VS Code editor, terminal, and language server features. Cannot be used outside of VS Code.</p>
-    <h2>Performance</h2>
-    <p>Responsive for typical tasks. Indexing and analysis can be resource intensive on larger projects.</p>
-    <h2>Documentation</h2>
-    <p>Good documentation covering setup, configuration, and usage patterns. The community is active. Some advanced features have limited coverage.</p>
-    <h2>Pricing</h2>
-    <p>Free extension. Costs are limited to API usage fees. Can use local models at no additional cost.</p>
-    <h2>Platform Support</h2>
-    <p>Available on all platforms VS Code supports.</p>
-    <h2>Verdict</h2>
-    <p>Cline is a capable autonomous coding assistant for VS Code users. Its multi-step task execution is impressive when it works well, but reliability varies. I use it occasionally for specific scenarios within the editor.</p>
-    <h2>Changelog</h2>
+    <h2>Where it fits</h2>
+    <p>Cline is appropriate for VS Code users who want an autonomous coding assistant for multi-step tasks within the editor. Its strength is automated refactoring and code generation where the transparent execution model allows reviewing planned actions before they execute.</p>
+    <h2>Current assessment</h2>
+    <p>Cline is a capable autonomous coding assistant for VS Code. Its multi-step task execution can be impressive for well-defined tasks. The primary limitations are VS Code dependency and variable reliability on complex or ambiguous tasks.</p>
+    <h2>Reference</h2>
+    <ul>
+      <li><a href="https://cline.bot/">Cline homepage</a></li>
+    </ul>
+    <h2>Revision history</h2>
     <div class="changelog">
-      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 3.4.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Converted to archived review</p>
       <p class="changelog-entry"><span class="changelog-date">2025-10</span> Updated review for version 2.5.0</p>
       <p class="changelog-entry"><span class="changelog-date">2025-01</span> Initial review (version 1.0.0)</p>
     </div>

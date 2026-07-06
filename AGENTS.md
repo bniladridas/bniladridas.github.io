@@ -28,7 +28,6 @@ The interface has crossed a threshold from making things quieter to making the i
 - Created `workers/auth-worker.js` Cloudflare Worker for code→token exchange (deployed)
 - Set `GITHUB_CLIENT_SECRET` as encrypted Cloudflare env var via `wrangler secret put`
 - Added auth link, `auth.js` script, sitemap entry to all 22 HTML pages
-- Created `build-index.py` and `search-index.json` for pre-built static search index
 - Created `search.js` – inline nav search with dropdown, highlighting, keyboard nav, `/` to focus
 - Created `/search/index.html` static fallback page for JS-off access
 - Restructured nav into three groups (`.nav-left`, `.nav-center`, `.nav-right`) on all 25 pages
@@ -38,21 +37,19 @@ The interface has crossed a threshold from making things quieter to making the i
 - "All Agents" → "Agents" across all pages, breadcrumbs, nav, search index, script references
 - All transitions reduced to ≤ 150ms (mostly 0.08s–0.12s); no scaling or movement on hover
 - Keyboard hints (`nav-key-hint`) hidden by default; revealed only on Alt/Option press
-- `margin-left: 3rem` added to `.nav-right` for visual separation between center and right nav groups
-- `.nav-right` gap increased from `0.75rem` to `1.25rem` for breathing room between Sign in and Search
-- Search panel widened from 360px to 420px; responsive widths adjusted (340px at 800px, 300px at 650px)
-- `box-shadow: 0 4px 16px rgba(0,0,0,0.35)` added to search dropdown for surface contrast
-- Title line removed from search results; breadcrumb is now the primary heading (breadcrumb → snippet)
-- Breadcrumb font increased from 0.65rem to 0.82rem, weight 500, color `text-secondary`
-- Search placeholders darkened from `opacity: 0.6` to `0.75`
-- Search `/` keycap added as separate `<kbd>` element (opacity 0.3, border `rgba(37,34,32,0.5)`), hidden ≤ 800px
-- ArrowUp keyboard handler in `search.js` now guards against hidden dropdown (matching ArrowDown)
-- Auth return URL fixed: `auth.js` stores `sessionStorage.setItem('auth_return_to', window.location.pathname)` before redirect; callback reads it back and removes it
-- Search index failure no longer silent – `.catch` sets `"Search is temporarily unavailable."` in the empty-state element
-- `build-index.py` now scans `agents/` directory for folders containing `index.html` instead of hardcoding agent IDs
-- Footer "Shortcuts" label replaces `?` trigger button, added via `script.js` injection, styled as quiet `text-tertiary`, appended to `.footer-colophon` with `·` separator
-- Shortcuts panel note added: "Hold Alt (⌥) to reveal shortcuts on navigation links."
-- Logo `alt="Palmshed"` → `alt=""` on all 25 pages (decorative image, adjacent text provides accessible name)
+- About page rewritten as purpose statement (4 paragraphs, no biography)
+- Ethos page rewritten from first principles: Patience, Integrity, Understanding, Humility, Stewardship
+- Review template designed: 8 sections with Review context box and evidence traceability
+- All 16 agent pages rewritten using new template – Active (OpenCode, Antigravity, Codex), Occasional (Gemini CLI, Claude Code, Aider), Archived (Warp, Cursor, Continue, Goose, OpenHands, Cline, Roo Code, Amp, Crush, Qwen Code)
+- `styles.css` – Added `.review-context`, `.review-note`, `.archived-notice` styles
+- **Architectural refactor: canonical data model** — `data.js` now owns site organization only (id, status, order, addedDate); all review metadata (name, developer, version, dates) extracted from agent HTML pages by `build.py`
+- **`build.py` replaces `build-index.py`** — generates `agents.js` (merged runtime data), `search-index.json`, `rss.xml`, `sitemap.xml` from a single command: `python3 build.py`
+- **`agents.js`** — generated runtime file with merged org data + extracted HTML metadata; loaded by Home and Agents pages instead of `data.js`
+- **Status-based rendering** — `script.js` now renders ranking and table by status groups (Active → Occasional → Archived) using `a.status` instead of old `a.verdict`; `verdictClass()` replaced with `statusClass()`
+- **Developer field added** to all 6 Active/Occasional agent pages' `agent-meta` for consistent extraction
+- **`extract_meta()` bug fixed** — now properly handles apostrophes in meta descriptions (was truncating at "Cloud's")
+- **Sitemap regenerated** — 25 URLs, no duplicate privacy entry, priorities based on status (Active: 0.7, Occasional: 0.6, Archived: 0.5)
+- **RSS regenerated** — 16 items with extracted descriptions, sorted by pubDate descending
 
 ### Shortcuts Panel — Final Design (stable, no further changes)
 The panel was refactored from a modal dialog to a quiet reference card:
@@ -82,6 +79,7 @@ Guidelines for future changes:
 
 ### In Progress
 - **Mobile-first navigation redesign** – hamburger menu ≤ 520px, mobile menu panel, touch targets, responsive tables and typography
+- **Pass 2: Home + Agents rendering** — rewrite prose, drop first person, update metadata
 
 ### Blocked
 (none)
@@ -116,12 +114,20 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - Shortcuts panel has no backdrop — the page underneath is part of the experience
 - Design direction shifted from "quieter" to "disappearing" — making the interface fade so the content leads
 
+## Review Philosophy
+- Reviews document understanding, not preference. A review should help the reader understand what a tool is, how it behaves in practice, where it succeeds, and where it falls short. The purpose is not to persuade readers toward or away from a tool, but to record careful observations grounded in evidence.
+- Every significant claim should be traceable to sustained use, direct observation, or verifiable documentation. If a statement doesn't belong to one of those categories, it probably shouldn't be in the review.
+- Current assessment answers "Where does this tool currently belong?" not "Should you use this?"
+
 ## Next Steps (Engineering, not UI)
-1. **Server-render ranking list** in homepage HTML so content exists when JS is disabled — highest-value robustness improvement
-2. **Make search index auto-generated** from filesystem (already partially done; ensure `build-index.py` covers all content)
-3. **Fix auth and search edge cases** when convenient (review known edge cases, add guards)
-4. **Regenerate search index** after content changes (`python3 build-index.py`)
-5. **Write better reviews, update content over time, maintain carefully** — the biggest quality improvements now come from content, not UI
+1. **Rewrite Home page** — remove "my" language, align tone with About and Ethos
+2. **Rewrite Methodology page** — replace "I evaluate" voice, align with new template philosophy
+3. **Rewrite Agents index page** — reduce prominence of non-Active tools
+4. **Server-render ranking list** in homepage HTML so content exists when JS is disabled
+5. **Regenerate after content changes** — single command: `python3 build.py` (generates agents.js, search-index.json, rss.xml, sitemap.xml)
+6. **Decide: which Archived tools remain vs removed entirely**
+7. **Create Kilo page** only after sufficient use to support a thoughtful review
+8. **Second consistency pass** — tone, headings, metadata, level-of-detail across all rewritten pages
 
 ## Critical Context
 - Site is a pure static HTML/CSS/JS site on GitHub Pages; no build tool, no framework, no package manager
@@ -131,11 +137,16 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - GitHub OAuth App client ID: `Ov23liMMYiMlgYzGg2Ht`
 - Client secret: `5276d25c31fb2c428963c76e0fa0b358b8caeb24` (stored only in Cloudflare, never in repo)
 - `auth.js` exposes `_config` and `_getStoredState`/`_clearStoredState` for callback page use
-- `build-index.py` generates `search-index.json`; should be run whenever page content changes
+- `build.py` replaces old `build-index.py`; generates agents.js, search-index.json, rss.xml, sitemap.xml from a single command: `python3 build.py`
 - All transitions now < 150ms; no scaling or movement on hover
 - Search injects into `.nav-right` (not direct nav container)
 - The interface is considered stable; future work should prioritize writing and engineering over design
 - Shortcuts panel has no backdrop; it rests on the page like a reference card
+- `data.js` is now the canonical org source (handwritten: id, status, order, addedDate); no longer loaded in browser
+- `agents.js` is the generated runtime file (merged org + extracted HTML metadata); loaded by Home and Agents pages
+- `build.py` extracts from agent HTML: name (h1), developer, version, lastUpdated — so updating a review requires editing one page and running `python3 build.py`
+- CSS status indicators changed from old verdict classes to `.status-active`, `.status-occasional`, `.status-archived`
+- `script.js` uses `a.status` for rendering; old `verdictClass()` and `a.verdict` references removed
 
 ## Relevant Files
 - `auth.js` — Auth module with OAuth flow, CSRF state, return URL persistence, email stubs
@@ -144,13 +155,16 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - `workers/auth-worker.js` — Cloudflare Worker for code→token exchange (deployed)
 - `wrangler.jsonc` — Worker deployment config (name: auth-worker, compatibility_date: 2026-06-30)
 - `.gitignore` — Ignores `.wrangler/` alongside `.DS_Store`
-- `build-index.py` — Python script to generate `search-index.json`; scans agents/ directory dynamically
+- `build.py` — Python script to generate `agents.js`, `search-index.json`, `rss.xml`, `sitemap.xml` from canonical sources; scans agents/ directory dynamically; single command: `python3 build.py`
+- `data.js` — Handwritten org data (id, status, order, addedDate); consumed only by `build.py`
+- `agents.js` — Generated runtime file (merged org + extracted HTML metadata); loaded by Home and Agents pages
 - `search-index.json` — Pre-built static search index
 - `search.js` — Inline nav search; dropdown results with breadcrumb + snippet; keyboard nav (`↑`/`↓`/`Enter`/`Esc`/`/`); `/` keycap element; guards against hidden state
 - `search/index.html` — Static fallback search page for JS-off access
-- `script.js` — Keyboard shortcuts (H, A, M, B, E, S, /, ?, Esc); Alt/Option hint reveal; shortcuts panel; footer `?` trigger; active page highlighting
-- `styles.css` — Nav three-group layout; search dropdown at 420px with box-shadow; keycap styling; shortcuts panel (no backdrop, positioned below nav); responsive collapse rules
-- `sitemap.xml` — Contains `/auth/` entry (priority 0.3) and `/search/` entry (priority 0.2)
-- `agent pages` (16 under `agents/`) — All tones lowered; "Best for…" → "Suitable for…"; en dashes throughout
+- `script.js` — Keyboard shortcuts (H, A, M, B, E, S, /, ?, Esc); Alt/Option hint reveal; shortcuts panel; footer Shortcuts trigger; active page highlighting; status-based ranking and table rendering
+- `styles.css` — Nav three-group layout; search dropdown at 420px with box-shadow; keycap styling; shortcuts panel (no backdrop, positioned below nav); responsive collapse rules; `.status-active/Occasional/Archived`
+- `sitemap.xml` — Generated by build.py; 25 URLs, no duplicates, priorities by status
+- `rss.xml` — Generated by build.py; 16 items with extracted descriptions
+- `agent pages` (16 under `agents/`) — All rewritten using new template; each owns its own name, developer, version, dates in HTML
 - `ethos/index.html` — H1 changed to "Ethos" (was "The Workshop") with updated intro prose
-- `agents/index.html` — H1 and title changed to "Agents" (was "All Agents") throughout site
+- `agents/index.html` — H1 and title changed to "Agents"; table now renders status column instead of verdict

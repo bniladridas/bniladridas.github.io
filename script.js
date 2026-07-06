@@ -181,15 +181,13 @@
     return months[parseInt(parts[1],10)-1] + ' ' + parts[0];
   }
 
-  function verdictClass(v) {
+  function statusClass(s) {
     var map = {
-      'Daily driver': 'status-daily',
-      'Frequently used': 'status-frequent',
-      'Useful in specific situations': 'status-useful',
-      'Occasionally used': 'status-occasional',
-      'Watching its progress': 'status-watching'
+      'Active': 'status-active',
+      'Occasional': 'status-occasional',
+      'Archived': 'status-archived'
     };
-    return map[v] || 'status-watching';
+    return map[s] || 'status-archived';
   }
 
   function renderRanking(list) {
@@ -198,12 +196,11 @@
     list.forEach(function(a, i) {
       html += '<li>' +
         '<span><span class="rank-number">' + (i+1) + '</span> <a href="' + a.path + '">' + a.name + '</a></span>' +
-        '<span class="rank-label">' + a.verdict + '</span>' +
+        '<span class="rank-label">' + a.status + '</span>' +
       '</li>';
     });
     rankingEl.innerHTML = html;
 
-    // Make ranking list items navigable with arrow keys
     rankingEl.setAttribute('role', 'list');
   }
 
@@ -215,7 +212,7 @@
     list.forEach(function(a) {
       html += '<tr tabindex="-1">' +
         '<td><a href="' + a.path + '">' + a.name + '</a><br><span class="text-small">' + a.developer + '</span></td>' +
-        '<td><span class="status-indicator ' + verdictClass(a.verdict) + '"></span>' + a.verdict + '</td>' +
+        '<td><span class="status-indicator ' + statusClass(a.status) + '"></span>' + a.status + '</td>' +
         '<td>' + a.versionReviewed + '</td>' +
         '<td>' + formatDate(a.lastUpdated) + '</td>' +
       '</tr>';

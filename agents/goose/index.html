@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161412">
-  <title>Goose: CLI Agents</title>
-  <meta name="description" content="Notes on using Goose, an open-source AI agent by Block.">
-  <meta property="og:title" content="Goose: CLI Agents">
-  <meta property="og:description" content="Notes on using Goose, an open-source AI agent by Block.">
+  <title>Goose — Palmshed</title>
+  <meta name="description" content="A review of Goose, an open-source sandboxed AI agent by Block, based on evaluation through early 2026.">
+  <meta property="og:title" content="Goose — Palmshed">
+  <meta property="og:description" content="A review of Goose, an open-source sandboxed AI agent by Block.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bniladridas.github.io/agents/goose/">
   <link rel="canonical" href="https://bniladridas.github.io/agents/goose/">
@@ -41,9 +41,9 @@
   </nav>
   <main class="container" id="main-content">
     <h1>Goose</h1>
-    <img src="/assets/logos/goose.svg" alt="Goose logo" class="agent-logo">
-    <p><span class="verdict-badge">Useful in specific situations</span></p>
     <dl class="agent-meta">
+      <dt>Status</dt>
+      <dd>Archived</dd>
       <dt>Developer</dt>
       <dd>Block</dd>
       <dt>Version Reviewed</dt>
@@ -53,51 +53,39 @@
       <dt>Platform</dt>
       <dd>macOS, Linux</dd>
     </dl>
+    <p class="archived-notice">This tool is no longer in active use. Observations from evaluation in 2025 and early 2026.</p>
     <h2>Overview</h2>
-    <p>I started evaluating Goose in early 2025 after hearing about it through the developer community. It is an open-source AI agent developed by Block (formerly Square) that operates in a sandboxed environment. It can edit code, execute terminal commands, and browse the web. The focus on safety and developer control is evident in its design.</p>
-    <p>I found Goose useful for projects where I need granular control over what the agent can access. The safety model is well thought out.</p>
-    <h2>Personal Note</h2>
-    <p>The safety model gave me confidence to let an agent operate on sensitive projects.</p>
-    <h2>What Works Well</h2>
+    <p>Goose is an open-source AI agent developed by Block (formerly Square) that operates in a sandboxed environment. It can edit code, execute terminal commands, and browse the web. The design emphasizes safety and developer control through granular permission management.</p>
+    <h2>Review context</h2>
+    <aside class="review-context">
+      <p><strong>Source of assessment:</strong> Evaluation from early 2025 through early 2026 for projects requiring sandboxed agent execution. No longer in current workflow.</p>
+    </aside>
+    <h2>Strengths</h2>
     <ul>
-      <li>The safety model is strong. Granular permission controls for file and command access.</li>
-      <li>Open source with corporate backing from Block. This gives confidence in long-term maintenance.</li>
-      <li>The sandboxed execution environment prevents accidental system modifications.</li>
-      <li>Documentation is thorough with practical examples.</li>
-      <li>Supports multiple LLM backends including local models.</li>
-      <li>Extensible via MCP (Model Context Protocol).</li>
+      <li>Strong safety model with granular permission controls for file and command access.</li>
+      <li>Open source with corporate backing from Block, providing confidence in long-term maintenance.</li>
+      <li>Sandboxed execution environment prevents accidental system modifications.</li>
+      <li>Supports multiple LLM backends including local models. Extensible via MCP.</li>
+      <li>Thorough documentation with practical examples.</li>
     </ul>
-    <h2>Where It Works Less Well</h2>
+    <h2>Limitations</h2>
     <ul>
-      <li>Setup is more involved than simpler CLI agents.</li>
-      <li>The sandbox adds noticeable latency to operations.</li>
-      <li>Code generation quality depends heavily on the backend model.</li>
-      <li>The community is smaller than more established tools.</li>
-      <li>I experienced occasional stability issues with the sandbox environment.</li>
+      <li>Setup is more involved than simpler CLI agents due to the sandbox and runtime requirements.</li>
+      <li>Sandbox adds noticeable latency compared to agents operating directly on the filesystem.</li>
+      <li>Code generation quality depends heavily on the backend model chosen.</li>
+      <li>Smaller community compared to more established tools. Occasional sandbox stability issues.</li>
     </ul>
-    <h2>Use Cases</h2>
-    <p>Teams that prioritize safety and need granular control over agent access. I found Goose useful for projects where I need to be careful about what the agent can modify.</p>
-    <h2>Engineering Maturity</h2>
-    <p>Medium. Handles common development tasks competently. The sandbox constraints can limit effectiveness on complex multi-service projects. The safety model is well designed for production environments.</p>
-    <h2>Product Maturity</h2>
-    <p>Medium. Core features are solid. The safety model is well implemented. The CLI interface is functional but not as polished as some alternatives.</p>
-    <h2>Developer Experience</h2>
-    <p>Installation requires setting up the Goose runtime and sandbox. Configuration is managed through a configuration file. The permission model requires some upfront setup but provides peace of mind.</p>
-    <h2>Workflow Integration</h2>
-    <p>The sandbox model means Goose operates in an isolated environment. File sharing between sandbox and host is configurable. Suitable for projects where safety and isolation matter.</p>
-    <h2>Performance</h2>
-    <p>The sandbox adds noticeable latency compared to agents that operate directly on the filesystem. Response times are acceptable for most tasks.</p>
-    <h2>Documentation</h2>
-    <p>Well-organized coverage of setup, configuration, safety features, and usage patterns. Examples reflect real use cases.</p>
-    <h2>Pricing</h2>
-    <p>Free and open source. Costs are limited to compute resources and model API fees.</p>
-    <h2>Platform Support</h2>
-    <p>macOS and Linux. Requires Docker or similar container runtime for the sandbox.</p>
-    <h2>Verdict</h2>
-    <p>Goose is a well-designed open-source agent with a strong safety model. I found it useful in situations where sandboxed execution and granular permission control are important. The sandbox overhead limits its appeal for fast-paced development.</p>
-    <h2>Changelog</h2>
+    <h2>Where it fits</h2>
+    <p>Goose is best suited for projects where safety and isolation are primary concerns. The sandboxed execution and granular permission model make it appropriate for environments where agent actions need careful containment. The overhead means it is less suitable for fast-paced iterative development.</p>
+    <h2>Current assessment</h2>
+    <p>Goose remains a well-designed open-source agent with a strong safety model. Its value is situational: it excels where sandboxed execution and permission control matter, but the overhead limits its appeal for everyday development where speed matters more than isolation.</p>
+    <h2>Reference</h2>
+    <ul>
+      <li><a href="https://block.github.io/goose/">Goose homepage</a></li>
+    </ul>
+    <h2>Revision history</h2>
     <div class="changelog">
-      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 1.5.0</p>
+      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Converted to archived review</p>
       <p class="changelog-entry"><span class="changelog-date">2025-09</span> Updated review for version 1.0.0</p>
       <p class="changelog-entry"><span class="changelog-date">2025-02</span> Initial review (version 0.9.0)</p>
     </div>

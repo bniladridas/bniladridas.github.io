@@ -734,18 +734,6 @@ nav a[aria-current="page"] {
   opacity: 0.85;
 }
 
-.verdict-badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
 .meta-label {
   font-family: var(--font-heading);
   font-size: 0.8rem;
@@ -1323,6 +1311,67 @@ kbd {
   border-bottom-color: var(--accent);
 }
 
+/* Review context box */
+.review-context {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  background: var(--bg-secondary);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--border);
+}
+
+dl.review-context {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 1rem;
+}
+
+dl.review-context dt {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+dl.review-context dd {
+  color: var(--text);
+  margin: 0;
+}
+
+aside.review-context p {
+  margin: 0;
+  color: var(--text-secondary);
+  max-width: 55ch;
+}
+
+aside.review-context p strong {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* Review note (Active/Occasional reviews) */
+.review-note {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--border);
+}
+
+/* Archived notice */
+.archived-notice {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--text-tertiary);
+}
+
 /* Changelog */
 .changelog {
   font-size: 0.9rem;
@@ -1352,11 +1401,9 @@ kbd {
   margin-right: 0.5rem;
 }
 
-.status-daily { background: #7a9f7a; }
-.status-frequent { background: #7a8f9f; }
-.status-useful { background: #9f8f5a; }
+.status-active { background: #7a9f7a; }
 .status-occasional { background: #9f7a5a; }
-.status-watching { background: #5a5a5a; }
+.status-archived { background: #5a5a5a; }
 
 /* Sort / filter controls */
 .sort-controls {

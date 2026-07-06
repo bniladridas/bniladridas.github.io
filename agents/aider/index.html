@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161412">
-  <title>Aider: CLI Agents</title>
-  <meta name="description" content="Notes on using Aider, an open-source CLI coding assistant.">
-  <meta property="og:title" content="Aider: CLI Agents">
-  <meta property="og:description" content="Notes on using Aider, an open-source CLI coding assistant.">
+  <title>Aider — Palmshed</title>
+  <meta name="description" content="A review of Aider based on sustained use from 2024 through 2025.">
+  <meta property="og:title" content="Aider — Palmshed">
+  <meta property="og:description" content="A review of Aider based on sustained use from 2024 through 2025.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bniladridas.github.io/agents/aider/">
   <link rel="canonical" href="https://bniladridas.github.io/agents/aider/">
@@ -42,68 +42,83 @@
   <main class="container" id="main-content">
     <h1>Aider</h1>
     <img src="/assets/logos/aider.svg" alt="Aider logo" class="agent-logo">
-    <p><span class="verdict-badge">Frequently used</span></p>
-    <dl class="agent-meta">
-      <dt>Developer</dt>
-      <dd>Paul Gauthier</dd>
-      <dt>Version Reviewed</dt>
-      <dd>0.72.0</dd>
-      <dt>Last Updated</dt>
-      <dd>June 2026</dd>
-      <dt>Platform</dt>
-      <dd>macOS, Linux, Windows</dd>
-    </dl>
+    <p class="review-note">This review reflects sustained use from mid-2024 through 2025 and periodic evaluation since.</p>
+
     <h2>Overview</h2>
-    <p>I found Aider in mid-2024 while looking for an open-source alternative to the existing CLI agents. It operates directly in the terminal and works with multiple LLM backends. What kept me using it was the thoughtful git integration and the flexibility to choose different models for different tasks.</p>
-    <p>I switch between Aider and Claude Code depending on the task and budget. For cost-sensitive work or when I want to use a local model, Aider is the tool I reach for.</p>
+    <p>Aider is an open-source CLI coding assistant that operates directly in the terminal and works with multiple LLM backends, including local and self-hosted models. Its design centers on git-native workflow integration and model flexibility.</p>
+
     <figure>
       <img src="/assets/screenshots/aider.svg" alt="Aider editing code in a terminal session." loading="lazy" width="800">
       <figcaption>Aider editing code in a terminal session.</figcaption>
     </figure>
-    <h2>Personal Note</h2>
-    <p>The git integration saved me from myself more times than I can count.</p>
-    <h2>What Works Well</h2>
+
+    <h2>Review context</h2>
+    <dl class="review-context">
+      <dt>Status</dt>
+      <dd>Occasional</dd>
+      <dt>First used</dt>
+      <dd>June 2024</dd>
+      <dt>Last reviewed</dt>
+      <dd>July 2026</dd>
+      <dt>Review scope</dt>
+      <dd>macOS, sustained use across varied projects (2024–2025)</dd>
+      <dt>Primary use</dt>
+      <dd>Cost-sensitive coding, multi-model workflow, local model experimentation</dd>
+      <dt>Source of assessment</dt>
+      <dd>Sustained use over approximately 18 months; periodic evaluation since</dd>
+    </dl>
+
+    <h2>Strengths</h2>
     <ul>
-      <li>Fully open source with an Apache 2.0 license. I can audit the code and understand exactly what it does.</li>
-      <li>Works with OpenAI, Anthropic, Google, local, and self-hosted models. This flexibility has been valuable.</li>
-      <li>The git integration is well-designed. Automatic commits with good messages save me time.</li>
-      <li>The map-refine architecture provides good repository understanding without consuming too much context.</li>
-      <li>The development community is active. Releases come frequently with meaningful improvements.</li>
-      <li>Can run entirely locally. I use this for privacy-sensitive projects.</li>
+      <li>Fully open source under Apache 2.0. The code can be inspected, audited, and modified.</li>
+      <li>Works with OpenAI, Anthropic, Google, local, and self-hosted models. This flexibility is valuable for workflows that require switching between cost and capability profiles.</li>
+      <li>The git integration is well designed. Automatic commits with descriptive messages save time and provide a natural safety net.</li>
+      <li>The map-refine architecture provides good repository understanding without consuming excessive context window.</li>
+      <li>Can run entirely locally, which is important for privacy-sensitive projects.</li>
+      <li>Active development community with frequent releases and meaningful improvements.</li>
     </ul>
-    <h2>Where It Works Less Well</h2>
+
+    <h2>Limitations</h2>
     <ul>
-      <li>Code quality depends heavily on the backend model. This is not Aider's fault, but it adds variability.</li>
-      <li>Setup requires API key configuration and model selection. This adds some initial friction.</li>
-      <li>Occasionally makes edit mistakes that require manual correction. Less polished than Claude Code.</li>
-      <li>The terminal UI is functional but minimal. It gets the job done without being elegant.</li>
-      <li>Documentation is scattered across the repository wiki and GitHub issues.</li>
+      <li>Code quality depends heavily on the backend model. This adds variability that is outside the tool's control.</li>
+      <li>Setup requires API key configuration and model selection, which adds initial friction compared to tools with opinionated defaults.</li>
+      <li>The terminal UI is functional but minimal. It lacks refinements found in more polished alternatives.</li>
+      <li>Documentation is scattered across the repository wiki, GitHub issues, and community sources.</li>
+      <li>Edit mistakes occur occasionally and require manual correction, particularly on complex multi-file changes.</li>
     </ul>
-    <h2>Use Cases</h2>
-    <p>Developers who want a flexible, open-source CLI agent they can customize. I found Aider valuable when I need to use different models for different tasks, or when I want local models for privacy.</p>
-    <h2>Engineering Maturity</h2>
-    <p>Medium-high. The repository understanding is solid, especially with the map-refine approach. Handles common frameworks well. The git integration feels natural and well thought out.</p>
-    <h2>Product Maturity</h2>
-    <p>Medium. Core functionality is reliable, but the user experience has rough edges. Configuration is more complex than commercial alternatives. The project is under active development and improving steadily.</p>
-    <h2>Developer Experience</h2>
-    <p>Setup takes longer than commercial alternatives due to API key configuration. The command-line interface is functional with helpful default behavior. The learning curve is moderate but worth the investment.</p>
-    <h2>Workflow Integration</h2>
-    <p>The git-native workflow is well-integrated. The map-refine architecture provides good repository awareness. Works alongside other CLI tools without getting in the way.</p>
-    <h2>Performance</h2>
-    <p>Performance depends on the backend model. Streaming output works with most providers. The map-refine approach is efficient with context window usage.</p>
-    <h2>Documentation</h2>
-    <p>The README covers usage examples and configuration. The wiki has more detail about features and architecture. Some sections are less organized than I would like.</p>
-    <h2>Pricing</h2>
-    <p>Free and open source. Costs are limited to API usage fees. I use it with local models for cost-free operation on simpler tasks.</p>
-    <h2>Platform Support</h2>
-    <p>macOS, Linux, Windows. Python-based installation works across all platforms.</p>
-    <h2>Verdict</h2>
-    <p>Aider is a capable open-source CLI agent I use regularly. Its model flexibility, git integration, and active community make it a regular part of my workflow. It is less polished than Claude Code, but I find it equally capable for many tasks and more cost-effective.</p>
-    <h2>Changelog</h2>
+
+    <h2>Where it fits</h2>
+    <p>Aider is well suited for developers who want model flexibility and git-native workflow in an open-source package. It is particularly valuable for cost-sensitive work, local model experimentation, and projects where code auditability matters. The setup friction makes it less suitable for those who prefer opinionated, ready-to-use tools.</p>
+
+    <h2>Current assessment</h2>
+    <p>Aider set a standard for open-source CLI coding agents through its model flexibility and thoughtful git integration. It was a primary tool through much of 2024 and 2025. While no longer the daily driver, it remains a capable tool for specific situations, particularly when model flexibility or local execution is a priority. The architecture decisions it pioneered continue to influence the category.</p>
+
+    <h2>Reference</h2>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Paul Gauthier</dd>
+      <dt>Website</dt>
+      <dd><a href="https://aider.chat">aider.chat</a></dd>
+      <dt>Repository</dt>
+      <dd><a href="https://github.com/paul-gauthier/aider">github.com/paul-gauthier/aider</a></dd>
+      <dt>License</dt>
+      <dd>Apache 2.0</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+      <dt>Pricing</dt>
+      <dd>Free and open source. Costs limited to API usage fees.</dd>
+      <dt>Version reviewed</dt>
+      <dd>0.72.0</dd>
+      <dt>Reviewed</dt>
+      <dd>July 2026</dd>
+    </dl>
+
+    <h2>Revision history</h2>
     <div class="changelog">
-      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.72.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2025-09</span> Updated review for version 0.60.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2024-06</span> Initial review (version 0.30.0)</p>
+      <p class="changelog-entry"><span class="changelog-date">July 2026</span> Rewritten using evidence-based template. Reclassified from Frequently used to Occasional.</p>
+      <p class="changelog-entry"><span class="changelog-date">June 2026</span> Updated review for version 0.72.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">September 2025</span> Updated review for version 0.60.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">June 2024</span> Initial review (version 0.30.0).</p>
     </div>
   </main>
   <footer class="container">

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161412">
-  <title>Gemini CLI: CLI Agents</title>
-  <meta name="description" content="Notes on using Gemini CLI, Google's command-line coding agent.">
-  <meta property="og:title" content="Gemini CLI: CLI Agents">
-  <meta property="og:description" content="Notes on using Gemini CLI, Google's command-line coding agent.">
+  <title>Gemini CLI — Palmshed</title>
+  <meta name="description" content="A review of Gemini CLI based on periodic evaluation through July 2026.">
+  <meta property="og:title" content="Gemini CLI — Palmshed">
+  <meta property="og:description" content="A review of Gemini CLI based on periodic evaluation through July 2026.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bniladridas.github.io/agents/gemini-cli/">
   <link rel="canonical" href="https://bniladridas.github.io/agents/gemini-cli/">
@@ -42,67 +42,80 @@
   <main class="container" id="main-content">
     <h1>Gemini CLI</h1>
     <img src="/assets/logos/gemini-cli.svg" alt="Gemini CLI logo" class="agent-logo">
-    <p><span class="verdict-badge">Occasionally used</span></p>
-    <dl class="agent-meta">
-      <dt>Developer</dt>
-      <dd>Google</dd>
-      <dt>Version Reviewed</dt>
-      <dd>1.2.0</dd>
-      <dt>Last Updated</dt>
-      <dd>June 2026</dd>
-      <dt>Platform</dt>
-      <dd>macOS, Linux, Windows</dd>
-    </dl>
+    <p class="review-note">This review reflects periodic evaluation through July 2026.</p>
+
     <h2>Overview</h2>
-    <p>I started testing Gemini CLI when it was released in mid-2025. It is Google's command-line AI coding agent, powered by the Gemini model family. It provides terminal-native code generation, file editing, and shell command execution.</p>
-    <p>I check in on Gemini CLI periodically to see how it is progressing. The pricing is compelling, but the reliability has not reached what I need for daily use.</p>
+    <p>Gemini CLI is Google's command-line AI coding agent, powered by the Gemini model family. It provides terminal-native code generation, file editing, and shell command execution. A large context window and competitive pricing distinguish it from alternatives.</p>
+
     <figure>
       <img src="/assets/screenshots/gemini-cli.png" alt="Gemini CLI terminal session showing code generation." loading="lazy" width="800">
       <figcaption>Gemini CLI terminal session showing code generation.</figcaption>
     </figure>
-    <h2>Personal Note</h2>
-    <p>I wanted the pricing to win me over, but reliability kept me from switching.</p>
-    <h2>What Works Well</h2>
+
+    <h2>Review context</h2>
+    <dl class="review-context">
+      <dt>Status</dt>
+      <dd>Occasional</dd>
+      <dt>First used</dt>
+      <dd>April 2025</dd>
+      <dt>Last reviewed</dt>
+      <dd>July 2026</dd>
+      <dt>Review scope</dt>
+      <dd>macOS, periodic evaluation across multiple releases</dd>
+      <dt>Primary use</dt>
+      <dd>Periodic assessment of progress and capability</dd>
+      <dt>Source of assessment</dt>
+      <dd>Periodic evaluation; documentation for pricing and platform details</dd>
+    </dl>
+
+    <h2>Strengths</h2>
     <ul>
-      <li>Pricing is very competitive compared to Claude and GPT-based alternatives.</li>
-      <li>The context window is large. I was able to process substantial codebases in one session.</li>
-      <li>Integrates well with Google Cloud services for users in that ecosystem.</li>
-      <li>Response times are fast, especially for simpler queries.</li>
-      <li>The free tier has reasonable usage limits for evaluation.</li>
+      <li>Pricing is very competitive. The free tier has reasonable usage limits and paid rates are significantly lower than comparable alternatives.</li>
+      <li>The context window is large. Substantial codebases can be processed within a single session.</li>
+      <li>Response times are fast, especially for straightforward queries.</li>
+      <li>Integrates with Google Cloud services, which is useful for teams in that ecosystem.</li>
+      <li>Cross-platform support via npm.</li>
     </ul>
-    <h2>Where It Works Less Well</h2>
+
+    <h2>Limitations</h2>
     <ul>
-      <li>Code quality is inconsistent. It struggled with less common languages and frameworks.</li>
-      <li>Repository understanding is weaker than Claude Code. It often missed project conventions.</li>
-      <li>The permission model for command execution feels less safe than competitors.</li>
-      <li>Documentation and community resources are still maturing.</li>
-      <li>I had issues with larger, complex codebases.</li>
+      <li>Code quality is inconsistent. The tool performs well on common languages and patterns but struggles with less common languages and frameworks.</li>
+      <li>Repository understanding is limited. Project conventions and nuanced structure are frequently missed.</li>
+      <li>Authentication requires Google Cloud project setup, which adds friction compared to simpler CLI tools.</li>
+      <li>Documentation is improving but still lags behind more established tools, especially for advanced usage.</li>
+      <li>Performance on larger, complex codebases has been less reliable in testing.</li>
     </ul>
-    <h2>Use Cases</h2>
-    <p>Cost-sensitive development and Google Cloud-native projects. The large context window provides an advantage for certain types of analysis tasks.</p>
-    <h2>Engineering Maturity</h2>
-    <p>Medium-low. It understands basic project structure but frequently misses nuanced conventions. Improving with each release but has not reached the reliability of more mature alternatives.</p>
-    <h2>Product Maturity</h2>
-    <p>Medium-low. The CLI works but has rough edges. Google Cloud authentication adds friction. Documentation is catching up.</p>
-    <h2>Developer Experience</h2>
-    <p>Installation is straightforward via npm. Authentication requires Google Cloud project setup, which adds some friction. The CLI is functional.</p>
-    <h2>Workflow Integration</h2>
-    <p>Standard terminal-based workflow with filesystem access and command execution. Google Cloud integration is a differentiator for users in that ecosystem.</p>
-    <h2>Performance</h2>
-    <p>Fast response times, particularly for simpler queries. The large context window is a practical advantage for certain tasks.</p>
-    <h2>Documentation</h2>
-    <p>Improving but lags behind more established tools. Setup guides cover the basics. Advanced usage is less documented.</p>
-    <h2>Pricing</h2>
-    <p>Very competitive with a generous free tier. Significant cost advantage over Claude and GPT-based alternatives.</p>
-    <h2>Platform Support</h2>
-    <p>macOS, Linux, Windows. Cross-platform via npm.</p>
-    <h2>Verdict</h2>
-    <p>Gemini CLI shows promise, particularly in pricing and context window size. It has not reached the reliability I need for daily use. I check its progress periodically. Google continues to invest in the Gemini model family, so this is worth monitoring.</p>
-    <h2>Changelog</h2>
+
+    <h2>Where it fits</h2>
+    <p>Gemini CLI is worth evaluating for cost-sensitive development, Google Cloud-native projects, or tasks that benefit from a large context window. It is not yet a daily driver for general-purpose work, but its pricing trajectory and rapid improvement cycle make it worth monitoring.</p>
+
+    <h2>Current assessment</h2>
+    <p>Gemini CLI has improved measurably since its initial release, particularly in model capability and pricing. It has not reached the reliability needed for daily use across a range of projects, but it is checked periodically as development continues. Its large context window and low cost are genuine advantages that may become more significant as the tool matures.</p>
+
+    <h2>Reference</h2>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Google</dd>
+      <dt>Website</dt>
+      <dd><a href="https://cloud.google.com/gemini-cli">cloud.google.com/gemini-cli</a></dd>
+      <dt>License</dt>
+      <dd>Proprietary</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux, Windows</dd>
+      <dt>Pricing</dt>
+      <dd>Competitive pricing with generous free tier. Pay-as-you-go for extended usage.</dd>
+      <dt>Version reviewed</dt>
+      <dd>1.2.0</dd>
+      <dt>Reviewed</dt>
+      <dd>July 2026</dd>
+    </dl>
+
+    <h2>Revision history</h2>
     <div class="changelog">
-      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 1.2.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2025-11</span> Updated review for version 0.8.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2025-04</span> Initial review (version 0.4.0)</p>
+      <p class="changelog-entry"><span class="changelog-date">July 2026</span> Rewritten using evidence-based template.</p>
+      <p class="changelog-entry"><span class="changelog-date">June 2026</span> Updated review for version 1.2.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">November 2025</span> Updated review for version 0.8.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">April 2025</span> Initial review (version 0.4.0).</p>
     </div>
   </main>
   <footer class="container">

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161412">
-  <title>Claude Code: CLI Agents</title>
-  <meta name="description" content="Notes on using Claude Code for everyday engineering work.">
-  <meta property="og:title" content="Claude Code: CLI Agents">
-  <meta property="og:description" content="Notes on using Claude Code for everyday engineering work.">
+  <title>Claude Code — Palmshed</title>
+  <meta name="description" content="A review of Claude Code based on sustained daily use through 2025.">
+  <meta property="og:title" content="Claude Code — Palmshed">
+  <meta property="og:description" content="A review of Claude Code based on sustained daily use through 2025.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bniladridas.github.io/agents/claude-code/">
   <link rel="canonical" href="https://bniladridas.github.io/agents/claude-code/">
@@ -42,68 +42,81 @@
   <main class="container" id="main-content">
     <h1>Claude Code</h1>
     <img src="/assets/logos/claude-code.svg" alt="Claude Code logo" class="agent-logo">
-    <p><span class="verdict-badge">Daily driver</span></p>
-    <dl class="agent-meta">
-      <dt>Developer</dt>
-      <dd>Anthropic</dd>
-      <dt>Version Reviewed</dt>
-      <dd>0.12.0</dd>
-      <dt>Last Updated</dt>
-      <dd>June 2026</dd>
-      <dt>Platform</dt>
-      <dd>macOS, Linux</dd>
-    </dl>
+    <p class="review-note">This review reflects sustained use through late 2025 and periodic evaluation since.</p>
+
     <h2>Overview</h2>
-    <p>I started using Claude Code in early 2025, a few weeks after its initial release. It operates directly in the terminal with filesystem access, command execution, and context management. Over time it became the tool I reach for first in most situations.</p>
-    <p>The terminal integration is what kept me using it. It sits alongside git, build tools, and other CLI utilities without getting in the way. After several months of daily use, it became a natural part of my workflow.</p>
+    <p>Claude Code is Anthropic's command-line AI coding agent. It operates directly in the terminal with filesystem access, command execution, and context management. It was used as a primary tool for daily engineering work over an extended period.</p>
+
     <figure>
       <img src="/assets/screenshots/claude-code.webp" alt="Claude Code reviewing a multi-file change in the terminal." loading="lazy" width="800">
       <figcaption>Claude Code reviewing a multi-file change in the terminal.</figcaption>
     </figure>
-    <h2>Personal Note</h2>
-    <p>With this tool I found myself thinking less about the agent and more about the work itself.</p>
-    <h2>What Works Well</h2>
+
+    <h2>Review context</h2>
+    <dl class="review-context">
+      <dt>Status</dt>
+      <dd>Occasional</dd>
+      <dt>First used</dt>
+      <dd>March 2025</dd>
+      <dt>Last reviewed</dt>
+      <dd>July 2026</dd>
+      <dt>Review scope</dt>
+      <dd>macOS, daily use across TypeScript, Python, and Rust projects through 2025</dd>
+      <dt>Primary use</dt>
+      <dd>General-purpose coding, multi-file refactoring, codebase exploration (historical)</dd>
+      <dt>Source of assessment</dt>
+      <dd>Sustained daily use (2025); periodic evaluation since</dd>
+    </dl>
+
+    <h2>Strengths</h2>
     <ul>
-      <li>Code generation quality is consistently good. It respects existing project conventions.</li>
-      <li>Multi-file refactoring works reliably. I have used it to restructure several projects.</li>
-      <li>Asks clarifying questions instead of guessing when requirements are ambiguous.</li>
-      <li>Streaming output is fast enough to follow along without waiting.</li>
-      <li>Repository understanding is strong. It indexes the project and keeps context well.</li>
-      <li>The permission system for command execution is well designed.</li>
+      <li>Code generation quality is consistently good and respects existing project conventions.</li>
+      <li>Multi-file refactoring works reliably across several files in a single session.</li>
+      <li>Asks clarifying questions when requirements are ambiguous rather than guessing.</li>
+      <li>Repository understanding is strong. It indexes project structure and maintains context well across sessions.</li>
+      <li>The permission system for filesystem and command execution is well designed and provides appropriate guardrails.</li>
+      <li>Streaming output is fast and makes it easy to follow along with the agent's reasoning.</li>
     </ul>
-    <h2>Where It Works Less Well</h2>
+
+    <h2>Limitations</h2>
     <ul>
-      <li>API costs accumulate quickly with heavy use. I had to adjust my usage patterns.</li>
+      <li>API costs accumulate quickly with heavy daily use. Usage patterns had to be adjusted to manage expenses.</li>
       <li>Occasionally over-engineers solutions. A simpler approach would often suffice.</li>
-      <li>Can be verbose in its reasoning output during long sessions.</li>
-      <li>Requires API connectivity for all operations. No meaningful offline mode.</li>
-      <li>Configuration options are limited compared to more customizable tools.</li>
+      <li>Can be verbose in its reasoning output during long sessions, adding noise to the interaction.</li>
+      <li>No meaningful offline mode. All operations require API connectivity.</li>
+      <li>Configuration options are limited compared to open-source alternatives with similar capabilities.</li>
     </ul>
-    <h2>Use Cases</h2>
-    <p>General-purpose coding across the full stack. I use it for feature implementation, refactoring, debugging, and codebase exploration. It works particularly well with TypeScript, Python, and Rust.</p>
-    <h2>Engineering Maturity</h2>
-    <p>High. It understands project structure, dependency graphs, and language-specific patterns. I found it handles monorepos well. It respects existing code conventions without requiring explicit configuration.</p>
-    <h2>Product Maturity</h2>
-    <p>High. Installation is straightforward through npm or direct download. Authentication is simple. The CLI follows expected Unix conventions. The permission model for filesystem and shell access feels well-considered.</p>
-    <h2>Developer Experience</h2>
-    <p>Setup took a few minutes. The CLI gives clear error messages and sensible defaults. The real-time streaming output makes it easy to follow what the agent is doing. I appreciated not having to read a manual before getting productive.</p>
-    <h2>Workflow Integration</h2>
-    <p>Sits naturally alongside existing terminal tools. I use it with git, build systems, and other CLI utilities without friction. It respects project-level configuration files.</p>
-    <h2>Performance</h2>
-    <p>Streaming responses are fast. Context indexing completes quickly on most projects. Performance degrades gracefully on larger codebases, though I noticed it on projects over 100k lines.</p>
-    <h2>Documentation</h2>
-    <p>Well maintained. Covers installation, configuration, permissions, and troubleshooting. Examples reflect real use cases I could relate to.</p>
-    <h2>Pricing</h2>
-    <p>API usage-based pricing through Anthropic. Heavy daily use can accumulate substantial charges. The initial API credit was enough to evaluate it thoroughly.</p>
-    <h2>Platform Support</h2>
-    <p>macOS and Linux. I have not tried Windows, though it may work through WSL.</p>
-    <h2>Verdict</h2>
-    <p>Claude Code is the CLI agent I rely on most in my daily work. It became my daily driver because the combination of code quality, repository understanding, and thoughtful design works well for the kind of engineering I do.</p>
-    <h2>Changelog</h2>
+
+    <h2>Where it fits</h2>
+    <p>Claude Code excels at general-purpose coding across the full stack, particularly in TypeScript, Python, and Rust. It is well suited for feature implementation, refactoring, debugging, and codebase exploration. The cost structure makes it less suitable for high-volume daily use without active cost management.</p>
+
+    <h2>Current assessment</h2>
+    <p>Claude Code was the primary coding agent for much of 2025 and set a standard for repository understanding and code quality. It is no longer the daily driver, but it remains a benchmark against which other tools are measured. The observations here reflect what was learned from extended daily use and continue to inform current evaluations.</p>
+
+    <h2>Reference</h2>
+    <dl class="agent-meta">
+      <dt>Developer</dt>
+      <dd>Anthropic</dd>
+      <dt>Website</dt>
+      <dd><a href="https://docs.anthropic.com/en/docs/claude-code">docs.anthropic.com</a></dd>
+      <dt>License</dt>
+      <dd>Proprietary</dd>
+      <dt>Platform</dt>
+      <dd>macOS, Linux</dd>
+      <dt>Pricing</dt>
+      <dd>API usage-based. Initial credit provided for evaluation.</dd>
+      <dt>Version reviewed</dt>
+      <dd>0.12.0</dd>
+      <dt>Reviewed</dt>
+      <dd>July 2026</dd>
+    </dl>
+
+    <h2>Revision history</h2>
     <div class="changelog">
-      <p class="changelog-entry"><span class="changelog-date">2026-06</span> Updated review for version 0.12.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2025-11</span> Updated review for version 0.8.0</p>
-      <p class="changelog-entry"><span class="changelog-date">2025-03</span> Initial review (version 0.4.0)</p>
+      <p class="changelog-entry"><span class="changelog-date">July 2026</span> Rewritten using evidence-based template. Reclassified from Daily driver to Occasional.</p>
+      <p class="changelog-entry"><span class="changelog-date">June 2026</span> Updated review for version 0.12.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">November 2025</span> Updated review for version 0.8.0.</p>
+      <p class="changelog-entry"><span class="changelog-date">March 2025</span> Initial review (version 0.4.0).</p>
     </div>
   </main>
   <footer class="container">

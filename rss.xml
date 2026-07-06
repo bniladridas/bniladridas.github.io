@@ -1,130 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CLI Agents</title>
+    <title>Palmshed</title>
     <link>https://bniladridas.github.io/</link>
-    <description>Practical notes from using command-line AI agents in real engineering work.</description>
+    <description>Thoughtful engineering, honest evaluation, and enduring craft.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 15:01:50 GMT</lastBuildDate>
     <atom:link href="https://bniladridas.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Crush review</title>
-      <link>https://bniladridas.github.io/agents/crush/</link>
-      <description>Review of Crush, a command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/crush/</guid>
-    </item>
-    <item>
-      <title>Amp review</title>
-      <link>https://bniladridas.github.io/agents/amp/</link>
-      <description>Review of Amp, a command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/amp/</guid>
+      <title>OpenCode review</title>
+      <link>https://bniladridas.github.io/agents/opencode/</link>
+      <description>A review of OpenCode based on sustained use through July 2026.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/opencode/</guid>
     </item>
     <item>
       <title>Antigravity review</title>
       <link>https://bniladridas.github.io/agents/antigravity/</link>
-      <description>Review of Antigravity, a command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A review of Antigravity based on sustained use through July 2026.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://bniladridas.github.io/agents/antigravity/</guid>
     </item>
     <item>
-      <title>OpenCode review</title>
-      <link>https://bniladridas.github.io/agents/opencode/</link>
-      <description>Review of OpenCode, an open-source command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/opencode/</guid>
-    </item>
-    <item>
-      <title>Qwen Code review</title>
-      <link>https://bniladridas.github.io/agents/qwen-code/</link>
-      <description>Review of Qwen Code, Alibaba Cloud's command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/qwen-code/</guid>
-    </item>
-    <item>
-      <title>Roo Code review</title>
-      <link>https://bniladridas.github.io/agents/roo-code/</link>
-      <description>Review of Roo Code, the AI coding assistant.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/roo-code/</guid>
-    </item>
-    <item>
-      <title>Cline review</title>
-      <link>https://bniladridas.github.io/agents/cline/</link>
-      <description>Review of Cline, the AI coding assistant for VS Code.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/cline/</guid>
+      <title>Codex review</title>
+      <link>https://bniladridas.github.io/agents/codex/</link>
+      <description>A review of Codex based on sustained use through July 2026.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/codex/</guid>
     </item>
     <item>
       <title>Gemini CLI review</title>
       <link>https://bniladridas.github.io/agents/gemini-cli/</link>
-      <description>Review of Gemini CLI, Google's command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A review of Gemini CLI based on periodic evaluation through July 2026.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://bniladridas.github.io/agents/gemini-cli/</guid>
+    </item>
+    <item>
+      <title>Claude Code review</title>
+      <link>https://bniladridas.github.io/agents/claude-code/</link>
+      <description>A review of Claude Code based on sustained daily use through 2025.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/claude-code/</guid>
+    </item>
+    <item>
+      <title>Aider review</title>
+      <link>https://bniladridas.github.io/agents/aider/</link>
+      <description>A review of Aider based on sustained use from 2024 through 2025.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/aider/</guid>
+    </item>
+    <item>
+      <title>Warp review</title>
+      <link>https://bniladridas.github.io/agents/warp/</link>
+      <description>A review of Warp, a terminal emulator with integrated AI features, based on sustained use through 2025.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/warp/</guid>
+    </item>
+    <item>
+      <title>Cursor review</title>
+      <link>https://bniladridas.github.io/agents/cursor/</link>
+      <description>A review of Cursor, an AI-first code editor with agent mode, based on sustained use through 2025.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/cursor/</guid>
+    </item>
+    <item>
+      <title>Continue review</title>
+      <link>https://bniladridas.github.io/agents/continue/</link>
+      <description>A review of Continue, an open-source AI code assistant for IDEs, based on evaluation through 2025.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/continue/</guid>
     </item>
     <item>
       <title>Goose review</title>
       <link>https://bniladridas.github.io/agents/goose/</link>
-      <description>Review of Goose, the open-source AI agent by Block.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A review of Goose, an open-source sandboxed AI agent by Block, based on evaluation through early 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://bniladridas.github.io/agents/goose/</guid>
     </item>
     <item>
       <title>OpenHands review</title>
       <link>https://bniladridas.github.io/agents/openhands/</link>
-      <description>Review of OpenHands, the open-source AI coding agent platform.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+      <description>A review of OpenHands, an open-source platform for autonomous coding agents, based on evaluation through 2025.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://bniladridas.github.io/agents/openhands/</guid>
     </item>
     <item>
-      <title>Codex review</title>
-      <link>https://bniladridas.github.io/agents/codex/</link>
-      <description>Review of Codex, the AI CLI tool by Cursor and OpenAI.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/codex/</guid>
+      <title>Cline review</title>
+      <link>https://bniladridas.github.io/agents/cline/</link>
+      <description>A review of Cline, an autonomous AI coding assistant for VS Code, based on evaluation through early 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/cline/</guid>
     </item>
     <item>
-      <title>Continue review</title>
-      <link>https://bniladridas.github.io/agents/continue/</link>
-      <description>Review of Continue, the open-source AI code assistant.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/continue/</guid>
+      <title>Roo Code review</title>
+      <link>https://bniladridas.github.io/agents/roo-code/</link>
+      <description>A review of Roo Code, an autonomous AI coding assistant for VS Code, based on evaluation through early 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/roo-code/</guid>
     </item>
     <item>
-      <title>Warp review</title>
-      <link>https://bniladridas.github.io/agents/warp/</link>
-      <description>Review of Warp, the modern terminal with AI features.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/warp/</guid>
+      <title>Amp review</title>
+      <link>https://bniladridas.github.io/agents/amp/</link>
+      <description>A review of Amp, a CLI coding agent for fast interactive code generation, based on early evaluation in 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/amp/</guid>
     </item>
     <item>
-      <title>Aider review</title>
-      <link>https://bniladridas.github.io/agents/aider/</link>
-      <description>Review of Aider, the open-source command-line AI coding assistant.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/aider/</guid>
+      <title>Crush review</title>
+      <link>https://bniladridas.github.io/agents/crush/</link>
+      <description>A review of Crush, a CLI coding agent focused on simplicity, based on early evaluation in 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/crush/</guid>
     </item>
     <item>
-      <title>Cursor review</title>
-      <link>https://bniladridas.github.io/agents/cursor/</link>
-      <description>Review of Cursor, the AI-first code editor with CLI capabilities.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/cursor/</guid>
-    </item>
-    <item>
-      <title>Claude Code review</title>
-      <link>https://bniladridas.github.io/agents/claude-code/</link>
-      <description>Review of Claude Code, Anthropic's command-line AI coding agent.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/agents/claude-code/</guid>
-    </item>
-    <item>
-      <title>Site launch</title>
-      <link>https://bniladridas.github.io/</link>
-      <description>Launch of CLI Agents: practical notes from using command-line AI agents in real engineering work.</description>
-      <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://bniladridas.github.io/</guid>
+      <title>Qwen Code review</title>
+      <link>https://bniladridas.github.io/agents/qwen-code/</link>
+      <description>A review of Qwen Code, Alibaba Cloud's CLI coding agent, based on evaluation through 2025 and 2026.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://bniladridas.github.io/agents/qwen-code/</guid>
     </item>
   </channel>
 </rss>
