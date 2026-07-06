@@ -242,31 +242,34 @@ nav {
 nav .container {
   padding: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 0;
 }
 
 .nav-left {
   display: flex;
   align-items: center;
+  align-self: flex-start;
   flex-shrink: 0;
   margin-right: 2rem;
 }
 
-.nav-center {
+.nav-links {
   display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  flex: 1;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 
 .nav-right {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-shrink: 0;
-  margin-left: 3rem;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 
 nav a {
@@ -917,6 +920,10 @@ figcaption {
   opacity: 0.4;
 }
 
+.nav-search-input:focus ~ .nav-search-key {
+  display: none;
+}
+
 /* Search results dropdown */
 .nav-search-dropdown {
   position: absolute;
@@ -1086,7 +1093,11 @@ figcaption {
 
 /* Mobile: hamburger menu */
 @media (max-width: 520px) {
-  .nav-center {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-auth-link {
     display: none;
   }
 
@@ -1095,7 +1106,11 @@ figcaption {
   }
 
   .nav-right {
+    position: static;
+    flex-direction: row;
+    align-items: center;
     margin-left: auto;
+    gap: 1.25rem;
   }
 }
 
@@ -1616,16 +1631,6 @@ footer a:hover {
     margin-bottom: 0.2rem;
   }
 
-  .nav-center {
-    gap: 1rem;
-    flex: 1 1 auto;
-    justify-content: flex-start;
-  }
-
-  .nav-right {
-    flex: 0 0 auto;
-  }
-
   nav a {
     font-size: 0.85rem;
     padding: 0.25rem 0;
@@ -1718,9 +1723,6 @@ footer a:hover {
     font-size: 0.78rem;
   }
 
-  .nav-center {
-    gap: 0.6rem;
-  }
 
   h1 {
     font-size: 1.4rem;

@@ -50,6 +50,7 @@ The interface has crossed a threshold from making things quieter to making the i
 - **`extract_meta()` bug fixed** — now properly handles apostrophes in meta descriptions (was truncating at "Cloud's")
 - **Sitemap regenerated** — 25 URLs, no duplicate privacy entry, priorities based on status (Active: 0.7, Occasional: 0.6, Archived: 0.5)
 - **RSS regenerated** — 16 items with extracted descriptions, sorted by pubDate descending
+- **Navigation redesign: vertical right nav** — removed `.nav-center`, moved links into `.nav-right` as `.nav-links` (flex column, right-aligned); `.nav-right` uses `flex-direction: column` on desktop, `row` on mobile (≤ 520px); `search.js` updated to use `.nav-links` for mobile menu cloning; all 26 HTML pages updated
 
 ### Shortcuts Panel — Final Design (stable, no further changes)
 The panel was refactored from a modal dialog to a quiet reference card:
@@ -78,8 +79,7 @@ Guidelines for future changes:
 - Gate every future change on: "Does this help someone return to reading more quickly?"
 
 ### In Progress
-- **Mobile-first navigation redesign** – hamburger menu ≤ 520px, mobile menu panel, touch targets, responsive tables and typography
-- **Pass 2: Home + Agents rendering** — rewrite prose, drop first person, update metadata
+- **Pass 3: Tone and consistency pass** — review all rewritten pages for voice, clarity, level of detail
 
 ### Blocked
 (none)
@@ -113,6 +113,7 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - Footer "Shortcuts" label replaces `?` for immediate understandability
 - Shortcuts panel has no backdrop — the page underneath is part of the experience
 - Design direction shifted from "quieter" to "disappearing" — making the interface fade so the content leads
+- Vertical right navigation fits Palmshed's text-first, quiet character; resembles marginal notes, not a traditional menu
 
 ## Review Philosophy
 - Reviews document understanding, not preference. A review should help the reader understand what a tool is, how it behaves in practice, where it succeeds, and where it falls short. The purpose is not to persuade readers toward or away from a tool, but to record careful observations grounded in evidence.
@@ -120,18 +121,15 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - Current assessment answers "Where does this tool currently belong?" not "Should you use this?"
 
 ## Next Steps (Engineering, not UI)
-1. **Rewrite Home page** — remove "my" language, align tone with About and Ethos
-2. **Rewrite Methodology page** — replace "I evaluate" voice, align with new template philosophy
-3. **Rewrite Agents index page** — reduce prominence of non-Active tools
-4. **Server-render ranking list** in homepage HTML so content exists when JS is disabled
-5. **Regenerate after content changes** — single command: `python3 build.py` (generates agents.js, search-index.json, rss.xml, sitemap.xml)
-6. **Decide: which Archived tools remain vs removed entirely**
-7. **Create Kilo page** only after sufficient use to support a thoughtful review
-8. **Second consistency pass** — tone, headings, metadata, level-of-detail across all rewritten pages
+1. **Server-render ranking list** in homepage HTML so content exists when JS is disabled
+2. **Decide: which Archived tools remain vs removed entirely**
+3. **Create Kilo page** only after sufficient use to support a thoughtful review
+4. **Second consistency pass** — tone, headings, metadata, level-of-detail across all rewritten pages
+5. **Mobile-first navigation redesign** — hamburger menu ≤ 520px, mobile menu panel (completed)
 
 ## Critical Context
 - Site is a pure static HTML/CSS/JS site on GitHub Pages; no build tool, no framework, no package manager
-- 25 HTML pages across site; all share identical three-group nav structure
+- 26 HTML pages across site; all share identical two-group nav structure (`.nav-left`, `.nav-right`); `.nav-center` removed; links stacked vertically in `.nav-links` within `.nav-right`
 - `script.js` only included on 5 top-level pages; individual agent pages have no JS but include `search.js`
 - Cloudflare Worker URL: `https://auth-worker.harpertoken-welcome.workers.dev`
 - GitHub OAuth App client ID: `Ov23liMMYiMlgYzGg2Ht`
@@ -159,10 +157,10 @@ The mobile experience is designed as its own first-class interface, not a scaled
 - `data.js` — Handwritten org data (id, status, order, addedDate); consumed only by `build.py`
 - `agents.js` — Generated runtime file (merged org + extracted HTML metadata); loaded by Home and Agents pages
 - `search-index.json` — Pre-built static search index
-- `search.js` — Inline nav search; dropdown results with breadcrumb + snippet; keyboard nav (`↑`/`↓`/`Enter`/`Esc`/`/`); `/` keycap element; guards against hidden state
+- `search.js` — Inline nav search; dropdown results with breadcrumb + snippet; keyboard nav (`↑`/`↓`/`Enter`/`Esc`/`/`); `/` keycap element; guards against hidden state; mobile menu clones from `.nav-links`
 - `search/index.html` — Static fallback search page for JS-off access
 - `script.js` — Keyboard shortcuts (H, A, M, B, E, S, /, ?, Esc); Alt/Option hint reveal; shortcuts panel; footer Shortcuts trigger; active page highlighting; status-based ranking and table rendering
-- `styles.css` — Nav three-group layout; search dropdown at 420px with box-shadow; keycap styling; shortcuts panel (no backdrop, positioned below nav); responsive collapse rules; `.status-active/Occasional/Archived`
+- `styles.css` — Nav two-group layout with vertical right nav (`.nav-links` column); search dropdown at 420px with box-shadow; keycap styling; shortcuts panel (no backdrop, positioned below nav); responsive collapse rules; `.status-active/Occasional/Archived`
 - `sitemap.xml` — Generated by build.py; 25 URLs, no duplicates, priorities by status
 - `rss.xml` — Generated by build.py; 16 items with extracted descriptions
 - `agent pages` (16 under `agents/`) — All rewritten using new template; each owns its own name, developer, version, dates in HTML

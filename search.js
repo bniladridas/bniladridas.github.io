@@ -317,8 +317,8 @@
   function buildMobileMenu() {
     var nav = document.querySelector('nav');
     var toggle = nav && nav.querySelector('.nav-toggle');
-    var navCenter = nav && nav.querySelector('.nav-center');
-    if (!nav || !toggle || !navCenter) return;
+    var navLinks = nav && nav.querySelector('.nav-links');
+    if (!nav || !toggle || !navLinks) return;
 
     /* Avoid duplicate menu if already built */
     if (nav.querySelector('.nav-mobile-menu')) return;
@@ -326,8 +326,8 @@
     var menu = document.createElement('div');
     menu.className = 'nav-mobile-menu';
 
-    /* Clone nav-center links */
-    var links = navCenter.querySelectorAll('a');
+    /* Clone nav links */
+    var links = navLinks.querySelectorAll('a');
     links.forEach(function (link) {
       var clone = link.cloneNode(true);
       clone.addEventListener('click', function () { closeMobileMenu(); });
