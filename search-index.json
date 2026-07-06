@@ -1,23 +1,23 @@
 [
   {
     "url": "/",
-    "title": "CLI Agents",
+    "title": "Palmshed",
     "breadcrumb": "Home",
-    "summary": "Practical notes from using command-line AI agents in real engineering work.",
+    "summary": "Evaluations of command-line AI coding agents based on sustained engineering use.",
     "sections": [
       {
-        "heading": "CLI Agents",
-        "content": "Practical notes from using command-line AI agents in real engineering work. These are personal observations based on real engineering use across a variety of projects. Rankings and assessments shift as tools evolve. This site is updated periodically to reflect current experience."
+        "heading": "Palmshed",
+        "content": "Evaluations of command-line AI coding agents, grounded in sustained engineering use. Tools are organized into three groups based on current use. Active tools are used regularly and their reviews are maintained. Occasional tools are evaluated periodically as they evolve. Archived reviews record observations from past use; the tools are no longer in the current workflow. Assessments shift as tools change, and the site is updated to reflect that."
       },
       {
         "heading": "Ranking",
-        "content": "Rankings reflect my current experience and will evolve as tools improve. Last updated: June 2026. See Agents for the complete list with version details. This workshop is sustained by time, curiosity, and the kindness of those who choose to support it. Share a coffee, if you feel like it."
+        "content": "Listed by status group, in the order they are currently reached for. All agents with version details and full reviews."
       }
     ]
   },
   {
     "url": "/about/",
-    "title": "About: CLI Agents",
+    "title": "About — Palmshed",
     "breadcrumb": "About",
     "summary": "Thoughtful engineering, honest evaluation, and enduring craft.",
     "sections": [
@@ -61,13 +61,13 @@
   },
   {
     "url": "/methodology/",
-    "title": "Methodology: CLI Agents",
+    "title": "Methodology — Palmshed",
     "breadcrumb": "Methodology",
-    "summary": "How CLI agent reviews are performed.",
+    "summary": "How CLI coding agent reviews are conducted and classified.",
     "sections": [
       {
         "heading": "Methodology",
-        "content": "Every review on this site is based on actual engineering use rather than feature lists or marketing materials. I evaluate each agent by applying it to real tasks across a range of projects and noting what works, what does not, and where the tool sits in its maturity lifecycle. Reviews are not scored or ranked numerically. Instead, each agent receives a short qualitative verdict that reflects my current experience. Because the landscape moves quickly, reviews are updated as tools change and as my usage patterns evolve."
+        "content": "Every review on this site is based on engineering use rather than feature lists or marketing materials. Agents are evaluated by applying them to real tasks across a range of projects and noting what works, what does not, and where each tool sits in its development. No scores or numerical ratings are assigned. Each agent receives a classification that reflects its current place in the workflow. Because the landscape moves quickly, reviews are updated as tools change and as usage patterns evolve."
       },
       {
         "heading": "Reliability",
@@ -115,29 +115,29 @@
       },
       {
         "heading": "Review Cycle",
-        "content": "Each agent is re-evaluated at least once per quarter or when a significant version change is released. In-use agents are evaluated more frequently as part of daily work."
+        "content": "Active agents are evaluated continuously as part of daily work. Occasional agents are re-evaluated at each significant version change or at least once per quarter. Archived reviews are not actively maintained unless a tool re-enters the workflow."
       },
       {
-        "heading": "Verdict Categories",
-        "content": "Verdict Meaning Daily driver Used as a primary tool in everyday engineering work. Highly reliable and integrated into workflow. Frequently used Used regularly but not the primary tool. May have specific use cases where it excels. Useful in specific situations Valuable for certain types of tasks but not general-purpose. Worth knowing about and keeping in the toolbox. Occasionally used Used from time to time. May be early in maturity or limited in applicability. Watching its progress Evaluated but not yet part of regular use. Shows potential worth monitoring."
+        "heading": "Classifications",
+        "content": "Classification Meaning Active Used regularly as part of daily engineering work. Reviews are current and maintained. Occasional Evaluated periodically. May be early in maturity or limited in applicability to current needs. Archived Observations from past use. The tool is no longer in the current workflow. Reviews are preserved for reference."
       }
     ]
   },
   {
     "url": "/agents/",
-    "title": "Agents: CLI Agents",
+    "title": "Agents — Palmshed",
     "breadcrumb": "Agents",
-    "summary": "Reviews of command-line AI coding agents.",
+    "summary": "Reviews of command-line AI coding agents, classified as Active, Occasional, or Archived.",
     "sections": [
       {
         "heading": "Agents",
-        "content": "Detailed reviews of command-line AI coding agents based on hands-on engineering use. Use the filters below to browse by ranking, recent updates, or newest additions. Current Ranking Recently Updated New Reviews Reviews of CLI AI coding agents, sortable by ranking, last updated, or addition date. Agent Status Version Last Updated"
+        "content": "Reviews of command-line AI coding agents grounded in sustained engineering use. Tools are classified as Active (currently used and maintained), Occasional (periodically evaluated), or Archived (observations from past use). Current Ranking Recently Updated New Reviews Reviews of AI coding agents, sortable by ranking, last updated, or addition date. Agent Status Version Last Updated"
       }
     ]
   },
   {
     "url": "/auth/",
-    "title": "Sign in: CLI Agents",
+    "title": "Sign in — Palmshed",
     "breadcrumb": "Sign in",
     "summary": "Sign in to enable optional personal features like bookmarks and reading history.",
     "sections": [
@@ -149,7 +149,7 @@
   },
   {
     "url": "/search/",
-    "title": "Search – CLI Agents",
+    "title": "Search — Palmshed",
     "breadcrumb": "Search",
     "summary": "",
     "sections": [
@@ -159,7 +159,7 @@
       },
       {
         "heading": "Pages",
-        "content": "Home – CLI Agents: honest reviews of command-line AI coding agents. About – About this site and its author. Ethos – The principles behind this site. Privacy – Data collection and storage practices. Methodology – How agents are reviewed. Agents – Browse every reviewed agent. Sign in – Sign in with GitHub."
+        "content": "Home – Palmshed: evaluations of command-line AI coding agents. About – About this site and its author. Ethos – The principles behind this site. Privacy – Data collection and storage practices. Methodology – How agents are reviewed. Agents – Browse every reviewed agent. Sign in – Sign in with GitHub."
       },
       {
         "heading": "Agent Reviews",
