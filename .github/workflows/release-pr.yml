@@ -1,0 +1,65 @@
+# Manual workflow: prepare a release PR.
+#
+# Creates (or updates) a release/prepare branch with freshly generated
+# build artifacts, then opens a pull request back into main.  If nothing
+# has changed since the last release it exits cleanly without a PR.
+#
+# Use this before triggering a release.  After the PR is reviewed and
+# merged with the `release` label, the release workflow will publish.
+
+name: release-pr
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.PALMSHED_APP_ID }}
+          private-key: ${{ secrets.PALMSHED_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build
+        run: python3 build.py
+      - name: Check for changes
+        id: changes
+        run: |
+          if ! git diff --exit-code --quiet; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "palmshed-steward[bot]"
+          git config user.email "300577328+palmshed-steward[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "build: regenerate generated files"
+          git push origin HEAD:release/prepare --force
+      - name: Create release label if missing
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh label create release --description "Triggers release workflow on merge" 2>/dev/null || true
+      - name: Create pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh pr create \
+            --base main \
+            --head release/prepare \
+            --title "Release preparation" \
+            --label release \
+            --body "Automated release preparation. Review and merge with the \`release\` label to trigger a release." \
+            || true

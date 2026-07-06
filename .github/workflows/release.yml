@@ -1,0 +1,72 @@
+# Publish a GitHub Release when a `release`-labelled PR is merged.
+#
+# Determines the next version from existing tags (or a VERSION file if one
+# exists), creates an annotated tag, and publishes a Release with auto-
+# generated release notes.
+#
+# Pages deployment is intentionally not handled here — build.yml already
+# deploys every push to main.
+
+name: release
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release')
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.PALMSHED_APP_ID }}
+          private-key: ${{ secrets.PALMSHED_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 0
+      - name: Determine version
+        id: version
+        run: |
+          if [ -f VERSION ]; then
+            version=$(cat VERSION | tr -d '[:space:]')
+            if ! echo "$version" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+              echo "ERROR: VERSION file does not contain a valid semver" >&2
+              exit 1
+            fi
+          else
+            latest=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1)
+            if [ -z "$latest" ]; then
+              version="0.1.0"
+            else
+              version=$(echo "$latest" | sed 's/^v//' | awk -F. '{print $1"."$2"."$3+1}')
+            fi
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Create tag
+        run: |
+          tag="v${{ steps.version.outputs.version }}"
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            echo "Tag $tag already exists — nothing to do."
+            exit 0
+          fi
+          git config user.name "palmshed-steward[bot]"
+          git config user.email "300577328+palmshed-steward[bot]@users.noreply.github.com"
+          git tag -a "$tag" -m "$tag"
+          git push origin "$tag"
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          tag="v${{ steps.version.outputs.version }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists — nothing to do."
+            exit 0
+          fi
+          gh release create "$tag" \
+            --generate-notes \
+            --target main
