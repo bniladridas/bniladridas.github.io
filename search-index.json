@@ -17,7 +17,7 @@
   },
   {
     "url": "/about/",
-    "title": "About — Palmshed",
+    "title": "About ~ Palmshed",
     "breadcrumb": "About",
     "summary": "Thoughtful engineering, honest evaluation, and enduring craft.",
     "sections": [
@@ -29,7 +29,7 @@
   },
   {
     "url": "/ethos/",
-    "title": "Ethos — Palmshed",
+    "title": "Ethos ~ Palmshed",
     "breadcrumb": "Ethos",
     "summary": "The convictions that govern the work found here.",
     "sections": [
@@ -38,30 +38,30 @@
         "content": "How we work reveals what we value. These convictions govern the work found here."
       },
       {
-        "heading": "Patience — Why should good work take time?",
+        "heading": "Patience ~ Why should good work take time?",
         "content": "Good work cannot be hurried into existence. It requires sustained attention, repeated revision, and the willingness to set something aside and return to it later. Time is not an obstacle to careful work. It is one of its conditions."
       },
       {
-        "heading": "Integrity — Why must the work remain truthful?",
+        "heading": "Integrity ~ Why must the work remain truthful?",
         "content": "Truthful work depends on nothing but its own honesty. It does not need persuasion, trends, or marketing to be valuable. The reader is not a target to be convinced but a person to be served. Uncertainty is acknowledged rather than hidden. Limitations are stated plainly. Work that sacrifices truth for effect betrays both the craft and the one who encounters it."
       },
       {
-        "heading": "Understanding — Why should observation come before judgment?",
+        "heading": "Understanding ~ Why should observation come before judgment?",
         "content": "A first encounter rarely reveals the full character of anything. Judgment without sustained observation is first impression dressed as conclusion. Understanding requires the willingness to let something reveal itself over time, through genuine use rather than controlled demonstration."
       },
       {
-        "heading": "Humility — Why should revision never be feared?",
+        "heading": "Humility ~ Why should revision never be feared?",
         "content": "No observation is final. Understanding deepens. The willingness to revise is not a sign of uncertainty but of honesty. Work that cannot change eventually ceases to tell the truth."
       },
       {
-        "heading": "Stewardship — Why is the work never really finished?",
+        "heading": "Stewardship ~ Why is the work never really finished?",
         "content": "Anything worth doing requires ongoing attention. Maintenance is not the cost of past decisions. It is the natural extension of care through time. A garden is not maintained because the gardener failed. It is maintained because growth is continuous. The hope is that these convictions become visible through the work itself."
       }
     ]
   },
   {
     "url": "/methodology/",
-    "title": "Methodology — Palmshed",
+    "title": "Methodology ~ Palmshed",
     "breadcrumb": "Methodology",
     "summary": "How CLI coding agent reviews are conducted and classified.",
     "sections": [
@@ -125,7 +125,7 @@
   },
   {
     "url": "/agents/",
-    "title": "Agents — Palmshed",
+    "title": "Agents ~ Palmshed",
     "breadcrumb": "Agents",
     "summary": "Reviews of command-line AI coding agents, classified as Active, Occasional, or Archived.",
     "sections": [
@@ -137,7 +137,7 @@
   },
   {
     "url": "/auth/",
-    "title": "Sign in — Palmshed",
+    "title": "Sign in ~ Palmshed",
     "breadcrumb": "Sign in",
     "summary": "Sign in to enable optional personal features like bookmarks and reading history.",
     "sections": [
@@ -149,7 +149,7 @@
   },
   {
     "url": "/search/",
-    "title": "Search — Palmshed",
+    "title": "Search ~ Palmshed",
     "breadcrumb": "Search",
     "summary": "",
     "sections": [
@@ -169,7 +169,7 @@
   },
   {
     "url": "/agents/opencode/",
-    "title": "OpenCode — Palmshed",
+    "title": "OpenCode ~ Palmshed",
     "breadcrumb": "Agents / OpenCode",
     "summary": "A review of OpenCode based on sustained use through July 2026.",
     "sections": [
@@ -203,7 +203,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Developer Anomaly Co. Website github.com/opencode-ai/opencode Repository github.com/opencode-ai/opencode License Apache 2.0 Platform macOS, Linux Pricing Free and open source. API usage fees for cloud model providers. Local models at no cost. Version reviewed 0.5.0 Reviewed July 2026"
+        "content": "Organization Anomaly Website opencode.ai Repository github.com/anomalyco/opencode License Apache 2.0 Platform macOS, Linux Pricing Free and open source. API usage fees for cloud model providers. Local models at no cost. Version reviewed 0.5.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -213,7 +213,7 @@
   },
   {
     "url": "/agents/antigravity/",
-    "title": "Antigravity — Palmshed",
+    "title": "Antigravity ~ Palmshed",
     "breadcrumb": "Agents / Antigravity",
     "summary": "A review of Antigravity based on sustained use through July 2026.",
     "sections": [
@@ -247,7 +247,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Developer Antigravity AI Repository github.com/antigravity-ai/antigravity License Open source Platform macOS, Linux Pricing Free and open source. API usage fees for cloud model providers. Version reviewed 0.4.0 Reviewed July 2026"
+        "content": "Organization Google Website antigravity.google Repository github.com/google-antigravity/antigravity-cli License Apache 2.0 Platform macOS, Linux Pricing Free and open source. API usage fees for cloud model providers. Version reviewed 0.4.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -257,7 +257,7 @@
   },
   {
     "url": "/agents/codex/",
-    "title": "Codex — Palmshed",
+    "title": "Codex ~ Palmshed",
     "breadcrumb": "Agents / Codex",
     "summary": "A review of Codex based on sustained use through July 2026.",
     "sections": [
@@ -287,11 +287,11 @@
       },
       {
         "heading": "Current assessment",
-        "content": "Codex occupies a specific, narrow space. It is not a general-purpose coding agent, and it does not try to be. For its intended use — quick, safe, single-file code generation — it performs reliably. It is not reached for by default, but for the tasks it handles, it is the most direct option available."
+        "content": "Codex occupies a specific, narrow space. It is not a general-purpose coding agent, and it does not try to be. For its intended use ~ quick, safe, single-file code generation ~ it performs reliably. It is not reached for by default, but for the tasks it handles, it is the most direct option available."
       },
       {
         "heading": "Reference",
-        "content": "Developer Cursor / OpenAI Repository github.com/cursor/codex License Proprietary Platform macOS, Linux, Windows Pricing Usage-based through the OpenAI API. Free tier available with limited usage. Version reviewed 0.10.0 Reviewed July 2026"
+        "content": "Organization OpenAI Website github.com/openai/codex Repository github.com/openai/codex License Apache 2.0 Platform macOS, Linux, Windows Pricing Usage-based through the OpenAI API. Free tier available with limited usage. Version reviewed 0.10.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -301,7 +301,7 @@
   },
   {
     "url": "/agents/gemini-cli/",
-    "title": "Gemini CLI — Palmshed",
+    "title": "Gemini CLI ~ Palmshed",
     "breadcrumb": "Agents / Gemini CLI",
     "summary": "A review of Gemini CLI based on periodic evaluation through July 2026.",
     "sections": [
@@ -335,7 +335,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Developer Google Website cloud.google.com/gemini-cli License Proprietary Platform macOS, Linux, Windows Pricing Competitive pricing with generous free tier. Pay-as-you-go for extended usage. Version reviewed 1.2.0 Reviewed July 2026"
+        "content": "Organization Google Website cloud.google.com/gemini-cli Repository github.com/google-gemini/gemini-cli License Apache 2.0 Platform macOS, Linux, Windows Pricing Competitive pricing with generous free tier. Pay-as-you-go for extended usage. Version reviewed 1.2.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -345,7 +345,7 @@
   },
   {
     "url": "/agents/claude-code/",
-    "title": "Claude Code — Palmshed",
+    "title": "Claude Code ~ Palmshed",
     "breadcrumb": "Agents / Claude Code",
     "summary": "A review of Claude Code based on sustained daily use through 2025.",
     "sections": [
@@ -379,7 +379,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Developer Anthropic Website docs.anthropic.com License Proprietary Platform macOS, Linux Pricing API usage-based. Initial credit provided for evaluation. Version reviewed 0.12.0 Reviewed July 2026"
+        "content": "Organization Anthropic Website docs.anthropic.com Repository github.com/anthropics/claude-code License Proprietary Platform macOS, Linux Pricing API usage-based. Initial credit provided for evaluation. Version reviewed 0.12.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -389,7 +389,7 @@
   },
   {
     "url": "/agents/aider/",
-    "title": "Aider — Palmshed",
+    "title": "Aider ~ Palmshed",
     "breadcrumb": "Agents / Aider",
     "summary": "A review of Aider based on sustained use from 2024 through 2025.",
     "sections": [
@@ -423,7 +423,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Developer Paul Gauthier Website aider.chat Repository github.com/paul-gauthier/aider License Apache 2.0 Platform macOS, Linux, Windows Pricing Free and open source. Costs limited to API usage fees. Version reviewed 0.72.0 Reviewed July 2026"
+        "content": "Organization Paul Gauthier Website aider.chat Repository github.com/Aider-AI/aider License Apache 2.0 Platform macOS, Linux, Windows Pricing Free and open source. Costs limited to API usage fees. Version reviewed 0.72.0 Reviewed July 2026"
       },
       {
         "heading": "Revision history",
@@ -433,13 +433,13 @@
   },
   {
     "url": "/agents/warp/",
-    "title": "Warp — Palmshed",
+    "title": "Warp ~ Palmshed",
     "breadcrumb": "Agents / Warp",
     "summary": "A review of Warp, a terminal emulator with integrated AI features, based on sustained use through 2025.",
     "sections": [
       {
         "heading": "Warp",
-        "content": "Status Archived Developer Warp Inc. Version Reviewed 2026.06 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from sustained use through 2025."
+        "content": "Status Archived Organization Warp Inc. Version Reviewed 2026.06 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from sustained use through 2025."
       },
       {
         "heading": "Overview",
@@ -467,7 +467,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Warp homepage"
+        "content": "Organization Warp Inc. Website warp.dev Repository github.com/warpdotdev/Warp License Proprietary Platform macOS, Linux Pricing Free for individuals. Teams plan available."
       },
       {
         "heading": "Revision history",
@@ -477,13 +477,13 @@
   },
   {
     "url": "/agents/cursor/",
-    "title": "Cursor — Palmshed",
+    "title": "Cursor ~ Palmshed",
     "breadcrumb": "Agents / Cursor",
     "summary": "A review of Cursor, an AI-first code editor with agent mode, based on sustained use through 2025.",
     "sections": [
       {
         "heading": "Cursor",
-        "content": "Status Archived Developer Cursor Inc. Version Reviewed 0.46.x Last Updated June 2026 Platform macOS, Linux, Windows This tool is no longer in active use. Observations from sustained use through 2025."
+        "content": "Status Archived Organization Cursor Inc. Version Reviewed 0.46.x Last Updated June 2026 Platform macOS, Linux, Windows This tool is no longer in active use. Observations from sustained use through 2025."
       },
       {
         "heading": "Overview",
@@ -511,7 +511,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Cursor homepage"
+        "content": "Organization Cursor Inc. Website cursor.com Repository github.com/getcursor/cursor (private) License Proprietary Platform macOS, Linux, Windows Pricing Subscription-based. Free tier with limited features, Pro at $20/month."
       },
       {
         "heading": "Revision history",
@@ -521,13 +521,13 @@
   },
   {
     "url": "/agents/continue/",
-    "title": "Continue — Palmshed",
+    "title": "Continue ~ Palmshed",
     "breadcrumb": "Agents / Continue",
     "summary": "A review of Continue, an open-source AI code assistant for IDEs, based on evaluation through 2025.",
     "sections": [
       {
         "heading": "Continue",
-        "content": "Status Archived Developer Continue Dev Version Reviewed 1.2.0 Last Updated June 2026 Platform VS Code, JetBrains This tool is no longer in active use. Observations from evaluation through 2024 and 2025."
+        "content": "Status Archived Organization Continue Version Reviewed 1.2.0 Last Updated June 2026 Platform VS Code, JetBrains This tool is no longer in active use. Observations from evaluation through 2024 and 2025."
       },
       {
         "heading": "Overview",
@@ -555,7 +555,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Continue homepage"
+        "content": "Organization Continue Website continue.dev Repository github.com/continuedev/continue License Apache 2.0 Platform VS Code, JetBrains Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -565,13 +565,13 @@
   },
   {
     "url": "/agents/goose/",
-    "title": "Goose — Palmshed",
+    "title": "Goose ~ Palmshed",
     "breadcrumb": "Agents / Goose",
     "summary": "A review of Goose, an open-source sandboxed AI agent by Block, based on evaluation through early 2026.",
     "sections": [
       {
         "heading": "Goose",
-        "content": "Status Archived Developer Block Version Reviewed 1.5.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
+        "content": "Status Archived Organization Block Version Reviewed 1.5.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
       },
       {
         "heading": "Overview",
@@ -599,7 +599,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Goose homepage"
+        "content": "Organization Block Website block.github.io/goose Repository github.com/block/goose License Apache 2.0 Platform macOS, Linux Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -609,13 +609,13 @@
   },
   {
     "url": "/agents/openhands/",
-    "title": "OpenHands — Palmshed",
+    "title": "OpenHands ~ Palmshed",
     "breadcrumb": "Agents / OpenHands",
     "summary": "A review of OpenHands, an open-source platform for autonomous coding agents, based on evaluation through 2025.",
     "sections": [
       {
         "heading": "OpenHands",
-        "content": "Status Archived Developer All-Hands-AI Version Reviewed 0.9.0 Last Updated June 2026 Platform macOS, Linux, Web UI This tool is no longer in active use. Observations from evaluation in 2025."
+        "content": "Status Archived Organization OpenHands Version Reviewed 0.9.0 Last Updated June 2026 Platform macOS, Linux, Web UI This tool is no longer in active use. Observations from evaluation in 2025."
       },
       {
         "heading": "Overview",
@@ -643,7 +643,7 @@
       },
       {
         "heading": "Reference",
-        "content": "OpenHands homepage"
+        "content": "Organization OpenHands Website all-hands.dev Repository github.com/All-Hands-AI/OpenHands License MIT Platform macOS, Linux, Web UI Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -653,13 +653,13 @@
   },
   {
     "url": "/agents/cline/",
-    "title": "Cline — Palmshed",
+    "title": "Cline ~ Palmshed",
     "breadcrumb": "Agents / Cline",
     "summary": "A review of Cline, an autonomous AI coding assistant for VS Code, based on evaluation through early 2026.",
     "sections": [
       {
         "heading": "Cline",
-        "content": "Status Archived Developer Cline Bot Version Reviewed 3.4.0 Last Updated June 2026 Platform VS Code This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
+        "content": "Status Archived Organization Cline Version Reviewed 3.4.0 Last Updated June 2026 Platform VS Code This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
       },
       {
         "heading": "Overview",
@@ -687,7 +687,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Cline homepage"
+        "content": "Organization Cline Website cline.bot Repository github.com/cline/cline License Apache 2.0 Platform VS Code Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -697,13 +697,13 @@
   },
   {
     "url": "/agents/roo-code/",
-    "title": "Roo Code — Palmshed",
+    "title": "Roo Code ~ Palmshed",
     "breadcrumb": "Agents / Roo Code",
     "summary": "A review of Roo Code, an autonomous AI coding assistant for VS Code, based on evaluation through early 2026.",
     "sections": [
       {
         "heading": "Roo Code",
-        "content": "Status Archived Developer Roo Version Reviewed 2.0.0 Last Updated June 2026 Platform VS Code This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
+        "content": "Status Archived Organization Roo Code Version Reviewed 2.0.0 Last Updated June 2026 Platform VS Code This tool is no longer in active use. Observations from evaluation in 2025 and early 2026."
       },
       {
         "heading": "Overview",
@@ -731,7 +731,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Roo Code homepage"
+        "content": "Organization Roo Code Website roocode.com Repository github.com/RooCodeInc/Roo-Code License Apache 2.0 Platform VS Code Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -741,13 +741,13 @@
   },
   {
     "url": "/agents/amp/",
-    "title": "Amp — Palmshed",
+    "title": "Amp ~ Palmshed",
     "breadcrumb": "Agents / Amp",
     "summary": "A review of Amp, a CLI coding agent for fast interactive code generation, based on early evaluation in 2026.",
     "sections": [
       {
         "heading": "Amp",
-        "content": "Status Archived Developer Amp AI Version Reviewed 0.3.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from early evaluation in 2026."
+        "content": "Status Archived Organization Sourcegraph Version Reviewed 0.3.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from early evaluation in 2026."
       },
       {
         "heading": "Overview",
@@ -775,7 +775,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Amp homepage"
+        "content": "Organization Sourcegraph Website ampcode.com Repository github.com/sourcegraph/amp License Apache 2.0 Platform macOS, Linux Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -785,13 +785,13 @@
   },
   {
     "url": "/agents/crush/",
-    "title": "Crush — Palmshed",
+    "title": "Crush ~ Palmshed",
     "breadcrumb": "Agents / Crush",
     "summary": "A review of Crush, a CLI coding agent focused on simplicity, based on early evaluation in 2026.",
     "sections": [
       {
         "heading": "Crush",
-        "content": "Status Archived Developer Crush AI Version Reviewed 0.2.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from early evaluation in 2026."
+        "content": "Status Archived Organization Charm Version Reviewed 0.2.0 Last Updated June 2026 Platform macOS, Linux This tool is no longer in active use. Observations from early evaluation in 2026."
       },
       {
         "heading": "Overview",
@@ -819,7 +819,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Crush homepage"
+        "content": "Organization Charm Website github.com/charmbracelet/crush Repository github.com/charmbracelet/crush License Apache 2.0 Platform macOS, Linux Pricing Free and open source."
       },
       {
         "heading": "Revision history",
@@ -829,13 +829,13 @@
   },
   {
     "url": "/agents/qwen-code/",
-    "title": "Qwen Code — Palmshed",
+    "title": "Qwen Code ~ Palmshed",
     "breadcrumb": "Agents / Qwen Code",
     "summary": "A review of Qwen Code, Alibaba Cloud's CLI coding agent, based on evaluation through 2025 and 2026.",
     "sections": [
       {
         "heading": "Qwen Code",
-        "content": "Status Archived Developer Alibaba Cloud Version Reviewed 2.5.0 Last Updated June 2026 Platform macOS, Linux, Windows This tool is no longer in active use. Observations from evaluation from mid-2025 through early 2026."
+        "content": "Status Archived Organization Alibaba Cloud Version Reviewed 2.5.0 Last Updated June 2026 Platform macOS, Linux, Windows This tool is no longer in active use. Observations from evaluation from mid-2025 through early 2026."
       },
       {
         "heading": "Overview",
@@ -863,7 +863,7 @@
       },
       {
         "heading": "Reference",
-        "content": "Qwen Code homepage"
+        "content": "Organization Alibaba Cloud Website github.com/QwenLM/Qwen-Code Repository github.com/QwenLM/Qwen-Code License Apache 2.0 Platform macOS, Linux, Windows Pricing Free and open source."
       },
       {
         "heading": "Revision history",

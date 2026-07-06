@@ -211,7 +211,7 @@
     var html = '';
     list.forEach(function(a) {
       html += '<tr tabindex="-1">' +
-        '<td><a href="' + a.path + '">' + a.name + '</a><br><span class="text-small">' + a.developer + '</span></td>' +
+        '<td><a href="' + a.path + '">' + a.name + '</a><br><span class="text-small">' + a.organization + '</span></td>' +
         '<td><span class="status-indicator ' + statusClass(a.status) + '"></span>' + a.status + '</td>' +
         '<td>' + a.versionReviewed + '</td>' +
         '<td>' + formatDate(a.lastUpdated) + '</td>' +
