@@ -1,6 +1,6 @@
 var agentOrg = [
   // Active
-  { id: 'opencode',    status: 'Active',     order: 1, addedDate: '2025-12' },
+  { id: 'opencode',    status: 'Active',     order: 1, addedDate: '2026-01' },
   { id: 'antigravity', status: 'Active',     order: 2, addedDate: '2026-01' },
   { id: 'codex',       status: 'Active',     order: 3, addedDate: '2024-10' },
   // Occasional
