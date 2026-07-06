@@ -1,67 +1,62 @@
 # Palmshed
 
-Welcome.
+Thoughtful engineering, honest evaluation, enduring craft.
 
-*Thoughtful notes from using CLI AI agents.*
+## What this is
 
-This is a place where software is built with care.
+Palmshed publishes careful observations from sustained work with software and tools. The primary content is a set of reviews of CLI AI coding agents, each documenting what a tool does, where it succeeds, where it falls short, and where it sits in its development. The aim is truthful observation, not advocacy.
 
-Projects begin here as questions.
+16 agents are reviewed across three classifications:
 
-Some become tools.
-Some become documentation.
-Some remain unfinished because they taught what they needed to teach.
+- **Active** – used regularly in daily work; reviews are current and maintained
+- **Occasional** – evaluated periodically; limited applicability or early maturity
+- **Archived** – observations from past use; preserved for reference
 
-All are part of the same workshop.
+## Architecture
 
----
+Pure static site on GitHub Pages. No frameworks, no JavaScript framework, no build tool beyond Python stdlib.
 
-## What you will find
+- 26 HTML pages, all hand-authored
+- `data.js` – handwritten canonical org data (id, status, order, addedDate)
+- `build.py` – generates `agents.js`, `search-index.json`, `rss.xml`, `sitemap.xml` in one command
+- Agent HTML pages own their own review metadata (name, developer, version, dates)
+- Client-side search with keyboard nav, highlighting, and `/` focus
+- GitHub OAuth sign-in via Cloudflare Worker (token exchange, no client secret in repo)
+- RSS feed, XML sitemap, `robots.txt`, `404.html`
 
-Right now this organization has one project:
+## Design
 
-**CLI Agents** – A long-term reference site documenting experience with command-line AI coding agents. Each review is based on hands-on use and updated as the tools evolve. The site is built with plain HTML, CSS, and JavaScript. No frameworks. No build step. It will still work ten years from now.
+Calm, text-first, built to disappear so the writing leads. Details in `PHILOSOPHY.md`.
 
-New projects will appear here as they grow. They will share the same approach: patient development, clear documentation, honest assessments, and a commitment to lasting work.
+- Vertical right navigation on desktop, hamburger menu on mobile
+- Keyboard shortcuts panel as a floating reference card (no backdrop)
+- Alt/Option reveals hidden navigation key hints
+- En dashes, no em dashes, no emojis, no marketing copy
+- All transitions under 150ms; respects `prefers-reduced-motion`
+- Touch targets ≥ 44px; semantic HTML throughout
 
----
+## Build
 
-## How the work is guided
-
-**Patience.** Good software takes time. Ideas need room to develop before they can be judged fairly.
-
-**Clarity.** Code is read more often than it is written. Documentation is part of the work itself, not something added afterward. Writing clearly about what a project does matters as much as the code.
-
-**Honesty.** Mistakes are part of building software. When something does not work, that is documented. The goal is to learn, not to appear correct.
-
-**Maintenance.** A project that cannot be maintained is not finished. Every repository here is built to be understood by someone who did not write the original code. Dependencies are chosen carefully. Complexity is resisted.
-
----
-
-## Begin exploring
-
-If you are curious about CLI AI agents, start with the [agent reviews](/agents/).
-
-If you want to understand how the reviews are done, read the [methodology](/methodology/).
-
-If you want to know what this organization believes in, the [ethos](/ethos/) page captures it more directly than a README can.
-
-The site is published at [bniladridas.github.io](https://bniladridas.github.io/).
-
----
-
-## Running locally
-
-The site is pure static files. Any HTTP server works:
-
-```
-python3 -m http.server 8000
+```sh
+python3 build.py
 ```
 
-## Deploy
+Generates `agents.js`, `search-index.json`, `rss.xml`, `sitemap.xml` from `data.js` and agent HTML pages. Run after adding a new agent or updating a review.
 
-Push to the default branch of `bniladridas.github.io` on GitHub and enable Pages. No build step.
+## Adding an agent
+
+1. Create `agents/<id>/index.html` following the existing review template
+2. Add an entry to `data.js`
+3. Run `python3 build.py`
+
+No redesign needed.
+
+## Developer
+
+Niladri Das – sole developer, writer, and maintainer.
 
 ## License
 
-MIT
+The code is MIT. The writing is not – reviews and essays are copyrighted.
+
+&copy; 2026 Niladri Das. Published under the Palmshed identity.
