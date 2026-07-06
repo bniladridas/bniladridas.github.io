@@ -7,7 +7,7 @@ var agents = [
     organization: "Anomaly",
     versionReviewed: "0.5.0",
     lastUpdated: "2026-07",
-    addedDate: "2025-11",
+    addedDate: "2025-12",
     path: "/agents/opencode/",
     order: 1
   },
