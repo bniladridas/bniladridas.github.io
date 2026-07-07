@@ -14,6 +14,7 @@ Usage: python3 scripts/build.py
 import os
 import re
 import json
+import sys
 import datetime
 from email.utils import formatdate
 
@@ -453,28 +454,104 @@ PAGES = [
     {"url": "/search/", "file": "search/index.html", "breadcrumb": "Search"},
 ]
 
+# ── Validation ───────────────────────────────────────────────────────────
+
+VALID_STATUSES = {'Active', 'Occasional', 'Archived'}
+REQUIRED_REGISTRY_FIELDS = {'id', 'status', 'order', 'addedDate'}
+
+
+def validate_registry(agents):
+    """Check registry invariants: unique ids, valid statuses, unique orders."""
+    errors = []
+    seen_ids = set()
+    orders_by_status = {}
+    for s in VALID_STATUSES:
+        orders_by_status[s] = set()
+
+    for a in agents:
+        missing = REQUIRED_REGISTRY_FIELDS - set(a.keys())
+        if missing:
+            errors.append(f"{a.get('id', '?')}: missing fields {missing}")
+            continue
+
+        if a['id'] in seen_ids:
+            errors.append(f"duplicate id: {a['id']}")
+        seen_ids.add(a['id'])
+
+        if a['status'] not in VALID_STATUSES:
+            errors.append(f"{a['id']}: invalid status '{a['status']}'")
+
+        if a['order'] in orders_by_status.get(a['status'], set()):
+            errors.append(f"{a['id']}: duplicate order {a['order']} in '{a['status']}'")
+        if a['status'] in orders_by_status:
+            orders_by_status[a['status']].add(a['order'])
+
+    return errors
+
+
+def validate_reviews(agents, org_data, agent_ids):
+    """Check every registry entry has a review page and required metadata."""
+    errors = []
+    registry_ids = {a['id'] for a in org_data}
+
+    for rid in sorted(registry_ids):
+        if rid not in agent_ids:
+            errors.append(f"registry entry '{rid}' has no agents/{rid}/index.html")
+
+    for aid in agent_ids:
+        if aid not in registry_ids:
+            print(f"  Warning: agents/{aid}/ has no registry entry")
+
+    for a in agents:
+        if not a['organization']:
+            errors.append(f"{a['id']}: missing Organization in review page")
+        if not a['versionReviewed']:
+            errors.append(f"{a['id']}: missing Version Reviewed in review page")
+        if not a['lastUpdated']:
+            errors.append(f"{a['id']}: missing Last reviewed or Last Updated in review page")
+
+    return errors
+
+
 # ── Main ─────────────────────────────────────────────────────────────────
 
 def main():
     print("Build started\n")
 
-    print("1. Merging agent data...")
-    agents_data = build_agents()
-    print(f"   {len(agents_data)} agents processed\n")
+    print("Validating registry...")
+    org_data = parse_org_data()
+    errors = validate_registry(org_data)
+    if errors:
+        print("  FAILED")
+        for e in errors:
+            print(f"  - {e}")
+        sys.exit(1)
+    print("  OK")
 
-    print("2. Generating search index...")
+    print("Validating reviews...")
+    agent_ids = scan_agent_dirs()
+    agents_data = build_agents()
+    errors = validate_reviews(agents_data, org_data, agent_ids)
+    if errors:
+        print("  FAILED")
+        for e in errors:
+            print(f"  - {e}")
+        sys.exit(1)
+    print("  OK\n")
+
+    print("1. Generating search index...")
     generate_search_index(PAGES, agents_data)
     print()
 
-    print("3. Generating RSS feed...")
+    print("2. Generating RSS feed...")
     generate_rss(agents_data)
     print()
 
-    print("4. Generating sitemap...")
+    print("3. Generating sitemap...")
     generate_sitemap(agents_data)
     print()
 
-    print("5. Generating agents.js...")
+    print("4. Generating agents.js...")
     generate_agents_js(agents_data)
     print()
 
