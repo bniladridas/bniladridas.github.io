@@ -32,16 +32,29 @@ The grouping reflects the tool's current place within the project rather than a 
 
 ```
 /
-├── about/
+├── about/             # content pages
+├── agents/            # review listing + individual reviews
+├── auth/              # sign-in and OAuth callback
 ├── ethos/
 ├── methodology/
-├── agents/
 ├── privacy/
 ├── search/
-├── auth/
-├── data.js
-├── build.py
-└── search-index.json
+├── registry/
+│   └── agents.js      # handwritten canonical registry
+├── scripts/
+│   └── build.py       # build tooling
+├── assets/            # logos, screenshots, icons
+├── docs/
+├── workers/
+├── agents.js          # generated runtime data
+├── search-index.json  # generated search index
+├── rss.xml            # generated RSS feed
+├── sitemap.xml        # generated sitemap
+├── styles.css         # site styles
+├── script.js          # client-side UI
+├── search.js          # client-side search
+├── auth.js            # client-side auth
+└── index.html         # site entry point
 ```
 
 ## Build
@@ -49,7 +62,7 @@ The grouping reflects the tool's current place within the project rather than a 
 Generated artifacts are produced with:
 
 ```bash
-python3 build.py
+python3 scripts/build.py
 ```
 
 This regenerates the search index, RSS feed, sitemap, and other derived data.

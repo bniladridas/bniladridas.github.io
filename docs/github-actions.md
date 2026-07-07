@@ -10,7 +10,7 @@
 
 **Behaviour.**
 
-- Runs `python3 build.py` to regenerate all derived artifacts (`agents.js`, `search-index.json`, `rss.xml`, `sitemap.xml`).
+- Runs `python3 scripts/build.py` to regenerate all derived artifacts (`agents.js`, `search-index.json`, `rss.xml`, `sitemap.xml`).
 - Fails if the generated files differ from what is committed — this keeps the repository consistent without manual rebuilds.
 - On push to `main`: uploads the repository root as a Pages artifact and deploys to GitHub Pages.
 - On pull requests: build and verify only. Pages steps are skipped.
@@ -25,7 +25,7 @@
 
 **Behaviour.**
 
-- Checks out `main`, runs `python3 build.py`.
+- Checks out `main`, runs `python3 scripts/build.py`.
 - If generated files have changed, commits them to the `release/prepare` branch and opens (or updates) a pull request back into `main` with the `release` label.
 - If nothing has changed, exits cleanly without creating a PR.
 

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Build: generate all derived artifacts from canonical sources.
 
-Reads data.js (handwritten org data) and agent HTML pages, then generates:
-  - agents.js      ~ merged runtime data (id, name, status, organization, version, dates, path, order)
-  - search-index.json  ~ full-text search index
-  - rss.xml             ~ RSS 2.0 feed
-  - sitemap.xml         ~ XML sitemap
+Reads registry/agents.js (handwritten org data) and agent HTML pages, then
+generates:
+  - agents.js         ~ merged runtime data
+  - search-index.json ~ full-text search index
+  - rss.xml           ~ RSS 2.0 feed
+  - sitemap.xml       ~ XML sitemap
 
-Usage: python3 build.py
+Usage: python3 scripts/build.py
 """
 
 import os
@@ -16,7 +17,7 @@ import json
 import datetime
 from email.utils import formatdate
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MONTH_MAP = {
     'January': '01', 'February': '02', 'March': '03', 'April': '04',
@@ -135,13 +136,13 @@ def extract_agent_name(html):
 # ── Org data parsing ─────────────────────────────────────────────────────
 
 def parse_org_data():
-    """Read handwritten data.js and return list of agent org dicts."""
-    path = os.path.join(ROOT, 'data.js')
+    """Read handwritten registry/agents.js and return list of agent org dicts."""
+    path = os.path.join(ROOT, 'registry', 'agents.js')
     with open(path) as f:
         content = f.read()
     m = re.search(r'var\s+agentOrg\s*=\s*\[(.*?)\];', content, re.DOTALL)
     if not m:
-        print("Error: could not find agentOrg in data.js")
+        print("Error: could not find agentOrg in registry/agents.js")
         return []
     array_text = m.group(1)
 

@@ -82,11 +82,40 @@ Do not copy values between projects.
 
 ## Metadata
 
-Structured metadata belongs in `data.js`.
+Structured metadata belongs in `registry/agents.js`.
 
 Review prose belongs in the individual review page.
 
-Generated files are produced by `build.py` and should not be edited directly.
+Generated files are produced by `scripts/build.py` and should not be edited directly.
+
+## Source of truth
+
+Handwritten:
+- `registry/agents.js` — canonical editorial registry (id, status, order, addedDate)
+- All HTML pages — review prose, about, ethos, methodology, privacy, auth
+
+Generated (never edit directly):
+- `agents.js`          — merged runtime data for the browser
+- `search-index.json`  — full-text search index
+- `rss.xml`            — RSS 2.0 feed
+- `sitemap.xml`        — XML sitemap
+
+Data flow:
+
+```
+registry/agents.js
+        │
+        ▼
+scripts/build.py
+        │
+        ├── agents.js
+        ├── search-index.json
+        ├── rss.xml
+        └── sitemap.xml
+                │
+                ▼
+           Browser / Search / RSS
+```
 
 ## Revisions
 
@@ -96,7 +125,7 @@ When an assessment changes:
 
 1. Update the review.
 2. Update the review context if needed.
-3. Update `data.js`.
-4. Run `python3 build.py`.
+3. Update `registry/agents.js`.
+4. Run `python3 scripts/build.py`.
 
 Visible revisions are part of the project's commitment to truthful work.
