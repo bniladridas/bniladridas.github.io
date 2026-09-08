@@ -4,15 +4,16 @@
   --r:10px; --max:1080px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html{scroll-behavior:smooth;scroll-padding-top:72px;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{max-width:100%}
 a{color:inherit}
 code{font-family:"JetBrains Mono",monospace;font-size:.8em;background:#0c1322;border:1px solid var(--line);padding:.12em .45em;border-radius:6px}
 pre{background:#0a101c;border:1px solid var(--line);border-radius:0 0 var(--r) var(--r);padding:1rem 1.15rem;overflow:auto;margin:0;font-size:.82rem;line-height:1.7}
 pre code{background:none;border:none;padding:0;color:var(--mut)}
 .container{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
 .container.narrow{max-width:680px}
-.nav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.92);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:30;background:rgba(10,14,20,.92);border-bottom:1px solid var(--line);overflow:visible}
 .scroll-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:transparent;pointer-events:none}
 .scroll-progress-bar{height:100%;width:0;background:var(--acc);transition:width .08s linear}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -32,10 +33,11 @@ pre code{background:none;border:none;padding:0;color:var(--mut)}
 .nav .links .btn.small::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:200% 100%;background-position:100% 0;opacity:0;transition:opacity .2s ease,background-position .38s ease;z-index:-1;border-radius:7px}
 .nav .links .btn.small:hover{color:#081018;border-color:transparent}
 .nav .links .btn.small:hover::before{opacity:1;background-position:0 0}
-.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:.4rem .7rem;cursor:pointer}
-.mobile-links{display:none;flex-direction:column;gap:.6rem;padding:.4rem 1.25rem 1rem}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:.55rem .75rem;cursor:pointer;min-width:44px;min-height:44px}
+.mobile-links{display:none;flex-direction:column;gap:.2rem;padding:.6rem 1.25rem 1rem;background:rgba(10,14,20,.98);border-top:1px solid var(--line);position:absolute;top:64px;left:0;right:0;z-index:20;box-shadow:0 12px 24px rgba(0,0,0,.35)}
 .mobile-links.open{display:flex}
-.mobile-links a{color:var(--mut);text-decoration:none}
+.mobile-links a{color:var(--mut);text-decoration:none;padding:.7rem 0;border-bottom:1px solid rgba(28,47,74,.6);font-size:.95rem}
+.mobile-links a:last-child{border-bottom:none}
 .hero{padding:5rem 0 2.2rem;background:var(--bg);border-bottom:1px solid var(--line)}
 .scroll-cue{display:flex;flex-direction:column;align-items:center;gap:.3rem;margin:2.6rem auto 0;color:var(--mut);text-decoration:none;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.85;transition:opacity .35s ease,transform .35s ease;animation:cueFloat 2.4s ease-in-out infinite}
 .scroll-cue svg{opacity:.9}
@@ -124,6 +126,19 @@ footer{border-top:1px solid var(--line);padding:1.15rem 0;color:var(--mut);font-
   .two,.proj-grid,.detail-grid,.gallery{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr 1fr}
   .links{display:none}.menu-btn{display:block}
-  .scope{grid-template-columns:1fr}
+  .section{padding:2.8rem 0}
+  .detail-grid{gap:1.2rem}
+  .proj-body{padding:1.1rem}
 }
-@media(max-width:560px){.grid3{grid-template-columns:1fr}.hero{padding-top:3.5rem}}
+@media(max-width:560px){
+  .grid3{grid-template-columns:1fr}
+  .hero{padding-top:2.5rem;padding-bottom:1.8rem}
+  .container{padding:0 1rem}
+  .proj-img{height:180px}
+  .gallery img{height:180px}
+  .facts li{flex-direction:column;align-items:flex-start;gap:.2rem}
+  .facts li strong{text-align:left}
+  .cta{flex-direction:column;align-items:stretch}
+  .cta .btn{width:100%;text-align:center}
+  .foot{flex-direction:column;align-items:flex-start}
+}
