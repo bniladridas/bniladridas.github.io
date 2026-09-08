@@ -33,6 +33,7 @@
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
+    <a href="https://github.com/bniladridas" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
 </header>
 
@@ -213,8 +214,15 @@
         <div class="codecard">
           <div class="codehead"><span>quickstart.ts</span><button class="copy" data-copy="npm install @palmshed/sandbox">Copy</button></div>
 <pre><code>import { Sandbox } from '@palmshed/sandbox';
-const sandbox = await Sandbox.create({ cpu: 2, memory: "512MB", timeout: 30000, network: "disabled", backend: "native" });
-const ex = await sandbox.exec("node -v"); await ex.wait();
+const sandbox = await Sandbox.create({
+  cpu: 2,
+  memory: "512MB",
+  timeout: 30000,
+  network: "disabled",
+  backend: "native"
+});
+const ex = await sandbox.exec("node -v");
+await ex.wait();
 await sandbox.destroy();</code></pre>
         </div>
       </div>
