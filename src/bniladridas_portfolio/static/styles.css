@@ -27,7 +27,7 @@ pre code{background:none;border:none;padding:0;color:var(--mut)}
 .btn.ghost{background:transparent}
 .btn.small{padding:.45rem .9rem;font-size:.84rem}
 .btn.big{padding:.9rem 1.8rem;font-size:1rem}
-/* header GitHub — gradient sweeps quickly toward cursor on hover */
+/* header GitHub: gradient sweeps quickly toward cursor on hover */
 .nav .links .btn.small{position:relative;overflow:hidden;isolation:isolate;transition:color .2s ease,border-color .2s ease}
 .nav .links .btn.small::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:200% 100%;background-position:100% 0;opacity:0;transition:opacity .2s ease,background-position .38s ease;z-index:-1;border-radius:7px}
 .nav .links .btn.small:hover{color:#081018;border-color:transparent}
