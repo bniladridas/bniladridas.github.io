@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bniladridas/bniladridas.github.io/main/.github/assets/thumbnail.png" alt="portfolio" width="100%">
+</p>
+
 # bniladridas-portfolio
 
 Portfolio server for bniladridas: **Traction** and **Palmshed Sandbox**.
