@@ -1,7 +1,7 @@
 [project]
 name = "bniladridas-portfolio"
 version = "0.1.0"
-description = "Portfolio server for bniladridas: Traction and Palmshed Sandbox"
+description = "Portfolio server for bniladridas: Traction and Palmshed Sandbox."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
