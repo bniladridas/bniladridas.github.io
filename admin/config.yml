@@ -2,6 +2,8 @@ backend:
   name: github
   repo: bniladridas/bniladridas.github.io
   branch: main
+  base_url: https://decap-proxy.harpertoken-welcome.workers.dev
+  auth_endpoint: auth
 
 # Decap CMS on GitHub Pages needs an OAuth proxy.
 # Option A: GitHub + OAuth proxy (keep Pages on GitHub)
