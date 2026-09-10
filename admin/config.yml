@@ -5,15 +5,8 @@ backend:
   base_url: https://decap-proxy.harpertoken-welcome.workers.dev
   auth_endpoint: auth
 
-# Decap CMS on GitHub Pages needs an OAuth proxy.
-# Option A: GitHub + OAuth proxy (keep Pages on GitHub)
-#   Create an OAuth app at https://github.com/settings/developers
-#   and set up a proxy like https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-github
-#   Then add:
-#   base_url: https://your-oauth-proxy.example.com
-#   auth_endpoint: auth
-# Option B: Netlify Identity + Git Gateway (Decap docs recommend for ease)
-#   See https://decapcms.org/docs/choosing-a-backend/
+# GitHub authentication uses the standalone Cloudflare Worker OAuth proxy.
+# OAuth secrets are stored only as Cloudflare Worker secrets, never in this repository.
 
 media_folder: "assets"
 public_folder: "/assets"
