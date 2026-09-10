@@ -26,3 +26,14 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/bniladridas_portfolio"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"index.html" = "bniladridas_portfolio/static/index.html"
+"styles.css" = "bniladridas_portfolio/static/styles.css"
+"script.js" = "bniladridas_portfolio/static/script.js"
+"favicon.svg" = "bniladridas_portfolio/static/favicon.svg"
+"favicon.png" = "bniladridas_portfolio/static/favicon.png"
+"apple-touch-icon.png" = "bniladridas_portfolio/static/apple-touch-icon.png"
+"og-image.png" = "bniladridas_portfolio/static/og-image.png"
+"assets" = "bniladridas_portfolio/static/assets"
+".github/assets/thumbnail.png" = "bniladridas_portfolio/static/.github/assets/thumbnail.png"

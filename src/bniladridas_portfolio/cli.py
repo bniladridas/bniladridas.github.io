@@ -8,16 +8,21 @@ import webbrowser
 from importlib import resources
 
 def get_static_dir() -> pathlib.Path:
-    # When installed, static lives inside the package
+    # Single source: when running from checkout, serve directly from Site root
     try:
-        # Python 3.9+
+        checkout_root = pathlib.Path(__file__).resolve().parents[2]
+        if (checkout_root / "index.html").is_file():
+            return checkout_root
+    except Exception:
+        pass
+    # When installed, static lives inside the package (populated via force-include)
+    try:
         pkg_files = resources.files("bniladridas_portfolio")  # type: ignore
         p = pkg_files / "static"
         if p.is_dir():
             return pathlib.Path(str(p))
     except Exception:
         pass
-    # Fallback for source checkout: src/bniladridas_portfolio/static
     return pathlib.Path(__file__).parent / "static"
 
 def serve(host: str, port: int, open_browser: bool):
