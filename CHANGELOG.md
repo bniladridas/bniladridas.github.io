@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Theme switch layout shift: card-like elements now reserve their border in both themes so toggling no longer moves the page.
+
 ## [0.3.0] - 2026-09-10
 
 ### Added
