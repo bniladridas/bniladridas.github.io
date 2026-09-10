@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: bniladridas/bniladridas.github.io
+  branch: main
+
+# Decap CMS on GitHub Pages needs an OAuth proxy.
+# Option A: GitHub + OAuth proxy (keep Pages on GitHub)
+#   Create an OAuth app at https://github.com/settings/developers
+#   and set up a proxy like https://github.com/decaporg/decap-cms/tree/main/packages/decap-cms-backend-github
+#   Then add:
+#   base_url: https://your-oauth-proxy.example.com
+#   auth_endpoint: auth
+# Option B: Netlify Identity + Git Gateway (Decap docs recommend for ease)
+#   See https://decapcms.org/docs/choosing-a-backend/
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: text}
+          - {label: Rule, name: rule, widget: string}
