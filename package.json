@@ -1,0 +1,11 @@
+{
+  "name": "bniladridas-portfolio-e2e",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test:e2e": "node tests/e2e/theme.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^30.0.1"
+  }
+}

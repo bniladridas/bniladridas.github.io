@@ -141,6 +141,28 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+// Theme switch — two round balls at end, keep both themes
+(function() {
+  function initTheme() {
+    const balls = document.querySelectorAll('.theme-ball');
+    if (!balls.length) return;
+    const saved = localStorage.getItem('theme');
+    const initial = saved || 'new';
+    document.documentElement.setAttribute('data-theme', initial);
+    balls.forEach((b) => b.classList.toggle('active', b.dataset.theme === initial));
+    balls.forEach((ball) => {
+      ball.addEventListener('click', () => {
+        const t = ball.dataset.theme;
+        document.documentElement.setAttribute('data-theme', t);
+        try { localStorage.setItem('theme', t); } catch (e) {}
+        balls.forEach((b) => b.classList.toggle('active', b === ball));
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initTheme);
+  else initTheme();
+})();
+
 // Scroll reveal
 const io = new IntersectionObserver(
   (entries) =>
