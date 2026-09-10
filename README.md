@@ -23,3 +23,7 @@ python -m bniladridas_portfolio.cli serve --host 127.0.0.1 --port 8000
 ```
 
 Serves the same static site that GitHub Pages serves.
+
+## Edit About
+
+The About section at `content/about.json` is editable from the site via Decap CMS at `https://bniladridas.github.io/admin/` (GitHub login required, admin only). Edits are saved as Git commits to `main`.
