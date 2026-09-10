@@ -182,14 +182,14 @@
       </div>
     </div>
 
-    <h3 class="reveal" style="margin-top:2rem">Key features</h3>
+    <h3 class="reveal gap-top">Key features</h3>
     <div class="grid3 reveal">
       <div class="card"><h4>Handling and AI</h4><p>Custom movement and drivetrain with pursuit drivers that recover on the same physics path.</p></div>
       <div class="card"><h4>Cameras and race</h4><p>Chase and cockpit drivers. Laps, checkpoints, positions, timing, and countdown as one connected state.</p></div>
       <div class="card"><h4>Audio and build</h4><p>Engine and tire audio on UE Audio. Metal renderer with a Blender and Substance pipeline.</p></div>
     </div>
 
-    <h3 class="reveal" style="margin-top:2rem">Architecture</h3>
+    <h3 class="reveal gap-top">Architecture</h3>
     <div class="arch reveal">
       <div class="layer"><span class="num">V</span><div><h4>Vehicle/</h4><p>Pawn, custom movement, drivetrain, config (<code>game/RacingGame/Source/RacingGame/Vehicle/</code>).</p></div></div>
       <div class="layer"><span class="num">C</span><div><h4>Camera/</h4><p>Chase driver + config. Cockpit in V1 scope.</p></div></div>
@@ -243,7 +243,7 @@ await sandbox.destroy();</code></pre>
       </div>
     </div>
 
-    <h3 class="reveal" style="margin-top:2rem">Highlights</h3>
+    <h3 class="reveal gap-top">Highlights</h3>
     <div class="grid3 reveal">
       <div class="card"><h4>Isolation and limits</h4><p>Hardened virtual filesystem, OS confinement on Linux, with CPU, memory, disk and timeout enforcement.</p></div>
       <div class="card"><h4>Network and spec</h4><p>Isolated on macOS, probed on Linux, unsupported on Windows. The v1.0.0 contract is frozen with a 6 month deprecation policy.</p></div>
@@ -320,6 +320,10 @@ await sandbox.destroy();</code></pre>
   <div class="container foot">
     <span>© 2026 bniladridas. Palmshed Sandbox is MIT licensed.</span>
     <span>Plain HTML, CSS, and JS. GitHub Pages ready.</span>
+  </div>
+  <div class="theme-switch" aria-label="Theme switch">
+    <button class="theme-ball active" data-theme="new" aria-label="Theme 1" title="Theme 1"></button>
+    <button class="theme-ball" data-theme="prev" aria-label="Theme 2" title="Theme 2"></button>
   </div>
 </footer>
 

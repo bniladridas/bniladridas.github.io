@@ -141,7 +141,7 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Theme switch — two round balls at end, keep both themes
+// Theme switch: two round balls at end, keep both themes
 (function() {
   function initTheme() {
     const balls = document.querySelectorAll('.theme-ball');
