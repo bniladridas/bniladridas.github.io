@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-09-10
+
+### Added
+- Decap CMS administration at `/admin/`: editable About section backed by `content/about.json` on `main`.
+- Standalone Cloudflare Worker OAuth proxy for Decap GitHub authentication; OAuth secrets stored only as Worker secrets, never in the repository. Real login, edit, commit, and Pages redeploy verified end to end.
+- Admin and visitor E2E coverage: theme switch, site experience, and public Edit link navigation to `/admin/`.
+- Pages pipeline documentation and project structure, development, deployment, and content editing sections in README.
+- Project Journey Gist link in README documenting architecture, security decisions, and debugging history.
+
+### Fixed
+- Decap CMS blank page: load the Decap script at end of body so it mounts after `document.body` exists.
+- Admin favicon links so the CMS page shows the site icon.
+- Mobile sidebar theme: menu background and dividers now follow the active theme instead of always rendering Theme 2.
+- Fixed header so it does not move when scrolling.
+- Single source for site content with no duplication between Use and Development sections.
+
+### Changed
+- Removed the token-based PAT admin editor; Decap CMS with OAuth proxy is the only admin path.
+- Clarified `admin/config.yml` comments to describe the Cloudflare Worker proxy; removed stale Netlify/Git Gateway guidance.
+
 ## [0.2.0] - 2026-09-10
 
 ### Added
