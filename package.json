@@ -3,7 +3,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "test:e2e": "node tests/e2e/theme.test.js"
+    "test:e2e": "node tests/e2e/theme.test.js && node tests/e2e/site.test.js"
   },
   "devDependencies": {
     "jsdom": "^30.0.1"
