@@ -1,5 +1,5 @@
 {
   "title": "Focused scope. Verified work.",
-  "body": "I work across real-time game systems and developer infrastructure. Vehicle dynamics, AI, cameras and race state on one end, process isolation, resource limits and network policy on the other. Both projects follow the same principle: small scope, clean architecture, evidence over claims.",
+  "body": "I work across real-time game systems and developer infrastructure. Vehicle dynamics, AI, cameras and race state on one end, process isolation, resource limits and network policy on the other. Both projects follow the same principle: small scope, clean architecture, evidence over claims.\n",
   "rule": "Traction: one car, one track, one complete race. Sandbox: spec first, SDKs second, backends pluggable."
 }
