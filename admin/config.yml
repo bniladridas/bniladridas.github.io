@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: bniladridas/bniladridas.github.io
+  branch: main
+  # For GitHub Pages, create an OAuth app at https://github.com/settings/developers
+  # and set base_url to your OAuth proxy, or use Decap's default proxy for testing.
+  # auth_type: implicit
+  # app_id: YOUR_OAUTH_APP_ID
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: text}
+          - {label: Rule, name: rule, widget: string}

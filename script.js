@@ -163,6 +163,29 @@ onScroll();
   else initTheme();
 })();
 
+// Header GitHub hover animate on open
+(function() {
+  function animateHeaderGithub() {
+    const btn = document.querySelector('.nav .links .btn.small');
+    if (!btn) return;
+    btn.classList.add('auto-hover');
+    setTimeout(() => btn.classList.remove('auto-hover'), 900);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(animateHeaderGithub, 400));
+  else setTimeout(animateHeaderGithub, 400);
+})();
+
+// Editable About from content/about.json (admin via /admin)
+fetch('content/about.json').then(r=>r.ok?r.json():null).then(d=>{
+  if(!d) return;
+  const t=document.getElementById('about-title');
+  const b=document.getElementById('about-body');
+  const r2=document.getElementById('about-rule');
+  if(t&&d.title) t.textContent=d.title;
+  if(b&&d.body) b.textContent=d.body;
+  if(r2&&d.rule) r2.textContent=d.rule;
+}).catch(()=>{});
+
 // Scroll reveal
 const io = new IntersectionObserver(
   (entries) =>

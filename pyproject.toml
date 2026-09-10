@@ -36,4 +36,6 @@ packages = ["src/bniladridas_portfolio"]
 "apple-touch-icon.png" = "bniladridas_portfolio/static/apple-touch-icon.png"
 "og-image.png" = "bniladridas_portfolio/static/og-image.png"
 "assets" = "bniladridas_portfolio/static/assets"
+"content" = "bniladridas_portfolio/static/content"
+"admin" = "bniladridas_portfolio/static/admin"
 ".github/assets/thumbnail.png" = "bniladridas_portfolio/static/.github/assets/thumbnail.png"
