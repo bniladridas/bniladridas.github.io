@@ -58,12 +58,12 @@ assert(html.includes('id="scrollCue"') && html.includes('id="scrollBar"'), 'HTML
 assert(js.includes('onScroll') && js.includes('scrollBar'), 'JS handles scroll progress');
 assert(css.includes('.scroll-cue'), 'CSS has scroll cue');
 
-// 7. Admin page (what admin sees) — token-based editor, not blank Decap
-assert(adminHtml.includes('Admin — Edit About'), 'Admin HTML has Edit About form');
-assert(adminHtml.includes('id="token"') && adminHtml.includes('id="title"'), 'Admin has token and title fields');
-assert(adminHtml.includes('api.github.com') && adminHtml.includes('bniladridas/bniladridas.github.io'), 'Admin saves via GitHub API');
-// Config is kept for Decap alternative, but token editor is primary and must not be blank
-assert(adminHtml.includes('GitHub token') || adminHtml.includes('github_pat'), 'Admin explains token scope');
+// 7. Admin page and config (what admin sees)
+assert(adminHtml.includes('decap-cms'), 'Admin HTML loads Decap CMS');
+assert(adminConfig.includes('backend:') && adminConfig.includes('name: github'), 'Admin config has github backend');
+assert(adminConfig.includes('repo: bniladridas/bniladridas.github.io'), 'Admin config points to correct repo');
+assert(adminConfig.includes('file: "content/about.json"'), 'Admin config edits about.json');
+assert(!adminConfig.includes('auth_type: implicit'), 'Admin config does not use implicit flow (per docs)');
 
 // 8. Open Graph and Twitter metadata (what social previews see)
 assert(html.includes('property="og:title"'), 'HTML has og:title');

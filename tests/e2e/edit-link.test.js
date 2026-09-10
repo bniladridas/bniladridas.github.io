@@ -61,19 +61,20 @@ setTimeout(() => {
   console.log('Target URL:', targetUrl);
   assert(targetUrl === 'http://127.0.0.1:8345/admin/', `Edit link navigates to /admin/ (got ${targetUrl})`);
 
-  // 4. Load admin page and verify token-based editor loads (what admin sees) — not blank
+  // 4. Load admin page and verify Decap CMS loads (what admin sees)
   const adminDom = new JSDOM(adminHtml, { url: 'http://127.0.0.1:8345/admin/' });
   const adminDoc = adminDom.window.document;
-  assert(adminDoc.querySelector('h1') && adminDoc.querySelector('h1').textContent.includes('Admin'), 'Admin page has Admin heading');
-  assert(adminDoc.querySelector('#token') && adminDoc.querySelector('#title'), 'Admin has token and title fields');
-  assert(adminHtml.includes('api.github.com') && adminHtml.includes('bniladridas/bniladridas.github.io'), 'Admin saves via GitHub API');
-  console.log('Admin editor: token-based, saves to content/about.json');
+  const decapScript = adminDoc.querySelector('script[src*="decap-cms"]');
+  assert(!!decapScript, 'Admin page loads Decap CMS script');
+  console.log('Admin Decap script:', decapScript.src);
 
-  // 5. Verify admin config exists as alternative (Decap docs), but token editor is primary
-  assert(adminConfig.includes('repo: bniladridas/bniladridas.github.io') || adminHtml.includes('api.github.com'), 'Admin points to correct repo');
+  // 5. Verify admin config is present and correct (deployment-critical, not OAuth)
+  assert(adminConfig.includes('repo: bniladridas/bniladridas.github.io'), 'Admin config points to correct repo');
+  assert(adminConfig.includes('file: "content/about.json"'), 'Admin config edits about.json');
+  assert(adminConfig.includes('backend:') && adminConfig.includes('name: github'), 'Admin config has github backend');
 
-  // Stop here — do not attempt GitHub API write. Document external boundary.
-  console.log('Note: Stopping before GitHub API write — external boundary, no credentials used.');
+  // Stop here — do not attempt GitHub OAuth. Document external boundary.
+  console.log('Note: Stopping before GitHub OAuth — external boundary, no credentials used.');
 
   console.log('\n=== Results ===');
   if (process.exitCode) console.log('E2E EDIT LINK FAILED');
