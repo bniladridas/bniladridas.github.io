@@ -43,10 +43,9 @@ The repository root is intentionally both the project root and the GitHub Pages 
 
 ## Development
 
+For serving the portfolio locally, see the commands in the Use section above.
+
 ```bash
-portfolio serve
-portfolio serve --port 8000 --open
-python -m bniladridas_portfolio.cli serve --host 127.0.0.1 --port 8000
 npm run test:e2e
 python3 verify-human.py
 ```
@@ -64,3 +63,9 @@ Pushes to `main` trigger the GitHub Pages workflow. The repository root is deplo
 ## Content editing
 
 About content lives in `content/about.json` and is loaded by the site. `/admin/` is the CMS entry point. GitHub OAuth authentication for Decap is a separate configuration concern.
+
+## Project Journey
+
+This repository's architecture, security decisions, debugging history, and SDK roadmap are documented in the public project journey Gist.
+
+[Read the full project journey](https://gist.github.com/bniladridas/88efa3afa553187692f0d45a45c262c8)
