@@ -45,9 +45,9 @@ pre code{background:none;border:none;padding:0;color:var(--mut);word-break:break
 .nav .links .btn.small.auto-hover{color:#081018;border-color:transparent}
 .nav .links .btn.small.auto-hover::before{opacity:1;background-position:0 0}
 .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:.55rem .75rem;cursor:pointer;min-width:44px;min-height:44px}
-.mobile-links{display:none;flex-direction:column;gap:.2rem;padding:.6rem 1.25rem 1rem;background:rgba(10,14,20,.98);border-top:1px solid var(--line);position:absolute;top:64px;left:0;right:0;z-index:20;box-shadow:0 12px 24px rgba(0,0,0,.35)}
+.mobile-links{display:none;flex-direction:column;gap:.2rem;padding:.6rem 1.25rem 1rem;background:rgba(18,14,46,0.96);border-top:1px solid var(--line);position:absolute;top:64px;left:0;right:0;z-index:20;box-shadow:0 12px 24px rgba(0,0,0,.35)}
 .mobile-links.open{display:flex}
-.mobile-links a{color:var(--mut);text-decoration:none;padding:.7rem 0;border-bottom:1px solid rgba(28,47,74,.6);font-size:.95rem}
+.mobile-links a{color:var(--mut);text-decoration:none;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
 .mobile-links a:last-child{border-bottom:none}
 .hero{padding:6rem 0 3rem;background:transparent;border-bottom:1px solid var(--line);text-align:center}
 .hero .container{max-width:720px}
@@ -113,6 +113,7 @@ footer{border-top:1px solid var(--line);padding:1.15rem 0 .9rem;color:var(--mut)
 html[data-theme="prev"]{--bg:#0a0e14;--bg2:#0e141f;--card:transparent;--line:#1c2f4a;--txt:#e6eef8;--mut:#8e9db6}
 html[data-theme="prev"] body{background:var(--bg);background-image:none}
 html[data-theme="prev"] .nav{background:rgba(10,14,20,0.92);border-bottom:1px solid var(--line)}
+html[data-theme="prev"] .mobile-links{background:rgba(10,14,20,0.98)}
 html[data-theme="prev"] .card,html[data-theme="prev"] .proj,html[data-theme="prev"] .layer,html[data-theme="prev"] .codecard,html[data-theme="prev"] .gallery figure,html[data-theme="prev"] .gist-details{border:1px solid var(--line);background:transparent}
 /* GitHub raw images + socials */
 .profile{display:flex;gap:.9rem;align-items:center;margin-bottom:1.3rem}
