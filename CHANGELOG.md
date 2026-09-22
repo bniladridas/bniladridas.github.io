@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Theme switch layout shift: card-like elements now reserve their border in both themes so toggling no longer moves the page.
+- Traction renderer task state corrected from Task 15 to Task 18 to match the game repository.
+- Removed the duplicate Profiles line in the contact section; the two profile buttons already link both profiles.
+- Inline gist rendering now always fetches the latest gist revision instead of serving cached copies.
 
 ## [0.3.0] - 2026-09-10
 
