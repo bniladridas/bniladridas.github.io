@@ -7,19 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-- Theme switch layout shift: card-like elements now reserve their border in both themes so toggling no longer moves the page.
-- Traction renderer task state corrected from Task 15 to Task 18 to match the game repository.
-- Removed the duplicate Profiles line in the contact section; the two profile buttons already link both profiles.
-- Inline gist rendering now always fetches the latest gist revision instead of serving cached copies.
-
 ## [0.4.0] - 2026-09-22
 
 ### Added
 - Read-only, synchronous, offline portfolio SDK foundation with no dependencies.
 - `Portfolio` facade with `about` and `projects` resources (`about.get()`, `projects.list()`, `projects.get(key)`).
 - Frozen `About` and `Project` models.
-- Explicit SDK exceptions: `PortfolioError` base, `ProjectNotFoundError` for unknown keys, `DataNotFoundError` for missing or invalid data files.
+- Explicit SDK exceptions: `PortfolioError` base, `ProjectNotFoundError` for unknown keys, `DataNotFoundError` for missing data files.
 - Curated `content/projects.json` data contract (traction, sandbox); the SDK reads only this file and never parses site HTML.
 - SDK test coverage: checkout and installed-style resolution, unknown keys, missing files, malformed JSON, and invalid records.
 
@@ -28,6 +22,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Site
 - Added LinkedIn profile and contact links (`https://www.linkedin.com/in/bniladridas`).
+
+### Fixed
+- Theme switch layout shift: card-like elements now reserve their border in both themes so toggling no longer moves the page.
+- Traction renderer task state corrected from Task 15 to Task 18 to match the game repository.
+- Removed the duplicate Profiles line in the contact section; the two profile buttons already link both profiles.
+- Inline gist rendering now always fetches the latest gist revision instead of serving cached copies.
 
 ## [0.3.0] - 2026-09-10
 
