@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "key": "traction",
+      "name": "Traction: Realistic Racing Game",
+      "kind": "Game / Desktop",
+      "tagline": "Simcade circuit racer for macOS (Apple Silicon), built in UE5 with Metal.",
+      "repo_url": "https://github.com/bniladridas/traction",
+      "case_study": "#traction",
+      "status": "In development"
+    },
+    {
+      "key": "sandbox",
+      "name": "Palmshed Sandbox: Secure Runtime",
+      "kind": "Dev Infrastructure",
+      "tagline": "Language-agnostic sandbox runtime and SDK suite.",
+      "repo_url": "https://github.com/palmshed/sandbox",
+      "case_study": "#sandbox",
+      "status": "Stable · v1.2.0 (Sep 2026)"
+    }
+  ]
+}
