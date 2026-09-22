@@ -7,7 +7,7 @@ from bniladridas_portfolio.exceptions import (
 )
 from bniladridas_portfolio.models import About, Project
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 __all__ = [
     "About",
