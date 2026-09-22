@@ -1,4 +1,5 @@
 import pathlib
+import re
 import shutil
 import sys
 import tempfile
@@ -18,7 +19,8 @@ from bniladridas_portfolio import (
 
 class TestPackage(unittest.TestCase):
     def test_version_unchanged(self):
-        self.assertEqual(bniladridas_portfolio.__version__, "0.3.0")
+        declared = re.search(r'^version = "([^"]+)"', (ROOT / "pyproject.toml").read_text(), re.M).group(1)
+        self.assertEqual(bniladridas_portfolio.__version__, declared)
 
     def test_exception_inheritance(self):
         self.assertTrue(issubclass(PortfolioError, Exception))
