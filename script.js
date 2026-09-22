@@ -107,7 +107,7 @@ document.querySelectorAll('details.gist-details').forEach((d) => {
     const pageUrl = 'https://gist.github.com/' + id;
     body.innerHTML = '<p class="muted small">Loading gist…</p>';
     try {
-      const res = await fetch('https://gist.githubusercontent.com/' + id + '/raw/' + file, { cache: 'force-cache' });
+      const res = await fetch('https://gist.githubusercontent.com/' + id + '/raw/' + file + '?t=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const md = await res.text();
       body.innerHTML = '<div class="md-body">' + mdRender(md) + '</div>';
