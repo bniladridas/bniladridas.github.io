@@ -62,7 +62,7 @@ Pushes to `main` trigger the GitHub Pages workflow. The repository root is deplo
 
 ## Content editing
 
-About content lives in `content/about.json` and is loaded by the site. `/admin/` is the CMS entry point. GitHub OAuth authentication for Decap is a separate configuration concern.
+About content lives in `content/about.json` and is loaded by the site. `/admin/` is the CMS entry point. GitHub OAuth authentication for Decap is configured via the standalone Cloudflare Worker proxy (see `admin/config.yml`).
 
 ## Project Journey
 
