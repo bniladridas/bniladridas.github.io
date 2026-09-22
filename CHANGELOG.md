@@ -13,6 +13,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the duplicate Profiles line in the contact section; the two profile buttons already link both profiles.
 - Inline gist rendering now always fetches the latest gist revision instead of serving cached copies.
 
+## [0.4.0] - 2026-09-22
+
+### Added
+- Read-only, synchronous, offline portfolio SDK foundation with no dependencies.
+- `Portfolio` facade with `about` and `projects` resources (`about.get()`, `projects.list()`, `projects.get(key)`).
+- Frozen `About` and `Project` models.
+- Explicit SDK exceptions: `PortfolioError` base, `ProjectNotFoundError` for unknown keys, `DataNotFoundError` for missing or invalid data files.
+- Curated `content/projects.json` data contract (traction, sandbox); the SDK reads only this file and never parses site HTML.
+- SDK test coverage: checkout and installed-style resolution, unknown keys, missing files, malformed JSON, and invalid records.
+
+### Changed
+- Public package exports now include `Portfolio`, models, and exceptions alongside `__version__`.
+
+### Site
+- Added LinkedIn profile and contact links (`https://www.linkedin.com/in/bniladridas`).
+
 ## [0.3.0] - 2026-09-10
 
 ### Added
@@ -62,7 +78,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile overlap near objective and quickstart.
 - Em dashes removed, full stop appended to descriptions.
 
-[Unreleased]: https://github.com/bniladridas/bniladridas.github.io/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/bniladridas/bniladridas.github.io/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/bniladridas/bniladridas.github.io/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/bniladridas/bniladridas.github.io/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/bniladridas/bniladridas.github.io/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/bniladridas/bniladridas.github.io/releases/tag/v0.1.0
