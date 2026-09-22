@@ -73,6 +73,11 @@ assert(html.includes('name="twitter:card"') && html.includes('summary_large_imag
 assert(html.includes('name="twitter:image"'), 'HTML has twitter:image');
 assert(html.includes('property="og:site_name"'), 'HTML has og:site_name');
 
+// 8b. LinkedIn profile link (public site, hero socials and contact)
+assert(html.includes('https://www.linkedin.com/in/bniladridas'), 'HTML links LinkedIn profile');
+assert(html.includes('aria-label="LinkedIn profile"'), 'LinkedIn link is labeled');
+assert((html.match(/linkedin\.com\/in\/bniladridas/g) || []).length >= 2, 'LinkedIn linked from hero and contact');
+
 // 9. DOM simulation for interactive parts
 const dom = new JSDOM(html, {
   url: 'http://127.0.0.1:8345/',
