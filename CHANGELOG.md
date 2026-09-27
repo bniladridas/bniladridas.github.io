@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Refreshed Palmshed Sandbox facts to match upstream `v1.3.0` (npm latest and spec 1.3.0) across the site and `content/projects.json`.
+- Sandbox SDK languages now read TypeScript (reference) and Go. The Go SDK is released as `go-v0.1.0`; the Rust SDK is implementation-complete but has no release tag, so it is not listed.
+- OS-level filesystem isolation now includes macOS (Seatbelt) alongside Linux.
+
 ## [0.4.0] - 2026-09-22
 
 ### Added
