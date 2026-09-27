@@ -38,7 +38,7 @@ class TestProjects(unittest.TestCase):
         sandbox = sdk.projects.get("sandbox")
         self.assertEqual(sandbox.name, "Palmshed Sandbox: Secure Runtime")
         self.assertEqual(sandbox.repo_url, "https://github.com/palmshed/sandbox")
-        self.assertEqual(sandbox.status, "Stable · v1.2.0 (Sep 2026)")
+        self.assertEqual(sandbox.status, "Stable · v1.3.0 (Sep 2026)")
 
     def test_unknown_key(self):
         try:
