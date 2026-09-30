@@ -96,7 +96,7 @@ gists = [
 for u in gists:
     check(f"Gist raw live: {u.split('/')[-2][:8]}", head_ok(u), u)
 
-check("Facebook link correct", "https://www.facebook.com/bniladridas/" in html_text)
+check("LinkedIn link correct", "https://www.linkedin.com/in/bniladridas" in html_text)
 check("GitHub links use bniladridas", "https://github.com/bniladridas" in html_text)
 
 # --- Summary ---
