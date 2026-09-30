@@ -2,3 +2,10 @@ node_modules/
 src/bniladridas_portfolio/static/*.js
 src/bniladridas_portfolio/static/*.css
 dist/
+
+# Python build and cache artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+.pytest_cache/
