@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sandbox SDK languages now read TypeScript (reference), Rust, Go, and Python. All four are released (Rust at the F1 milestone, Go at `go-v0.1.0`, Python at `py-v0.1.0`); only the TypeScript SDK is published to npm, so the version fact tracks the `v1.x` line alone.
 - OS-level filesystem isolation now includes macOS (Seatbelt) alongside Linux.
 - Ignore Python build and cache artifacts (`__pycache__`, `*.pyc`, egg-info, `build`, `.pytest_cache`) so they no longer appear as untracked noise.
+- Traction AI feature now credits the verified racecraft gates: line-commit racing (overtake, commit to the free side, cede back, no-commit negative case) and defend-the-line with a simultaneous-commit separation invariant.
+- Removed the hardcoded upstream task number from the Traction renderer claim. It duplicated upstream state and went stale repeatedly (15 to 18 to 20), so the sentence now describes the renderer directly and relies on the repository link already in that section.
 
 ### Removed
 - Deactivated Facebook profile links from the hero socials and the contact section. The `verify-human` profile-link check now covers LinkedIn instead, keeping the count unchanged.
